@@ -438,6 +438,10 @@ def pill_text(d, x, y, txt, f, fg, bg=(0, 0, 0, 235), padx=26, pady=14, anchor="
     return x0 + tw + 2 * padx
 
 
+TITLE_STYLES = {"yellow": (YEL, (0, 0, 0, 235)), "red": (WHITE, (215, 25, 25, 240)),
+                "white": ((0, 0, 0, 255), (255, 255, 255, 240))}
+
+
 def ov_title(L, ov, t):
     """Hook title: stacked black pills with yellow text, slam-in."""
     q = (t - ov["t0"]) / 0.22
@@ -455,7 +459,8 @@ def ov_title(L, ov, t):
         f = font("anton", size)
         sc = 1 + 0.35 * (1 - back_out(qi))
         fz = font("anton", max(10, int(size * sc)))
-        pill_text(d, CX, y + i * (size + 34), line, fz, YEL, padx=30, pady=18)
+        fg, bg = TITLE_STYLES[ov.get("style", "yellow")]
+        pill_text(d, CX, y + i * (size + 34), line, fz, fg, bg=bg, padx=30, pady=18)
     tmp.putalpha(ImageChops.multiply(tmp.split()[3], Image.new("L", (W, H), int(255 * clamp(out)))))
     L.alpha_composite(tmp)
 
@@ -1197,17 +1202,24 @@ def cover_frame():
     """Kapak (thumbnail): videonun ilk 2 karesi ve kapak.jpg. scenes.COVER ile tanımlanır."""
     c = S.COVER
     z = c.get("zoom", 1.05)
-    sc = dict(t=-9.0, _end=-8.0, img=c["img"], zoom=(z, z), focus=c.get("focus", (0.5, 0.35)), grade=c.get("grade", "std"))
-    img = r_cover(sc, -9.0)
+    if c.get("imgs"):   # iki görsel üst/alt (karşılaştırma kapakları)
+        img = r_split(dict(t=-9.0, imgs=c["imgs"]), -4.0)
+    else:
+        sc = dict(t=-9.0, _end=-8.0, img=c["img"], zoom=(z, z), focus=c.get("focus", (0.5, 0.35)), grade=c.get("grade", "std"))
+        img = r_cover(sc, -9.0)
     # üst ve alt koyu geçiş: yazılar her görselde okunur
     y = np.linspace(0, 1, H, dtype=np.float32)[:, None, None]
     shade = 1 - 0.55 * np.clip((0.32 - y) / 0.32, 0, 1) - 0.6 * np.clip((y - 0.62) / 0.38, 0, 1)
     arr = np.asarray(img).astype(np.float32) * shade * vignette()
     img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert("RGBA")
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    for key, x, y0, size in c.get("portraits", []):   # yuvarlak portre ekleri
+        rp = round_portrait(key, size)
+        L.alpha_composite(rp, (int(x - rp.width / 2), int(y0 - rp.height / 2)))
     for m in c.get("marks", []):
         OV[m["type"]](L, dict(m, t0=-9.0, t1=99.0), 0.0)
-    ov_title(L, dict(t0=-9.0, t1=99.0, lines=c["lines"], y=c.get("y", 300), size=c.get("size", 116)), 0.0)
+    ov_title(L, dict(t0=-9.0, t1=99.0, lines=c["lines"], y=c.get("y", 300), size=c.get("size", 116),
+                     style=c.get("style", "yellow")), 0.0)
     if c.get("stamp"):
         ov_stamp(L, dict(t0=-9.0, t1=99.0, text=c["stamp"], y=c.get("stamp_y", 1000), size=c.get("stamp_size", 130),
                          rot=c.get("stamp_rot", -7), color=c.get("stamp_color", RED), fill=True), 0.0)

@@ -64,6 +64,14 @@ python3 tools/viral.py voice videolar/<klasör>
                bottom="sonuna kadar izle", bottom_y=1330,              # altta sarı küçük çağrı
                marks=[dict(type="pencircle", cx=..., cy=..., rx=..., ry=...)])  # isteğe bağlı: kırmızı daire/ok
   ```
+  **Her videonun kapağı kendine özel olmalı** (kullanıcı isteği). Kapak tasarlamadan önce `grep -A4 "COVER" videolar/*/scenes.py` ile son 7 videonun kapaklarına bak ve aynı düzeni, aynı damga/alt yazıyı, aynı başlık rengini art arda kullanma. Konuya göre düzen seç:
+  - **Tek yüz** (kişi videoları): `img` + `focus` yüze, büyük başlık, damga.
+  - **Karşılaştırma** (X mi Y mi): `imgs=[dict(img=..., focus=...), dict(img=..., focus=...)]` + `marks=[dict(type="vs")]`.
+  - **Detay işaretleme** (belge, tablo, mekân): `marks` ile `pencircle` + `penarrow` kırmızı daire/ok, `handwrite` el yazısı not.
+  - **Harita/şehir + portre**: arka plan harita (`grade="dark"`), `portraits=[("anahtar", x, y, boyut)]` yuvarlak portre.
+  - **Rakam kancası**: başlıkta büyük sayı ("53 GÜN", "623 YIL", "%3").
+  - Başlık rengi `style`: `"yellow"` (siyah kutu sarı yazı), `"red"` (kırmızı kutu beyaz yazı), `"white"` (beyaz kutu siyah yazı). Damga rengi `stamp_color`. Alt yazı (`bottom`) her seferinde farklı ve konuya özel olsun ("sonuna kadar izle"yi sürekli tekrarlama); gerekmiyorsa hiç koyma.
+  - Kapak metni videodaki kancayla aynı vaadi versin ama birebir aynı cümle olmak zorunda değil; merak boşluğu bıraksın.
   Başlık 3 saniyede okunmalı, en fazla ~16 karakter/satır. Yüz veya ana obje yazıların altında kalmasın. `python3 tools/viral.py cover <klasör>` ile üretip Read ile kontrol et; küçük (360x640) halde de okunur olmalı.
 - Önizleme: `python3 tools/viral.py stills videolar/<klasör> 0.5,5,30,60,...` ve kareleri Read ile kontrol et (yazı taşması, yüz kesilmesi, güvenli alan). Sorunları düzelt.
 
