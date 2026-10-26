@@ -8,7 +8,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | Tarih | Gün | Konu | Klasör | Durum |
 |---|---|---|---|---|
 | 2026-10-26 | Pzt | Fatih İstanbul'u alamasaydı ne olurdu? (test, 03:30'da paylaşıldı) | 2026-10-27-fatih-istanbul | planlandı |
-| 2026-10-27 | Sal | Kösem Sultan nasıl öldürüldü? | 2026-10-27-kosem-olumu | hazır |
+| 2026-10-27 | Sal | Kösem Sultan nasıl öldürüldü? | 2026-10-27-kosem-olumu | planlandı |
 | 2026-10-28 | Çar | Cumhuriyet ilan edilmeseydi ne olurdu? | | bekliyor |
 | 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | | bekliyor |
 | 2026-10-30 | Cum | Şems-i Tebrizi'ye ne oldu? | | bekliyor |
