@@ -56,6 +56,15 @@ python3 tools/viral.py voice videolar/<klasör>
   - Yapay zekâ görünümü olmasın: gerçek arşiv görselleri, sade modern tipografi, abartısız renk.
   - Sona `cta` + tartışma sorusu `kinetic` ile.
   - Kaynak gösterilen iddialarda `source` overlay'i kullan.
+- **Kapak (zorunlu):** `scenes.py` içine `COVER` ekle. Videonun ilk 2 karesi ve `kapak.jpg` bundan üretilir (TikTok kapağı ilk kareden alır; beyaz flaş/boş kare kapak olmasın). Kullanıcının elle yaptığı kapak tarzı:
+  ```python
+  COVER = dict(img="fatih", focus=(0.45, 0.32), zoom=1.12,          # yüzü net, büyük bir görsel
+               lines=["FATİH İSTANBUL'U", "ALAMASAYDI?"], size=118,   # siyah kutuda sarı, 2 satır, kısa ve soru/şok
+               stamp="OSMANLI BİTERDİ?", stamp_y=1050, stamp_size=96, # kırmızı damga: tartışma kışkırtan 1-3 kelime
+               bottom="sonuna kadar izle", bottom_y=1330,              # altta sarı küçük çağrı
+               marks=[dict(type="pencircle", cx=..., cy=..., rx=..., ry=...)])  # isteğe bağlı: kırmızı daire/ok
+  ```
+  Başlık 3 saniyede okunmalı, en fazla ~16 karakter/satır. Yüz veya ana obje yazıların altında kalmasın. `python3 tools/viral.py cover <klasör>` ile üretip Read ile kontrol et; küçük (360x640) halde de okunur olmalı.
 - Önizleme: `python3 tools/viral.py stills videolar/<klasör> 0.5,5,30,60,...` ve kareleri Read ile kontrol et (yazı taşması, yüz kesilmesi, güvenli alan). Sorunları düzelt.
 
 ## 6. Render
@@ -80,6 +89,7 @@ git add videolar/<klasör> takvim.md && git commit -m "<konu> videosu" && git pu
 ```json
 {"autoPublish": true, "draft": false, "text": "<aciklama.txt>",
  "media": ["https://raw.githubusercontent.com/medyagemreklamcilik-sudo/acaba/main/videolar/<klasör>/video.mp4"],
+ "videoThumbnailUrl": "https://raw.githubusercontent.com/medyagemreklamcilik-sudo/acaba/main/videolar/<klasör>/kapak.jpg",
  "providers": [{"network":"instagram"},{"network":"tiktok"},{"network":"youtube"},{"network":"facebook"}],
  "publicationDate": {"dateTime": "<YYYY-MM-DD>T16:00:00", "timezone": "Europe/Istanbul"},
  "instagramData": {"type": "REEL", "showReelOnFeed": true},
@@ -88,7 +98,7 @@ git add videolar/<klasör> takvim.md && git commit -m "<konu> videosu" && git pu
  "facebookData": {"type": "REEL"},
  "firstCommentText": "", "hasNotReadNotes": false, "shortener": false, "smartLinkData": {"ids": []}, "descendants": [], "mediaAltText": []}
 ```
-Hata verirse mesajı olduğu gibi kullanıcıya ilet; plan limiti (ücretsiz plan) dolduysa takvimde durumu `hazır` bırak.
+`VIDEO_THUMBNAIL_NOT_APPLICABLE` hatası gelirse `videoThumbnailUrl` olmadan bir kez daha dene (kapak zaten videonun ilk karesi). Başka hata verirse mesajı olduğu gibi kullanıcıya ilet; plan limiti (ücretsiz plan) dolduysa takvimde durumu `hazır` bırak.
 Başarılıysa takvimde durumu `planlandı` yap, commit + push.
 
 ## 10. Rapor

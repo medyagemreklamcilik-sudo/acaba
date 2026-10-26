@@ -636,7 +636,10 @@ def ov_stamp(L, ov, t):
     tw = d.textlength(txt, font=f)
     col = tuple(ov.get("color", RED))
     al = int(255 * out)
-    d.rectangle((450 - tw / 2 - 34, 200 - size * 0.62, 450 + tw / 2 + 34, 200 + size * 0.62), outline=col + (al,), width=12)
+    box = (450 - tw / 2 - 34, 200 - size * 0.62, 450 + tw / 2 + 34, 200 + size * 0.62)
+    if ov.get("fill"):
+        d.rectangle(box, fill=(0, 0, 0, int(190 * out)))
+    d.rectangle(box, outline=col + (al,), width=12)
     d.text((450, 205), txt, font=f, fill=col + (al,), anchor="mm")
     s = 1 + 1.2 * (1 - eout(q, 3))
     tmp = tmp.resize((int(900 * s), int(400 * s)), Image.BILINEAR).rotate(ov.get("rot", -8), Image.BILINEAR, expand=True)
@@ -1189,7 +1192,35 @@ def grain():
     return [rng.normal(0, 3.5, (H, W, 1)).astype(np.float32) for _ in range(4)]
 
 
+@lru_cache(1)
+def cover_frame():
+    """Kapak (thumbnail): videonun ilk 2 karesi ve kapak.jpg. scenes.COVER ile tanımlanır."""
+    c = S.COVER
+    z = c.get("zoom", 1.05)
+    sc = dict(t=-9.0, _end=-8.0, img=c["img"], zoom=(z, z), focus=c.get("focus", (0.5, 0.35)), grade=c.get("grade", "std"))
+    img = r_cover(sc, -9.0)
+    # üst ve alt koyu geçiş: yazılar her görselde okunur
+    y = np.linspace(0, 1, H, dtype=np.float32)[:, None, None]
+    shade = 1 - 0.55 * np.clip((0.32 - y) / 0.32, 0, 1) - 0.6 * np.clip((y - 0.62) / 0.38, 0, 1)
+    arr = np.asarray(img).astype(np.float32) * shade * vignette()
+    img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert("RGBA")
+    L = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    for m in c.get("marks", []):
+        OV[m["type"]](L, dict(m, t0=-9.0, t1=99.0), 0.0)
+    ov_title(L, dict(t0=-9.0, t1=99.0, lines=c["lines"], y=c.get("y", 300), size=c.get("size", 116)), 0.0)
+    if c.get("stamp"):
+        ov_stamp(L, dict(t0=-9.0, t1=99.0, text=c["stamp"], y=c.get("stamp_y", 1000), size=c.get("stamp_size", 130),
+                         rot=c.get("stamp_rot", -7), color=c.get("stamp_color", RED), fill=True), 0.0)
+    if c.get("bottom"):
+        d = ImageDraw.Draw(L)
+        pill_text(d, CX, c.get("bottom_y", 1300), tr_upper(c["bottom"]), font("mont", 62, 900), YEL, padx=28, pady=16)
+    img.alpha_composite(L)
+    return img.convert("RGB")
+
+
 def frame(t):
+    if hasattr(S, "COVER") and t < 2 / FPS:
+        return cover_frame()
     img = base_frame(t)
     for ft, dur in S.FLASH:
         d = t - ft
@@ -1226,6 +1257,9 @@ def render_range(f0, f1, out):
 
 def main():
     outdir = sys.argv[1]
+    if len(sys.argv) > 2 and sys.argv[2] == "cover":
+        cover_frame().save(os.path.join(outdir, "kapak.jpg"), quality=92)
+        return
     workers = int(sys.argv[2]) if len(sys.argv) > 2 else 4
     if len(sys.argv) > 3:
         for ts in sys.argv[3].split(","):

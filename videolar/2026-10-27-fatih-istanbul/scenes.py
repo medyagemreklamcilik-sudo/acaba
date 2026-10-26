@@ -197,3 +197,7 @@ SFX += [dict(name="pen", t=p, gain=0.3) for p in _PEN]
 
 def spec():
     return {"duration": DURATION, "music": MUSIC, "sfx": SFX}
+
+
+COVER = dict(img="fatih", focus=(0.45, 0.32), zoom=1.12, lines=["FATİH İSTANBUL'U", "ALAMASAYDI?"], size=118,
+             stamp="OSMANLI BİTERDİ?", stamp_y=1050, stamp_size=96, bottom="sonuna kadar izle", bottom_y=1330)

@@ -2,7 +2,8 @@
 
   python3 tools/viral.py voice  <klasör>            tts.txt -> build/voice.mp3, script.txt, aligned.json
   python3 tools/viral.py stills <klasör> t1,t2,...  önizleme kareleri -> build/stills/
-  python3 tools/viral.py render <klasör>            müzik+sfx+mix, render, encode -> <klasör>/video.mp4
+  python3 tools/viral.py cover  <klasör>            scenes.COVER -> <klasör>/kapak.jpg (önizleme)
+  python3 tools/viral.py render <klasör>            müzik+sfx+mix, render, encode -> <klasör>/video.mp4 + kapak.jpg
 
 Harita videoları için klasörde mapdata.py varsa engine/map/run_map.py kullanılır.
 """
@@ -51,6 +52,11 @@ def stills(d, ts):
     run([PY, renderer(d), out, "1", ts], env=env(d))
 
 
+def cover(d):
+    """scenes.COVER'dan kapak.jpg üretir (videonun ilk karesiyle aynı)."""
+    run([PY, renderer(d), os.path.abspath(d), "cover"], env=env(d))
+
+
 def render(d, workers="4"):
     d = os.path.abspath(d); b = os.path.join(d, "build"); out = os.path.join(b, "out"); os.makedirs(out, exist_ok=True)
     e = env(d)
@@ -80,12 +86,11 @@ def render(d, workers="4"):
         ["-maxrate", f"{kbps * 2}k", "-bufsize", f"{kbps * 2 + 2000}k", "-pass", "2", "-pix_fmt", "yuv420p",
          "-profile:v", "high", "-level", "4.2", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart",
          "-tag:v", "avc1", "-shortest", final])
-    # kapak: 1. saniyedeki kare
-    run(["ffmpeg", "-v", "error", "-y", "-ss", "1.0", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(d, "kapak.jpg")])
+    cover(d)
     print(f"{final}: {os.path.getsize(final) / 1e6:.1f} MB, {duration(final):.2f} sn")
 
 
 if __name__ == "__main__":
     cmd, d = sys.argv[1], sys.argv[2]
     {"voice": lambda: voice(d), "stills": lambda: stills(d, sys.argv[3]),
-     "render": lambda: render(d, *sys.argv[3:4])}[cmd]()
+     "render": lambda: render(d, *sys.argv[3:4]), "cover": lambda: cover(d)}[cmd]()
