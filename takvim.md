@@ -7,7 +7,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 
 | Tarih | Gün | Konu | Klasör | Durum |
 |---|---|---|---|---|
-| 2026-10-27 | Sal | Fatih İstanbul'u alamasaydı ne olurdu? | | bekliyor |
+| 2026-10-27 | Sal | Fatih İstanbul'u alamasaydı ne olurdu? | 2026-10-27-fatih-istanbul | hazır |
 | 2026-10-28 | Çar | Cumhuriyet ilan edilmeseydi ne olurdu? | | bekliyor |
 | 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | | bekliyor |
 | 2026-10-30 | Cum | Şems-i Tebrizi'ye ne oldu? | | bekliyor |
