@@ -6,7 +6,8 @@ description: acaba.nolurdu için uçtan uca dikey tarih videosu üretir ve yayı
 # /viral — acaba.nolurdu video hattı
 
 Depo: `medyagemreklamcilik-sudo/acaba` (herkese açık, `main` dalı). Çalışma kökü: `/home/user/acaba`.
-Argüman yoksa `takvim.md`'de durumu `bekliyor` olan **ilk** satırı üret. Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
+Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan satırı üret; o satır `bekliyor` değilse, tarihi yarından sonra olan ilk `bekliyor` satırı üret. Takvimde hiç `bekliyor` satır kalmadıysa önceki konularla çakışmayan, tartışma yaratacak yeni bir Osmanlı/Cumhuriyet tarihi konusu seç ve takvime ekle.
+Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her kararı kendin ver ve sonunda kısa rapor yaz. Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
 
 ## 0. Hazırlık (her yeni oturumda)
 1. `/home/user/acaba` yoksa: `add_repo` (owner `medyagemreklamcilik-sudo`, repo `acaba`, access `push`), sonra `git clone https://github.com/medyagemreklamcilik-sudo/acaba /home/user/acaba`.

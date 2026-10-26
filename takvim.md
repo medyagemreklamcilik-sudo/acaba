@@ -7,12 +7,13 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 
 | Tarih | Gün | Konu | Klasör | Durum |
 |---|---|---|---|---|
-| 2026-10-27 | Sal | Fatih İstanbul'u alamasaydı ne olurdu? | 2026-10-27-fatih-istanbul | hazır |
+| 2026-10-26 | Pzt | Fatih İstanbul'u alamasaydı ne olurdu? (test, 03:30'da paylaşıldı) | 2026-10-27-fatih-istanbul | planlandı |
+| 2026-10-27 | Sal | Kösem Sultan nasıl öldürüldü? | | bekliyor |
 | 2026-10-28 | Çar | Cumhuriyet ilan edilmeseydi ne olurdu? | | bekliyor |
 | 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | | bekliyor |
 | 2026-10-30 | Cum | Şems-i Tebrizi'ye ne oldu? | | bekliyor |
 | 2026-10-31 | Cmt | Nasreddin Hoca gerçekten yaşadı mı? | | bekliyor |
-| 2026-11-01 | Paz | Kösem Sultan nasıl öldürüldü? | | bekliyor |
+| 2026-11-01 | Paz | Osmanlı'da kahvehaneler neden yasaklandı? | | bekliyor |
 | 2026-11-02 | Pzt | Fatih zehirlendi mi? | | bekliyor |
 | 2026-11-03 | Sal | Osmanlı'da kardeş katli | | bekliyor |
 | 2026-11-04 | Çar | Yavuz 8 yılda imparatorluğu nasıl ikiye katladı? (harita) | | bekliyor |
