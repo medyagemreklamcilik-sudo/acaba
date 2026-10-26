@@ -2,3 +2,5 @@
 *.secret
 __pycache__/
 work/
+videolar/*/build/
+videolar/*/img/
