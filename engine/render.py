@@ -534,7 +534,7 @@ def ov_counter(L, ov, t):
         return
     v0, v1 = ov["from"], ov["to"]
     val = int(round(v0 + (v1 - v0) * eout(q, 3)))
-    txt = ov.get("fmt", "{}").format(val)
+    txt = ov.get("fmt", "{}").format(f"{val:,}".replace(",", ".") if ov.get("sep") else val)
     d = ImageDraw.Draw(L)
     size = ov.get("size", 230)
     sc = 1 + 0.08 * (1 - eout((t - ov["t0"] - ov.get("dur", 0.8)) / 0.3)) if q >= 1 else 1
@@ -1100,12 +1100,122 @@ def ov_papers(L, ov, t):
         d.line([pts[0], pts[1]], fill=(120, 110, 90, int(160 * out)), width=2)
 
 
+def ov_chart(L, ov, t):
+    """Finans grafiği: çizgi soldan sağa çizilir; `crash` indeksinden sonrası kırmızı çöküş."""
+    q = (t - ov["t0"]) / ov.get("dur", 1.6)
+    if q <= 0:
+        return
+    out = 1 - ease((t - ov["t1"] + 0.25) / 0.25)
+    if out <= 0:
+        return
+    x0, y0, x1, y1 = ov.get("box", (110, 520, 900, 1020))
+    pts = ov["points"]                        # [(etiket, değer), ...]
+    vals = [v for _, v in pts]
+    lo, hi = min(vals + [0]), max(vals) * 1.12
+    al = int(255 * out)
+    d = ImageDraw.Draw(L)
+    d.rounded_rectangle((x0 - 40, y0 - 70, x1 + 40, y1 + 80), 22, fill=(8, 14, 30, int(205 * out)))
+    for k in range(5):                         # yatay ızgara
+        gy = y1 - (y1 - y0) * k / 4
+        d.line([(x0, gy), (x1, gy)], fill=(120, 150, 200, int(60 * out)), width=2)
+    if ov.get("title"):
+        d.text((x0, y0 - 38), tr_upper(ov["title"]), font=font("anton", 40), fill=WHITE + (al,), anchor="lm")
+    xy = [(x0 + (x1 - x0) * i / (len(pts) - 1), y1 - (y1 - y0) * (v - lo) / (hi - lo)) for i, (_, v) in enumerate(pts)]
+    prog = eout(q, 2) * (len(xy) - 1)
+    crash = ov.get("crash", len(xy))
+    upc, dnc = tuple(ov.get("color", YEL)), (255, 50, 50)
+    for i in range(len(xy) - 1):
+        if prog <= i:
+            break
+        f = clamp(prog - i)
+        a_, b_ = xy[i], xy[i + 1]
+        e = (a_[0] + (b_[0] - a_[0]) * f, a_[1] + (b_[1] - a_[1]) * f)
+        col = dnc if i + 1 >= crash else upc
+        d.line([a_, e], fill=col + (al,), width=10)
+        if i + 1 < len(xy) and f >= 1:
+            lab = pts[i + 1][0]
+            if lab:
+                d.text((b_[0], y1 + 42), lab, font=font("mont", 26, 700), fill=(200, 210, 230, al), anchor="mm")
+    hi_i = min(int(prog), len(xy) - 1)
+    f = prog - int(prog)
+    hx = xy[hi_i][0] if hi_i == len(xy) - 1 else xy[hi_i][0] + (xy[hi_i + 1][0] - xy[hi_i][0]) * f
+    hy = xy[hi_i][1] if hi_i == len(xy) - 1 else xy[hi_i][1] + (xy[hi_i + 1][1] - xy[hi_i][1]) * f
+    col = dnc if hi_i + (1 if f > 0 else 0) >= crash else upc
+    r = 16 + 4 * math.sin(t * 10)
+    d.ellipse((hx - r, hy - r, hx + r, hy + r), fill=col + (al,))
+    d.ellipse((hx - r - 10, hy - r - 10, hx + r + 10, hy + r + 10), outline=col + (int(al * 0.5),), width=4)
+    if pts[0][0]:
+        d.text((xy[0][0], y1 + 42), pts[0][0], font=font("mont", 26, 700), fill=(200, 210, 230, al), anchor="mm")
+
+
+def ov_moneyrain(L, ov, t):
+    """Yağan banknotlar (dönerek, sallanarak)."""
+    if t < ov["t0"]:
+        return
+    out = 1 - ease((t - ov["t1"] + 0.3) / 0.3)
+    if out <= 0:
+        return
+    d = ImageDraw.Draw(L)
+    rng = np.random.default_rng(ov.get("seed", 7))
+    col = tuple(ov.get("color", (110, 190, 90)))
+    for i in range(ov.get("n", 34)):
+        st = ov["t0"] + rng.uniform(0, ov.get("spread", 1.6))
+        x0 = rng.uniform(-60, W + 60)
+        vy = rng.uniform(380, 700)
+        sway, ph = rng.uniform(40, 120), rng.uniform(0, 6.28)
+        dt = t - st
+        if dt < 0:
+            continue
+        x = x0 + sway * math.sin(dt * 2.0 + ph)
+        y = -120 + vy * dt
+        if y > H + 100:
+            continue
+        ang = 50 * math.sin(dt * 2.6 + ph)
+        w, h = 150, 70 * abs(math.cos(dt * 3.1 + ph)) + 10
+        c, s_ = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+        pts = [(x + px * c - py * s_, y + px * s_ + py * c) for px, py in ((-w / 2, -h / 2), (w / 2, -h / 2), (w / 2, h / 2), (-w / 2, h / 2))]
+        a = int(235 * out)
+        d.polygon(pts, fill=col + (a,), outline=(30, 70, 30, a))
+        cx_, cy_ = sum(p[0] for p in pts) / 4, sum(p[1] for p in pts) / 4
+        if h > 30:
+            d.text((cx_, cy_), ov.get("sym", "$"), font=font("anton", int(h * 0.6)), fill=(30, 80, 30, a), anchor="mm")
+
+
+def ov_ticker(L, ov, t):
+    """Borsa ekranı gibi kayan bant: items=[("TELSIM", "-%87"), ...] (- kırmızı, + yeşil)."""
+    if t < ov["t0"]:
+        return
+    out = 1 - ease((t - ov["t1"] + 0.25) / 0.25)
+    if out <= 0:
+        return
+    a = int(255 * out)
+    d = ImageDraw.Draw(L)
+    y, hh = ov.get("y", 240), 64
+    d.rectangle((0, y - hh / 2, W, y + hh / 2), fill=(5, 10, 22, int(225 * out)))
+    d.line([(0, y - hh / 2), (W, y - hh / 2)], fill=YEL + (a,), width=3)
+    f, fb = font("mont", 34, 800), font("mont", 34, 900)
+    seg = []
+    for name, chg in ov["items"]:
+        seg.append((name + " ", WHITE))
+        up = not chg.strip().startswith("-")
+        seg.append((("▲ " if up else "▼ ") + chg + "     ", (90, 230, 120) if up else (255, 70, 70)))
+    total = sum(d.textlength(s_, font=fb) for s_, _ in seg)
+    x = -((t - ov["t0"]) * ov.get("speed", 220)) % total
+    x -= total
+    while x < W:
+        for s_, c in seg:
+            if -400 < x < W:
+                d.text((x, y), s_, font=fb if c is WHITE else f, fill=c + (a,) if len(c) == 3 else c, anchor="lm")
+            x += d.textlength(s_, font=fb)
+
+
 OV = {"title": ov_title, "label": ov_label, "kinetic": ov_kinetic, "counter": ov_counter, "arrow": ov_arrow,
       "pip": ov_pip, "stamp": ov_stamp, "tagpair": ov_tagpair, "cta": ov_cta,
       "item": ov_item, "source": ov_source, "quote": ov_quote,
       "vs": ov_vs, "roster": ov_roster, "pencircle": ov_pencircle, "penarrow": ov_penarrow,
       "penline": ov_penline, "pencross": ov_pencross, "handwrite": ov_handwrite, "finger": ov_finger,
-      "people": ov_people, "typewriter": ov_typewriter, "papers": ov_papers}
+      "people": ov_people, "typewriter": ov_typewriter, "papers": ov_papers,
+      "chart": ov_chart, "moneyrain": ov_moneyrain, "ticker": ov_ticker}
 
 
 # ---------------------------------------------------------------- captions
