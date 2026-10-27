@@ -95,7 +95,7 @@ OVERLAYS = [
     dict(type="kinetic", t0=20.08, t1=21.5, text="PARA LAZIM", y=380, size=130),
     dict(type="tagpair", t0=21.7, t1=25.9, tags=[("MOTOROLA", 380, 24.34), ("NOKIA", 1060, 24.88)]),
     dict(type="moneyrain", t0=26.0, t1=28.85, n=30, spread=1.2),
-    dict(type="counter", t0=26.0, t1=28.85, **{"from": 0, "to": 2700000000}, fmt="${}", sep=True, dur=1.0, y=520, size=118, sub="satıcı kredisi"),
+    dict(type="counter", t0=26.0, t1=28.85, **{"from": 0, "to": 2700000000}, fmt="${}", sep=True, dur=1.0, y=520, size=118),
     dict(type="title", t0=29.86, t1=31.35, lines=["2001"], y=380, size=150),
     dict(type="stamp", t0=31.82, t1=33.4, text="ÖDEME YOK", y=760, size=150, color=RED, rot=-8, fill=True),
     # --- mahkeme
@@ -173,7 +173,7 @@ def spec():
     return {"duration": DURATION, "music": MUSIC, "sfx": SFX}
 
 
-COVER = dict(img="cem_miting", grade="dark", focus=(0.45, 0.32), zoom=1.0, lines=["MOTOROLA'NIN", "2 MİLYAR $'INI", "BATIRAN ŞİRKET"],
-             y=230, size=104, stamp="TELSİM", stamp_y=1560, stamp_size=150, stamp_color=ORANGE, stamp_rot=-6,
+COVER = dict(img="cem_miting", grade="dark", focus=(0.45, 0.12), zoom=1.0, lines=["TELSİM", "MOTOROLA'NIN", "2 MİLYAR $'INI", "NASIL BATIRDI?"],
+             y=150, size=86, stamp="BATTI", stamp_y=1560, stamp_size=150, stamp_color=RED, stamp_rot=-6,
              marks=[dict(type="chart", dur=0.01, color=ORANGE, crash=3, points=[("", 0.3), ("", 2.0), ("", 2.7), ("", 0.2)],
                          box=(560, 1120, 900, 1380))])
