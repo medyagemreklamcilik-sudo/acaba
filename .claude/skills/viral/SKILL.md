@@ -6,7 +6,7 @@ description: acaba.nolurdu için uçtan uca dikey tarih videosu üretir ve yayı
 # /viral — acaba.nolurdu video hattı
 
 Depo: `medyagemreklamcilik-sudo/acaba` (herkese açık, `main` dalı). Çalışma kökü: `/home/user/acaba`.
-Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan satırı üret; o satır `bekliyor` değilse, tarihi yarından sonra olan ilk `bekliyor` satırı üret. Takvimde hiç `bekliyor` satır kalmadıysa önceki konularla çakışmayan, tartışma yaratacak yeni bir Osmanlı/Cumhuriyet tarihi konusu seç ve takvime ekle.
+Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan ve durumu `bekliyor` olan satırı üret (aynı güne ait EKSTRA satırlar ayrı videodur, onlara bakma); yarına ait `bekliyor` satır yoksa, tarihi yarından sonra olan ilk `bekliyor` satırı üret. Satırda saat yazmıyorsa yayın 16:00'dır. Takvimde hiç `bekliyor` satır kalmadıysa önceki konularla çakışmayan, tartışma yaratacak yeni bir Osmanlı/Cumhuriyet tarihi konusu seç ve takvime ekle.
 Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her kararı kendin ver ve sonunda kısa rapor yaz. Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
 
 ## 0. Hazırlık (her yeni oturumda)
