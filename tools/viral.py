@@ -7,7 +7,7 @@
 
 Harita videoları için klasörde mapdata.py varsa engine/map/run_map.py kullanılır.
 """
-import json, os, subprocess, sys
+import json, os, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS, ENGINE = os.path.join(ROOT, "tools"), os.path.join(ROOT, "engine")
@@ -87,6 +87,7 @@ def render(d, workers="4"):
          "-profile:v", "high", "-level", "4.2", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart",
          "-tag:v", "avc1", "-shortest", final])
     cover(d)
+    shutil.rmtree(out, ignore_errors=True)   # ara dosyalar (seg*, raw.mp4) ~1 GB
     print(f"{final}: {os.path.getsize(final) / 1e6:.1f} MB, {duration(final):.2f} sn")
 
 
