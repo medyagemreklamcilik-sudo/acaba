@@ -26,7 +26,7 @@ IMG = os.path.join(VID, "img")
 FONTS = os.path.join(ROOT, "fonts")
 BUILD = os.path.join(VID, "build")
 ASSETS = os.path.join(ROOT, "assets")
-YEL = (255, 214, 10)
+YEL = tuple(getattr(S, "ACCENT", (255, 214, 10)))   # kanal vurgu rengi (scenes.ACCENT)
 RED = (255, 45, 45)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -1177,7 +1177,7 @@ def _captions(L, t):
         d.rounded_rectangle((x - 26, yy - size * 0.62, x + lw + 26, yy + size * 0.62), 18, fill=(0, 0, 0, 238))
         for i in idx:
             # spoken words full yellow, upcoming words dimmer yellow
-            col = YEL + (255,) if act[i] else (255, 214, 10, 150)
+            col = YEL + (255,) if act[i] else YEL + (150,)
             d.text((x, yy + size * 0.04), words[i], font=f, fill=col, anchor="lm")
             x += widths[i] + space
 
