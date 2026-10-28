@@ -10,7 +10,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-10-26 | Pzt | Fatih İstanbul'u alamasaydı ne olurdu? (test, 03:30'da paylaşıldı) | 2026-10-27-fatih-istanbul | planlandı |
 | 2026-10-26 | Pzt | Kösem Sultan nasıl öldürüldü? (16:20) | 2026-10-27-kosem-olumu | planlandı |
 | 2026-10-27 | Sal | Cumhuriyet ilan edilmeseydi ne olurdu? | 2026-10-27-cumhuriyet-olmasaydi | planlandı |
-| 2026-10-28 | Çar | EKSTRA 12:00 · Osmanlı'da eşcinsellik: 1858 iddiası ve belgeler | 2026-10-28-osmanlida-escinsellik | hazır |
+| 2026-10-28 | Çar | EKSTRA 12:00 · Osmanlı'da eşcinsellik: 1858 iddiası ve belgeler | 2026-10-28-osmanlida-escinsellik | planlandı |
 | 2026-10-28 | Çar | Şems-i Tebrizi'ye ne oldu? | 2026-10-28-sems-tebrizi | planlandı |
 | 2026-10-29 | Per | EKSTRA 07:00 · Onuncu Yıl Nutku (Atatürk'ün sözleriyle) | 2026-10-29-onuncu-yil-nutku | planlandı |
 | 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | | bekliyor |
