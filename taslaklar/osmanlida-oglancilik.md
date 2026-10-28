@@ -1,35 +1,34 @@
 # Osmanlı'da oğlancılık (taslak, onay bekliyor)
 
-## Seslendirme metni (tts)
+Not: v1'deki çocuk istismarı davaları (1631 Manisa, 1742 Kayseri, oğlan kaçırma cezası) v2 metninden çıkarıldı; kaynak tablosunda referans olarak duruyor.
 
-[whispers] 1631, Manisa. Bir baba mahkemeye geldi. Üç yaşındaki oğlunu sokaktan kaçıran adamı şikâyet etti. [pause] Komşular çocuğun çığlığını duyup içeri dalmış, onu son anda kurtarmıştı.
+## Seslendirme metni (tts) — v2: konu erkekler arası ilişki
 
-[dramatic] Kadı şahitleri dinledi. Mahalle, adamın bu işleri adet edindiğini söyledi. Karar kesindi: adam, devletin gemilerine kürekçi olarak verildi.
+[whispers] Osmanlı'da oğlancılık, sanıldığı gibi gizli bir şey değildi. [pause] Şiirlerde övüldü, kanunlarda cezası yazıldı... ve bir sadrazam bunu Avrupalılardan saklamaya çalıştı.
 
-[serious] Osmanlı'da bunun bir adı vardı: oğlancılık. Ve devlet bu konuda sanıldığı kadar sessiz değildi.
+[dramatic] O dönemin dilinde erkeklere ilgi duyan adama "gulâmpâre" ya da "oğlancı" denirdi. Sevilen genç erkeğe ise "mahbub". Divan şiirindeki sevgili de sık sık bir erkekti.
 
-Kanuni'nin kanunnamesinde livatanın cezası açıkça yazılıydı. Evli ve zenginse 300 akçe, orta hâlliyse 200, fakirse 100 akçe.
+[curious] Şair Deli Birader, Şehzade Korkut için yazdığı kitapta bu ilişkileri açık açık anlattı. Enderunlu Fazıl 1793'te Hubanname'yi yazdı: farklı milletlerden genç erkeklerin güzelliğini anlatan bir kitap. 1837'de basıldı.
 
-[surprised] Ama bir çocuğu kaçırmak bambaşka bir suçtu. Dulkadir ve Bozok kanunlarına göre oğlan kaçıranın cezası hadım edilmekti. Yapılmazsa 24 altın ceza alınırdı.
+Bir de köçekler vardı. Kadın kılığında dans eden genç erkekler. Seyirciler onlar yüzünden birbirine girerdi. Anlatılana göre 1837'de bu kavgalar yüzünden köçek dansı yasaklandı.
 
-[dramatic] Şeyhülislam Ebussuud Efendi daha da sertti. Fetvasına göre bu işi alışkanlık edinen biri, padişahın izniyle idam edilebilirdi.
+[serious] Peki devlet ne diyordu? Kanuni'nin kanunnamesinde livatanın cezası para cezasıydı. Evli ve zenginse 300 akçe, orta hâlliyse 200, fakirse 100 akçe. Yani neredeyse zinayla aynı tarife.
 
-Ve bu kâğıt üzerinde kalmadı. 1742'de Kayseri'de bir baba, oğlunu zorla kaçıran iki adamı dava etti. Mahkeme sicile şu fetvayı geçirdi: [pause] "Bunu adet edinenin katli meşrudur."
+[dramatic] Şeyhülislam Ebussuud Efendi daha sertti. Bunu alışkanlık edinenin, padişahın izniyle idam edilebileceğine fetva verdi. Ama mahkeme kayıtlarına çoğunlukla zorla yapılan saldırılar yansıdı.
 
-[curious] Ama madalyonun bir de öbür yüzü vardı. Köçekler. Kadın kılığında dans eden genç erkekler. Düğünlerde, meyhanelerde, konak eğlencelerinde sahneye çıkarlardı. Seyirciler köçekler yüzünden birbirine girerdi. Anlatılana göre 1837'de bu kavgalar yüzünden köçek dansı yasaklandı.
+[surprised] 1858'de çıkan yeni Ceza Kanunu'nda ise livata için ayrı bir madde yoktu. Sadece alenen yapılan hayâsızca fiiller cezalandırılıyordu. Bu yüzden bazıları "Osmanlı, eşcinselliği suç olmaktan çıkardı" der. Bazı tarihçiler ise buna kesinlikle itiraz eder.
 
-Saray şairi Enderunlu Fazıl ise 1793'te Hubanname'yi yazdı. Farklı milletlerden genç erkeklerin güzelliğini anlatan bir kitap. Bugün okununca insanı rahatsız eden bir kitap.
+[serious] Ve sonra her şey değişti. Ahmed Cevdet Paşa notlarına şunu yazdı: [pause] "Zen-dostlar çoğalıp mahbublar azaldı." Yani kadın sevenler çoğaldı, oğlan sevenler azaldı. Cevdet Paşa'ya göre Sadrazam Âli Paşa bile, Avrupalıların tepkisinden çekindiği için bu eğilimini saklamaya çalışırdı.
 
-[serious] Peki bu kültür nasıl bitti? Tanzimat'ın büyük devlet adamı Ahmed Cevdet Paşa notlarına şöyle yazdı: [pause] "Zen-dostlar çoğalıp mahbublar azaldı." Yani kadın sevenler çoğaldı, oğlan sevenler azaldı.
-
-[dramatic] Birkaç kuşak içinde bu kültür neredeyse tamamen silindi.
-
-[curious] Sence onu bitiren neydi? Avrupa'nın baskısı mı, yoksa toplumun kendisi mi? [pause] Yorumlara yaz.
+[curious] Sence Osmanlı bu konuda gerçekten hoşgörülü müydü, yoksa sadece göz mü yumuyordu? [pause] Yorumlara yaz.
 
 ## Belgeler / kaynaklar
 
 | Videodaki bilgi | Belge | Nerede |
 |---|---|---|
+| Gulâmpâre / mahbub / zen-dost terimleri; Âli Paşa'nın "gulâmpâreliğini ihfâya çalışurdu" | Cevdet Paşa, *Ma'rûzât* (Halaçoğlu, 1980) | Urania Institute alıntısı |
+| Deli Birader (Gazâlî), Şehzade Korkut için yazılan bâhnâme | — | Artan & Schick 2013, s.157-8 (Wikipedia "Sexual and gender minorities in the Ottoman Empire") |
+| 1858 Ceza Kanunu'nda livataya özel madde yok; m.202 alenen hayâsızca fiiller | 1858 Ceza Kanunnamesi | Avcı 2018 s.32; Ekinci; Özsoy 2020 ("suç olmaktan çıkarma" tezine itiraz) |
 | 1631 Manisa: 3 yaşındaki çocuğa saldıran Mehmed b. Osman, mahalle "daima bu makule fesaddan hâlî değildir" deyince "mîrî gemiye teslim" (kürek) | Manisa Şer'iye Sicili d.no.64, h.no.12/1 (1040/1631) | Çetin, *64 No'lu Manisa Şer'iye Sicili*, YL tezi, 2013, s.28; Avcı 2018, s.38 dn.108 |
 | Kanuni kanunnamesi m.32-33: livata için evli gani 300, orta 200, fakir 100, daha fakir 50-40 akçe; bekâr 100/50/30 akçe | Kanunname-i Âl-i Osman | Akgündüz, *Osmanlı Kanunnameleri* IV/298; Heyd, *Studies in Old Ottoman Criminal Law*, 1973, s.64; Avcı 2018, s.31 |
 | Oğlan kaçırana hadım ("arıdalar") ya da 24 altın | Alaüddevle (Dulkadir) ve Bozok kanunları m.15 | Barkan, *Kanunlar*, 1943, s.121, 125; Akgündüz VI/227; Avcı 2018, s.30 |
