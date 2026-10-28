@@ -13,7 +13,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-10-28 | Çar | EKSTRA 12:00 · Osmanlı'da eşcinsellik: 1858 iddiası ve belgeler | 2026-10-28-osmanlida-escinsellik | planlandı |
 | 2026-10-28 | Çar | Şems-i Tebrizi'ye ne oldu? | 2026-10-28-sems-tebrizi | planlandı |
 | 2026-10-29 | Per | EKSTRA 07:00 · Onuncu Yıl Nutku (Atatürk'ün sözleriyle) | 2026-10-29-onuncu-yil-nutku | planlandı |
-| 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | | bekliyor |
+| 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | 2026-10-29-cumhuriyet-gecesi | hazır |
 | 2026-10-30 | Cum | Nasreddin Hoca gerçekten yaşadı mı? | | bekliyor |
 | 2026-10-31 | Cmt | Osmanlı'da kahvehaneler neden yasaklandı? | | bekliyor |
 | 2026-11-01 | Paz | Fatih zehirlendi mi? | | bekliyor |
