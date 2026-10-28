@@ -277,7 +277,14 @@ def r_number(sc, t):
     return bg
 
 
-RENDER = {"cover": r_cover, "card": r_card, "split": r_split, "grid": r_grid, "plate": r_number}
+def r_journey(sc, t):
+    """Harita üzerinde yolculuk (engine/map/journey.py)."""
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "map"))
+    import journey
+    return journey.frame(sc, t, sys.modules[__name__])
+
+
+RENDER = {"cover": r_cover, "card": r_card, "split": r_split, "grid": r_grid, "plate": r_number, "journey": r_journey}
 
 
 def scene_frame(i, t):
