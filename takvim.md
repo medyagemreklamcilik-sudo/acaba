@@ -15,7 +15,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-10-29 | Per | EKSTRA 07:00 · Onuncu Yıl Nutku (Atatürk'ün sözleriyle) | 2026-10-29-onuncu-yil-nutku | planlandı |
 | 2026-10-29 | Per | 29 Ekim 1923 gecesi Ankara'da ne oldu? | 2026-10-29-cumhuriyet-gecesi | planlandı |
 | 2026-10-29 | Per | EKSTRA 03:08 · Atatürk vatan haini mi? (haritalı) | 2026-10-29-ataturk-vatan-haini-mi | planlandı |
-| 2026-10-30 | Cum | Nasreddin Hoca gerçekten yaşadı mı? | 2026-10-30-nasreddin-hoca | hazır |
+| 2026-10-30 | Cum | Nasreddin Hoca gerçekten yaşadı mı? | 2026-10-30-nasreddin-hoca | planlandı |
 | 2026-10-31 | Cmt | Osmanlı'da kahvehaneler neden yasaklandı? | | bekliyor |
 | 2026-11-01 | Paz | Fatih zehirlendi mi? | | bekliyor |
 | 2026-11-02 | Pzt | Osmanlı'da kardeş katli | | bekliyor |
