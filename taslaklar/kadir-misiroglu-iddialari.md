@@ -2,27 +2,25 @@
 
 ## Seslendirme metni (tts) — son hâl
 
-[dramatic] "Keşke Yunan galip gelseydi." [pause] Bu sözü, kendine tarihçi diyen Kadir Mısıroğlu söyledi. Gerekçesi şuydu: Yunan kazansaydı hilafet de şeriat da yıkılmazdı.
+[dramatic] "Keşke Yunan galip gelseydi." [pause] Bunu Kadir Mısıroğlu söyledi. Çünkü ona göre Yunan kazansaydı hilafet de şeriat da yıkılmazdı.
 
 [serious] Peki belgeler ne diyor? Tek tek bakalım.
 
 [curious] Birinci iddia: Kurtuluş Savaşı, İngilizlerle danışıklı dövüştü. Mustafa Kemal'i Anadolu'ya İngilizler gönderdi.
 
-[serious] Diyelim ki öyle. O zaman asıl soru şu: [pause] Bir Osmanlı paşasını bir yerden bir yere göreve gönderecek kadar yetkiyi İngilizler nereden buldu? Cevap belli: 30 Ekim 1918'de Mondros Mütarekesi'ni imzalayan, 13 Kasım'da işgal donanmasının İstanbul'a girmesine boyun eğen saltanat hükümetinden. Üstelik Mustafa Kemal'in tayin emrini İngilizler değil, padişahın hükümeti imzaladı.
+[serious] Diyelim ki öyle. O zaman asıl soru şu: [pause] Bir Osmanlı paşasını bir yerden bir yere göreve gönderecek kadar yetkiyi İngilizler nereden buldu? Cevap belli: 1918'de Mondros'u imzalayan ve işgal donanmasını İstanbul'a sokan saltanat hükümetinden. Üstelik Mustafa Kemal'in tayin emrini İngilizler değil, padişahın hükümeti imzaladı.
 
-[dramatic] Peki o zaman neden İngilizler, daha Haziran 1919'da onun İstanbul'a geri çağrılması için baskı yaptı? Neden 16 Mart 1920'de İstanbul'u resmen işgal edip Meclis üyelerini Malta'ya sürdüler? [pause] Danışıklı dövüşte kimse karşı tarafın vekillerini sürgüne göndermez.
+[dramatic] Peki o zaman İngilizler neden daha Haziran 1919'da onu geri çağırtmaya çalıştı? Neden 1920'de vekilleri Malta'ya sürdü? [pause] Danışıklı dövüşte kimse karşı tarafın vekillerini sürgüne göndermez.
 
-[dramatic] Atatürk'e İngiliz ajanı diyenler şunu iyi bilsin: Millî Mücadele boyunca İngiltere'nin yanında durduğu taraf, saltanat ve hilafetti. [pause] Halifenin şeyhülislamı Millî Mücadele'ye karşı fetva verdi. İngiliz desteğiyle, Kuva-yı Milliye'ye karşı savaşacak bir Halife Ordusu kuruldu. Ve 17 Kasım 1922'de son padişah Vahdettin İstanbul'dan kaçarken hangi gemiye bindi? Bir İngiliz savaş gemisine: Malaya zırhlısına.
+[dramatic] Atatürk'e İngiliz ajanı diyenler şunu iyi bilsin: Millî Mücadele boyunca İngiltere'nin yanında durduğu taraf, saltanat ve hilafetti. [pause] Şeyhülislam Millî Mücadele'ye karşı fetva verdi, İngiliz desteğiyle Halife Ordusu kuruldu. Ve 17 Kasım 1922'de son padişah Vahdettin İstanbul'dan kaçarken hangi gemiye bindi? Bir İngiliz savaş gemisine: Malaya zırhlısına.
 
-[serious] İkinci iddia: Lozan zafer değil, hezimetti. Mısıroğlu bu tezi 1965'te bir kitapla savundu.
+[serious] İkinci iddia: Lozan hezimetti. Haritaya bakın. Sevr Antlaşması'nda İzmir Yunanistan'a, Doğu Anadolu Ermenistan'a bırakılmış, Boğazlar uluslararası bir komisyona verilmişti. Lozan'da hepsi geri alındı, kapitülasyonlar kaldırıldı.
 
-Ama haritaya bakın. Sevr Antlaşması'nda İzmir Yunanistan'a, Doğu Anadolu Ermenistan'a bırakılmış, Boğazlar uluslararası bir komisyona verilmişti. Lozan'da ise bunların hepsi geri alındı. Üstelik yüzyıllardır süren kapitülasyonlar kaldırıldı.
+[curious] Üçüncü iddia: Adaları Lozan'da verdik. Onikiada'yı İtalya 1912'den beri işgal ediyordu. Midilli, Sakız, Limni ise 1914'te, Cumhuriyet kurulmadan Yunanistan'a bırakılmıştı. Lozan'da ise Gökçeada ve Bozcaada geri alındı.
 
-[curious] Üçüncü iddia: Adaları Lozan'da verdik. Gerçek şu: Onikiada'yı İtalya 1912'den beri işgal ediyordu. Midilli, Sakız, Limni gibi adalar ise 1914'te, Balkan Savaşı'ndan sonra Yunanistan'a bırakılmıştı. Yani Cumhuriyet daha kurulmadan. Lozan'da ise Gökçeada ve Bozcaada geri alındı.
+[serious] Dördüncü iddia: Hilafet, Lozan'ın gizli şartıydı. Lozan'ın 143 maddesinin hiçbirinde hilafet geçmez. Hilafeti 3 Mart 1924'te Türkiye Büyük Millet Meclisi kaldırdı.
 
-[serious] Dördüncü iddia: Hilafet, Lozan'ın gizli şartıydı. Lozan'ın metni herkese açık. 143 maddenin hiçbirinde hilafet geçmez. Hilafeti 3 Mart 1924'te Türkiye Büyük Millet Meclisi kaldırdı.
-
-[curious] Bir de işin ironik tarafı var. 12 Eylül 1980 darbesinden sonra Mısıroğlu yurt dışına çıktı. Çağrıya rağmen dönmeyince, 7 Eylül 1983'te Türk vatandaşlığından çıkarıldı. [pause] Peki sığınmak için hangi ülkeyi seçti? Şeriatla yönetilen onca ülke dururken... Hilafeti savunan, Kurtuluş Savaşı'nı İngiliz oyunu sayan adam, İngiltere'ye sığındı.
+[curious] Bir de ironi var. 12 Eylül'den sonra yurt dışına çıkan Mısıroğlu, dönmeyince 1983'te vatandaşlıktan çıkarıldı. [pause] Peki sığınmak için hangi ülkeyi seçti? Şeriatla yönetilen onca ülke dururken... Hilafeti savunan, Kurtuluş Savaşı'nı İngiliz oyunu sayan adam, İngiltere'ye sığındı.
 
 [dramatic] Fikirlerinizi elbette savunabilirsiniz. Ama işgalci ordunun kazanmasını dilemek ve belgeleri yok saymak tarihçilik değildir.
 
