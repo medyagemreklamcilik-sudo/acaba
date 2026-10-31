@@ -82,7 +82,7 @@ python3 tools/viral.py render videolar/<klasör>
 (Harita videoları için klasörde `mapdata.py` olması yeterli.) Çıktı: `video.mp4` (1080x1920, ≈3.5 Mbps, < 90 MB) ve `kapak.jpg`. Uzun sürer; arka planda çalıştır, bitince süreyi ve boyutu doğrula, birkaç kare çıkarıp bak.
 
 ## 7. Açıklama (`aciklama.txt`)
-- **Toplam en fazla 100 karakter, 4 hashtag dahil.** Emoji yok. Merak uyandıran tek cümle + 4 hashtag. Python ile `len()` kontrol et.
+- **Toplam en fazla 100 karakter, 4 hashtag dahil.** Emoji yok. `#osmanlıtreni` / "osmanlı treni" etiketini KULLANMA (kullanıcı yalnızca tek bir video için istemişti). Merak uyandıran tek cümle + 4 hashtag. Python ile `len()` kontrol et.
 - YouTube başlığı (`baslik.txt`): en fazla 70 karakter, kanca gibi.
 
 ## 8. Depoya gönder
