@@ -1,6 +1,6 @@
 # Kadir Mısıroğlu'nun iddiaları ve belgeler (taslak, onay bekliyor)
 
-## Seslendirme metni (tts)
+## Seslendirme metni (tts) — son hâl
 
 [dramatic] "Keşke Yunan galip gelseydi." [pause] Bu sözü, kendine tarihçi diyen Kadir Mısıroğlu söyledi. Gerekçesi şuydu: Yunan kazansaydı hilafet de şeriat da yıkılmazdı.
 
@@ -8,15 +8,15 @@
 
 [curious] Birinci iddia: Kurtuluş Savaşı, İngilizlerle danışıklı dövüştü. Mustafa Kemal'i Anadolu'ya İngilizler gönderdi.
 
-[dramatic] Peki o zaman neden İngilizler, daha Haziran 1919'da onun İstanbul'a geri çağrılması için baskı yaptı? Neden 16 Mart 1920'de İstanbul'u resmen işgal edip Meclis üyelerini Malta'ya sürdüler? Ve neden Nisan 1920'de, İngiliz desteğiyle Kuva-yı Milliye'ye karşı savaşacak bir "Halife Ordusu" kuruldu? [pause] Danışıklı dövüşte kimse karşı tarafa ordu kurmaz.
+[dramatic] Peki o zaman neden İngilizler, daha Haziran 1919'da onun İstanbul'a geri çağrılması için baskı yaptı? Neden 16 Mart 1920'de İstanbul'u resmen işgal edip Meclis üyelerini Malta'ya sürdüler? [pause] Danışıklı dövüşte kimse karşı tarafın vekillerini sürgüne göndermez.
+
+[dramatic] Atatürk'e İngiliz ajanı diyenler şunu iyi bilsin: Millî Mücadele boyunca İngiltere'nin yanında durduğu taraf, saltanat ve hilafetti. [pause] Halifenin şeyhülislamı Millî Mücadele'ye karşı fetva verdi. İngiliz desteğiyle, Kuva-yı Milliye'ye karşı savaşacak bir Halife Ordusu kuruldu. Ve 17 Kasım 1922'de son padişah Vahdettin İstanbul'dan kaçarken hangi gemiye bindi? Bir İngiliz savaş gemisine: Malaya zırhlısına.
 
 [serious] İkinci iddia: Lozan zafer değil, hezimetti. Mısıroğlu bu tezi 1965'te bir kitapla savundu.
 
 Ama haritaya bakın. Sevr Antlaşması'nda İzmir Yunanistan'a, Doğu Anadolu Ermenistan'a bırakılmış, Boğazlar uluslararası bir komisyona verilmişti. Lozan'da ise bunların hepsi geri alındı. Üstelik yüzyıllardır süren kapitülasyonlar kaldırıldı.
 
 [curious] Üçüncü iddia: Adaları Lozan'da verdik. Gerçek şu: Onikiada'yı İtalya 1912'den beri işgal ediyordu. Midilli, Sakız, Limni gibi adalar ise 1914'te, Balkan Savaşı'ndan sonra Yunanistan'a bırakılmıştı. Yani Cumhuriyet daha kurulmadan. Lozan'da ise Gökçeada ve Bozcaada geri alındı.
-
-[dramatic] Bir dakika... İngilizler hilafetin düşmanı mıydı? Belgeler tam tersini söylüyor. Millî Mücadele boyunca İngilizler, padişah ve halifenin İstanbul hükümetini destekledi. Halifenin şeyhülislamı Millî Mücadele'ye karşı fetva verdi, İngiliz desteğiyle Halife Ordusu kuruldu. [pause] Ve 17 Kasım 1922'de son padişah Vahdettin İstanbul'dan kaçarken hangi gemiye bindi? Bir İngiliz savaş gemisine: Malaya zırhlısına.
 
 [serious] Dördüncü iddia: Hilafet, Lozan'ın gizli şartıydı. Lozan'ın metni herkese açık. 143 maddenin hiçbirinde hilafet geçmez. Hilafeti 3 Mart 1924'te Türkiye Büyük Millet Meclisi kaldırdı.
 
