@@ -16,9 +16,11 @@ Ama haritaya bakın. Sevr Antlaşması'nda İzmir Yunanistan'a, Doğu Anadolu Er
 
 [curious] Üçüncü iddia: Adaları Lozan'da verdik. Gerçek şu: Onikiada'yı İtalya 1912'den beri işgal ediyordu. Midilli, Sakız, Limni gibi adalar ise 1914'te, Balkan Savaşı'ndan sonra Yunanistan'a bırakılmıştı. Yani Cumhuriyet daha kurulmadan. Lozan'da ise Gökçeada ve Bozcaada geri alındı.
 
+[dramatic] Bir dakika... İngilizler hilafetin düşmanı mıydı? Belgeler tam tersini söylüyor. Millî Mücadele boyunca İngilizler, padişah ve halifenin İstanbul hükümetini destekledi. Halifenin şeyhülislamı Millî Mücadele'ye karşı fetva verdi, İngiliz desteğiyle Halife Ordusu kuruldu. [pause] Ve 17 Kasım 1922'de son padişah Vahdettin İstanbul'dan kaçarken hangi gemiye bindi? Bir İngiliz savaş gemisine: Malaya zırhlısına.
+
 [serious] Dördüncü iddia: Hilafet, Lozan'ın gizli şartıydı. Lozan'ın metni herkese açık. 143 maddenin hiçbirinde hilafet geçmez. Hilafeti 3 Mart 1924'te Türkiye Büyük Millet Meclisi kaldırdı.
 
-[curious] Bir de işin ironik tarafı var. 12 Eylül 1980 darbesinden sonra Mısıroğlu yurt dışına çıktı. Çağrıya rağmen dönmeyince, 7 Eylül 1983'te Türk vatandaşlığından çıkarıldı. [pause] Peki sığınmak için hangi ülkeyi seçti? Hilafeti savunan, Kurtuluş Savaşı'nı İngiliz oyunu sayan adam... İngiltere'ye sığındı.
+[curious] Bir de işin ironik tarafı var. 12 Eylül 1980 darbesinden sonra Mısıroğlu yurt dışına çıktı. Çağrıya rağmen dönmeyince, 7 Eylül 1983'te Türk vatandaşlığından çıkarıldı. [pause] Peki sığınmak için hangi ülkeyi seçti? Şeriatla yönetilen onca ülke dururken... Hilafeti savunan, Kurtuluş Savaşı'nı İngiliz oyunu sayan adam, İngiltere'ye sığındı.
 
 [dramatic] Fikirlerinizi elbette savunabilirsiniz. Ama işgalci ordunun kazanmasını dilemek ve belgeleri yok saymak tarihçilik değildir.
 
@@ -36,4 +38,5 @@ Ama haritaya bakın. Sevr Antlaşması'nda İzmir Yunanistan'a, Doğu Anadolu Er
 | Sevr (10 Ağustos 1920): İzmir bölgesi Yunanistan'a, Doğu'da Ermenistan, Boğazlar komisyonu; Lozan (24 Temmuz 1923): kapitülasyonların kaldırılması | Sevr ve Lozan metinleri; TDV İslâm Ansiklopedisi, "Lozan Antlaşması" |
 | Onikiada 1912'den beri İtalyan işgalinde (Lozan m.15 durumu tanıdı); diğer Ege adaları 1914 Londra kararıyla Yunanistan'a (Lozan m.12 teyit etti); İmroz ve Bozcaada Türkiye'ye | Lozan Antlaşması m.12 ve m.15 metni |
 | 1980 sonrası yurt dışına çıkış, 7 Eylül 1983 Resmî Gazete ile vatandaşlıktan çıkarılma, İngiltere'ye sığınma başvurusu, 1991'de dönüş | Habertürk ve Mepa News biyografileri; sığınma başvurusunda 7 Eylül 1983 Resmî Gazete'sine dayandığı aktarılıyor. İngiliz vatandaşlığı/pasaportu iddiası doğrulanamadı, metne konmadı |
+| İngilizlerin Millî Mücadele boyunca İstanbul hükümetini desteklemesi; Dürrizade fetvası (Nisan 1920); Kuva-yı İnzibâtiye; Vahdettin'in 17 Kasım 1922'de İngiliz zırhlısı HMS Malaya ile İstanbul'dan ayrılması | Genel kabul gören kronoloji; TDV "Mehmed VI (Vahdeddin)" maddesi |
 | Lozan metninde hilafet maddesi yok; hilafetin kaldırılması 3 Mart 1924, TBMM kanunu (431 sayılı) | Lozan Antlaşması tam metni; 3 Mart 1924 kanunları |
