@@ -17,7 +17,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-10-29 | Per | EKSTRA 03:08 · Atatürk vatan haini mi? (haritalı) | 2026-10-29-ataturk-vatan-haini-mi | planlandı |
 | 2026-10-30 | Cum | Nasreddin Hoca gerçekten yaşadı mı? | 2026-10-30-nasreddin-hoca | planlandı |
 | 2026-10-31 | Cmt | Osmanlı'da kahvehaneler neden yasaklandı? | 2026-10-31-kahvehane-yasagi | planlandı |
-| 2026-11-01 | Paz | Fatih zehirlendi mi? | 2026-11-01-fatih-zehir | hazır |
+| 2026-11-01 | Paz | Fatih zehirlendi mi? | 2026-11-01-fatih-zehir | planlandı |
 | 2026-11-02 | Pzt | Osmanlı'da kardeş katli | | bekliyor |
 | 2026-11-03 | Sal | Yavuz 8 yılda imparatorluğu nasıl ikiye katladı? (harita) | | bekliyor |
 | 2026-11-04 | Çar | Kanuni Viyana'yı alsaydı ne olurdu? | | bekliyor |
