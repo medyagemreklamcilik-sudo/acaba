@@ -240,6 +240,21 @@ def sfx_pop():
     return norm(np.sin(2 * np.pi * np.cumsum(f) / SR) * env_exp(len(tt), 0.04))
 
 
+def sfx_popcorn(d=2.6, seed=3):
+    """Patlamış mısır: rastgele kısa, tok patlamalar."""
+    rng = np.random.default_rng(seed)
+    out = np.zeros(int(SR * d))
+    t = 0.05
+    while t < d - 0.08:
+        n = int(SR * 0.035)
+        burst = rng.standard_normal(n) * env_exp(n, 0.006)
+        burst = bandpass(burst, 600 + rng.random() * 900, 3500 + rng.random() * 2500)
+        i = int(t * SR)
+        out[i:i + n] += burst * (0.4 + 0.6 * rng.random())
+        t += rng.exponential(0.09 if t < d * 0.6 else 0.16)
+    return norm(out, 0.8)
+
+
 def sfx_shutter():
     n = int(0.3 * SR)
     x = bandpass(rng.standard_normal(n), 2000, 9000)
@@ -253,7 +268,7 @@ SFX = {
     "impact": sfx_impact, "hit": sfx_hit, "whoosh": sfx_whoosh, "riser": sfx_riser,
     "revcym": sfx_reverse_cymbal, "bell": sfx_bell, "shimmer": sfx_shimmer, "paper": sfx_paper,
     "quill": sfx_quill, "chains": sfx_chains, "heartbeat": sfx_heartbeat, "thunder": sfx_thunder,
-    "sword": sfx_sword, "murmur": sfx_murmur, "glitch": sfx_glitch, "pop": sfx_pop, "shutter": sfx_shutter,
+    "sword": sfx_sword, "murmur": sfx_murmur, "glitch": sfx_glitch, "pop": sfx_pop, "shutter": sfx_shutter, "popcorn": sfx_popcorn,
 }
 
 

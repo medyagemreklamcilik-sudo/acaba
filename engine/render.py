@@ -284,7 +284,15 @@ def r_journey(sc, t):
     return journey.frame(sc, t, sys.modules[__name__])
 
 
-RENDER = {"cover": r_cover, "card": r_card, "split": r_split, "grid": r_grid, "plate": r_number, "journey": r_journey}
+def r_treaty(sc, t):
+    """Sevr / Lozan / adalar haritası (engine/map/treaty.py)."""
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "map"))
+    import treaty
+    return treaty.frame(sc, t, sys.modules[__name__])
+
+
+RENDER = {"cover": r_cover, "card": r_card, "split": r_split, "grid": r_grid, "plate": r_number, "journey": r_journey,
+          "treaty": r_treaty}
 
 
 def scene_frame(i, t):
