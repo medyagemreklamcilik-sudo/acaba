@@ -310,7 +310,9 @@ def report(d, rows=None, avg=None, hold3=None, platform=None, views=None):
             biggest = biggest or ("ucurum", f"{c['t']:.0f}. saniyede %{c['lost']} tek seferde kayıp")
 
     L += ["## Tek düzeltme"]
-    if biggest:
+    if hold3 is None and avg is None and not rows:
+        L += ["Henüz izleyici verisi yok; yalnızca kanca kontrolü yapıldı" + (" ve sorun bulunmadı." if not hnotes else ". Yukarıdaki kanca uyarılarını düzelt.")]
+    elif biggest:
         L += [f"En büyük sızıntı: **{biggest[1]}**. Önce bunu düzelt, gerisi sonra."]
     else:
         L += ["Kanca ve tempo sağlıklı görünüyor; sorun büyük ihtimalle kapak/başlık (paketleme). Kapağı ve ilk yazıyı değiştir."]
