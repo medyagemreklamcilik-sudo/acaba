@@ -60,6 +60,8 @@ def back_out(p, s=1.7):
 
 
 def tr_upper(s):
+    if getattr(S, "LANG", "tr") != "tr":
+        return s.upper()
     return s.replace("i", "İ").replace("ı", "I").upper()
 
 
@@ -639,6 +641,44 @@ def ov_pip(L, ov, t):
     if ov.get("tag") and q > 0.6:
         d = ImageDraw.Draw(L)
         pill_text(d, x, y + c.height / 2 - 40, tr_upper(ov["tag"]), font("anton", 40), BLACK, bg=YEL + (int(255 * out),))
+
+
+@lru_cache(4)
+def logo_disc(key, size):
+    im = load(key, "std").convert("RGB")
+    side = min(im.size)
+    im = im.crop(((im.width - side) // 2, (im.height - side) // 2, (im.width + side) // 2, (im.height + side) // 2))
+    im = im.resize((size, size), Image.LANCZOS).convert("RGBA")
+    m = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(m).ellipse((0, 0, size - 1, size - 1), fill=255)
+    im.putalpha(m)
+    ring = Image.new("RGBA", (size + 24, size + 24), (0, 0, 0, 0))
+    ImageDraw.Draw(ring).ellipse((0, 0, size + 23, size + 23), fill=YEL + (255,))
+    ring.alpha_composite(im, (12, 12))
+    return ring
+
+
+def ov_logo(L, ov, t):
+    """Kanal logosu: yuvarlak rozet, zıplayarak gelir; altında isim ve slogan (img, xy, size, name, sub)."""
+    q = (t - ov["t0"]) / 0.35
+    if q <= 0:
+        return
+    out = 1 - ease((t - ov["t1"] + 0.25) / 0.25)
+    if out <= 0:
+        return
+    disc = logo_disc(ov.get("img", "logo"), ov.get("size", 360))
+    s = back_out(clamp(q)) * (1 + 0.015 * math.sin((t - ov["t0"]) * 5))
+    dd = disc.resize((max(1, int(disc.width * s)), max(1, int(disc.height * s))), Image.BILINEAR)
+    if out < 1:
+        dd.putalpha(dd.split()[3].point(lambda v: int(v * out)))
+    x, y = ov.get("xy", (CX, 760))
+    L.alpha_composite(dd, (int(x - dd.width / 2), int(y - dd.height / 2)))
+    d = ImageDraw.Draw(L)
+    if ov.get("name") and q > 0.5:
+        a = int(255 * out * clamp((q - 0.5) / 0.5))
+        pill_text(d, x, y + disc.height / 2 + 50, ov["name"], font("anton", 72), BLACK, bg=YEL + (a,), padx=28, pady=12)
+        if ov.get("sub"):
+            pill_text(d, x, y + disc.height / 2 + 150, ov["sub"], font("mont", 46, 800), WHITE, bg=(0, 0, 0, int(a * 0.85)), padx=20, pady=10)
 
 
 def ov_stamp(L, ov, t):
@@ -1230,7 +1270,8 @@ OV = {"title": ov_title, "label": ov_label, "kinetic": ov_kinetic, "counter": ov
       "vs": ov_vs, "roster": ov_roster, "pencircle": ov_pencircle, "penarrow": ov_penarrow,
       "penline": ov_penline, "pencross": ov_pencross, "handwrite": ov_handwrite, "finger": ov_finger,
       "people": ov_people, "typewriter": ov_typewriter, "papers": ov_papers,
-      "chart": ov_chart, "moneyrain": ov_moneyrain, "ticker": ov_ticker}
+      "chart": ov_chart, "moneyrain": ov_moneyrain, "ticker": ov_ticker,
+      "logo": ov_logo}
 
 
 # ---------------------------------------------------------------- captions

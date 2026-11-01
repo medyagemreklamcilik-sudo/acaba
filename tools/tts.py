@@ -1,6 +1,7 @@
 """ElevenLabs seslendirme: Cavit Pancar sesi, Eleven v4 (ses etiketleri [dramatic], [whispers]... desteklenir).
 
 Kullanım: python3 tools/tts.py <tts.txt> <çıktı.mp3>
+Klasörde voice.txt varsa (ör. History with Berat için Peter) o ses kimliği kullanılır.
 Anahtar: ELEVENLABS_API_KEY ortam değişkeni ya da depo kökündeki .env (git'e girmez).
 """
 import json, os, sys, urllib.error, urllib.request
@@ -23,8 +24,10 @@ def key():
 
 def main(src, out):
     text = open(src).read().strip()
+    vf = os.path.join(os.path.dirname(os.path.abspath(src)), "voice.txt")
+    voice = open(vf).read().strip() if os.path.exists(vf) else VOICE
     body = json.dumps({"text": text, "model_id": MODEL}).encode()
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE}?output_format=mp3_44100_192"
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_192"
     req = urllib.request.Request(url, data=body, headers={"xi-api-key": key(), "Content-Type": "application/json"})
     try:
         data = urllib.request.urlopen(req, timeout=600).read()

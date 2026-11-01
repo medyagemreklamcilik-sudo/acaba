@@ -30,7 +30,9 @@ def voice(d):
     if not os.path.exists(mp3):
         run([PY, os.path.join(TOOLS, "tts.py"), os.path.join(d, "tts.txt"), mp3])
     run([PY, os.path.join(TOOLS, "strip_tags.py"), os.path.join(d, "tts.txt"), os.path.join(d, "script.txt")])
-    run([PY, os.path.join(TOOLS, "transcribe.py"), mp3, os.path.join(b, "words.json")])
+    lf = os.path.join(d, "lang.txt")
+    lang = open(lf).read().strip() if os.path.exists(lf) else "tr"
+    run([PY, os.path.join(TOOLS, "transcribe.py"), mp3, os.path.join(b, "words.json"), lang])
     run([PY, os.path.join(TOOLS, "align.py"), os.path.join(b, "words.json"), os.path.join(d, "script.txt"),
          os.path.join(b, "aligned.json")])
     print(f"süre: {duration(mp3):.2f} sn")
