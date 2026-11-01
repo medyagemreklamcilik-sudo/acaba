@@ -35,6 +35,7 @@ def voice(d):
     run([PY, os.path.join(TOOLS, "transcribe.py"), mp3, os.path.join(b, "words.json"), lang])
     run([PY, os.path.join(TOOLS, "align.py"), os.path.join(b, "words.json"), os.path.join(d, "script.txt"),
          os.path.join(b, "aligned.json")])
+    shutil.copy(os.path.join(b, "aligned.json"), os.path.join(d, "kelimeler.json"))  # analiz için depoda kalır
     print(f"süre: {duration(mp3):.2f} sn")
 
 

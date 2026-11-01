@@ -20,6 +20,7 @@ Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her 
 `videolar/<YYYY-MM-DD>-<kısa-slug>/` (ör. `videolar/2026-11-03-kardes-katli/`). Takvimde Klasör sütununu doldur.
 
 ## 2. Araştırma + metin (`tts.txt`)
+- **Önce `ogrenimler.md`'yi oku** ve oradaki derslere uy (kanca, süre, kart süresi, ikinci merak boşluğu). Bu dosya gerçek izleyici verisinden (`/analiz`) gelir ve bu bölümdeki genel kurallarla çelişirse `ogrenimler.md` kazanır.
 - Konuyu WebSearch ile araştır; tarih, isim, sayıları en az iki kaynaktan doğrula. Kaynak listesini README'ye yaz.
 - Kesin olmayan iddiaları kesin gibi yazma; tartışmalıysa "iddiaya göre", "bazı tarihçilere göre" de ya da soru olarak sor. Etkileşim için tartışma çıkaran **soru** sor, uydurma bilgi verme.
 - Uzunluk: 1.600–2.100 karakter (≈1:45–2:15). Dil: sade, konuşma Türkçesi, kısa cümleler.
@@ -123,4 +124,5 @@ Her paylaşım için `createScheduledPost` — blogId `7651740`, tarih `<YYYY-MM
 Dört paylaşım da başarılıysa takvimde durumu `planlandı` yap, commit + push.
 
 ## 10. Rapor
+- `python3 tools/analiz.py <klasör>` ile kanca kontrolünü çalıştır; "Tarihle başlıyor" ya da "İlk 0.6 sn'de ekranda yazı yok" uyarısı varsa planlamadan önce düzelt.
 Kullanıcıya kısa Türkçe özet: konu, süre, yayın tarihi ve platform saatleri, açıklama, tartışmalı/emin olunmayan noktalar, Metricool planner linki.
