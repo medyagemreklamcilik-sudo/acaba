@@ -72,3 +72,9 @@ YURU(t), KOS(t), NEFES(t, poz), YAZ(t), SEMA(t), BOGUL_DUS(f, t) + dusur(h, f), 
 Hız (GPU'suz bulut makinesi): kare başı ~2-6 sn → 5 sn kanca ≈ 10 dk, 2,5 dk video ≈ 5 saat.
 
 Kataloğu yeniden çekmek: `motor/` içinde `node render.mjs stills 0.5,1.5,...,N.5 stills` (N = öğe sayısı, `KATALOG` listesi).
+
+## Low poly karakter (deneme)
+`src/kutuphane/lowpoly.js`: `lowPolyAdam({ten, sac, ceket, gomlek, kravat, bas})` köşeli yüzeyli, düz gölgeli yakın çekim karakter (bıyıklı, takım elbiseli).
+`a.ifade({ kizgin, saskin, gulumse, kirp, bak:[x,y] })` ifadeler, `lowPolyOda(scene)` sıcak ışıklı bulanık çalışma odası.
+Örnek çekim listesi: `motor/src/ornek-lowpoly-shots.js` (4 sn: kararlı bakış + şaşkın yakın çekim). Görseller: `katalog/lowpoly/`.
+Not: AI görsel üreticilerinin low poly kalitesine (detaylı eller, kumaş, kalabalık) kodla ulaşılamaz; bu, yakın çekim ve basit sahneler için.
