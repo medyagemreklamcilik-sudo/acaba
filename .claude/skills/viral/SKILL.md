@@ -1,12 +1,12 @@
 ---
 name: viral
-description: acaba.nolurdu için uçtan uca dikey tarih videosu üretir ve yayına planlar. Takvimdeki sıradaki konuyu (veya verilen konuyu) araştırır, ElevenLabs seslendirme metnini Cavit Pancar sesiyle seslendirir, gerçek tarihi görselleri bulur, 1080x1920 videoyu render eder, depoya push eder ve Metricool'da 16:00'ya Instagram/TikTok/YouTube/Facebook için planlar. "/viral", "/viral <konu>", "/viral 2026-11-03" veya "sıradaki videoyu hazırla" dendiğinde kullan.
+description: acaba.nolurdu için uçtan uca dikey tarih videosu üretir ve yayına planlar. Takvimdeki sıradaki konuyu (veya verilen konuyu) araştırır, ElevenLabs seslendirme metnini Cavit Pancar sesiyle seslendirir, gerçek tarihi görselleri bulur, 1080x1920 videoyu render eder, depoya push eder ve Metricool'da her platformu kendi zirve saatine (Facebook 12:00, YouTube 16:00, TikTok 18:00, Instagram 20:00) planlar. "/viral", "/viral <konu>", "/viral 2026-11-03" veya "sıradaki videoyu hazırla" dendiğinde kullan.
 ---
 
 # /viral — acaba.nolurdu video hattı
 
 Depo: `medyagemreklamcilik-sudo/acaba` (herkese açık, `main` dalı). Çalışma kökü: `/home/user/acaba`.
-Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan ve durumu `bekliyor` olan satırı üret (aynı güne ait EKSTRA satırlar ayrı videodur, onlara bakma); yarına ait `bekliyor` satır yoksa, tarihi yarından sonra olan ilk `bekliyor` satırı üret. Satırda saat yazmıyorsa yayın 16:00'dır. Takvimde hiç `bekliyor` satır kalmadıysa önceki konularla çakışmayan, tartışma yaratacak yeni bir Osmanlı/Cumhuriyet tarihi konusu seç ve takvime ekle.
+Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan ve durumu `bekliyor` olan satırı üret (aynı güne ait EKSTRA satırlar ayrı videodur, onlara bakma); yarına ait `bekliyor` satır yoksa, tarihi yarından sonra olan ilk `bekliyor` satırı üret. Satırda saat yazmıyorsa her platform kendi zirve saatinde yayınlanır (bkz. adım 9); satırda saat yazıyorsa (EKSTRA) dört platform o saatte tek paylaşım olarak gider. Takvimde hiç `bekliyor` satır kalmadıysa önceki konularla çakışmayan, tartışma yaratacak yeni bir Osmanlı/Cumhuriyet tarihi konusu seç ve takvime ekle.
 Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her kararı kendin ver ve sonunda kısa rapor yaz. Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
 
 ## 0. Hazırlık (her yeni oturumda)
@@ -96,22 +96,31 @@ git add videolar/<klasör> takvim.md && git commit -m "<konu> videosu" && git pu
 `img/` ve `build/` .gitignore'da; video, kapak, metinler, scenes.py ve README girer. Push sonrası kontrol:
 `curl -sI https://raw.githubusercontent.com/medyagemreklamcilik-sudo/acaba/main/videolar/<klasör>/video.mp4` → 200.
 
-## 9. Metricool'da planla (16:00)
-`createScheduledPost` — blogId `7651740`, tarih `<YYYY-MM-DD>T16:00:00+03:00`, info:
+## 9. Metricool'da planla (platform başına zirve saat)
+Her platform **ayrı bir paylaşım** olarak, kendi zirve saatinde planlanır (Metricool en iyi saat verisi, Kasım 2026):
+
+| Platform | Saat | providers | ağ verisi |
+|---|---|---|---|
+| Facebook | 12:00 | `[{"network":"facebook"}]` | `"facebookData": {"type": "REEL"}` |
+| YouTube | 16:00 | `[{"network":"youtube"}]` | `"youtubeData": {"title": "<baslik.txt>", "type": "short", "privacy": "public", "madeForKids": false, "category": "EDUCATION", "tags": ["tarih", "osmanlı", ...]}` |
+| TikTok | 18:00 | `[{"network":"tiktok"}]` | `"tiktokData": {"privacyOption": "PUBLIC_TO_EVERYONE", "title": "<aciklama.txt>"}` |
+| Instagram | 20:00 | `[{"network":"instagram"}]` | `"instagramData": {"type": "REEL", "showReelOnFeed": true}` |
+
+Takvim satırında saat yazıyorsa (EKSTRA) bölme yapma: dört platform tek paylaşımda o saatte gider. Video gün içinde hazırlanıyorsa saati geçmiş platformu bir sonraki günün aynı saatine değil, hemen sonraki en yakın uygun saate (en az 15 dk sonrası) koy ve raporda belirt.
+
+Her paylaşım için `createScheduledPost` — blogId `7651740`, tarih `<YYYY-MM-DD>T<SAAT>:00+03:00`, info (yalnızca o platformun ağ verisini ekle):
 ```json
 {"autoPublish": true, "draft": false, "text": "<aciklama.txt>",
  "media": ["https://raw.githubusercontent.com/medyagemreklamcilik-sudo/acaba/main/videolar/<klasör>/video.mp4"],
  "videoThumbnailUrl": "https://raw.githubusercontent.com/medyagemreklamcilik-sudo/acaba/main/videolar/<klasör>/kapak.jpg",
- "providers": [{"network":"instagram"},{"network":"tiktok"},{"network":"youtube"},{"network":"facebook"}],
- "publicationDate": {"dateTime": "<YYYY-MM-DD>T16:00:00", "timezone": "Europe/Istanbul"},
- "instagramData": {"type": "REEL", "showReelOnFeed": true},
- "tiktokData": {"privacyOption": "PUBLIC_TO_EVERYONE", "title": "<aciklama.txt>"},
- "youtubeData": {"title": "<baslik.txt>", "type": "short", "privacy": "public", "madeForKids": false, "category": "EDUCATION", "tags": ["tarih", "osmanlı"]},
- "facebookData": {"type": "REEL"},
+ "providers": [{"network":"<platform>"}],
+ "publicationDate": {"dateTime": "<YYYY-MM-DD>T<SAAT>:00", "timezone": "Europe/Istanbul"},
+ "<platform>Data": {...},
  "firstCommentText": "", "hasNotReadNotes": false, "shortener": false, "smartLinkData": {"ids": []}, "descendants": [], "mediaAltText": []}
 ```
+İlk paylaşımın yanıtındaki `media`/`videoThumbnailUrl` (static.metricool.com) adreslerini sonraki üç paylaşımda kullanmak yeterlidir.
 `VIDEO_THUMBNAIL_NOT_APPLICABLE` hatası gelirse `videoThumbnailUrl` olmadan bir kez daha dene (kapak zaten videonun ilk karesi). Başka hata verirse mesajı olduğu gibi kullanıcıya ilet; plan limiti (ücretsiz plan) dolduysa takvimde durumu `hazır` bırak.
-Başarılıysa takvimde durumu `planlandı` yap, commit + push.
+Dört paylaşım da başarılıysa takvimde durumu `planlandı` yap, commit + push.
 
 ## 10. Rapor
-Kullanıcıya kısa Türkçe özet: konu, süre, yayın tarihi/saati, açıklama, tartışmalı/emin olunmayan noktalar, Metricool planner linki.
+Kullanıcıya kısa Türkçe özet: konu, süre, yayın tarihi ve platform saatleri, açıklama, tartışmalı/emin olunmayan noktalar, Metricool planner linki.

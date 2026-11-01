@@ -1,6 +1,6 @@
 # İçerik takvimi
 
-Her video **16:00 (Europe/Istanbul)** saatinde Instagram Reels, TikTok, YouTube Shorts ve Facebook Reels'e aynı anda gider.
+Her video platform başına zirve saatte gider (Europe/Istanbul): **Facebook Reels 12:00 · YouTube Shorts 16:00 · TikTok 18:00 · Instagram Reels 20:00**. Satırda saat yazıyorsa (EKSTRA) dört platform o saatte birlikte gider.
 `/viral` çalıştırıldığında durumu `bekliyor` olan ilk satırı üretir, Metricool'a planlar ve durumu `planlandı` yapar.
 
 Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` (Metricool'da) · `atlandı`

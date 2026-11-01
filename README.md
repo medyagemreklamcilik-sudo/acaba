@@ -2,7 +2,7 @@
 
 Dikey (1080x1920) tarih videoları, video motoru ve `/viral` skill'i.
 
-- `takvim.md` — günlük içerik takvimi (her gün 16:00, tüm platformlar)
+- `takvim.md` — günlük içerik takvimi (her gün; FB 12:00, YT 16:00, TikTok 18:00, IG 20:00)
 - `videolar/<tarih>-<konu>/` — her videonun klasörü: `video.mp4`, `kapak.jpg`, `tts.txt` (ElevenLabs metni), `script.txt`, `scenes.py`, `aciklama.txt`, `README.md` (kaynaklar)
 - `engine/` — renderer (`render.py`), müzik/SFX (`music.py`, `audio.py`), harita motoru (`map/`), fontlar, örnek sahne dosyaları
 - `tools/` — seslendirme (`tts.py`), transkripsiyon/hizalama, görsel arama, boru hattı (`viral.py`)
