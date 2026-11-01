@@ -1,11 +1,13 @@
 # History with Berat · 01 · Ortaçağ'da insanlar nasıl temizlenirdi? (Türkçe taslak, onay bekliyor)
 
 İngilizce başlık önerisi: "How Did Medieval People Actually Stay Clean?"
-Seslendirme İngilizce yapılacak; bu metin onaydan sonra çevrilecek.
+Seslendirme İngilizce yapılacak (ses: Peter, ZthjuvLPty3kTMaNKVKb); bu metin onaydan sonra çevrilecek.
 
 ## Metin
 
 Ortaçağ insanları hiç yıkanmazdı, değil mi? Yanlış. Hem de çok yanlış.
+
+(İngilizce) I'm Berat, and this is the history they never taught you.
 
 1292 yılında sadece Paris'te en az yirmi altı umumi hamam vardı. Sabah olunca tellallar sokaklarda dolaşıp bağırırdı: "Su sıcak, gelin!" Buhar banyosu iki denye, tam banyo dört denyeydi.
 
@@ -24,6 +26,8 @@ Peki "pis Ortaçağ" efsanesi nereden çıktı? Asıl kötü dönem Ortaçağ'da
 Yani asıl kokan Ortaçağ değildi.
 
 Sence kim daha temizdi: Ortaçağ insanı mı, yoksa 1600'lerin insanı mı? Yorumlara yaz.
+
+(İngilizce kapanış) I'm Berat. Follow for more history they never taught you.
 
 ## Kaynaklar
 - Eleanor Janega, "I assure you, medieval people bathed" (going-medieval.com, 2019): Paris'te 1292'de en az 26 hamam (Fabiola Van Dam'a atıfla); Étienne Boileau, Livre des Métiers: tellalların gün doğmadan bağırma yasağı, buhar banyosu 2, tam banyo 4 denye; Southwark "stews"in genelev olması ve Winchester Piskoposu'na ait olması; yemek öncesi-sonrası el yıkama; sabun (hayvan yağı, kül; 12. yy Kastilya sabunu; Halep sabunu); 16.-18. yy bazı doktorların banyonun zararlı olduğunu savunması
