@@ -291,14 +291,8 @@ def r_treaty(sc, t):
     return treaty.frame(sc, t, sys.modules[__name__])
 
 
-def r_anim(sc, t):
-    """Çizgi film arka planı (engine/kukla.py)."""
-    import kukla
-    return kukla.bg_frame(sc, t, W, H)
-
-
 RENDER = {"cover": r_cover, "card": r_card, "split": r_split, "grid": r_grid, "plate": r_number, "journey": r_journey,
-          "treaty": r_treaty, "anim": r_anim}
+          "treaty": r_treaty}
 
 
 def scene_frame(i, t):
@@ -683,102 +677,6 @@ def ov_tagpair(L, ov, t):
         out = 1 - ease((t - ov["t1"] + 0.2) / 0.2)
         x = SAFE_L + 10 - int((1 - q) * 400)
         pill_text(d, x + 10, y, txt, font("anton", 70), BLACK, bg=YEL + (int(255 * out),), anchor="lm", padx=24)
-
-
-@lru_cache(32)
-def karakter_img(pose, h, flip=False):
-    """engine/assets/karakter/<poz>.png — kanalın sabit maskot karakteri (her videoda aynı çizim)."""
-    im = Image.open(os.path.join(ASSETS, "karakter", pose + ".png")).convert("RGBA")
-    im = im.resize((max(1, int(im.width * h / im.height)), h), Image.LANCZOS)
-    return im.transpose(Image.FLIP_LEFT_RIGHT) if flip else im
-
-
-def ov_karakter(L, ov, t):
-    """Maskot karakter. ov: pose (tam|anlatan|dusunen|kizgin|sikilmis|sevincli|suphe), x (alt-orta), y (alt kenar),
-    h (yükseklik px), flip, enter (pop|left|right|up), talk (konuşurken zıplama)."""
-    t0, t1 = ov["t0"], ov["t1"]
-    if t < t0 - 0.01 or t > t1:
-        return
-    q = (t - t0) / 0.32
-    out = 1 - ease((t - t1 + 0.18) / 0.18)
-    if out <= 0:
-        return
-    h = ov.get("h", 600)
-    im = karakter_img(ov["pose"], h, ov.get("flip", False))
-    enter = ov.get("enter", "pop")
-    x, y = ov.get("x", CX), ov.get("y", H - 420)
-    sx = sy = 1.0
-    if q < 1 and enter == "pop":
-        k = back_out(clamp(q))
-        sx, sy = 0.75 + 0.25 * k, 0.6 + 0.4 * k
-    elif q < 1 and enter in ("left", "right"):
-        x += (-1 if enter == "left" else 1) * (1 - eout(clamp(q), 3)) * (W * 0.7)
-    elif q < 1 and enter == "up":
-        y += (1 - eout(clamp(q), 3)) * h
-    # nefes / konuşma: alt kenara sabit squash-stretch + hafif sallanma
-    tt = t - t0
-    amp = 0.035 if ov.get("talk", True) else 0.012
-    b = math.sin(tt * 2 * math.pi * (2.6 if ov.get("talk", True) else 0.9))
-    sy *= 1 + amp * b
-    sx *= 1 - amp * 0.6 * b
-    rot = ov.get("rot", 0) + (1.6 if ov.get("talk", True) else 0.6) * math.sin(tt * 2 * math.pi * 0.55)
-    w2, h2 = max(1, int(im.width * sx)), max(1, int(im.height * sy))
-    spr = im.resize((w2, h2), Image.BILINEAR)
-    if abs(rot) > 0.05:
-        spr = spr.rotate(rot, Image.BICUBIC, expand=True, center=(w2 / 2, h2))
-    if out < 1:
-        spr.putalpha(spr.split()[3].point(lambda v: int(v * out)))
-    # gölge (masa varsa gerek yok)
-    if ov.get("shadow", True) and not ov.get("desk"):
-        sh = Image.new("RGBA", (int(w2 * 0.8), 40), (0, 0, 0, 0))
-        ImageDraw.Draw(sh).ellipse((0, 0, sh.width - 1, 39), fill=(0, 0, 0, int(110 * out)))
-        L.alpha_composite(sh, (int(x - sh.width / 2), int(y - 22)))
-    L.alpha_composite(spr, (int(x - spr.width / 2), int(y - spr.height)))
-    if ov.get("desk"):
-        # büst kesiğini örten anlatıcı masası: koyu bant + vurgu çizgisi
-        d = ImageDraw.Draw(L)
-        top = int(ov.get("y", H - 420)) - 26
-        d.rectangle((0, top, W, H), fill=(14, 14, 18, int(245 * out)))
-        d.rectangle((0, top, W, top + 8), fill=YEL + (int(255 * out),))
-
-
-def ov_balon(L, ov, t):
-    """Konuşma balonu: text, x, y, w, tail ('left'|'right'), size."""
-    q = (t - ov["t0"]) / 0.25
-    if q <= 0:
-        return
-    out = 1 - ease((t - ov["t1"] + 0.15) / 0.15)
-    if out <= 0:
-        return
-    d = ImageDraw.Draw(L)
-    f = font("anton", ov.get("size", 64))
-    words = ov["text"].split()
-    maxw = ov.get("w", 620)
-    lines, cur = [], ""
-    for w_ in words:
-        tr_ = (cur + " " + w_).strip()
-        if d.textlength(tr_, font=f) > maxw - 60 and cur:
-            lines.append(cur); cur = w_
-        else:
-            cur = tr_
-    lines.append(cur)
-    lh = int(ov.get("size", 64) * 1.15)
-    bw = max(d.textlength(l_, font=f) for l_ in lines) + 70
-    bh = lh * len(lines) + 50
-    s = back_out(clamp(q))
-    x, y = ov["x"], ov["y"]
-    al = int(255 * out)
-    box = Image.new("RGBA", (int(bw) + 80, int(bh) + 80), (0, 0, 0, 0))
-    bd = ImageDraw.Draw(box)
-    bd.rounded_rectangle((10, 10, bw + 10, bh + 10), 36, fill=(255, 255, 255, al), outline=(0, 0, 0, al), width=6)
-    tx = 60 if ov.get("tail", "left") == "left" else bw - 60
-    bd.polygon([(tx - 22, bh + 4), (tx + 22, bh + 4), (tx - 10 if ov.get("tail", "left") == "left" else tx + 10, bh + 62)],
-               fill=(255, 255, 255, al), outline=(0, 0, 0, al))
-    bd.line([(tx - 22, bh + 8), (tx + 22, bh + 8)], fill=(255, 255, 255, al), width=8)
-    for i, l_ in enumerate(lines):
-        bd.text((10 + bw / 2, 10 + 25 + lh * i + lh / 2), l_, font=f, fill=(15, 15, 15, al), anchor="mm")
-    box = box.resize((max(1, int(box.width * s)), max(1, int(box.height * s))), Image.BILINEAR)
-    L.alpha_composite(box, (int(x - box.width / 2), int(y - box.height)))
 
 
 def ov_cta(L, ov, t):
@@ -1332,10 +1230,7 @@ OV = {"title": ov_title, "label": ov_label, "kinetic": ov_kinetic, "counter": ov
       "vs": ov_vs, "roster": ov_roster, "pencircle": ov_pencircle, "penarrow": ov_penarrow,
       "penline": ov_penline, "pencross": ov_pencross, "handwrite": ov_handwrite, "finger": ov_finger,
       "people": ov_people, "typewriter": ov_typewriter, "papers": ov_papers,
-      "chart": ov_chart, "moneyrain": ov_moneyrain, "ticker": ov_ticker,
-      "karakter": ov_karakter, "balon": ov_balon,
-      "kukla": lambda L, ov, t: __import__("kukla").draw(L, ov, t, sys.modules[__name__]),
-      "tabut": lambda L, ov, t: __import__("kukla").draw_tabut(L, ov, t)}
+      "chart": ov_chart, "moneyrain": ov_moneyrain, "ticker": ov_ticker}
 
 
 # ---------------------------------------------------------------- captions
@@ -1434,8 +1329,6 @@ def cover_frame():
     z = c.get("zoom", 1.05)
     if c.get("imgs"):   # iki görsel üst/alt (karşılaştırma kapakları)
         img = r_split(dict(t=-9.0, imgs=c["imgs"]), -4.0)
-    elif c.get("bg"):   # çizgi film arka planı (kukla videoları)
-        img = r_anim(dict(t=0.0, _end=1.0, bg=c["bg"], pan=(c.get("pan", 0.3),) * 2, zoom=(z, z)), 0.0)
     else:
         sc = dict(t=-9.0, _end=-8.0, img=c["img"], zoom=(z, z), focus=c.get("focus", (0.5, 0.35)), grade=c.get("grade", "std"))
         img = r_cover(sc, -9.0)
