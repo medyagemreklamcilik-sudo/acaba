@@ -291,8 +291,14 @@ def r_treaty(sc, t):
     return treaty.frame(sc, t, sys.modules[__name__])
 
 
+def r_anim(sc, t):
+    """Çizgi film arka planı (engine/kukla.py)."""
+    import kukla
+    return kukla.bg_frame(sc, t, W, H)
+
+
 RENDER = {"cover": r_cover, "card": r_card, "split": r_split, "grid": r_grid, "plate": r_number, "journey": r_journey,
-          "treaty": r_treaty}
+          "treaty": r_treaty, "anim": r_anim}
 
 
 def scene_frame(i, t):
@@ -1327,7 +1333,9 @@ OV = {"title": ov_title, "label": ov_label, "kinetic": ov_kinetic, "counter": ov
       "penline": ov_penline, "pencross": ov_pencross, "handwrite": ov_handwrite, "finger": ov_finger,
       "people": ov_people, "typewriter": ov_typewriter, "papers": ov_papers,
       "chart": ov_chart, "moneyrain": ov_moneyrain, "ticker": ov_ticker,
-      "karakter": ov_karakter, "balon": ov_balon}
+      "karakter": ov_karakter, "balon": ov_balon,
+      "kukla": lambda L, ov, t: __import__("kukla").draw(L, ov, t, sys.modules[__name__]),
+      "tabut": lambda L, ov, t: __import__("kukla").draw_tabut(L, ov, t)}
 
 
 # ---------------------------------------------------------------- captions
@@ -1426,6 +1434,8 @@ def cover_frame():
     z = c.get("zoom", 1.05)
     if c.get("imgs"):   # iki görsel üst/alt (karşılaştırma kapakları)
         img = r_split(dict(t=-9.0, imgs=c["imgs"]), -4.0)
+    elif c.get("bg"):   # çizgi film arka planı (kukla videoları)
+        img = r_anim(dict(t=0.0, _end=1.0, bg=c["bg"], pan=(c.get("pan", 0.3),) * 2, zoom=(z, z)), 0.0)
     else:
         sc = dict(t=-9.0, _end=-8.0, img=c["img"], zoom=(z, z), focus=c.get("focus", (0.5, 0.35)), grade=c.get("grade", "std"))
         img = r_cover(sc, -9.0)
