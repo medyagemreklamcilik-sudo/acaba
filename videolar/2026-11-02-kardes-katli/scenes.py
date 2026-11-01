@@ -1,95 +1,162 @@
-"""Timeline for "Osmanlı'da kardeş katli" (narration seconds)."""
+"""Timeline for "Osmanlı'da kardeş katli" (narration seconds). Kanca güncellendi: tarih yerine iddia ile açılış."""
 
-DURATION = 109.3
+DURATION = 107.44
 CAP_Y = 1235
 CX = 507
 RED = (230, 40, 40)
 YELLOW = (255, 214, 10)
 
-IMAGES = {k: k + ".jpg" for k in [
-    "mehmed3", "mehmed3b", "murad3", "sanduka", "turbe", "kanunname", "kanunname_baski", "yildirim", "ankara", "savas",
-    "kanuni", "mustafa", "ahmed1", "mustafa1", "kafes", "kafes2", "babussaade", "cenaze", "cenaze2", "cellat", "fatih"]}
+IMAGES = {'mehmed3': 'mehmed3.jpg',
+ 'mehmed3b': 'mehmed3b.jpg',
+ 'murad3': 'murad3.jpg',
+ 'sanduka': 'sanduka.jpg',
+ 'turbe': 'turbe.jpg',
+ 'kanunname': 'kanunname.jpg',
+ 'kanunname_baski': 'kanunname_baski.jpg',
+ 'yildirim': 'yildirim.jpg',
+ 'ankara': 'ankara.jpg',
+ 'savas': 'savas.jpg',
+ 'kanuni': 'kanuni.jpg',
+ 'mustafa': 'mustafa.jpg',
+ 'ahmed1': 'ahmed1.jpg',
+ 'mustafa1': 'mustafa1.jpg',
+ 'kafes': 'kafes.jpg',
+ 'kafes2': 'kafes2.jpg',
+ 'babussaade': 'babussaade.jpg',
+ 'cenaze': 'cenaze.jpg',
+ 'cenaze2': 'cenaze2.jpg',
+ 'cellat': 'cellat.jpg',
+ 'fatih': 'fatih.jpg'}
 
-FACES = {"mehmed3": (0.5, 0.35), "murad3": (0.5, 0.35), "yildirim": (0.5, 0.3), "kanuni": (0.5, 0.3), "mustafa": (0.5, 0.35),
-         "ahmed1": (0.5, 0.35), "mustafa1": (0.5, 0.3), "fatih": (0.6, 0.35)}
+FACES = {'mehmed3': (0.5, 0.35),
+ 'murad3': (0.5, 0.35),
+ 'yildirim': (0.5, 0.3),
+ 'kanuni': (0.5, 0.3),
+ 'mustafa': (0.5, 0.35),
+ 'ahmed1': (0.5, 0.35),
+ 'mustafa1': (0.5, 0.3),
+ 'fatih': (0.6, 0.35)}
 
-SCENES = [
-    # kanca
-    dict(t=0.00, img="babussaade", grade="dark", zoom=(1.35, 1.05), focus=(0.5, 0.5)),
-    dict(t=3.82, img="mehmed3", zoom=(1.0, 1.15), focus=(0.5, 0.35), tr="flash"),
-    dict(t=5.96, img="cellat", grade="dark", zoom=(1.1, 1.3), focus=(0.4, 0.45), tr="glitch"),
-    dict(t=9.78, img="cenaze", zoom=(1.0, 1.2), focus=(0.5, 0.5), tr="dip"),
-    dict(t=12.78, img="sanduka", zoom=(1.0, 1.25), focus=(0.5, 0.5), tr="pushup"),
-    dict(t=14.68, img="cenaze2", zoom=(1.0, 1.2), focus=(0.5, 0.5), tr="pushleft"),
-    dict(t=17.04, img="mehmed3b", zoom=(1.0, 1.15), focus=(0.5, 0.45), tr="flash"),
-    dict(t=21.66, mode="plate", bg="murad3", tr="dip"),
-    # neden?
-    dict(t=24.92, img="murad3", zoom=(1.0, 1.15), focus=(0.5, 0.35), tr="pushup"),
-    dict(t=31.86, img="savas", zoom=(1.0, 1.2), focus=(0.5, 0.5), tr="glitch"),
-    dict(t=33.74, img="yildirim", zoom=(1.0, 1.15), focus=(0.5, 0.3), tr="pushleft"),
-    dict(t=35.80, img="ankara", zoom=(1.0, 1.2), focus=(0.5, 0.5), tr="bars"),
-    # Fatih kanunnamesi
-    dict(t=41.72, img="fatih", zoom=(1.0, 1.15), focus=(0.6, 0.35), tr="flash"),
-    dict(t=45.18, img="kanunname", mode="card", maxw=880, maxh=760, tilt=-2, tr="pushup"),
-    dict(t=47.20, mode="plate", bg="kanunname", tr="dip"),
-    dict(t=59.18, img="kanunname_baski", mode="card", maxw=700, maxh=1000, tilt=2, tr="pushleft"),
-    dict(t=63.26, mode="plate", bg="kanunname_baski", tr="dip"),
-    # 61 şehzade, Kanuni
-    dict(t=71.62, img="turbe", zoom=(1.0, 1.2), focus=(0.5, 0.5), tr="pushup"),
-    dict(t=77.00, mode="split", tr="bars", imgs=[dict(img="kanuni", focus=(0.5, 0.3)), dict(img="mustafa", focus=(0.5, 0.3))]),
-    # son
-    dict(t=81.70, img="cenaze", grade="dark", zoom=(1.2, 1.4), focus=(0.5, 0.5), tr="dip"),
-    dict(t=88.18, mode="split", tr="bars", imgs=[dict(img="ahmed1", focus=(0.5, 0.35)), dict(img="mustafa1", focus=(0.5, 0.3))]),
-    dict(t=92.28, img="kafes", zoom=(1.0, 1.2), focus=(0.5, 0.5), tr="pushleft"),
-    dict(t=97.78, img="kafes2", zoom=(1.0, 1.2), focus=(0.4, 0.5), tr="pushup"),
-    # final
-    dict(t=102.30, mode="plate", bg="mehmed3", tr="dip"),
-]
+SCENES = [{'t': 0.0, 'img': 'mehmed3', 'zoom': (1.05, 1.25), 'focus': (0.5, 0.35)},
+ {'t': 2.74, 'img': 'cellat', 'grade': 'dark', 'zoom': (1.1, 1.3), 'focus': (0.4, 0.45), 'tr': 'glitch'},
+ {'t': 4.5, 'img': 'babussaade', 'grade': 'dark', 'zoom': (1.3, 1.05), 'focus': (0.5, 0.5), 'tr': 'dip'},
+ {'t': 7.92, 'img': 'cenaze', 'zoom': (1.0, 1.2), 'focus': (0.5, 0.5), 'tr': 'dip'},
+ {'t': 10.92, 'img': 'sanduka', 'zoom': (1.0, 1.25), 'focus': (0.5, 0.5), 'tr': 'pushup'},
+ {'t': 12.82, 'img': 'cenaze2', 'zoom': (1.0, 1.2), 'focus': (0.5, 0.5), 'tr': 'pushleft'},
+ {'t': 15.18, 'img': 'mehmed3b', 'zoom': (1.0, 1.15), 'focus': (0.5, 0.45), 'tr': 'flash'},
+ {'t': 19.8, 'mode': 'plate', 'bg': 'murad3', 'tr': 'dip'},
+ {'t': 23.06, 'img': 'murad3', 'zoom': (1.0, 1.15), 'focus': (0.5, 0.35), 'tr': 'pushup'},
+ {'t': 30.0, 'img': 'savas', 'zoom': (1.0, 1.2), 'focus': (0.5, 0.5), 'tr': 'glitch'},
+ {'t': 31.88, 'img': 'yildirim', 'zoom': (1.0, 1.15), 'focus': (0.5, 0.3), 'tr': 'pushleft'},
+ {'t': 33.94, 'img': 'ankara', 'zoom': (1.0, 1.2), 'focus': (0.5, 0.5), 'tr': 'bars'},
+ {'t': 39.86, 'img': 'fatih', 'zoom': (1.0, 1.15), 'focus': (0.6, 0.35), 'tr': 'flash'},
+ {'t': 43.32, 'img': 'kanunname', 'mode': 'card', 'maxw': 880, 'maxh': 760, 'tilt': -2, 'tr': 'pushup'},
+ {'t': 45.34, 'mode': 'plate', 'bg': 'kanunname', 'tr': 'dip'},
+ {'t': 57.32, 'img': 'kanunname_baski', 'mode': 'card', 'maxw': 700, 'maxh': 1000, 'tilt': 2, 'tr': 'pushleft'},
+ {'t': 61.4, 'mode': 'plate', 'bg': 'kanunname_baski', 'tr': 'dip'},
+ {'t': 69.76, 'img': 'turbe', 'zoom': (1.0, 1.2), 'focus': (0.5, 0.5), 'tr': 'pushup'},
+ {'t': 75.14,
+  'mode': 'split',
+  'tr': 'bars',
+  'imgs': [{'img': 'kanuni', 'focus': (0.5, 0.3)}, {'img': 'mustafa', 'focus': (0.5, 0.3)}]},
+ {'t': 79.84, 'img': 'cenaze', 'grade': 'dark', 'zoom': (1.2, 1.4), 'focus': (0.5, 0.5), 'tr': 'dip'},
+ {'t': 86.32,
+  'mode': 'split',
+  'tr': 'bars',
+  'imgs': [{'img': 'ahmed1', 'focus': (0.5, 0.35)}, {'img': 'mustafa1', 'focus': (0.5, 0.3)}]},
+ {'t': 90.42, 'img': 'kafes', 'zoom': (1.0, 1.2), 'focus': (0.5, 0.5), 'tr': 'pushleft'},
+ {'t': 95.92, 'img': 'kafes2', 'zoom': (1.0, 1.2), 'focus': (0.4, 0.5), 'tr': 'pushup'},
+ {'t': 100.44, 'mode': 'plate', 'bg': 'mehmed3', 'tr': 'dip'}]
 for _i, _s in enumerate(SCENES):
     _s["_end"] = SCENES[_i + 1]["t"] if _i + 1 < len(SCENES) else DURATION
 
-OVERLAYS = [
-    # --- kanca
-    dict(type="title", t0=0.0, t1=3.7, lines=["27 OCAK 1595"], y=330, size=130),
-    dict(type="label", t0=1.3, t1=3.7, title="Topkapı Sarayı", sub="Bâbüssaâde", y=520),
-    dict(type="counter", t0=7.24, t1=9.6, **{"from": 0, "to": 19}, fmt="{} KARDEŞ", dur=0.7, y=420, size=150),
-    dict(type="stamp", t0=8.52, t1=9.6, text="BOĞDURULDU", y=820, size=130, color=RED, rot=-7, fill=True),
-    dict(type="counter", t0=11.04, t1=12.7, **{"from": 0, "to": 19}, fmt="{} TABUT", dur=0.6, y=420, size=150),
-    dict(type="kinetic", t0=13.34, t1=14.6, text="BAZILARI ÇOCUKTU", y=380, size=110, style="red"),
-    dict(type="label", t0=17.2, t1=21.5, title="Üçüncü Mehmed", sub="1595 – 1603", y=420),
-    dict(type="kinetic", t0=21.66, t1=24.8, text="NEREDEN\nÇIKTI?", y=760, size=140),
-    # --- neden
-    dict(type="kinetic", t0=25.62, t1=27.6, text="SABİT KURAL YOK", y=380, size=110, style="black"),
-    dict(type="label", t0=27.7, t1=31.7, title="Her şehzade", sub="tahtın adayı", y=420),
-    dict(type="stamp", t0=32.36, t1=33.6, text="İÇ SAVAŞ", y=820, size=150, color=RED, rot=-7, fill=True),
-    dict(type="label", t0=33.9, t1=35.7, title="Yıldırım Bayezid", sub="1389 – 1402", y=420),
-    dict(type="counter", t0=36.44, t1=41.6, **{"from": 0, "to": 11}, fmt="{} YIL", dur=0.6, y=420, size=160, sub="Fetret Devri · 1402-1413"),
-    # --- kanunname
-    dict(type="label", t0=42.0, t1=45.0, title="Fatih Sultan Mehmed", sub="Kanunnâme-i Âl-i Osman", y=420),
-    dict(type="quote", t0=47.2, t1=54.2, y=760, by="Fatih Kanunnâmesi",
-         words=[("Her", 47.28), ("kimesneye", 47.5), ("evladımdan", 48.1), ("saltanat", 48.92), ("müyesser", 49.48), ("ola,", 49.98),
-                ("karındaşların", 50.46), ("nizam-ı", 51.36), ("âlem", 51.94), ("için", 52.34), ("katletmek", 52.6), ("münasiptir.", 53.3)]),
-    dict(type="kinetic", t0=54.34, t1=58.9, text="DÜNYANIN DÜZENİ İÇİN", y=380, size=104, style="red"),
-    dict(type="label", t0=59.3, t1=63.1, title="\"Ekser ulemâ tecvîz etmiştir\"", sub="Ulemanın çoğu izin verdi", y=330),
-    dict(type="tagpair", t0=64.12, t1=67.4, tags=[("\"LÂZIMDIR\" DEĞİL", 640, 64.68), ("\"MÜNASİPTİR\"", 780, 66.22)]),
-    dict(type="kinetic", t0=67.48, t1=71.5, text="SONRADAN\nEKLENDİ Mİ?", y=330, size=110, style="black"),
-    # --- 61 şehzade
-    dict(type="counter", t0=74.08, t1=76.9, **{"from": 0, "to": 61}, fmt="{} ŞEHZADE", dur=0.8, y=420, size=150),
-    dict(type="tagpair", t0=77.0, t1=81.6, tags=[("KANUNİ", 380, 77.0), ("ŞEHZADE MUSTAFA · 1553", 1060, 79.34)]),
-    dict(type="stamp", t0=80.86, t1=81.6, text="BOĞDURDU", y=960, size=120, color=RED, rot=-7, fill=True),
-    # --- son
-    dict(type="title", t0=82.18, t1=86.0, lines=["1595 · O GECE"], y=330, size=120),
-    dict(type="kinetic", t0=86.16, t1=88.1, text="HALK AYAKLANDI", y=380, size=110, style="red"),
-    dict(type="tagpair", t0=88.2, t1=92.2, tags=[("I. AHMED", 380, 89.26), ("MUSTAFA · YAŞADI", 1060, 90.18)]),
-    dict(type="kinetic", t0=93.4, t1=97.6, text="EN BÜYÜK ERKEK\nTAHTA ÇIKAR", y=380, size=104),
-    dict(type="label", t0=98.0, t1=102.1, title="Kafes", sub="Topkapı'da şehzade daireleri", y=420),
-    # --- final
-    dict(type="kinetic", t0=102.3, t1=DURATION + 1, text="ZORUNLULUK MU,\nVAHŞET Mİ?", y=330, size=110),
-    dict(type="tagpair", t0=103.0, t1=DURATION + 1, tags=[("ZORUNLULUKTU", 640, 105.2), ("VAHŞETTİ", 780, 107.0)]),
-    dict(type="cta", t0=107.9, t1=DURATION + 1, y=1250),
-]
+OVERLAYS = [{'type': 'title', 't0': 0.0, 't1': 1.45, 'lines': ['TAHTA ÇIKTIĞI GECE'], 'y': 330, 'size': 110},
+ {'type': 'counter', 't0': 1.48, 't1': 4.4, 'from': 0, 'to': 19, 'fmt': '{} KARDEŞ', 'dur': 0.6, 'y': 420, 'size': 150},
+ {'type': 'stamp',
+  't0': 2.74,
+  't1': 4.4,
+  'text': 'BOĞDURTTU',
+  'y': 820,
+  'size': 130,
+  'color': RED,
+  'rot': -7,
+  'fill': True},
+ {'type': 'title', 't0': 4.62, 't1': 7.8, 'lines': ['27 OCAK 1595'], 'y': 330, 'size': 130},
+ {'type': 'label', 't0': 5.4, 't1': 7.8, 'title': 'Topkapı Sarayı', 'sub': 'Bâbüssaâde', 'y': 520},
+ {'type': 'counter', 't0': 9.18, 't1': 10.84, 'from': 0, 'to': 19, 'fmt': '{} TABUT', 'dur': 0.6, 'y': 420, 'size': 150},
+ {'type': 'kinetic', 't0': 11.48, 't1': 12.74, 'text': 'BAZILARI ÇOCUKTU', 'y': 380, 'size': 110, 'style': 'red'},
+ {'type': 'label', 't0': 15.34, 't1': 19.64, 'title': 'Üçüncü Mehmed', 'sub': '1595 – 1603', 'y': 420},
+ {'type': 'kinetic', 't0': 19.8, 't1': 22.94, 'text': 'NEREDEN\nÇIKTI?', 'y': 760, 'size': 140},
+ {'type': 'kinetic', 't0': 23.76, 't1': 25.74, 'text': 'SABİT KURAL YOK', 'y': 380, 'size': 110, 'style': 'black'},
+ {'type': 'label', 't0': 25.84, 't1': 29.84, 'title': 'Her şehzade', 'sub': 'tahtın adayı', 'y': 420},
+ {'type': 'stamp',
+  't0': 30.5,
+  't1': 31.74,
+  'text': 'İÇ SAVAŞ',
+  'y': 820,
+  'size': 150,
+  'color': RED,
+  'rot': -7,
+  'fill': True},
+ {'type': 'label', 't0': 32.04, 't1': 33.84, 'title': 'Yıldırım Bayezid', 'sub': '1389 – 1402', 'y': 420},
+ {'type': 'counter',
+  't0': 34.58,
+  't1': 39.74,
+  'from': 0,
+  'to': 11,
+  'fmt': '{} YIL',
+  'dur': 0.6,
+  'y': 420,
+  'size': 160,
+  'sub': 'Fetret Devri · 1402-1413'},
+ {'type': 'label', 't0': 40.14, 't1': 43.14, 'title': 'Fatih Sultan Mehmed', 'sub': 'Kanunnâme-i Âl-i Osman', 'y': 420},
+ {'type': 'quote',
+  't0': 45.34,
+  't1': 52.34,
+  'y': 760,
+  'by': 'Fatih Kanunnâmesi',
+  'words': [('Her', 45.42),
+            ('kimesneye', 45.64),
+            ('evladımdan', 46.24),
+            ('saltanat', 47.06),
+            ('müyesser', 47.62),
+            ('ola,', 48.12),
+            ('karındaşların', 48.6),
+            ('nizam-ı', 49.5),
+            ('âlem', 50.08),
+            ('için', 50.48),
+            ('katletmek', 50.74),
+            ('münasiptir.', 51.44)]},
+ {'type': 'kinetic', 't0': 52.48, 't1': 57.04, 'text': 'DÜNYANIN DÜZENİ İÇİN', 'y': 380, 'size': 104, 'style': 'red'},
+ {'type': 'label',
+  't0': 57.44,
+  't1': 61.24,
+  'title': '"Ekser ulemâ tecvîz etmiştir"',
+  'sub': 'Ulemanın çoğu izin verdi',
+  'y': 330},
+ {'type': 'tagpair', 't0': 62.26, 't1': 65.54, 'tags': [('"LÂZIMDIR" DEĞİL', 640, 62.82), ('"MÜNASİPTİR"', 780, 64.36)]},
+ {'type': 'kinetic', 't0': 65.62, 't1': 69.64, 'text': 'SONRADAN\nEKLENDİ Mİ?', 'y': 330, 'size': 110, 'style': 'black'},
+ {'type': 'counter', 't0': 72.22, 't1': 75.04, 'from': 0, 'to': 61, 'fmt': '{} ŞEHZADE', 'dur': 0.8, 'y': 420, 'size': 150},
+ {'type': 'tagpair', 't0': 75.14, 't1': 79.74, 'tags': [('KANUNİ', 380, 75.14), ('ŞEHZADE MUSTAFA · 1553', 1060, 77.48)]},
+ {'type': 'stamp',
+  't0': 79.0,
+  't1': 79.74,
+  'text': 'BOĞDURDU',
+  'y': 960,
+  'size': 120,
+  'color': RED,
+  'rot': -7,
+  'fill': True},
+ {'type': 'title', 't0': 80.32, 't1': 84.14, 'lines': ['1595 · O GECE'], 'y': 330, 'size': 120},
+ {'type': 'kinetic', 't0': 84.3, 't1': 86.24, 'text': 'HALK AYAKLANDI', 'y': 380, 'size': 110, 'style': 'red'},
+ {'type': 'tagpair', 't0': 86.34, 't1': 90.34, 'tags': [('I. AHMED', 380, 87.4), ('MUSTAFA · YAŞADI', 1060, 88.32)]},
+ {'type': 'kinetic', 't0': 91.54, 't1': 95.74, 'text': 'EN BÜYÜK ERKEK\nTAHTA ÇIKAR', 'y': 380, 'size': 104},
+ {'type': 'label', 't0': 96.14, 't1': 100.24, 'title': 'Kafes', 'sub': "Topkapı'da şehzade daireleri", 'y': 420},
+ {'type': 'kinetic', 't0': 100.44, 't1': DURATION + 1, 'text': 'ZORUNLULUK MU,\nVAHŞET Mİ?', 'y': 330, 'size': 110},
+ {'type': 'tagpair', 't0': 101.14, 't1': DURATION + 1, 'tags': [('ZORUNLULUKTU', 640, 103.34), ('VAHŞETTİ', 780, 105.14)]},
+ {'type': 'cta', 't0': 106.04, 't1': DURATION + 1, 'y': 1250}]
 
-NO_CAPTIONS = [(0.0, 3.7), (47.2, 54.2), (102.3, DURATION + 1)]
+NO_CAPTIONS = [(0.0, 1.45), (4.62, 7.8), (45.34, 52.34), (100.44, DURATION + 1)]
 BLUR_CAPS = []
 
 
@@ -97,22 +164,42 @@ def CAPTION_Y(t):
     return CAP_Y
 
 
-PUNCH = [0.0, 8.52, 11.04, 32.36, 41.72, 54.34, 74.08, 80.86, 86.16]
-SHAKE = [8.52, 32.36, 80.86]
-FLASH = [(3.82, 0.12), (41.72, 0.15)]
+PUNCH = [0.0, 2.74, 9.18, 30.5, 39.86, 52.48, 72.22, 79.0, 84.3]
+SHAKE = [2.74, 30.5, 79.0]
+FLASH = [(2.74, 0.12), (39.86, 0.15)]
 
-MUSIC = [(0, 9.78, 3), (9.78, 21.66, 2), (21.66, 41.72, 2), (41.72, 71.62, 3), (71.62, 81.7, 3), (81.7, 102.3, 2),
-         (102.3, DURATION, 1)]
+MUSIC = [(0, 7.92, 3),
+ (7.92, 19.8, 2),
+ (19.8, 39.86, 2),
+ (39.86, 69.76, 3),
+ (69.76, 79.84, 3),
+ (79.84, 100.44, 2),
+ (100.44, DURATION, 1)]
 
-SFX = [dict(name="impact", t=0.05, gain=0.5), dict(name="hit", t=8.52, gain=0.35), dict(name="bell", t=9.78, gain=0.25),
-       dict(name="hit", t=32.36, gain=0.3), dict(name="riser", t=47.2, gain=0.2, pre=True), dict(name="hit", t=80.86, gain=0.3),
-       dict(name="pop", t=107.9, gain=0.35)]
+SFX = [{'name': 'impact', 't': 0.05, 'gain': 0.5},
+ {'name': 'hit', 't': 2.74, 'gain': 0.35},
+ {'name': 'bell', 't': 7.92, 'gain': 0.25},
+ {'name': 'hit', 't': 30.5, 'gain': 0.3},
+ {'name': 'riser', 't': 45.34, 'gain': 0.2, 'pre': True},
+ {'name': 'hit', 't': 79.0, 'gain': 0.3},
+ {'name': 'pop', 't': 106.04, 'gain': 0.35}]
 
 
 def spec():
     return {"duration": DURATION, "music": MUSIC, "sfx": SFX}
 
 
-COVER = dict(img="mehmed3", focus=(0.5, 0.4), zoom=1.05, lines=["BİR GECEDE", "19 KARDEŞ"], y=250, size=130,
-             style="red", stamp="KANUN BÖYLE", stamp_y=1200, stamp_size=120, stamp_color=YELLOW, stamp_rot=-6,
-             bottom="Fatih Kanunnâmesi · 1595", bottom_y=1340)
+COVER = {'img': 'mehmed3',
+ 'focus': (0.5, 0.4),
+ 'zoom': 1.05,
+ 'lines': ['BİR GECEDE', '19 KARDEŞ'],
+ 'y': 250,
+ 'size': 130,
+ 'style': 'red',
+ 'stamp': 'KANUN BÖYLE',
+ 'stamp_y': 1200,
+ 'stamp_size': 120,
+ 'stamp_color': YELLOW,
+ 'stamp_rot': -6,
+ 'bottom': 'Fatih Kanunnâmesi · 1595',
+ 'bottom_y': 1340}

@@ -1,4 +1,4 @@
-[whispers] 27 Ocak 1595, İstanbul. Yeni padişah tahta oturdu. [pause] Ve aynı gece, on dokuz kardeşi boğduruldu.
+[dramatic] Tahta çıktığı gece, on dokuz kardeşini boğdurttu. [pause] [serious] 27 Ocak 1595, İstanbul.
 
 [dramatic] Ertesi gün saraydan on dokuz tabut çıktı. Bazıları daha çocuktu. İstanbul halkı sokaklarda ağladı.
 

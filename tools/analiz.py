@@ -213,7 +213,8 @@ def hook_check(words, S):
         notes.append("Tarihle başlıyor: kanca kuralına aykırı, en çarpıcı iddia ilk kelimelerde olmalı.")
     if first.count(" ") + 1 > 10:
         notes.append("İlk 3 saniyede 10'dan fazla kelime var; ilk cümle kısalmalı.")
-    if not re.search(r"[?!]|\d", first):
+    sayi = r"\b(bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|yirmi|otuz|kırk|elli|yüz|bin)\b"
+    if not re.search(r"[?!]|\d", first) and not re.search(sayi, first.lower()):
         notes.append("İlk cümlede soru, sayı ya da ünlem yok; merak boşluğu zayıf.")
     ovs = [o for o in getattr(S, "OVERLAYS", []) if o.get("t0", 9) < 0.6] if S else []
     if not ovs:
