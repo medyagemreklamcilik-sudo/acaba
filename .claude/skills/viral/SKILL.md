@@ -24,6 +24,10 @@ Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her 
 - Kesin olmayan iddiaları kesin gibi yazma; tartışmalıysa "iddiaya göre", "bazı tarihçilere göre" de ya da soru olarak sor. Etkileşim için tartışma çıkaran **soru** sor, uydurma bilgi verme.
 - Uzunluk: 1.600–2.100 karakter (≈1:45–2:15). Dil: sade, konuşma Türkçesi, kısa cümleler.
 - Yapı: **ilk cümle kanca** (şok edici bilgi/soru, ilk 1 saniye), 3 saniyede vaat, ana anlatım (isimler, yıllar, somut detaylar), en sonda yorumlarda tartışma çıkaracak soru ("Sizce...? Yorumlara yazın.").
+- **KANCA KURALI (kullanıcı isteği, kesin):** Video ASLA tarih/yer ile açılmaz ("27 Ocak 1595, İstanbul..." YOK, fısıltıyla tarih okumak YOK). İlk cümle olayın en şok edici gerçeği ya da en çok tartışılan sorusu olur; tarih ve yer ikinci-üçüncü cümlede gelir. İlk kelime `[dramatic]` veya `[curious]` ile, `[whispers]` ile değil.
+  - Örnek kancalar (kullanıcının beğendikleri): "Bir gecede 19 kardeşini öldürttü." · "Atatürk vatan haini mi?" · "Atatürk hocaları astı mı?" · "Şehzade Mustafa isyan etseydi ne olurdu?" · "Hürrem mi güçlüydü, Kösem mi?" · "Kösem Sultan nasıl öldürüldü?"
+  - Kalıplar: şok eylem ("Kendi oğlunu boğdurttu."), suçlama sorusu ("X hain miydi?"), karşılaştırma ("X mi, Y mi?"), "ya ... olsaydı?", gizem ("Mezar taşında yanlış tarih yazıyor.").
+  - Ekrandaki ilk `title` overlay'i de bu kanca cümlesi olur (tarih değil); kapak başlığı kancayla aynı vaadi verir.
 - ElevenLabs "auto-tag" yerine etiketleri sen ekle (Eleven v4 destekler): `[dramatic]`, `[serious]`, `[whispers]`, `[excited]`, `[curious]`, `[pause]`, `[sighs]`. Her 1–3 cümlede bir, abartmadan. Etiketler köşeli parantezde, okunmaz.
 - Sayıları ve kısaltmaları yazıyla değil rakamla bırakabilirsin (1453), ama "II. Mehmed" yerine "İkinci Mehmed" yaz ki doğru okunsun.
 
