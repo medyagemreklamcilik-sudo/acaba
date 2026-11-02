@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Anton';src:url(fonts/Anton.ttf)}
+@font-face{font-family:'Mont';font-weight:100 900;src:url(fonts/Montserrat.ttf)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0a0e16}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#141c2b 0%,#0a0e16 70%)}
+svg{position:absolute;left:0;top:0}
+.kara{fill:#3b352d;stroke:#6e6455;stroke-width:1.2}
+.bolge{stroke:#fff;stroke-width:1.6;stroke-linejoin:round;opacity:0}
+.yil{position:absolute;left:0;right:0;top:215px;text-align:center;font:400 200px/1 'Anton';color:#ffd60a;letter-spacing:2px;opacity:0;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+.pill{position:absolute;left:50%;transform:translateX(-50%);top:440px;padding:10px 26px;background:#000;color:#ffd60a;font:800 40px 'Mont';white-space:nowrap;border-radius:6px;opacity:0}
+.pin{opacity:0}
+.pin text{font:400 38px 'Anton';fill:#000}
+.son{position:absolute;left:0;right:0;text-align:center;opacity:0}
+.kutu{display:inline-block;padding:14px 34px;font:400 120px/1 'Anton';border-radius:8px}
+.bar{position:absolute;left:140px;height:64px;border-radius:6px;width:0}
+.barl{position:absolute;left:140px;font:800 34px 'Mont';color:#fff;opacity:0}
+#not{position:absolute;left:0;right:0;top:1440px;text-align:center;font:600 26px 'Mont';color:#8a93a3;opacity:0}
+</style></head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="9" data-fps="30" data-width="1080" data-height="1920">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <g id="cam"><g id="harita" transform="translate(0,380)">
+    <path id="kara" class="kara"/>
+    <path id="r1512" class="bolge"/><path id="r1514" class="bolge"/><path id="r1516" class="bolge"/><path id="r1517" class="bolge"/><path id="hicaz" class="bolge"/>
+    <path id="eski" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="14 10" opacity="0" filter="url(#glow)"/>
+    <g id="pins"></g>
+  </g></g>
+</svg>
+<div class="yil" id="y1512">1512</div><div class="yil" id="y1514">1514</div><div class="yil" id="y1516">1516</div><div class="yil" id="y1517">1517</div><div class="yil" id="y1520">1520</div>
+<div class="pill" id="p0">YAVUZ TAHTA ÇIKTI</div>
+<div class="son" id="s1" style="top:700px"><span class="kutu" style="background:#ffd60a;color:#000">8 YILDA</span></div>
+<div class="son" id="s2" style="top:860px"><span class="kutu" style="background:#c8102e;color:#fff">İKİYE KATLADI</span></div>
+<div class="barl" id="bl1" style="top:1060px">1512</div><div class="bar" id="b1" style="top:1105px;background:#c8102e"></div>
+<div class="barl" id="bl2" style="top:1195px">1520</div><div class="bar" id="b2" style="top:1240px;background:#ffd60a"></div>
+<div id="not" style="top:1120px">kesik çizgi: 1512 · yaklaşık sınırlar</div>
+<script src="vendor/gsap.min.js"></script>
+<script>
+(function () {
+const S = __SPEC__;
+const gsap = window.gsap, tl = gsap.timeline({ paused: true });
+const $ = id => document.getElementById(id);
+$('kara').setAttribute('d', S.kara);
+for (const k of ['r1512', 'r1514', 'r1516', 'r1517', 'hicaz']) $(k).setAttribute('d', S[k]);
+$('eski').setAttribute('d', S.r1512);
+const NS = 'http://www.w3.org/2000/svg', pins = $('pins');
+for (const [k, [x, y, ad]] of Object.entries(S.pins)) {
+  const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'pin'); g.id = 'pin_' + k; g.setAttribute('transform', `translate(${x},${y})`);
+  g.innerHTML = `<circle class="ring" r="14" fill="none" stroke="#ffd60a" stroke-width="4"/><circle r="12" fill="#e01e2a" stroke="#fff" stroke-width="4"/>` +
+    `<rect x="24" y="-26" width="${ad.length * 21 + 26}" height="52" rx="6" fill="#ffd60a"/><text x="37" y="15">${ad}</text>`;
+  pins.appendChild(g);
+}
+const RED = '#c8102e', GOLD = '#ffd60a';
+// kamera: Anadolu yakın -> tüm bölge
+gsap.set('#cam', { svgOrigin: '540 900', scale: 1.42, x: 0, y: 270 });
+tl.to('#cam', { scale: 1.2, x: -120, y: 40, duration: 1.2, ease: 'power2.inOut' }, 1.3);
+tl.to('#cam', { scale: 1.0, x: 0, y: 0, duration: 1.6, ease: 'power2.inOut' }, 3.7);
+// yıllar
+const YIL = [['y1512', 0.0, 1.6], ['y1514', 1.6, 3.0], ['y1516', 3.0, 4.4], ['y1517', 4.4, 6.2], ['y1520', 6.2, 9.1]];
+for (const [id, a, b] of YIL) { tl.fromTo('#' + id, { opacity: 0, y: 40, scale: 1.3 }, { opacity: 1, y: 0, scale: 1, duration: .3, ease: 'back.out(2)' }, a); if (b < 9) tl.to('#' + id, { opacity: 0, y: -40, duration: .2 }, b - .05); }
+tl.fromTo('#p0', { opacity: 0 }, { opacity: 1, duration: .3 }, .3); tl.to('#p0', { opacity: 0, duration: .2 }, 1.5);
+// bölgeler: altın parlama -> kırmızı
+tl.fromTo('#r1512', { opacity: 0, fill: RED }, { opacity: .85, duration: .7, ease: 'power2.out' }, .2);
+const fet = (id, t, pin) => {
+  tl.fromTo('#' + id, { opacity: 0, fill: GOLD }, { opacity: 1, duration: .35, ease: 'power2.out' }, t);
+  tl.to('#' + id, { fill: RED, opacity: .85, duration: .6 }, t + .55);
+  if (pin) { tl.fromTo('#pin_' + pin, { opacity: 0, scale: .3, transformOrigin: '0 0' }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(2.5)' }, t + .05);
+    tl.fromTo('#pin_' + pin + ' .ring', { attr: { r: 14 }, opacity: 1 }, { attr: { r: 60 }, opacity: 0, duration: .8, ease: 'power2.out' }, t + .1); }
+};
+tl.fromTo('#pin_istanbul', { opacity: 0 }, { opacity: 1, duration: .3 }, .4);
+fet('r1514', 1.7, 'caldiran'); fet('r1516', 3.1, 'mercidabik'); fet('r1517', 4.5, 'kahire'); fet('hicaz', 5.3, 'mekke');
+// final
+tl.to('.pin', { opacity: 0, duration: .3 }, 6.1);
+tl.to('#kara, .bolge', { opacity: '-=0.25', duration: .4 }, 6.2);
+tl.fromTo('#eski', { opacity: 0 }, { opacity: 1, duration: .4 }, 6.3);
+tl.fromTo('#s1', { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, 6.6);
+tl.fromTo('#s2', { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, 6.95);
+tl.to('#not', { opacity: 1, duration: .3 }, 7.6);
+tl.set({}, {}, 9);
+window.__timelines = window.__timelines || {}; window.__timelines['main'] = tl;
+})();
+</script>
+</div>
+</body></html>
