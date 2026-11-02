@@ -24,3 +24,13 @@
 3. **Belge/plate kartları uzun kalınca kayıp artıyor.** Kartı 3 sn'den uzun tutma, yazıyı 3-4 kelimeye indir, sesle aynı anda vurgula.
 4. **Süre uzun.** Videolar 104-173 sn, izleyici ortalama ~30 sn kalıyor. Yeni videolar 75-95 sn hedeflensin; 120 sn üstü yalnızca çok güçlü konularda.
 5. Ses tonu: kancada fısıltı yok, ilk kelime en yüksek enerji.
+6. **"Yer + tarih" açılışı da tarih açılışıdır** (2 Kasım verisi): "Venedik, 1472." diye açılan Fatih zehir videosu %46'da kaldı; iddia ile açılanlar %51-65. Kanca kontrolü artık bunu da yakalıyor.
+7. **Geriye dönüş cümlesi kaybettiriyor:** Kahvehane videosunda ortalama izleyici "Hikâye 1554'te başladı." cümlesinde gitti (25. sn). Arka planı ayrı bir "hikâye başlangıcı" cümlesiyle değil, olayın içine yedirerek ver.
+8. **İsim listesi kartı:** Fatih zehir videosunda izleyici 26. sn'de "Arnavut bir berber, Floransalı bir adam, Yahudi bir hekim..." listesi ve yazılı kartta gitti. 3'ten fazla öğeli sayımları tek çarpıcı örneğe indir.
+
+## Güncellenen veriler (2 Kasım, Instagram)
+| Video | İlk 3 sn'yi geçen | Ort. izleme | İzlenme |
+|---|---|---|---|
+| fatih-zehir (1 gün) | %46.1 | 25.6 sn / 100 sn | 2.259 |
+| misiroglu-iddialari | %45.2 | 42.5 sn / 166 sn | 622 |
+| kahvehane-yasagi | %26.2 | 25.4 sn / 104 sn | 265 |

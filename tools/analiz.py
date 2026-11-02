@@ -209,7 +209,8 @@ def hook_check(words, S):
     """İlk 3 saniyenin metinsel kontrolü (Shorts kanca kuralı)."""
     first = " ".join(w for w, s, _ in words if s < 3.0)
     notes = []
-    if re.match(r"^\W*\d", first):
+    ilk = re.split(r"[.!?]", first)[0]
+    if re.match(r"^\W*\d", first) or (re.search(r"\b1\d{3}\b", ilk) and len(ilk.split()) <= 4):
         notes.append("Tarihle başlıyor: kanca kuralına aykırı, en çarpıcı iddia ilk kelimelerde olmalı.")
     if first.count(" ") + 1 > 10:
         notes.append("İlk 3 saniyede 10'dan fazla kelime var; ilk cümle kısalmalı.")
