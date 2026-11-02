@@ -20,3 +20,9 @@ vendor/claude-animation-skills/kit/vendor/
 3d-animasyon-kutuphanesi/motor/silent.mp4
 3d-animasyon-kutuphanesi/motor/stills/
 hyperframes-sahneler/*/work/
+uzun-videolar/*/build/
+uzun-videolar/*/seg/
+uzun-videolar/*/stills/
+uzun-videolar/*/audio/
+uzun-videolar/*/*.mp4
+uzun-videolar/*/img/

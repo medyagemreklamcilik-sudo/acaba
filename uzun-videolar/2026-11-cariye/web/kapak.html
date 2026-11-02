@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}@font-face{font-family:Anton;src:url(fonts/Anton.ttf)}body{margin:0;background:#000}</style></head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="lib.js"></script><script src="chars.js"></script><script src="env.js"></script><script src="words.js"></script><script>window.WARP=null</script><script src="shots.js"></script>
+<script>
+window.ciz = () => {
+  const ctx = document.getElementById('c').getContext('2d');
+  bg(ctx, 'harem_kapi', 0, 1, { z: [1.15, 1.15], p: [[.38, .58]] }); tone(ctx, 'harem', .9);
+  sc(ctx); const g = ctx.createLinearGradient(0, 0, 1100, 0); g.addColorStop(0, 'rgba(10,6,14,.85)'); g.addColorStop(1, 'rgba(10,6,14,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  kandilIsigi(ctx, 1450, 420, 600, .8, 0);
+  gul(ctx, 1450, 1110, 640, { arms: { L: [.3, -.2], R: { ik: [.1, -.62] } }, face: { eyes: 'wide', mouth: 'o', browAng: -.35, look: [-.5, -.2] } });
+  sc(ctx); ctx.save(); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.lineJoin = 'round';
+  const L = [['OSMANLI SARAYINDA', 92, '#ffffff'], ['CARİYE', 250, '#ffd23a'], ['OLSAYDIN?', 250, '#ffffff']];
+  let y = 210; for (const [s, z, c] of L) { ctx.font = (z > 100 ? '400 ' : '700 ') + z + 'px ' + (z > 100 ? 'Anton' : 'Poppins'); y += z * (z > 100 ? .98 : 1.0); ctx.lineWidth = z * .12; ctx.strokeStyle = '#120a10'; ctx.strokeText(s, 80, y); ctx.fillStyle = c; ctx.fillText(s, 80, y); y += 14; }
+  ctx.restore();
+  etiket(ctx, 'YIL 1598 · TOPKAPI', 300, 950, 48, 1);
+};
+</script></body></html>
