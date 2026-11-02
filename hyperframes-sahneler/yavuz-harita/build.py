@@ -44,7 +44,9 @@ def path(g, tol=0.04):
 kara = [shape(f["geometry"]) for f in json.load(open(GEO / "ne_50m_land.geojson"))["features"]]
 kara = unary_union([g for g in kara if g.intersects(box(LON0 - 5, LAT0 - 5, LON1 + 5, LAT1 + 5))]).intersection(box(LON0 - 5, LAT0 - 5, LON1 + 5, LAT1 + 5))
 PINS = {"caldiran": (43.9, 39.15, "ÇALDIRAN"), "mercidabik": (37.27, 36.54, "MERCİDABIK"), "kahire": (31.25, 30.05, "RİDANİYE"), "mekke": (39.8, 21.42, "MEKKE"), "istanbul": (28.97, 41.01, "İSTANBUL")}
-spec = {"kara": path(kara, 0.06), **{k: path(v) for k, v in R.items()}, "pins": {k: [*P(lo, la), ad] for k, (lo, la, ad) in PINS.items()},
+SIRA = ["r1512", "r1514", "r1516", "r1517", "hicaz"]
+UNI = {f"u{i}": path(unary_union([R[k] for k in SIRA[:i + 1]]).buffer(0.05).buffer(-0.05), 0.05) for i in range(len(SIRA))}
+spec = {**UNI, "kara": path(kara, 0.06), **{k: path(v) for k, v in R.items()}, "pins": {k: [*P(lo, la), ad] for k, (lo, la, ad) in PINS.items()},
         "oran": round(a20 / a12, 1), "H": (LAT1 - LAT0) * K}
 
 work = HERE / "work"

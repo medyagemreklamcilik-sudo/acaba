@@ -8,7 +8,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#0a0e16}
 #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#141c2b 0%,#0a0e16 70%)}
 svg{position:absolute;left:0;top:0}
 .kara{fill:#3b352d;stroke:#6e6455;stroke-width:1.2}
-.bolge{stroke:#fff;stroke-width:1.6;stroke-linejoin:round;opacity:0}
+.bolge{stroke:none;opacity:0}
+.sinir{fill:none;stroke-linejoin:round;stroke-linecap:round;opacity:0}
 .yil{position:absolute;left:0;right:0;top:215px;text-align:center;font:400 200px/1 'Anton';color:#ffd60a;letter-spacing:2px;opacity:0;text-shadow:0 6px 24px rgba(0,0,0,.6)}
 .pill{position:absolute;left:50%;transform:translateX(-50%);top:440px;padding:10px 26px;background:#000;color:#ffd60a;font:800 40px 'Mont';white-space:nowrap;border-radius:6px;opacity:0}
 .pin{opacity:0}
@@ -26,6 +27,7 @@ svg{position:absolute;left:0;top:0}
   <g id="cam"><g id="harita" transform="translate(0,380)">
     <path id="kara" class="kara"/>
     <path id="r1512" class="bolge"/><path id="r1514" class="bolge"/><path id="r1516" class="bolge"/><path id="r1517" class="bolge"/><path id="hicaz" class="bolge"/>
+    <path id="u0" class="sinir" stroke="#ff3b3b" stroke-width="6" filter="url(#glow)"/><path id="u1" class="sinir" stroke="#ff3b3b" stroke-width="6" filter="url(#glow)"/><path id="u2" class="sinir" stroke="#ff3b3b" stroke-width="6" filter="url(#glow)"/><path id="u3" class="sinir" stroke="#ff3b3b" stroke-width="6" filter="url(#glow)"/><path id="u4" class="sinir" stroke="#ffd60a" stroke-width="7" filter="url(#glow)"/>
     <path id="eski" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="14 10" opacity="0" filter="url(#glow)"/>
     <g id="pins"></g>
   </g></g>
@@ -63,18 +65,21 @@ const YIL = [['y1512', 0.0, 1.6], ['y1514', 1.6, 3.0], ['y1516', 3.0, 4.4], ['y1
 for (const [id, a, b] of YIL) { tl.fromTo('#' + id, { opacity: 0, y: 40, scale: 1.3 }, { opacity: 1, y: 0, scale: 1, duration: .3, ease: 'back.out(2)' }, a); if (b < 9) tl.to('#' + id, { opacity: 0, y: -40, duration: .2 }, b - .05); }
 tl.fromTo('#p0', { opacity: 0 }, { opacity: 1, duration: .3 }, .3); tl.to('#p0', { opacity: 0, duration: .2 }, 1.5);
 // bölgeler: altın parlama -> kırmızı
-tl.fromTo('#r1512', { opacity: 0, fill: RED }, { opacity: .85, duration: .7, ease: 'power2.out' }, .2);
+for (let i = 0; i < 5; i++) { const el = $('u' + i); el.setAttribute('d', S['u' + i]); const L = el.getTotalLength(); el.style.strokeDasharray = L; el.style.strokeDashoffset = L; }
+const ciz = (i, t, d = .9) => { tl.set('#u' + i, { opacity: 1 }, t); tl.to('#u' + i, { strokeDashoffset: 0, duration: d, ease: 'power1.inOut' }, t); if (i > 0) tl.to('#u' + (i - 1), { opacity: 0, duration: .4 }, t + d * .8); };
+ciz(0, .2, 1.1);
+tl.fromTo('#r1512', { opacity: 0, fill: RED }, { opacity: .22, duration: .7, ease: 'power2.out' }, .6);
 const fet = (id, t, pin) => {
-  tl.fromTo('#' + id, { opacity: 0, fill: GOLD }, { opacity: 1, duration: .35, ease: 'power2.out' }, t);
-  tl.to('#' + id, { fill: RED, opacity: .85, duration: .6 }, t + .55);
+  tl.fromTo('#' + id, { opacity: 0, fill: GOLD }, { opacity: .55, duration: .35, ease: 'power2.out' }, t + .3);
+  tl.to('#' + id, { fill: RED, opacity: .22, duration: .6 }, t + .9);
   if (pin) { tl.fromTo('#pin_' + pin, { opacity: 0, scale: .3, transformOrigin: '0 0' }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(2.5)' }, t + .05);
     tl.fromTo('#pin_' + pin + ' .ring', { attr: { r: 14 }, opacity: 1 }, { attr: { r: 60 }, opacity: 0, duration: .8, ease: 'power2.out' }, t + .1); }
 };
 tl.fromTo('#pin_istanbul', { opacity: 0 }, { opacity: 1, duration: .3 }, .4);
-fet('r1514', 1.7, 'caldiran'); fet('r1516', 3.1, 'mercidabik'); fet('r1517', 4.5, 'kahire'); fet('hicaz', 5.3, 'mekke');
+fet('r1514', 1.7, 'caldiran'); ciz(1, 1.7); fet('r1516', 3.1, 'mercidabik'); ciz(2, 3.1); fet('r1517', 4.5, 'kahire'); ciz(3, 4.5); fet('hicaz', 5.3, 'mekke'); ciz(4, 5.3, .7);
 // final
 tl.to('.pin', { opacity: 0, duration: .3 }, 6.1);
-tl.to('#kara, .bolge', { opacity: '-=0.25', duration: .4 }, 6.2);
+tl.to('#kara', { opacity: .75, duration: .4 }, 6.2);
 tl.fromTo('#eski', { opacity: 0 }, { opacity: 1, duration: .4 }, 6.3);
 tl.fromTo('#s1', { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, 6.6);
 tl.fromTo('#s2', { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, 6.95);
