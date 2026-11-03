@@ -18,3 +18,6 @@
 
 ## Görseller
 Kanuni (Tiziano atölyesi portresi; "Solimanus" portresi; genç Kanuni portresi), Süleymannâme sefer minyatürleri, Hünernâme "Viyana Kuşatması" minyatürü (TSM H.1524), Nikolaus Meldeman'ın 1529 Viyana kuşatması dairesel görünümü, 1529 kuşatma ahşap baskısı, Osmanlı süvarileri gravürü, 1683 Viyana Savaşı tablosu (Frans Geffels), yeniçeri gravürü, Şarlken portresi (Christoph Amberger), Martin Luther (Lucas Cranach). Kaynak URL'leri: `build/cand/_index.json` (depoya girmez).
+
+## Metricool (4 Kasım 2026)
+Facebook 12:00 (id 414905620) · YouTube 16:00 (414905673) · TikTok 18:00 (414905692) · Instagram 20:00 (414905718)
