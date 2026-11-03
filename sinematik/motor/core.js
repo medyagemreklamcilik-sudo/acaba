@@ -111,7 +111,7 @@ function routeDraw(ctx, o, t, lv) {
   const u = clamp((t - o.t0) / (o.t1 - o.t0)); if (u <= 0) return;
   const P = o.pts.map(([lo, la]) => proj(lo, la)); const L = []; let tot = 0; for (let i = 1; i < P.length; i++) { const d = Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]); L.push(d); tot += d; }
   let rem = easeInOut(u) * tot;
-  ctx.save(); ctx.globalAlpha = .22 + .78 * lv; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = o.color || '#9a1c14'; ctx.lineWidth = Math.max(o.width || 22, 7 / CURZ); if (o.dash) ctx.setLineDash(o.dash);
+  ctx.save(); ctx.globalAlpha = (.22 + .78 * lv) * (1 - .7 * (1 - lv) * clamp((mapDimAt(t) - .12) / .48)); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = o.color || '#9a1c14'; ctx.lineWidth = Math.max(o.width || 22, 7 / CURZ); if (o.dash) ctx.setLineDash(o.dash);
   ctx.shadowColor = 'rgba(60,10,5,.35)'; ctx.shadowBlur = 10;
   ctx.beginPath(); ctx.moveTo(...P[0]); let tip = P[0];
   for (let i = 1; i < P.length && rem > 0; i++) { const k = Math.min(1, rem / L[i - 1]); tip = [lerp(P[i - 1][0], P[i][0], k), lerp(P[i - 1][1], P[i][1], k)]; ctx.lineTo(...tip); rem -= L[i - 1]; }
@@ -122,7 +122,7 @@ function routeDraw(ctx, o, t, lv) {
 function inkLabel(ctx, o, t, lv) { // haritaya mürekkeple yazılan büyük etiket (soldan sağa açılır)
   const u = clamp((t - o.t0) / (o.dur || .55)); if (u <= 0) return;
   const [x, y] = o.lon != null ? proj(o.lon, o.lat) : [o.x, o.y];
-  ctx.save(); ctx.globalAlpha = .16 + .84 * lv; ctx.font = `700 ${o.size}px Cinzel`; ctx.textAlign = o.align || 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.save(); ctx.globalAlpha = (.16 + .84 * lv) * (1 - .8 * (1 - lv) * clamp((mapDimAt(t) - .12) / .48)); ctx.font = `700 ${o.size}px Cinzel`; ctx.textAlign = o.align || 'left'; ctx.textBaseline = 'alphabetic';
   const tw = ctx.measureText(o.text).width, lx = (o.align === 'center' ? x - tw / 2 : o.align === 'right' ? x - tw : x) + (o.dx || 0), ly = y + (o.dy || 0);
   ctx.beginPath(); ctx.rect(lx - 40, ly - o.size * 1.3, (tw + 80) * easeOut(u), o.size * 2.6 + (o.subSize || 0) * 1.6); ctx.clip();
   ctx.lineJoin = 'round'; ctx.lineWidth = o.size * .14; ctx.strokeStyle = 'rgba(242,230,200,.85)'; ctx.strokeText(o.text, lx + (o.align === 'center' ? tw / 2 : o.align === 'right' ? tw : 0), ly);
@@ -132,7 +132,7 @@ function inkLabel(ctx, o, t, lv) { // haritaya mürekkeple yazılan büyük etik
 }
 function penCircle(ctx, o, t, lv) { // kelime söylenirken elle çizilen daire
   const u = clamp((t - o.t0) / (o.dur || .5)); if (u <= 0) return; const [x, y] = o.lon != null ? proj(o.lon, o.lat) : [o.x, o.y];
-  ctx.save(); ctx.globalAlpha = .35 + .65 * lv; ctx.lineCap = 'round'; ctx.strokeStyle = o.color || '#b3140c'; ctx.lineWidth = o.width || 18; ctx.beginPath();
+  ctx.save(); ctx.globalAlpha = (.35 + .65 * lv) * (1 - .8 * (1 - lv) * clamp((mapDimAt(t) - .12) / .48)); ctx.lineCap = 'round'; ctx.strokeStyle = o.color || '#b3140c'; ctx.lineWidth = o.width || 18; ctx.beginPath();
   const a0 = -2.2, span = TAU * 1.08 * easeInOut(u); for (let k = 0; k <= 80; k++) { const a = a0 + span * k / 80, w = 1 + .04 * Math.sin(a * 3 + 1); const px = x + Math.cos(a) * o.rx * w, py = y + Math.sin(a) * o.ry * w * (1 + .05 * k / 80); k ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
   ctx.stroke(); ctx.restore();
 }
