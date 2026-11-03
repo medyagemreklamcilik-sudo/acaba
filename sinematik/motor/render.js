@@ -2,7 +2,7 @@
 const { chromium } = require('playwright'); const { spawn } = require('child_process'); const fs = require('fs'); const path = require('path');
 (async () => {
   const dir = path.resolve(process.argv[2]), mode = process.argv[3];
-  const browser = await chromium.launch({ ...(process.env.CHROME ? { executablePath: process.env.CHROME } : {}), args: ['--allow-file-access-from-files', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+  const browser = await chromium.launch({ ...(process.env.CHROME ? { executablePath: process.env.CHROME } : {}), args: ['--allow-file-access-from-files'] });
   const fmt = JSON.parse(fs.readFileSync(path.join(dir, 'format.json')));
   const page = await browser.newPage({ viewport: { width: fmt.w, height: fmt.h } });
   page.on('console', m => console.log('[page]', m.text())); page.on('pageerror', e => console.log('[err]', e.message));
