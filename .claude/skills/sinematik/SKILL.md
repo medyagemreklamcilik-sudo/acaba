@@ -6,7 +6,7 @@ description: Verilen tarih konusundan, tamamen kodla çizilmiş sinematik "tek k
 # /sinematik — kodla çizilen tek plan sinematik video
 
 Motor: `sinematik/motor/` — `core.js` (v2: düz dünya → WebGL lens → ekran katmanı), `render.js` (Playwright ile kare kare MP4), `geo/dunya.js` (Natural Earth kara/göl/nehir, lon -12…62 / lat 24…62), `geo/relief.jpg` (Natural Earth gölgeli kabartma), `fonts/` (Cinzel, Playfair Display Italic, Caveat, Amiri). `core_v1.js` eski düz (perspektifsiz) sürümdür.
-**Varsayılan örnek: `sinematik/ornekler/kanuni-viyana-dikey/` (9:16, 1080x1920, 30 fps, 15 sn) — yeni videoya bu klasörü kopyalayarak başla.** (`kanuni-viyana-demo/` 21:9 v1 örneğidir.)
+**Varsayılan örnek: `sinematik/ornekler/viyana-seferi/` (belgesel modu, 9:16). Haritalı sade örnek: `sinematik/ornekler/kanuni-viyana-dikey/` (9:16, 1080x1920, 30 fps, 15 sn) — yeni videoya bu klasörü kopyalayarak başla.** (`kanuni-viyana-demo/` 21:9 v1 örneğidir.)
 
 ## Stil referansları (kullanıcının verdiği, `sinematik/referanslar/ref01-14.jpg`)
 Kullanıcı ayrıca referans vermezse bu görünüm esas alınır; her videoda en az 4-5 tanesi bulunsun:
@@ -18,6 +18,17 @@ Kullanıcı ayrıca referans vermezse bu görünüm esas alınır; her videoda e
 - **Gazete kupürü / dergi sayfası** (Tanin, Servet-i Fünun tarzı): gerçek başlık + gerçek fotoğraf, gövde metni yalnızca gri çizgiler (`newspaper`, `rtl: true` ile Osmanlıca başlık). Yalnızca gazetenin var olduğu dönemlerde (19.-20. yy) kullan; 16. yy için baskı/minyatür/belge kullan.
 - **Fiziksel baskılar**: beyaz kenarlı fotoğraf/minyatür düşer, gölgesi oturur (`print`, `fx` ile yağmur, kar, ateş gibi efektler).
 - Kaçınılacaklar (referanslarda olsa da kurallara aykırı): rastgele uyarı ikonları, okunmayan küçük etiket yığınları, süs için bant/damga.
+
+## Belgesel modu (varsayılan; kullanıcı isteği: Netflix / yüksek bütçeli tarih belgeseli)
+`index.html`'de `core.js`'ten sonra `motor/belgesel.js` yüklenir. Kanal tarih öğreten bir belgesel kanalıdır; her videoda:
+- **Satranç taşı ordular** (`army`: `team` 'osm' kırmızı lake / 'hab' fildişi, `rows`, `cols`, `gap`, `S`, `path [[t,lon,lat]...]` söylenen kelimeye göre zamanlanır, `ring {t,lon,lat,r}` kuşatma halkası, `unring`, `king: true` önde kavuklu kral, `kingHide`), tek büyük taş (`king`: lider; yakın plan kahraman). Taşlar haritadan yükselir, yürürken hafif zıplar, gölgeleri ışığın tersine düşer, derinliğe göre bulanıklaşır.
+- **Hareket eden gemiler** (`fleet`: `route` nehir/deniz rotası, `t0/t1`, `s0/s1` rota oranı, `n`, `spacing`, `S`): kürekler çalışır, dümen suyu bırakır, rotada yön çevirir.
+- **Toplar** (`cannons`, `sink` ile çamura gömülme), **minyatür kale/şehir** (`citadel`: surlar, burçlar, iç şehir, kule), **duman + ateş** (`smoke`).
+- **Slow motion**: `SLOMO = [[t0, t1, hız]]` — dramatik anda (yağmur, kar, çarpışma) animasyon ve parçacıklar yavaşlar, ses boğuklaşır (audio.py'de aynı aralıkta alçak geçiren filtre).
+- **Hava ve ışık**: `WEATHER` (yağmur, kar; kar bokeh'li), `FLASHES` (şimşek), `RAYS(t)` (ışık huzmeleri + toz), `DARKEN(t)` (fırtınada karartma), `LOOK.teal` (teal-turuncu sinema tonu).
+- **Ses**: dron + savaş davulu, ortam (su, yağmur, rüzgâr), vuruşlarda "braam"/top sesi; anlatımın altında otomatik kısılır.
+Hikâye kuralları yine geçerli: her satırda tek kahraman (ordu, filo, toplar, kale, kral), gerisi söner; efekt kelimeye oturur.
+Örnek: `sinematik/ornekler/viyana-seferi/` (18,9 sn). Yeni belgesel videoya bu klasörü kopyalayarak başla.
 
 ## Kullanıcının asıl isteği (aynen uygulanacak şablon)
 Aşağıdaki şablondaki köşeli parantezli yerleri **kullanıcıya sormadan** konuya göre doldur (kullanıcı "bana hiçbir şey sorma" dedi):

@@ -220,7 +220,7 @@ const gl = glc.getContext('webgl2', { preserveDrawingBuffer: true, antialias: fa
 const VS = `#version 300 es
 in vec2 p; out vec2 uv; void main(){ uv = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;
 const FS = `#version 300 es
-precision highp float; in vec2 uv; out vec4 o; uniform sampler2D tex; uniform vec2 scr, fsz, fc; uniform float foc, tilt, dof, focusY, bloom, grain, vig, warm, seed, lpow; uniform vec2 vel, lpos;
+precision highp float; in vec2 uv; out vec4 o; uniform sampler2D tex; uniform vec2 scr, fsz, fc; uniform float foc, tilt, dof, focusY, bloom, grain, vig, warm, seed, lpow, teal, dark; uniform vec2 vel, lpos;
 vec3 plane(vec2 px){ float a = tilt, x = px.x, y = -px.y, hh = foc * cos(a), s = hh / (foc * cos(a) - y * sin(a)); float X = s * x, Y = -hh * tan(a) + s * (y * cos(a) + foc * sin(a)); return vec3(X, -Y, s); }
 float h21(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
 void main(){
@@ -232,6 +232,7 @@ void main(){
   vec3 b = textureLod(tex, t, 5.5).rgb; c += max(b - .55, 0.) * bloom * 2.2 + b * bloom * .12;
   vec2 q = uv - vec2(lpos.x, 1. - lpos.y); float lp = exp(-dot(q * vec2(scr.x / scr.y, 1.), q * vec2(scr.x / scr.y, 1.)) * 2.2); c *= mix(1. - lpow * .55, 1. + lpow * .45, lp);
   c = mix(c, c * vec3(1.06, 1.0, .9), warm * 4.); c = c * c * (3. - 2. * c) * .35 + c * .65;
+  float lum = dot(c, vec3(.299, .587, .114)); c = mix(c, c * vec3(.86, 1.0, 1.12), teal * (1. - smoothstep(.15, .6, lum))); c = mix(c, c * vec3(1.08, 1.0, .88), teal * .6 * smoothstep(.45, .9, lum)); c *= 1. - dark;
   vec2 v = uv - .5; c *= 1. - vig * smoothstep(.25, .85, length(v * vec2(scr.x / scr.y, 1.) * 1.1));
   c += (h21(uv * scr + seed * 17.) - .5) * grain; o = vec4(c, 1.);
 }`;
@@ -255,7 +256,7 @@ function drawFlat(t, cam, hh) {
 function lens(t, cam, vel, f) {
   gl.viewport(0, 0, W, H); gl.bindTexture(gl.TEXTURE_2D, tx); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, flat); gl.generateMipmap(gl.TEXTURE_2D);
   gl.uniform2f(U('scr'), W, H); gl.uniform2f(U('fsz'), FW, FH); gl.uniform2f(U('fc'), FCX, FCY); gl.uniform1f(U('foc'), FOC); gl.uniform1f(U('tilt'), cam.tilt * Math.PI / 180);
-  gl.uniform1f(U('dof'), L.dof); gl.uniform1f(U('focusY'), L.focusY); gl.uniform1f(U('bloom'), L.bloom); gl.uniform1f(U('grain'), L.grain); gl.uniform1f(U('vig'), L.vignette); gl.uniform1f(U('warm'), L.warm); gl.uniform1f(U('seed'), f * .618 % 1 * 10);
+  gl.uniform1f(U('dof'), L.dof); gl.uniform1f(U('focusY'), L.focusY); gl.uniform1f(U('bloom'), L.bloom); gl.uniform1f(U('grain'), L.grain); gl.uniform1f(U('vig'), L.vignette); gl.uniform1f(U('warm'), L.warm); gl.uniform1f(U('teal'), L.teal || 0); gl.uniform1f(U('dark'), typeof DARKEN === 'function' ? DARKEN(t) : 0); gl.uniform1f(U('seed'), f * .618 % 1 * 10);
   const flick = typeof CANDLE !== 'undefined' && CANDLE ? 1 + .06 * Math.sin(t * 9.1) + .04 * Math.sin(t * 23.7) : 1; gl.uniform1f(U('lpow'), L.lightPower * flick); gl.uniform2f(U('lpos'), L.light[0], L.light[1]); gl.uniform2f(U('vel'), vel[0] * L.mblur, vel[1] * L.mblur);
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 }
@@ -265,7 +266,12 @@ function renderFrame(f) {
   drawFlat(t, cam, hh); lens(t, cam, vv, f);
   octx.setTransform(1, 0, 0, 1, 0, 0); octx.drawImage(glc, 0, 0);
   const P = (lon, lat) => { const [wx, wy] = proj(lon, lat), dx = wx - cam.x, dy = wy - cam.y, c = Math.cos((cam.r || 0) + hh.r), s = Math.sin((cam.r || 0) + hh.r); const fx = (dx * c - dy * s) * cam.z + hh.x, fy = (dx * s + dy * c) * cam.z + hh.y; const [sx, sy, k] = plane2scr(fx, fy, cam.tilt); return [W / 2 + sx, H / 2 + sy, k]; };
-  for (const o of OBJECTS) if (SCR[o.type]) { const lv = heroLevel(o.id, t); octx.save(); octx.globalAlpha = .35 + .65 * lv; SCR[o.type](octx, o, t, P); octx.restore(); }
+  const Pw = (wx, wy) => { const dx = wx - cam.x, dy = wy - cam.y, c = Math.cos((cam.r || 0) + hh.r), s = Math.sin((cam.r || 0) + hh.r); const fx = (dx * c - dy * s) * cam.z + hh.x, fy = (dx * s + dy * c) * cam.z + hh.y; const [sx, sy, k] = plane2scr(fx, fy, cam.tilt); return [W / 2 + sx, H / 2 + sy, k]; };
+  const sF = scr2plane(0, (L.focusY - .5) * H, cam.tilt)[2], dofPx = k => L.dof * Math.abs(Math.log((1 / k) / sF)) * 26 * .55;
+  const info = { P, Pw, cam, t, at: typeof animT === 'function' ? animT(t) : t, dofPx, f };
+  const items = OBJECTS.filter(o => SCR[o.type]).map(o => { const a = o.anchor ? o.anchor(t) : (o.lon != null ? proj(o.lon, o.lat) : [o.x || 0, o.y || 0]); return [o, Pw(a[0], a[1])[1]]; }).sort((a, b) => a[1] - b[1]);
+  for (const [o] of items) { const lv = heroLevel(o.id, t); octx.save(); octx.globalAlpha = (o.type === 'title' ? 1 : (.35 + .65 * lv) * (1 - .8 * fadeOut(lv, t))); SCR[o.type](octx, o, t, P, info, lv); octx.restore(); }
+  for (const fx of (window.POSTFX || [])) { octx.save(); octx.setTransform(1, 0, 0, 1, 0, 0); fx(octx, t, info); octx.restore(); }
 }
 window.READY = (async () => {
   GEO = window.GEOJS; makeTextures();
