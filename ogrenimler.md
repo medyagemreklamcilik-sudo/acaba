@@ -58,3 +58,24 @@ Takipçi: 1.028 → 3.421 (9 günde +2.393). Toplam ~730 bin izlenme, 14 video. 
 9. **TikTok'ta da kanıtlandı:** tarih/yer ile açılan 5 videonun hepsi 1-2,6 bin izlenmede kaldı; iddia, suçlama sorusu, şok eylem ve "ya olsaydı" ile açılanlar 22-159 bin.
 10. **Paylaşımı kimlik/tartışma konuları getiriyor:** Atatürk, Osmanlı'da eşcinsellik ve Mısıroğlu videolarında paylaşım/izlenme %1,5-1,6; diğerlerinde %0,1-0,5. Tarafların olduğu, "belgelerle cevap" veren konular paylaşılıyor.
 11. Uzunluk TikTok'ta tek başına öldürmüyor: en çok izlenen video 172 sn. Kanca güçlüyse uzun video da çalışıyor; ama 75-95 sn hedefi Instagram için geçerli kalsın.
+
+## Instagram güncel (3 Kasım 2026, Metricool)
+Takipçi: 885 (25 Ekim) → 2.512 (2 Kasım), +1.627.
+
+| Video | İzlenme | İlk 3 sn'yi geçen | Ort. izleme | Paylaşım | Kaydetme |
+|---|---|---|---|---|---|
+| kosem-olumu | 100.451 | %64.9 | 50.6 sn | 227 | 305 |
+| ataturk-vatan-haini-mi | 80.069 | %54.4 | 49.3 sn | 3.359 | 1.238 |
+| osmanlida-escinsellik | 13.144 | %65.3 | 51.8 sn | 380 | 107 |
+| kardes-katli (1 gün, yeni kanca) | 10.628 | %66.4 | 43.0 sn | 52 | 40 |
+| ikinci-dunya-savasi | 7.589 | %46.4 | 33.0 sn | 6 | 22 |
+| cumhuriyet-gecesi | 3.073 | %24.0 | 11.5 sn | 9 | 8 |
+| onuncu-yil-nutku | 2.681 | %30.5 | 14.5 sn | 8 | 8 |
+| fatih-zehir | 2.588 | %46.5 | 25.7 sn | 2 | 6 |
+| sems-tebrizi | 2.511 | %43.8 | 24.9 sn | 12 | 12 |
+| misiroglu-iddialari | 814 | %45.8 | 40.3 sn | 96 | 15 |
+| kahvehane-yasagi | 317 | %27.6 | 22.5 sn | 1 | 0 |
+
+12. **Kanca düzeltmesi işe yaradı:** kardeş katli videosu yeniden seslendirilip şok cümleyle açılınca ilk 3 sn'yi geçen oran %66,4 oldu (kanalın en yükseği). Tarihle açılanlar %24-31'de.
+13. **Platformlar farklı videoyu seçiyor:** Kösem Instagram'da 100 bin / TikTok'ta 24 bin; Nasreddin Hoca TikTok'ta 112 bin / Instagram'da 506. Bir platformda sönen video kötü demek değil; kanca kuralı ikisinde de aynı.
+14. **Instagram'da Atatürk videosu izlenmenin %4,2'si kadar paylaşıldı (3.359)** ve 1.238 kez kaydedildi: "belgelerle cevap" + kimlik konusu en çok yayılan format.
