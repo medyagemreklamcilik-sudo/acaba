@@ -1,6 +1,6 @@
 # 03 · He Carried His Navy Over a Hill to Take Constantinople
 
-Stil: tamamı çöp adam animasyonu (`/stick-figure` motoru), ses: Peter (ElevenLabs), süre ~94 sn. Manuel yükleme.
+Stil: tamamı çöp adam animasyonu (`/stick-figure` motoru), ses: Peter (ElevenLabs), süre ~103 sn. Manuel yükleme.
 
 - Başlık: `baslik.txt` · Açıklama: `aciklama.txt` · YouTube etiketleri: `etiketler.txt` · Kapak: `kapak.jpg`
 - Yeniden üretmek: `kaynak/` (web/shots.js sahneler, web/ortak.js + yardim.js karakterler, audio.py ses efektleri, tts.txt metin).
@@ -10,7 +10,7 @@ Stil: tamamı çöp adam animasyonu (`/stick-figure` motoru), ses: Peter (Eleven
 - İmza kancadan sonra (7-11 sn).
 - İkinci merak boşluğu ~26 sn: "And here's the twist. Urban had first offered it to the Byzantines."
 - Üçüncü dönemeç ~45 sn: "So Mehmed did something no one expected."
-- Final bağlantısı: "Nine years later, he would face Dracula himself." (önceki videoya köprü)
+- Final: "And the world changed forever." Bizanslı âlimler kitaplarla İtalya'ya, Rönesans ve Orta Çağ'ın sonu (genel dünya tarihi bağlantısı).
 - Tartışma sorusu: "Was it genius, or did the walls just run out of luck?"
 
 ## Metin (Türkçe karşılığı)
@@ -24,7 +24,7 @@ Stil: tamamı çöp adam animasyonu (`/stick-figure` motoru), ses: Peter (Eleven
 8. Adamları Galata tepelerine yağlı kütükler dizdi ve yaklaşık yetmiş gemiyi karadan sürükledi. Bir sabah Bizanslılar uyandığında Osmanlı donanmasını limanlarının içinde gördü.
 9. Elli üç gün sonra, 29 Mayıs'ta son saldırı geldi. Rivayete göre son Roma imparatoru 11. Konstantin imparatorluk giysilerini çıkarıp savaşa atıldı. Cesedi hiçbir zaman teşhis edilemedi.
 10. Bin yıldan uzun süren bir imparatorluk tek bir sabahta sona erdi.
-11. Peki şehri alan padişah? Dokuz yıl sonra bizzat Drakula'yla karşı karşıya gelecekti.
+11. Ve dünya sonsuza dek değişti. Bizanslı âlimler eski kitapları yanlarına alıp İtalya'ya kaçtı. Birçok tarihçiye göre bu Rönesans'ı ateşlemeye yardım etti ve Orta Çağ'ın sonunu işaret etti.
 12. Dâhilik miydi, yoksa surların şansı mı tükendi? Yorumlara yaz.
 13. Ben Berat. Size öğretilmeyen tarih için takip et.
 
@@ -41,4 +41,4 @@ Stil: tamamı çöp adam animasyonu (`/stick-figure` motoru), ses: Peter (Eleven
 | Haliç'i kapatan zincir; 22 Nisan'da gemilerin Galata üzerinden karadan geçirilmesi | Runciman 1965; Feridun Emecen, *İstanbul'un Fethi Olayı ve Meseleleri* (2003) |
 | Savunmacıların surları geceleri onarması | Nicolò Barbaro, *Giornale dell'assedio di Costantinopoli*; Runciman 1965 |
 | 11. Konstantin'in ölümü, cesedin kesin teşhis edilememesi | Britannica, "Constantine XI Palaeologus"; Runciman 1965 |
-| 1462'de Mehmed'in Vlad III ile savaşı | Britannica, "Vlad III"; Chalkokondyles, *Historiai* IX |
+| Bizanslı âlimlerin İtalya'ya göçü ve Rönesans'a katkısı; 1453'ün Orta Çağ'ın sonu sayılması | Britannica, "Fall of Constantinople" ve "Renaissance"; Deno J. Geanakoplos, *Greek Scholars in Venice* (1962) — "many historians say" diye verildi |

@@ -5,3 +5,4 @@
 - İmza kancadan SONRA gelir, asla videonun ilk cümlesi olmaz; 2-3 saniyeyi geçmez.
 - Metin önce Türkçe taslak olarak kullanıcıya sunulur, onaydan sonra İngilizceye çevrilip seslendirilir.
 - Kaynak: her bilgi en az iki kaynaktan; README'de listelenir.
+- Kanal genel dünya tarihi anlatır (yalnızca Osmanlı ya da Drakula değil). Videoları önceki videolara (ör. Drakula) bağlamak zorunlu değil; final dünya tarihine etkisiyle bağlanır.
