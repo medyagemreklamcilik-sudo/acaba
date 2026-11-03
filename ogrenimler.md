@@ -34,3 +34,27 @@
 | fatih-zehir (1 gün) | %46.1 | 25.6 sn / 100 sn | 2.259 |
 | misiroglu-iddialari | %45.2 | 42.5 sn / 166 sn | 622 |
 | kahvehane-yasagi | %26.2 | 25.4 sn / 104 sn | 265 |
+
+## TikTok, 25 Ekim - 3 Kasım 2026 (Metricool, 3 Kasım'da çekildi)
+Takipçi: 1.028 → 3.421 (9 günde +2.393). Toplam ~730 bin izlenme, 14 video. (İzlenme süresi / tamamlama oranı bu hesap için Metricool'da gelmiyor.)
+
+| Video | İzlenme | Beğeni | Yorum | Paylaşım | Açılış |
+|---|---|---|---|---|---|
+| ataturk-vatan-haini-mi | 159.397 | 11.199 | 430 | 2.412 | suçlama sorusu |
+| kardes-katli | 150.232 | 2.147 | 185 | 732 | şok eylem |
+| nasreddin-hoca | 111.755 | 2.039 | 26 | 87 | gizem (mezar taşı) |
+| osmanlida-escinsellik | 98.158 | 2.541 | 148 | 1.474 | iddia + belge |
+| fatih-istanbul | 83.642 | 2.654 | 21 | 74 | "ya olsaydı" |
+| cumhuriyet-olmasaydi | 38.599 | 948 | 39 | 92 | "ya olsaydı" |
+| yavuz-8-yil (ilk saatler) | 32.749 | 503 | 8 | 26 | şok eylem |
+| kosem-olumu | 23.976 | 608 | 9 | 34 | soru |
+| misiroglu-iddialari | 22.335 | 1.019 | 77 | 363 | alıntı + cevap |
+| sems-tebrizi | 2.585 | 60 | 2 | 3 | tarih + yer |
+| fatih-zehir | 2.540 | 55 | 2 | 14 | yer + tarih |
+| kahvehane-yasagi | 2.099 | 48 | 2 | 4 | tarih + yer |
+| onuncu-yil-nutku | 1.095 | 98 | 3 | 6 | tarih |
+| cumhuriyet-gecesi | 1.069 | 66 | 4 | 3 | tarih |
+
+9. **TikTok'ta da kanıtlandı:** tarih/yer ile açılan 5 videonun hepsi 1-2,6 bin izlenmede kaldı; iddia, suçlama sorusu, şok eylem ve "ya olsaydı" ile açılanlar 22-159 bin.
+10. **Paylaşımı kimlik/tartışma konuları getiriyor:** Atatürk, Osmanlı'da eşcinsellik ve Mısıroğlu videolarında paylaşım/izlenme %1,5-1,6; diğerlerinde %0,1-0,5. Tarafların olduğu, "belgelerle cevap" veren konular paylaşılıyor.
+11. Uzunluk TikTok'ta tek başına öldürmüyor: en çok izlenen video 172 sn. Kanca güçlüyse uzun video da çalışıyor; ama 75-95 sn hedefi Instagram için geçerli kalsın.
