@@ -26,3 +26,6 @@ uzun-videolar/*/stills/
 uzun-videolar/*/audio/
 uzun-videolar/*/*.mp4
 uzun-videolar/*/img/
+sinematik/ornekler/*/build/
+sinematik/ornekler/*/stills/
+sinematik/motor/geo/rivers.geojson
