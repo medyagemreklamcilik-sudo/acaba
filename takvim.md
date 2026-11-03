@@ -21,7 +21,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-01 | Paz | Fatih zehirlendi mi? | 2026-11-01-fatih-zehir | planlandı |
 | 2026-11-02 | Pzt | Osmanlı'da kardeş katli | 2026-11-02-kardes-katli | planlandı |
 | 2026-11-03 | Sal | Yavuz 8 yılda imparatorluğu nasıl ikiye katladı? (harita) | 2026-11-03-yavuz-8-yil | planlandı |
-| 2026-11-04 | Çar | Kanuni Viyana'yı alsaydı ne olurdu? | | bekliyor |
+| 2026-11-04 | Çar | Kanuni Viyana'yı alsaydı ne olurdu? | 2026-11-04-kanuni-viyana | hazır |
 | 2026-11-05 | Per | Pargalı İbrahim neden boğduruldu? | | bekliyor |
 | 2026-11-06 | Cum | Abdülaziz: intihar mı, cinayet mi? | | bekliyor |
 | 2026-11-07 | Cmt | Piri Reis haritasının sırrı | | bekliyor |
