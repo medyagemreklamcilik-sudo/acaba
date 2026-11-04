@@ -79,3 +79,15 @@ Takipçi: 885 (25 Ekim) → 2.512 (2 Kasım), +1.627.
 12. **Kanca düzeltmesi işe yaradı:** kardeş katli videosu yeniden seslendirilip şok cümleyle açılınca ilk 3 sn'yi geçen oran %66,4 oldu (kanalın en yükseği). Tarihle açılanlar %24-31'de.
 13. **Platformlar farklı videoyu seçiyor:** Kösem Instagram'da 100 bin / TikTok'ta 24 bin; Nasreddin Hoca TikTok'ta 112 bin / Instagram'da 506. Bir platformda sönen video kötü demek değil; kanca kuralı ikisinde de aynı.
 14. **Instagram'da Atatürk videosu izlenmenin %4,2'si kadar paylaşıldı (3.359)** ve 1.238 kez kaydedildi: "belgelerle cevap" + kimlik konusu en çok yayılan format.
+
+## Instagram, 19-24 Ekim (Metricool, 4 Kasım'da eklendi) — kanalın en büyük videoları
+| Video | İzlenme | İlk 3 sn | Ort. izleme | Paylaşım | Kaydetme | Beğeni |
+|---|---|---|---|---|---|---|
+| "ATATÜRK ASLINDA DİNDARDI!" (22 Ekim) | 579.826 | %52.4 | 26.9 sn | 29.295 | 13.650 | 40.972 |
+| Hürrem mi daha güçlüydü, Kösem mi? (23 Ekim) | 114.257 | %71.4 | 44.1 sn | 427 | 360 | 1.961 |
+| Osmanlı'da köle olmak (22 Ekim) | 15.319 | %68.5 | 38.4 sn | 7 | 26 | 160 |
+| Atatürk hocaları idam ettirdi mi? | 1.504 | %56.3 | 67.9 sn | 127 | 40 | 126 |
+| Hürrem Sultan nasıl bu kadar güçlü oldu? | 2.216 | %64.2 | 36.5 sn | 8 | 8 | 37 |
+
+15. **Kanalı büyüten format: "Atatürk aslında ..." (yaygın inanışı belgelerle ters yüz eden kimlik konusu).** 580 bin izlenme, izlenmenin %5'i paylaşım (29 bin), %2,4'ü kaydetme. Ortalama izleme sadece 27 sn olmasına rağmen paylaşım videoyu taşıdı. Atatürk + din / Atatürk + vatan hainliği gibi "iki taraflı" konular en güçlü damar; ayda en az 2 kez işlenmeli (her seferinde belge + kaynak ile).
+16. **"X mi, Y mi?" karşılaştırması en iyi tutan kanca:** Hürrem-Kösem %71,4 ile kanalın en yüksek ilk-3-sn oranı. Tek kişilik biyografi (Hürrem tek başına) 2,2 binde kaldı; karşılaştırma ve ölüm gizemi (Kösem'i kim öldürdü) 100 binleri buluyor.
