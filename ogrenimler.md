@@ -143,3 +143,11 @@ Uzun video "Osmanlı Sarayında Bir Cariye Olsaydın" ilk gün 155 izlenme (gece
 
 23. **Uzun Osmanlıca alıntı ortalama izleyiciyi kaybettiriyor:** kardeş katlinde ortalama izleyici 43. sn'de, Kanunname'nin "Her kimesneye evladımdan saltanat müyesser ola..." cümlesinin hem eski hâli hem çevirisi okunurken gitti. Eski metni seslendirme; tek cümlelik sade hâlini söyle, orijinalden yalnızca 2-3 kelimeyi ekranda belge üstünde göster.
 24. Kanca kuralı yine doğrulandı: şok eylemle açılan kardeş katli %66,4 ile ilk 3 sn'de kanalın en iyilerinden. Sorun kanca değil, ortadaki alıntı.
+
+## İzlet / yorumlat / paylaştır kontrol listesi (4 Kasım, kullanıcının referansıyla karşılaştırma)
+Güçlü olanlar: ilk saniye kancası, videonun hissi (müzik, gerçek görsel), sondaki "X mi Y mi" sorusu, akılda kalan replik.
+Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
+25. **Orta bölüm boş kalıyor:** ortalama izleyici 25-50. sn'de gidiyor ve yorum sorusu yalnızca sonda geliyor (kardeş katli: 10.628 izlenme, 22 yorum). 30-40. sn'ye izleyiciyi içine çeken bir "sen olsan?" cümlesi konacak.
+26. **Süre:** 95-170 sn videolar, 30-45 sn ortalama izleme. Günlük video metni en fazla 1.300 karakter (≈85 sn).
+27. **"Kendini görmek / tam ben" hissi yoktu:** her videoda olayı izleyicinin bugünkü hayatına bağlayan tek bir cümle olacak.
+28. **Paylaşım bilinçli kurgulanacak:** son cümle alıntılanabilir replik; ilk yorumda iki seçenekli soru + "bunu ... arkadaşına gönder" çağrısı.

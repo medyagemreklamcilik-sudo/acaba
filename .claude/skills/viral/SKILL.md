@@ -23,7 +23,12 @@ Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her 
 - **Önce `ogrenimler.md`'yi oku** ve oradaki derslere uy (kanca, süre, kart süresi, ikinci merak boşluğu). Bu dosya gerçek izleyici verisinden (`/analiz`) gelir ve bu bölümdeki genel kurallarla çelişirse `ogrenimler.md` kazanır.
 - Konuyu WebSearch ile araştır; tarih, isim, sayıları en az iki kaynaktan doğrula. Kaynak listesini README'ye yaz.
 - Kesin olmayan iddiaları kesin gibi yazma; tartışmalıysa "iddiaya göre", "bazı tarihçilere göre" de ya da soru olarak sor. Etkileşim için tartışma çıkaran **soru** sor, uydurma bilgi verme.
-- Uzunluk: 1.600–2.100 karakter (≈1:45–2:15). Dil: sade, konuşma Türkçesi, kısa cümleler.
+- **Uzunluk: en fazla 1.300 karakter (etiketsiz metin, ≈80-90 sn).** Taşarsa kes: önce biyografi/kronoloji cümleleri, uzun alıntılar (orijinalden en fazla bir kısa cümle, sade hâliyle) ve 3'ten fazla öğeli isim listeleri gider. Uzun video ya da EKSTRA sinematik video bu sınırın dışındadır. Dil: sade, konuşma Türkçesi, kısa cümleler.
+- **İzlet / yorumlat / paylaştır kontrolü (her metinde zorunlu):**
+  - *Ortada taraf tutturan an:* 30-40. saniye civarına (≈ metnin %35-45'i) izleyiciyi doğrudan içine çeken tek bir cümle koy: "Sen o gece İbrahim'in yerinde olsan saraya gider miydin?", "Sen olsan emri dinler miydin?" Cevabı videonun devamında gelmesin; merakı da diri tutar.
+  - *Kendini görmek / "tam ben" hissi:* en az bir cümlede olayı izleyicinin bugünkü hayatına bağla (en yakın arkadaşın sırtından vurması, patronun emri, kardeş kıskançlığı, ailenin baskısı). Kısa ve tek cümle; ders verme.
+  - *Paylaşım repliği:* videonun son anlatım cümlesi, kapaktaki vaatle aynı, tek başına alıntılanabilecek kısa bir replik olsun ("Teslim olan Medine'ydi, Çöl Kaplanı değil."). Ekranda büyük yazıyla da görünür.
+  - *Söylenecek bir şey:* kapanış sorusu tek kelimeyle cevaplanabilecek iki seçenekli olsun ("Hürrem mi, kibri mi?"); yorumu kolaylaştır.
 - Yapı: **ilk cümle kanca** (şok edici bilgi/soru, ilk 1 saniye), 3 saniyede vaat, ana anlatım (isimler, yıllar, somut detaylar), en sonda yorumlarda tartışma çıkaracak soru ("Sizce...? Yorumlara yazın.").
 - **KANCA KURALI (kullanıcı isteği, kesin):** Video ASLA tarih/yer ile açılmaz ("27 Ocak 1595, İstanbul..." YOK, fısıltıyla tarih okumak YOK). İlk cümle olayın en şok edici gerçeği ya da en çok tartışılan sorusu olur; tarih ve yer ikinci-üçüncü cümlede gelir. İlk kelime `[dramatic]` veya `[curious]` ile, `[whispers]` ile değil.
   - Örnek kancalar (kullanıcının beğendikleri): "Bir gecede 19 kardeşini öldürttü." · "Atatürk vatan haini mi?" · "Atatürk hocaları astı mı?" · "Şehzade Mustafa isyan etseydi ne olurdu?" · "Hürrem mi güçlüydü, Kösem mi?" · "Kösem Sultan nasıl öldürüldü?"
@@ -87,6 +92,7 @@ python3 tools/viral.py render videolar/<klasör>
 (Harita videoları için klasörde `mapdata.py` olması yeterli.) Çıktı: `video.mp4` (1080x1920, ≈3.5 Mbps, < 90 MB) ve `kapak.jpg`. Uzun sürer; arka planda çalıştır, bitince süreyi ve boyutu doğrula, birkaç kare çıkarıp bak.
 
 ## 7. Açıklama (`aciklama.txt`)
+- **İlk yorum (`ilk_yorum.txt`, zorunlu):** iki seçenekli soru + paylaşım çağrısı, konuya özel; ör. "Hürrem mi bitirdi, kibri mi? 1 ya da 2 yaz. Bunu en yakın arkadaşına gönder, o ne derdi?" Metricool'da `firstCommentText` olarak dört paylaşımın hepsine eklenir.
 - **Toplam en fazla 100 karakter, 4 hashtag dahil.** Emoji yok. `#osmanlıtreni` / "osmanlı treni" etiketini KULLANMA (kullanıcı yalnızca tek bir video için istemişti). Merak uyandıran tek cümle + 4 hashtag. Python ile `len()` kontrol et.
 - YouTube başlığı (`baslik.txt`): en fazla 70 karakter, kanca gibi.
 
@@ -117,7 +123,7 @@ Her paylaşım için `createScheduledPost` — blogId `7651740`, tarih `<YYYY-MM
  "providers": [{"network":"<platform>"}],
  "publicationDate": {"dateTime": "<YYYY-MM-DD>T<SAAT>:00", "timezone": "Europe/Istanbul"},
  "<platform>Data": {...},
- "firstCommentText": "", "hasNotReadNotes": false, "shortener": false, "smartLinkData": {"ids": []}, "descendants": [], "mediaAltText": []}
+ "firstCommentText": "<ilk_yorum.txt>", "hasNotReadNotes": false, "shortener": false, "smartLinkData": {"ids": []}, "descendants": [], "mediaAltText": []}
 ```
 İlk paylaşımın yanıtındaki `media`/`videoThumbnailUrl` (static.metricool.com) adreslerini sonraki üç paylaşımda kullanmak yeterlidir.
 `VIDEO_THUMBNAIL_NOT_APPLICABLE` hatası gelirse `videoThumbnailUrl` olmadan bir kez daha dene (kapak zaten videonun ilk karesi). Başka hata verirse mesajı olduğu gibi kullanıcıya ilet; plan limiti (ücretsiz plan) dolduysa takvimde durumu `hazır` bırak.
