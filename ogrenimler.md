@@ -113,3 +113,24 @@ Sayfa takipçisi: 29 (24 Ekim) → 3.775 (3 Kasım). Büyümenin tamamı otomati
 17. **Facebook kitlesi siyasi tartışma ve "ya olsaydı" seviyor:** Mısıroğlu (Instagram'da 814) Facebook'ta 314 bin; Fatih İstanbul'u alamasaydı (Instagram'da 667) Facebook'ta 211 bin. Aynı video platforma göre 300 kat fark yapabiliyor.
 18. **Toplu yükleme çalışmıyor:** gece yarısı bir dakikada yüklenen 6 eski video 92-1.381 izlenmede kaldı (Instagram'da 580 bin alan "Atatürk dindardı" dahil). Eski güçlü videolar Facebook'a tek tek, 12:00 zirve saatinde yeniden paylaşılmalı.
 19. **Uzun video Facebook'ta umut verici:** cariye videosu ilk gün 26 bin izlenme, ortalama 79 sn izlenme.
+
+## YouTube, kanalın başından 4 Kasım'a (Metricool + herkese açık sayaçlar)
+Abone: 82 (25 Ekim) → 357 (3 Kasım). Günlük kanal izlenmesi 18-22 Ekim: 70-3.200 → 23 Ekim'den beri 10-28 bin (Hürrem-Kösem patlaması). Gelir 0 (para kazanma kapalı).
+
+| Shorts | İzlenme |
+|---|---|
+| Hürrem Sultan mı daha güçlüydü, Kösem Sultan mı? | 117.000 |
+| Atatürk Vatan Haini mi? | 51.000 |
+| Şems-i Tebrizi'ye Ne Oldu? 800 Yıllık Sır | 14.000 |
+| Hürrem Sultan nasıl bu kadar güçlü oldu? | 5.700 |
+| Kösem Sultan Nasıl Öldürüldü? | 4.900 |
+| Nasreddin Hoca Gerçekten Yaşadı mı? | 4.600 |
+| Fatih İstanbul'u Alamasaydı | 3.500 |
+| diğerleri (kardeş katli ve Yavuz yeni) | 1.100-2.600 |
+| ATATÜRK ASLINDA DİNDARDI! | 117 (Instagram'da 580 bin) |
+| Atatürk hocaları astı mı? | 82 |
+Uzun video "Osmanlı Sarayında Bir Cariye Olsaydın" ilk gün 155 izlenme (gece 03:36 yayınlandı).
+
+20. **YouTube'da başlık kancadır:** "800 Yıllık Sır" başlıklı Şems videosu diğer platformlarda sönerken YouTube'da 14 bin aldı. Shorts başlığı da merak sorusu olsun (`baslik.txt`).
+21. **Atatürk + din/idam videoları YouTube'da neredeyse hiç gösterilmedi** (117 ve 82): kısıtlama, telif ya da hassas içerik sınırlaması olabilir; YouTube Studio'da "Kısıtlamalar" sütunu kontrol edilmeli.
+22. YouTube için Metricool video başına veri vermiyor; izleyici tutma için YouTube Studio CSV'si gerekli.
