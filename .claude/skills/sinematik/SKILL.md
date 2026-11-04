@@ -44,6 +44,14 @@ Kullanıcı bu görünümü istedi; yeni videolarda varsayılan budur. Motor: `m
 - Ekran katmanı: altta yıl çizgisi (`TIMELINE`), turuncu toz zerreleri, camgöbeği gölge / sıcak ışık renk, spot vinyet, gren.
 - Kamera yavaş: ekran hızı ~400 px/sn'yi geçmesin (kullanıcı "kamera çok hızlı" dedi); nesneleri kameranın yolu üstünde sırala, uzak zıplama yok.
 
+## Kapak (zorunlu, kullanıcı isteği)
+TikTok kişisel hesapta `videoThumbnailUrl`'yi yok sayar ve kapağı videonun içinden seçer; Fahreddin videosunda ızgarada yalnızca "1918" etiketi göründü. Bu yüzden her sinematik videoda:
+1. `kapak.json` yaz ve `python3 sinematik/motor/kapak.py <klasör>/kapak.json <klasör>/kapak.jpg` ile "dosya" stilinde kapak üret: mantar pano (`bg: cork`) ya da karanlık (`dark`), raptiyeli gri polaroid + siyah mono isim bandı, kırmızı ip ile bağlı manila yıl etiketi, kırmızı lastik damga ve **üstte iki satır kalın başlık** (siyah bant + kırmızı kenar; `title_red` ile bir satır kırmızı kutu). Örnek: `sinematik/ornekler/fahreddin-dosya/kapak.json`.
+2. Başlık videonun kanca vaadi olsun, kısa ve şok/soru (ör. "PADİŞAHA BİLE / TESLİM OLMADI"); konu adı (ör. ÇÖL KAPLANI) damgaya gider. Satır başına ~14 karakter. Diğer kanal kapaklarıyla aynı okunurlukta olmalı: 3:4 ızgara kırpmasında (y 240-1680) ve 150 px genişlikte okunur. Yazı yüzün üstüne binmez, ip yüzün üstünden geçmez.
+3. Kapağı videonun **ilk 2 karesine** göm (TikTok ilk kareyi alır):
+   `ffmpeg -i video.mp4 -loop 1 -i kapak.jpg -filter_complex "[1:v]scale=1080:1920,format=yuv420p[k];[0:v][k]overlay=enable='lt(n\,2)':shortest=1[v]" -map "[v]" -map 0:a -c:v libx264 -preset slow -b:v 4300k -maxrate 6500k -bufsize 9000k -pix_fmt yuv420p -c:a copy -movflags +faststart video_k.mp4`
+4. Metricool'da `videoThumbnailUrl` olarak da `kapak.jpg` ver. Dosya GitHub raw için 100 MB'ın altında olmalı (yukarıdaki bit hızı 2:24 için ~78 MB).
+
 ## Klasör ve dosyalar
 ```
 sinematik/ornekler/<slug>/

@@ -1,0 +1,28 @@
+{
+ "bg": "cork",
+ "photo": "img/pasa.jpg",
+ "crop": [
+  0,
+  0,
+  1,
+  0.66
+ ],
+ "name": "FAHREDDİN PAŞA",
+ "photo_w": 600,
+ "photo_y": 610,
+ "rot": 2.5,
+ "title": [
+  "PADİŞAHA BİLE",
+  "TESLİM OLMADI"
+ ],
+ "title_red": 2,
+ "title_size": 126,
+ "title_y": 300,
+ "stamp": "ÇÖL KAPLANI",
+ "stamp_rot": -6,
+ "tag_big": "1919",
+ "tag_small": "DOSYA",
+ "photo_dx": -60,
+ "stamp_y": 1040,
+ "tag_dy": 0
+}
