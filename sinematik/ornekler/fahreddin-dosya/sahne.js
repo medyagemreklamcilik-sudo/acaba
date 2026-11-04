@@ -3,7 +3,7 @@
 // mekânlar arası geçiş yumuşak kararmayla. Kelime zamanları build/aligned.json'dan.
 const FORMAT = { w: 1080, h: 1920, fps: 30, dur: 4316 / 30 };
 const WORLD = { lon0: 20, lat0: 46, k: 600, latc: 30 };
-const IMAGES = {}; for (const k of ['pasa', 'pasa2', 'pasa3', 'pasa4', 'yasli', 'vahdettin', 'vahdettin2', 'askerler', 'toplanma', 'kapi', 'subaylar', 'kubbe', 'emanet', 'mondros', 'mezar', 'yorgun']) IMAGES[k] = `img/${k}.jpg`;
+const IMAGES = {}; for (const k of ['pasa', 'pasa2', 'pasa3', 'pasa4', 'yasli', 'vahdettin', 'vahdettin2', 'askerler', 'toplanma', 'kapi', 'subaylar', 'ravza', 'kubbe', 'emanet', 'mondros', 'mezar', 'yorgun']) IMAGES[k] = `img/${k}.jpg`;
 const OBJECTS = [], SPACES = [];
 const LL = (lo, la) => ({ lon: lo, lat: la });
 const MED = [39.61, 24.47], IST = [28.97, 41.01];
