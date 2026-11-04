@@ -179,7 +179,7 @@ function renderFrame(f) {
   out.globalCompositeOperation = 'screen'; out.globalAlpha = .22; out.drawImage(glowC, 0, 0, FORMAT.w, FORMAT.h); out.globalAlpha = 1; out.globalCompositeOperation = 'source-over';
   // sıcak renk + vinyet
   out.fillStyle = 'rgba(255,170,90,.05)'; out.globalCompositeOperation = 'soft-light'; out.fillRect(0, 0, FORMAT.w, FORMAT.h); out.globalCompositeOperation = 'source-over';
-  const vg = out.createRadialGradient(FORMAT.w / 2, FORMAT.h / 2, FORMAT.h * .45, FORMAT.w / 2, FORMAT.h / 2, FORMAT.w * .62); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.55)'); out.fillStyle = vg; out.fillRect(0, 0, FORMAT.w, FORMAT.h);
+  const vg = out.createRadialGradient(FORMAT.w / 2, FORMAT.h / 2, Math.min(FORMAT.w, FORMAT.h) * .45, FORMAT.w / 2, FORMAT.h / 2, Math.hypot(FORMAT.w, FORMAT.h) * .55); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.55)'); out.fillStyle = vg; out.fillRect(0, 0, FORMAT.w, FORMAT.h);
   // film greni
   out.globalCompositeOperation = 'overlay'; out.globalAlpha = .09; const g = TEX.grain[f % TEX.grain.length]; out.save(); out.translate((f * 131) % 512, (f * 71) % 512); out.fillStyle = out.createPattern(g, 'repeat'); out.fillRect(-512, -512, FORMAT.w + 1024, FORMAT.h + 1024); out.restore(); out.globalAlpha = 1; out.globalCompositeOperation = 'source-over';
 }
