@@ -91,3 +91,25 @@ Takipçi: 885 (25 Ekim) → 2.512 (2 Kasım), +1.627.
 
 15. **Kanalı büyüten format: "Atatürk aslında ..." (yaygın inanışı belgelerle ters yüz eden kimlik konusu).** 580 bin izlenme, izlenmenin %5'i paylaşım (29 bin), %2,4'ü kaydetme. Ortalama izleme sadece 27 sn olmasına rağmen paylaşım videoyu taşıdı. Atatürk + din / Atatürk + vatan hainliği gibi "iki taraflı" konular en güçlü damar; ayda en az 2 kez işlenmeli (her seferinde belge + kaynak ile).
 16. **"X mi, Y mi?" karşılaştırması en iyi tutan kanca:** Hürrem-Kösem %71,4 ile kanalın en yüksek ilk-3-sn oranı. Tek kişilik biyografi (Hürrem tek başına) 2,2 binde kaldı; karşılaştırma ve ölüm gizemi (Kösem'i kim öldürdü) 100 binleri buluyor.
+
+## Facebook, son 28 gün (7 Ekim - 4 Kasım 2026, Metricool)
+Sayfa takipçisi: 29 (24 Ekim) → 3.775 (3 Kasım). Büyümenin tamamı otomatik günlük paylaşımlar başladıktan sonra.
+
+| Video | İzlenme | Beğeni | Ort. izleme |
+|---|---|---|---|
+| misiroglu-iddialari | 313.925 | 12.567 | 41 sn |
+| kardes-katli | 223.349 | 2.231 | 27 sn |
+| fatih-istanbul | 210.804 | 5.723 | 31 sn |
+| nasreddin-hoca | 79.413 | 1.022 | 27 sn |
+| osmanlida-escinsellik | 67.088 | 910 | 34 sn |
+| ataturk-vatan-haini-mi | 58.336 | 3.491 | 30 sn |
+| cumhuriyet-olmasaydi | 49.265 | 954 | 33 sn |
+| yavuz-8-yil (1 gün) | 47.644 | 543 | 26 sn |
+| kosem-olumu | 45.036 | 376 | 39 sn |
+| cariye uzun video (1 gün, 10:41) | 26.316 | 249 | 79 sn |
+| fatih-zehir / kahvehane / cumhuriyet-gecesi / onuncu-yil | 1,7-6,6 bin | | 12-19 sn |
+| 29 Ekim 00:28'de topluca yüklenen 6 eski video (Atatürk dindardı dahil) | 92-1.381 | | |
+
+17. **Facebook kitlesi siyasi tartışma ve "ya olsaydı" seviyor:** Mısıroğlu (Instagram'da 814) Facebook'ta 314 bin; Fatih İstanbul'u alamasaydı (Instagram'da 667) Facebook'ta 211 bin. Aynı video platforma göre 300 kat fark yapabiliyor.
+18. **Toplu yükleme çalışmıyor:** gece yarısı bir dakikada yüklenen 6 eski video 92-1.381 izlenmede kaldı (Instagram'da 580 bin alan "Atatürk dindardı" dahil). Eski güçlü videolar Facebook'a tek tek, 12:00 zirve saatinde yeniden paylaşılmalı.
+19. **Uzun video Facebook'ta umut verici:** cariye videosu ilk gün 26 bin izlenme, ortalama 79 sn izlenme.
