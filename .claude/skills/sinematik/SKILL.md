@@ -37,6 +37,13 @@ Aşağıdaki şablondaki köşeli parantezli yerleri **kullanıcıya sormadan** 
 - Son render'dan önce kendi işini kontrol et: her beat'ten still (`node sinematik/motor/render.js <klasör> stills 0.3,2.5,...`) ve kamera hareketlerinden ardışık kare dizileri çıkar; kalabalık, zor okunan, üst üste binen ya da sarsılan/aniden duran her şeyi düzelt.
 - Son MP4'ü seslendirmeyle senkron, tam bu formatta teslim et.
 
+## Görünüm: "dosya" stili (kullanıcının referansları, `sinematik/referans/dosya/01-16.png`)
+Kullanıcı bu görünümü istedi; yeni videolarda varsayılan budur. Motor: `motor/dosya.js` (örnek: `ornekler/fahreddin-dosya/`, `index.html` bu motoru ve Plex Mono / Special Elite / Cormorant / Oswald fontlarını yükler). Eski parşömen görünümü `motor/core.js` ile yalnızca istenirse.
+- Dünya: koyu camgöbeği belgesel haritası (taralı kara, ince ışıyan kıyı), üstünde mantar pano(lar) (`BOARDS`). Kamera koyu haritadan sıcak panoya, oradan tekrar haritaya süzülür.
+- Nesneler: `halftone` (siyah üstünde nokta portre + kırmızı ışık), `polaroid` (gri tonlu baskı, siyah mono isim bandı, kırmızı raptiye, `brackets` odak köşeleri), `tag` (manila dosya etiketi: DOSYA + büyük yıl), `doc` (daktilo belge: başlık, gri satır, karartma, daktiloyla yazılan anahtar cümle + kırmızı daire, isteğe bağlı damga), `thread` (iki raptiye arası kırmızı ip), `glowdot` (turuncu ışıyan şehir + mono etiket + kesikli kare + nişangâh), `title` (ince büyük serif, yanlarda çizgi), `strike` (mono yazı, söylenince kırmızı çizgiyle üstü çizilir), `region`.
+- Ekran katmanı: altta yıl çizgisi (`TIMELINE`), turuncu toz zerreleri, camgöbeği gölge / sıcak ışık renk, spot vinyet, gren.
+- Kamera yavaş: ekran hızı ~400 px/sn'yi geçmesin (kullanıcı "kamera çok hızlı" dedi); nesneleri kameranın yolu üstünde sırala, uzak zıplama yok.
+
 ## Klasör ve dosyalar
 ```
 sinematik/ornekler/<slug>/
