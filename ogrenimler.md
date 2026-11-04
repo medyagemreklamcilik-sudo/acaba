@@ -134,3 +134,12 @@ Uzun video "Osmanlı Sarayında Bir Cariye Olsaydın" ilk gün 155 izlenme (gece
 20. **YouTube'da başlık kancadır:** "800 Yıllık Sır" başlıklı Şems videosu diğer platformlarda sönerken YouTube'da 14 bin aldı. Shorts başlığı da merak sorusu olsun (`baslik.txt`).
 21. **Atatürk + din/idam videoları YouTube'da neredeyse hiç gösterilmedi** (117 ve 82): kısıtlama, telif ya da hassas içerik sınırlaması olabilir; YouTube Studio'da "Kısıtlamalar" sütunu kontrol edilmeli.
 22. YouTube için Metricool video başına veri vermiyor; izleyici tutma için YouTube Studio CSV'si gerekli.
+
+## Instagram, kardeş katli (2 Kasım, 4 Kasım'da analiz edildi)
+| Video | İzlenme | İlk 3 sn | Ort. izleme | Erişim | Yorum |
+|---|---|---|---|---|---|
+| kardes-katli | 10.628 | %66.4 | 43.0 sn / 107 sn (%40) | 8.722 | 22 |
+| yavuz-8-yil (1 gün) | 220 | %54.2 | 19.3 sn | 193 | 0 |
+
+23. **Uzun Osmanlıca alıntı ortalama izleyiciyi kaybettiriyor:** kardeş katlinde ortalama izleyici 43. sn'de, Kanunname'nin "Her kimesneye evladımdan saltanat müyesser ola..." cümlesinin hem eski hâli hem çevirisi okunurken gitti. Eski metni seslendirme; tek cümlelik sade hâlini söyle, orijinalden yalnızca 2-3 kelimeyi ekranda belge üstünde göster.
+24. Kanca kuralı yine doğrulandı: şok eylemle açılan kardeş katli %66,4 ile ilk 3 sn'de kanalın en iyilerinden. Sorun kanca değil, ortadaki alıntı.
