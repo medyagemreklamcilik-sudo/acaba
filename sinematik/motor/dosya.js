@@ -15,8 +15,8 @@ const MONO = '"IBM Plex Mono"', TYPE = '"Special Elite"', SERIF = '"Cormorant Ga
 const RED = '#c8322a', ORANGE = '#f0754e';
 
 // ---------------- kamera ----------------
-function camAt(t) {
-  const K = CAMERA, n = K.length;
+function camAt(t, K = CAMERA) {
+  const n = K.length;
   if (t <= K[0].t) return { x: K[0].x, y: K[0].y, z: K[0].z, r: K[0].r || 0 };
   if (t >= K[n - 1].t) return { x: K[n - 1].x, y: K[n - 1].y, z: K[n - 1].z, r: K[n - 1].r || 0 };
   let i = 0; while (i < n - 2 && t > K[i + 1].t) i++;
@@ -39,7 +39,8 @@ function heroLevel(id, t) {
   return lv;
 }
 function mapDimAt(t) { const FADE = .6; for (let i = BEATS.length - 1; i >= 0; i--) if (t >= BEATS[i].t) { const p = i > 0 ? (BEATS[i - 1].mapDim || 0) : (BEATS[i].mapDim || 0); return lerp(p, BEATS[i].mapDim || 0, smooth((t - BEATS[i].t) / FADE)); } return 0; }
-const fadeOf = (o, t) => o.t1 != null ? 1 - smooth((t - o.t1) / (o.fadeDur || .5)) : 1;
+const endOf = o => o.type === 'route' ? o.hide : o.t1;
+const fadeOf = (o, t) => endOf(o) != null ? 1 - smooth((t - endOf(o)) / (o.fadeDur || .5)) : 1;
 
 // ---------------- dokular ----------------
 const TEX = {}, IMG = {}, GRAY = {}, HALF = {};
@@ -68,7 +69,7 @@ function prepImages() {
     const im = IMG[o.img]; if (!im || !im.naturalWidth) continue; const c = cropOf(o, im), cols = o.cols || 64, rows = Math.round(cols * c[3] / c[2]);
     const s = mk(cols, rows, g => { g.filter = 'grayscale(1) contrast(1.35)'; g.drawImage(im, c[0], c[1], c[2], c[3], 0, 0, cols, rows); });
     const d = s.getContext('2d').getImageData(0, 0, cols, rows).data, R = rng(3), dots = [];
-    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) { const q = Math.hypot((i / cols - .5) / .5, (j / rows - .45) / .55), l = d[(j * cols + i) * 4] / 255 * (1 - smooth((q - .55) / .45)); if (l > .1) dots.push({ i, j, l, d: Math.hypot(i / cols - .5, j / rows - .42) + R() * .25 }); }
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) { const q = Math.hypot((i / cols - .5) / .5, (j / rows - .45) / .55); let l = d[(j * cols + i) * 4] / 255 * (1 - smooth((q - .55) / .45)); if (o.maxL && l > o.maxL) l *= Math.max(0, 1 - (l - o.maxL) / .1); if (l > .1) dots.push({ i, j, l, d: Math.hypot(i / cols - .5, j / rows - .42) + R() * .25 }); }
     HALF[o.id] = { cols, rows, dots };
   }
 }
@@ -147,7 +148,7 @@ function tag(ctx, o, t, lv) { // manila dosya etiketi: delik + raptiye, küçük
   const hx = -w / 2 + w * .14; ctx.beginPath(); ctx.arc(hx, 0, h * .12, 0, TAU); ctx.fillStyle = '#efe6cc'; ctx.fill(); ctx.lineWidth = h * .03; ctx.strokeStyle = 'rgba(120,100,60,.6)'; ctx.stroke();
   ctx.fillStyle = 'rgba(70,60,45,.55)'; ctx.font = `500 ${h * .11}px ${MONO}`; ctx.letterSpacing = (h * .03) + 'px'; ctx.textBaseline = 'alphabetic'; ctx.fillText(o.small || 'DOSYA', -w / 2 + w * .3, -h * .24);
   ctx.strokeStyle = 'rgba(70,60,45,.35)'; ctx.lineWidth = h * .012; ctx.beginPath(); ctx.moveTo(-w / 2 + w * .3, -h * .18); ctx.lineTo(w / 2 - w * .07, -h * .2); ctx.stroke();
-  ctx.fillStyle = '#26221d'; ctx.font = `700 ${h * .5}px ${COND}`; ctx.letterSpacing = '0px'; ctx.fillText(o.big, -w / 2 + w * .28, h * .3);
+  ctx.fillStyle = '#26221d'; ctx.font = `700 ${h * .5}px ${COND}`; ctx.letterSpacing = '0px'; { const mw = ctx.measureText(o.big).width, fsz = Math.min(h * .5, h * .5 * w * .64 / mw); ctx.font = `700 ${fsz}px ${COND}`; } ctx.fillText(o.big, -w / 2 + w * .28, h * .3);
   if (o.sub) { ctx.fillStyle = RED; ctx.font = `600 ${h * .1}px ${MONO}`; ctx.letterSpacing = (h * .025) + 'px'; ctx.fillText(o.sub, -w / 2 + w * .3, h * .43); }
   dimRect(ctx, lv, -w / 2, -h / 2, w, h); const pu = clamp((t - o.t0 - .3) / .25); if (pu > 0) pinHead(ctx, hx, 0, h * .1 * lerp(1.6, 1, backOut(pu)), clamp(pu * 3));
   ctx.restore();
@@ -188,7 +189,7 @@ function thread(ctx, o, t, lv) { // kırmızı ip: iki raptiye arası sarkan çi
 function halftone(ctx, o, t, lv) { // siyah üstünde nokta portre, merkezden dışa açılır
   const H = HALF[o.id]; if (!H || t < o.t0) return; const fa = fadeOf(o, t); if (fa <= 0) return; const cell = o.w / H.cols, x0 = o.x - o.w / 2, y0 = o.y - cell * H.rows / 2, rev = o.rev || 1.1;
   ctx.save(); ctx.globalAlpha = fa * (.25 + .75 * lv);
-  if (o.glow) { const [gx, gy] = [x0 + o.glow[0] * o.w, y0 + o.glow[1] * cell * H.rows], gr = o.w * .12, ga = smooth((t - o.t0 - .5) / .8) * (.75 + .25 * Math.sin(t * 2.2)); const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr); g.addColorStop(0, `rgba(215,50,35,${.75 * ga})`); g.addColorStop(1, 'rgba(215,50,35,0)'); ctx.fillStyle = g; ctx.fillRect(gx - gr, gy - gr, gr * 2, gr * 2); }
+  if (o.glow) { const [gx, gy] = [x0 + o.glow[0] * o.w, y0 + o.glow[1] * cell * H.rows], gr = o.w * .12, ga = smooth((t - o.t0 - .5) / .8) * (.75 + .25 * Math.sin(t * 2.2)); const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr); const gc = o.glowColor || '215,50,35'; g.addColorStop(0, `rgba(${gc},${.75 * ga})`); g.addColorStop(1, `rgba(${gc},0)`); ctx.fillStyle = g; ctx.fillRect(gx - gr, gy - gr, gr * 2, gr * 2); }
   ctx.fillStyle = '#d9dbd6'; const buckets = [[], [], [], []];
   for (const d of H.dots) { const a = clamp((t - o.t0 - d.d * rev) / .35); if (a <= 0) continue; buckets[Math.min(3, (a * 4) | 0)].push(d); }
   buckets.forEach((B, bi) => { if (!B.length) return; ctx.globalAlpha = fa * (.25 + .75 * lv) * (bi + 1) / 4; ctx.beginPath(); for (const d of B) { const r = cell * .5 * Math.sqrt(d.l) * .98, cx = x0 + (d.i + .5 + (d.j % 2) * .5) * cell, cy = y0 + (d.j + .5) * cell; ctx.moveTo(cx + r, cy); ctx.arc(cx, cy, r, 0, TAU); } ctx.fill(); });
@@ -200,7 +201,7 @@ function glowdot(ctx, o, t, lv) { // ışıyan şehir noktası + mono etiket + k
   const gr = 120 / z * pulse, g = ctx.createRadialGradient(x, y, 0, x, y, gr); g.addColorStop(0, 'rgba(255,150,90,.85)'); g.addColorStop(.25, 'rgba(240,100,60,.35)'); g.addColorStop(1, 'rgba(240,90,50,0)'); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(x - gr, y - gr, gr * 2, gr * 2); ctx.globalCompositeOperation = 'source-over';
   ctx.fillStyle = '#ffd9c2'; ctx.beginPath(); ctx.arc(x, y, 9 / z, 0, TAU); ctx.fill();
   if (o.square) { const s = 46 / z * lerp(1.6, 1, easeOut(u)); ctx.setLineDash([7 / z, 6 / z]); ctx.strokeStyle = 'rgba(240,117,78,.85)'; ctx.lineWidth = 2.2 / z; ctx.strokeRect(x - s, y - s, s * 2, s * 2); ctx.setLineDash([]); }
-  if (o.label) { const lu = clamp((t - o.t0 - .2) / .5), fs = o.size; ctx.font = `600 ${fs}px ${MONO}`; ctx.letterSpacing = (fs * .16) + 'px'; ctx.textBaseline = 'middle'; const tw = ctx.measureText(o.label).width; const lx = x + (o.dx != null ? o.dx : 70 / z), ly = y + (o.dy || 0); ctx.save(); ctx.beginPath(); ctx.rect(lx - 10, ly - fs, (tw + 40) * easeOut(lu), fs * 2); ctx.clip(); ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 20; ctx.fillStyle = ORANGE; ctx.fillText(o.label, lx, ly); ctx.restore(); }
+  if (o.label) { const lu = clamp((t - o.t0 - .2) / .5), fs = o.size / z; ctx.font = `600 ${fs}px ${MONO}`; ctx.letterSpacing = (fs * .16) + 'px'; ctx.textBaseline = 'middle'; const tw = ctx.measureText(o.label).width; const lx = x + (o.dx != null ? o.dx : 70 / z), ly = y + (o.dy || 0); ctx.save(); ctx.beginPath(); ctx.rect(lx - 10, ly - fs, (tw + 40) * easeOut(lu), fs * 2); ctx.clip(); ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 20; ctx.fillStyle = ORANGE; ctx.fillText(o.label, lx, ly); ctx.restore(); }
   if (o.crossT != null) { const cu = clamp((t - o.crossT) / .45); if (cu > 0) { const R = 120 / z * lerp(1.5, 1, easeOut(cu)); ctx.save(); ctx.translate(x, y); ctx.rotate(lerp(-.6, -.2, easeOut(cu))); ctx.globalAlpha *= easeOut(cu); ctx.strokeStyle = RED; ctx.lineWidth = 3.5 / z; ctx.beginPath(); ctx.arc(0, 0, R, 0, TAU * easeInOut(cu)); ctx.stroke(); ctx.beginPath(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { ctx.moveTo(a * R * .55, b * R * .55); ctx.lineTo(a * R * 1.35, b * R * 1.35); } ctx.stroke(); ctx.restore(); } }
   ctx.restore();
 }
@@ -212,7 +213,7 @@ function title(ctx, o, t, lv) { // büyük ince serif başlık, iki yanında inc
   const u = clamp((t - o.t0) / (o.dur || .9)); if (u <= 0) return; const fa = fadeOf(o, t); if (fa <= 0) return; const e = easeOut(u), fs = o.size;
   ctx.save(); ctx.globalAlpha = fa * smooth(u * 1.4) * (.2 + .8 * lv); ctx.font = `${o.weight || 500} ${fs}px ${o.font === 'mono' ? MONO : SERIF}`; ctx.letterSpacing = (fs * lerp(.24, o.track != null ? o.track : .12, e)) + 'px'; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
   ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = fs * .3; ctx.fillStyle = o.color || '#f1ede4';
-  const lines = o.text.split('\n'), lh = fs * (o.lh || 1.02); lines.forEach((s, i) => ctx.fillText(s, o.x, o.y + i * lh + (1 - e) * fs * .12));
+  const lines = o.text.split('\n'), lh = fs * (o.lh || 1.02); const A0 = ctx.globalAlpha; lines.forEach((s, i) => { let ee = e; if (o.lineT) { const lu = clamp((t - o.lineT[i]) / (o.dur || .9)); if (lu <= 0) return; ee = easeOut(lu); ctx.globalAlpha = fa * smooth(lu * 1.4) * (.2 + .8 * lv); } ctx.fillText(s, o.x, o.y + i * lh + (1 - ee) * fs * .12); }); ctx.globalAlpha = A0;
   if (o.rule) { const tw = ctx.measureText(lines[0]).width - fs * .12, gap = fs * .3, L = o.rule * easeInOut(clamp((t - o.t0 - .25) / .8)), yy = o.y - fs * .33; ctx.shadowColor = 'transparent';
     for (const s of [-1, 1]) { const a = o.x + s * (tw / 2 + gap); ctx.strokeStyle = 'rgba(230,230,225,.45)'; ctx.lineWidth = fs * .012; ctx.beginPath(); ctx.moveTo(a, yy); ctx.lineTo(a + s * L, yy); ctx.stroke(); ctx.strokeStyle = RED; ctx.lineWidth = fs * .022; ctx.beginPath(); ctx.moveTo(a, yy); ctx.lineTo(a + s * Math.min(L, fs * .22), yy); ctx.stroke(); } }
   ctx.restore();
@@ -223,7 +224,37 @@ function strike(ctx, o, t, lv) { // mono yazı, söylenince kırmızı çizgiyle
   ctx.fillText(o.text, o.x, o.y); const tw = ctx.measureText(o.text).width; ctx.restore();
   if (su > 0) { ctx.save(); ctx.globalAlpha = fa * (.3 + .7 * lv); ctx.strokeStyle = RED; ctx.lineCap = 'round'; ctx.lineWidth = fs * .075; ctx.beginPath(); const a = o.x - tw / 2 - fs * .15, b = o.x + tw / 2 + fs * .1; ctx.moveTo(a, o.y - fs * .34); ctx.lineTo(lerp(a, b, easeInOut(su)), o.y - fs * .34 - fs * .03 * easeInOut(su)); ctx.stroke(); ctx.restore(); }
 }
-const DRAW = { polaroid, tag, doc, thread, halftone, glowdot, region, title, strike };
+function band(ctx, o, t, lv) { // tek başına siyah mono bant (etiket)
+  const u = clamp((t - o.t0) / .4); if (u <= 0) return; const fa = fadeOf(o, t); if (fa <= 0) return; const fs = o.size;
+  ctx.save(); ctx.globalAlpha = fa * (.3 + .7 * lv); ctx.translate(o.x, o.y); ctx.rotate(o.rot || 0); ctx.font = `600 ${fs}px ${MONO}`; ctx.letterSpacing = (fs * .14) + 'px'; const tw = ctx.measureText(o.text).width, W = tw + fs * 1.2, H = fs * 1.7;
+  ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = fs * .4; ctx.shadowOffsetY = fs * .12; ctx.fillStyle = o.bg || '#15181a'; ctx.fillRect(-W / 2, -H / 2, W * easeOut(u), H); ctx.shadowColor = 'transparent';
+  if (o.red) { ctx.fillStyle = RED; ctx.fillRect(-W / 2, -H / 2, fs * .14, H); }
+  ctx.beginPath(); ctx.rect(-W / 2, -H / 2, W * easeOut(u), H); ctx.clip(); ctx.fillStyle = o.color || '#efefe9'; ctx.textBaseline = 'middle'; ctx.fillText(o.text, -W / 2 + fs * .6, fs * .04);
+  ctx.restore(); if (o.pin) { ctx.save(); ctx.globalAlpha = fa; const [px, py] = local(o, 0, -fs * .85); pinHead(ctx, px, py, fs * .22); ctx.restore(); }
+}
+function route(ctx, o, t, lv) { // ışıyan turuncu rota, ucunda nokta
+  const u = clamp((t - o.t0) / (o.t1 - o.t0)); if (u <= 0) return; const fa = fadeOf(o, t); if (fa <= 0) return; const z = CURZ;
+  const P = o.pts.map(([lo, la]) => proj(lo, la)), L = []; let tot = 0; for (let i = 1; i < P.length; i++) { const d = Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]); L.push(d); tot += d; }
+  let rem = easeInOut(u) * tot; const path = [P[0]]; let tip = P[0];
+  for (let i = 1; i < P.length && rem > 0; i++) { const k = Math.min(1, rem / L[i - 1]); tip = [lerp(P[i - 1][0], P[i][0], k), lerp(P[i - 1][1], P[i][1], k)]; path.push(tip); rem -= L[i - 1]; }
+  ctx.save(); ctx.globalAlpha = fa * (.3 + .7 * lv); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  const stroke = (w, c) => { ctx.strokeStyle = c; ctx.lineWidth = w / z; ctx.beginPath(); path.forEach((p, i) => i ? ctx.lineTo(...p) : ctx.moveTo(...p)); ctx.stroke(); };
+  stroke(18, 'rgba(240,117,78,.12)'); if (o.dash) ctx.setLineDash([16 / z, 12 / z]); stroke(4.5, o.color || ORANGE); ctx.setLineDash([]);
+  if (u < 1) { const g = ctx.createRadialGradient(tip[0], tip[1], 0, tip[0], tip[1], 60 / z); g.addColorStop(0, 'rgba(255,170,120,.9)'); g.addColorStop(1, 'rgba(255,120,80,0)'); ctx.fillStyle = g; ctx.fillRect(tip[0] - 60 / z, tip[1] - 60 / z, 120 / z, 120 / z); }
+  ctx.restore();
+}
+function ring(ctx, o, t, lv) { // kuşatma halkası: kesikli kırmızı daire içe doğru daralır, oklar merkeze bakar
+  const u = clamp((t - o.t0) / (o.dur || 1.6)); if (u <= 0) return; const fa = fadeOf(o, t); if (fa <= 0) return; const [x, y] = proj(o.lon, o.lat), z = CURZ, r = lerp(o.r0, o.r1, easeInOut(u));
+  ctx.save(); ctx.globalAlpha = fa * smooth(u * 3) * (.3 + .7 * lv); ctx.strokeStyle = RED; ctx.lineWidth = 3.5 / z; ctx.setLineDash([22 / z, 14 / z]); ctx.lineDashOffset = -t * 40 / z; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+  const n = o.n || 10; for (let k = 0; k < n; k++) { const a = k / n * TAU + .3, ax = x + Math.cos(a) * r, ay = y + Math.sin(a) * r, L = 70 / z, h = 22 / z; ctx.beginPath(); ctx.moveTo(ax + Math.cos(a) * L, ay + Math.sin(a) * L); ctx.lineTo(ax, ay); ctx.stroke(); ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(ax + Math.cos(a + .5) * h, ay + Math.sin(a + .5) * h); ctx.moveTo(ax, ay); ctx.lineTo(ax + Math.cos(a - .5) * h, ay + Math.sin(a - .5) * h); ctx.stroke(); }
+  ctx.restore();
+}
+function xmark(ctx, o, t, lv) { // kırmızı çarpı (kesilen yol)
+  const u = clamp((t - o.t0) / .4); if (u <= 0) return; const fa = fadeOf(o, t); if (fa <= 0) return; const [x, y] = proj(o.lon, o.lat), s = (o.s || 70) / CURZ;
+  ctx.save(); ctx.globalAlpha = fa * (.3 + .7 * lv); ctx.strokeStyle = RED; ctx.lineCap = 'round'; ctx.lineWidth = 9 / CURZ; const a = clamp(u * 2), b = clamp(u * 2 - 1);
+  ctx.beginPath(); ctx.moveTo(x - s, y - s); ctx.lineTo(x - s + 2 * s * easeOut(a), y - s + 2 * s * easeOut(a)); ctx.stroke(); if (b > 0) { ctx.beginPath(); ctx.moveTo(x + s, y - s); ctx.lineTo(x + s - 2 * s * easeOut(b), y - s + 2 * s * easeOut(b)); ctx.stroke(); } ctx.restore();
+}
+const DRAW = { band, route, ring, xmark, polaroid, tag, doc, thread, halftone, glowdot, region, title, strike };
 let OBJ = {};
 
 // ---------------- ekran katmanları ----------------
@@ -248,31 +279,56 @@ function drawDust(ctx, t, cam) {
 const canvas = document.getElementById('c'); canvas.width = FORMAT.w; canvas.height = FORMAT.h; const out = canvas.getContext('2d');
 const buf = document.createElement('canvas'); buf.width = FORMAT.w; buf.height = FORMAT.h; const bctx = buf.getContext('2d');
 const glowC = document.createElement('canvas'); glowC.width = FORMAT.w / 4; glowC.height = FORMAT.h / 4; const gctx = glowC.getContext('2d');
-function drawWorld(ctx, t) {
-  const cam = camAt(t), hh = handheld(t, FORMAT.w / 3840 * 1.4); CURZ = cam.z;
-  applyView(ctx, cam, hh); drawMap(ctx); drawBoards(ctx);
+const SPC = typeof SPACES !== 'undefined' ? SPACES : [{ t: 0, s: 'map', cam: CAMERA }], TR = .8;
+const keysOf = sc => sc.cam || CAMERA;
+function drawCork(ctx, cam) {
+  ctx.fillStyle = pat(ctx, TEX.cork, 3); ctx.fillRect(cam.x - 6000, cam.y - 8000, 12000, 16000);
+  const g = ctx.createRadialGradient(cam.x, cam.y - 300, 400, cam.x, cam.y, 4200); g.addColorStop(0, 'rgba(255,215,160,.10)'); g.addColorStop(1, 'rgba(25,12,5,.5)'); ctx.fillStyle = g; ctx.fillRect(cam.x - 6000, cam.y - 8000, 12000, 16000);
+}
+function drawDark(ctx, cam) {
+  ctx.fillStyle = '#0a0e0f'; ctx.fillRect(cam.x - 8000, cam.y - 10000, 16000, 20000);
+  ctx.strokeStyle = 'rgba(160,200,200,.035)'; ctx.lineWidth = 1.5 / CURZ; ctx.beginPath(); const G = 420;
+  for (let x = Math.floor((cam.x - 3000) / G) * G; x < cam.x + 3000; x += G) { ctx.moveTo(x, cam.y - 4000); ctx.lineTo(x, cam.y + 4000); }
+  for (let y = Math.floor((cam.y - 4000) / G) * G; y < cam.y + 4000; y += G) { ctx.moveTo(cam.x - 3000, y); ctx.lineTo(cam.x + 3000, y); } ctx.stroke();
+}
+function drawWorld(ctx, t, sc) {
+  const sp = sc.s, K = keysOf(sc), cam = camAt(t, K), hh = handheld(t, FORMAT.w / 3840 * 1.4); CURZ = cam.z;
+  applyView(ctx, cam, hh); if (sp === 'board') drawCork(ctx, cam); else if (sp === 'dark') drawDark(ctx, cam); else drawMap(ctx);
   const md = mapDimAt(t); if (md > 0) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = `rgba(4,6,7,${md})`; ctx.fillRect(0, 0, FORMAT.w, FORMAT.h); ctx.restore(); }
-  const order = OBJECTS.filter(o => o.type !== 'thread').sort((a, b) => heroLevel(a.id, t) - heroLevel(b.id, t)).concat(OBJECTS.filter(o => o.type === 'thread'));
+  const mine = OBJECTS.filter(o => (o.space || 'map') === sp && (o.t0 == null || t >= o.t0 - .05) && !(endOf(o) != null && t > endOf(o) + (o.fadeDur || .5)));
+  const order = mine.filter(o => o.type !== 'thread').sort((a, b) => heroLevel(a.id, t) - heroLevel(b.id, t)).concat(mine.filter(o => o.type === 'thread'));
   for (const o of order) { applyView(ctx, cam, hh); DRAW[o.type](ctx, o, t, heroLevel(o.id, t)); }
   ctx.setTransform(1, 0, 0, 1, 0, 0); return cam;
 }
-function screenSpeed(t) { const a = camAt(t), b = camAt(t + 1 / FORMAT.fps), z = (a.z + b.z) / 2; return Math.hypot((b.x - a.x) * z, (b.y - a.y) * z) + Math.abs(Math.log(b.z / a.z)) * FORMAT.w * .6; }
+function screenSpeed(t, K) { const a = camAt(t, K), b = camAt(t + 1 / FORMAT.fps, K), z = (a.z + b.z) / 2; return Math.hypot((b.x - a.x) * z, (b.y - a.y) * z) + Math.abs(Math.log(b.z / a.z)) * FORMAT.w * .6; }
+const bufB = document.createElement('canvas'); bufB.width = FORMAT.w; bufB.height = FORMAT.h; const b2 = bufB.getContext('2d');
+function renderSpace(ctx, t, sp, f) { // tek mekân, gerekirse hareket bulanıklığıyla
+  const v = screenSpeed(t, keysOf(sp)), n = v > 14 ? Math.min(6, Math.ceil(v / 14)) : 1;
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, FORMAT.w, FORMAT.h);
+  if (n === 1) return drawWorld(ctx, t, sp);
+  const tmp = mk(FORMAT.w, FORMAT.h, () => {}), tc = tmp.getContext('2d'); let cam;
+  for (let k = 0; k < n; k++) { const tt = t + (k / (n - 1) - .5) * .5 / FORMAT.fps; tc.setTransform(1, 0, 0, 1, 0, 0); tc.fillStyle = '#000'; tc.fillRect(0, 0, FORMAT.w, FORMAT.h); cam = drawWorld(tc, tt, sp); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1 / (k + 1); ctx.drawImage(tmp, 0, 0); }
+  ctx.globalAlpha = 1; return cam;
+}
 function renderFrame(f) {
-  const t = f / FORMAT.fps, sp = screenSpeed(t), n = sp > 14 ? Math.min(6, Math.ceil(sp / 14)) : 1; let cam;
+  const t = f / FORMAT.fps; let i = 0; while (i < SPC.length - 1 && t >= SPC[i + 1].t - TR / 2) i++;
+  const inT = i > 0 && t < SPC[i].t + TR / 2; let cam;
   out.setTransform(1, 0, 0, 1, 0, 0); out.globalCompositeOperation = 'source-over'; out.globalAlpha = 1; out.fillStyle = '#000'; out.fillRect(0, 0, FORMAT.w, FORMAT.h);
-  if (n === 1) cam = drawWorld(out, t);
-  else { for (let k = 0; k < n; k++) { const tt = t + (k / (n - 1) - .5) * .5 / FORMAT.fps; bctx.setTransform(1, 0, 0, 1, 0, 0); bctx.fillStyle = '#000'; bctx.fillRect(0, 0, FORMAT.w, FORMAT.h); cam = drawWorld(bctx, tt); out.setTransform(1, 0, 0, 1, 0, 0); out.globalAlpha = 1 / (k + 1); out.drawImage(buf, 0, 0); } out.globalAlpha = 1; }
-  out.setTransform(1, 0, 0, 1, 0, 0);
+  if (!inT) cam = renderSpace(out, t, SPC[i], f);
+  else { // mekân geçişi: eskisi hafifçe yaklaşıp kararırken yenisi karanlıktan açılır
+    const u = clamp((t - (SPC[i].t - TR / 2)) / TR), e = smooth(u);
+    renderSpace(bctx, t, SPC[i - 1], f); cam = renderSpace(b2, t, SPC[i], f);
+    const W = FORMAT.w, H = FORMAT.h, draw = (c, sc, a) => { out.globalAlpha = a; out.drawImage(c, W / 2 - W * sc / 2, H / 2 - H * sc / 2, W * sc, H * sc); };
+    draw(buf, 1 + .06 * e, 1); draw(bufB, 1.05 - .05 * e, e); out.globalAlpha = 1;
+    out.fillStyle = `rgba(0,0,0,${.6 * Math.sin(Math.PI * u)})`; out.fillRect(0, 0, W, H);
+  }
+  out.setTransform(1, 0, 0, 1, 0, 0); out.globalAlpha = 1;
   drawDust(out, t, cam);
-  // ışıma
   gctx.filter = 'blur(12px) brightness(1.15)'; gctx.clearRect(0, 0, glowC.width, glowC.height); gctx.drawImage(canvas, 0, 0, glowC.width, glowC.height); gctx.filter = 'none';
   out.globalCompositeOperation = 'screen'; out.globalAlpha = .26; out.drawImage(glowC, 0, 0, FORMAT.w, FORMAT.h); out.globalAlpha = 1;
-  // renk: gölgeler camgöbeği, ışıklar sıcak
   out.globalCompositeOperation = 'soft-light'; out.fillStyle = 'rgba(40,95,105,.22)'; out.fillRect(0, 0, FORMAT.w, FORMAT.h); out.globalCompositeOperation = 'source-over';
-  // spot ışığı + vinyet
   const vg = out.createRadialGradient(FORMAT.w / 2, FORMAT.h * .47, Math.min(FORMAT.w, FORMAT.h) * .32, FORMAT.w / 2, FORMAT.h / 2, Math.hypot(FORMAT.w, FORMAT.h) * .56); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.72)'); out.fillStyle = vg; out.fillRect(0, 0, FORMAT.w, FORMAT.h);
   drawTimeline(out, t);
-  // gren
   out.globalCompositeOperation = 'overlay'; out.globalAlpha = .11; const g = TEX.grain[f % TEX.grain.length]; out.save(); out.translate((f * 131) % 512, (f * 71) % 512); out.fillStyle = out.createPattern(g, 'repeat'); out.fillRect(-512, -512, FORMAT.w + 1024, FORMAT.h + 1024); out.restore(); out.globalAlpha = 1; out.globalCompositeOperation = 'source-over';
 }
 window.READY = (async () => {
