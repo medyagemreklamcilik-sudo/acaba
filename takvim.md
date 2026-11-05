@@ -24,7 +24,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-04 | Çar | Kanuni Viyana'yı alsaydı ne olurdu? | 2026-11-04-kanuni-viyana | planlandı |
 | 2026-11-04 | Çar | EKSTRA 11:20 · Fahreddin Paşa: Çöl Kaplanı (sinematik, 2:24) | 2026-11-05-fahreddin-pasa-ekstra | planlandı |
 | 2026-11-05 | Per | Pargalı İbrahim neden boğduruldu? | 2026-11-05-pargali-ibrahim | planlandı |
-| 2026-11-06 | Cum | Abdülaziz: intihar mı, cinayet mi? | | bekliyor |
+| 2026-11-06 | Cum | Abdülaziz: intihar mı, cinayet mi? | 2026-11-06-abdulaziz | hazır |
 | 2026-11-07 | Cmt | Piri Reis haritasının sırrı | | bekliyor |
 | 2026-11-08 | Paz | Atatürk'ün son günleri | | bekliyor |
 | 2026-11-09 | Pzt | Atatürk'ün vasiyeti | | bekliyor |
