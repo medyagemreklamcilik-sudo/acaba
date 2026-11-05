@@ -151,3 +151,14 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 26. **Süre:** 95-170 sn videolar, 30-45 sn ortalama izleme. Günlük video metni en fazla 1.300 karakter (≈85 sn).
 27. **"Kendini görmek / tam ben" hissi yoktu:** her videoda olayı izleyicinin bugünkü hayatına bağlayan tek bir cümle olacak.
 28. **Paylaşım bilinçli kurgulanacak:** son cümle alıntılanabilir replik; ilk yorumda iki seçenekli soru + "bunu ... arkadaşına gönder" çağrısı.
+
+## Instagram, 3-4 Kasım videoları (5 Kasım'da çekildi)
+| Video | Yaş | İzlenme | İlk 3 sn | Ort. izleme | Erişim |
+|---|---|---|---|---|---|
+| yavuz-8-yil | 2 gün | 314 | %53.4 | 21.9 sn / 100 sn | 268 |
+| fahreddin-pasa (sinematik, 2:24) | 1 gün | 365 | %33.3 | 13.8 sn / 144 sn | 314 |
+| kanuni-viyana | 15 saat | 171 | %33.8 | 9.2 sn / 94 sn | 152 |
+
+29. **Yavuz'da ortalama izleyici 22. sn'de "Peki 8 yıla nasıl bu kadar çok şey sığdırdı?" geçişinde gitti** (hemen önceki "KANITLANAMADI" damgasıyla konu kapanmış gibi hissettirdi). "Peki..." ile yeni bölüme geçme; önceki bölümü cevapsız bırakıp vaatle bağla ("Ama asıl şok edici olan...").
+30. **Sinematik Fahreddin videosu Instagram'da ilk 3 sn'de %33'te kaldı:** video karanlıkta yavaş beliren nokta portreyle açılıyor, ilk karede okunur yazı ve net yüz yok. Sinematik videolarda da ilk karede net yüz + büyük kanca yazısı olmalı (kapak ilk karelere gömüldü; açılış sahnesi de kanca yazısıyla başlamalı, karanlıktan açılış yok).
+31. Instagram'da son 3 videonun erişimi 150-310'a düştü (önceki haftalar 2-100 bin). Kanca oranı da düştüğü için önce ilk 3 sn düzeltilmeli; düşüş sürerse paylaşım saatleri (Instagram 20:00) ve aynı gün iki video paylaşmanın etkisi kontrol edilmeli.
