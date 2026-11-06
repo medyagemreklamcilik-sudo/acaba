@@ -57,7 +57,7 @@ SC(61.5, 'board', 60000, [[61.1, -100, -500, .6], [63.6, 0, -250, .56], [66.2, 0
   { id: 'fb2', type: 'polaroid', img: 'fbsk', crop: [.12, 0, .76, .7], censor: FB_CENSOR, censorT: 61.75, x: -270, y: -430, w: 520, rot: -.05, t0: 61.7, name: 'F. B. SAYAN KAYA', nameT: 62.1, nameSize: 30 },
   { id: 'kupur', type: 'doc', x: 270, y: -380, w: 560, h: 720, rot: .04, t0: 62.88, seed: 23, head: ['HABER', 'FON SORUŞTURMASI'], rowsBefore: 3, key: 'HİSSE SATIŞI', keySize: 52, keyT: 63.2, keyDur: .5, rowsAfter: 5 },
   { id: 'sfk', type: 'thread', from: 'fb2', to: 'kupur', t0: 63.3, dur: .6, sag: .1 },
-  { id: 'kaynak', type: 'region', text: 'KAYNAK: BİRGÜN, T24 · KASIM 2026', x: 0, y: 80, size: 30, alpha: .75, t0: 63.5 },
+  { id: 'kaynak', type: 'region', text: 'KAYNAK: BİRGÜN, T24, NTV, SÖZCÜ', x: 0, y: 70, size: 30, alpha: .75, t0: 63.5 },
   { id: 'c163', type: 'counter', from: 0, to: 163000000, fmt: TL, x: 0, y: 330, size: 120, t0: 64.34, dur: 1.1, sub: 'YATIRIM', subSize: 30, solid: '#f1efe8', glow: 'rgba(0,0,0,.6)' },
   { id: 'c217b', type: 'counter', from: 163000000, to: 2170000000, fmt: TL, x: 0, y: 720, size: 140, t0: 66.98, dur: 1.8, sub: 'HİSSE SATIŞI', subSize: 32 },
   { id: 'kat', type: 'band', text: '×13', x: 380, y: 520, size: 90, red: true, rot: -.06, t0: 68.8 },
@@ -78,7 +78,7 @@ SC(87.2, 'board', 80000, [[86.8, 0, -500, .6], [91.0, 0, -350, .58], [94.2, 0, 6
 // 8) pano: milletvekilinin oğlu, karar, adalet
 SC(98.4, 'board', 100000, [[98.0, 0, -500, .6], [103.0, 0, -250, .6], [108.6, 0, 300, .56], [112.6, 0, 700, .56], [119.5, 0, 1550, .55], [126.0, 0, 1950, .56], [127.8, 0, 2050, .57]], [
   { id: 'karar', type: 'doc', x: 120, y: -330, w: 1000, h: 1150, rot: .02, t0: 98.62, seed: 51, head: ['KARAR', 'OSMANİYE 4. AĞIR CEZA'], rowsBefore: 3, redact: [1], key: '25 KG 850 GR ESRAR', keySize: 72, keyT: 102.46, keyDur: 1.6, circleT: 104.2, rowsAfter: 5, stamp: { text: '11 YIL 8 AY', t: 107.36, x: .05, y: .3, rot: -.1 } },
-  { id: 'zen', type: 'polaroid', img: 'zenbilci', crop: [.18, .08, .66, .72], censor: [0.34, 0.355, 0.64, 0.425], censorT: 100.1, x: -300, y: 520, w: 520, rot: -.05, t0: 99.9, name: 'VEKİLİN OĞLU', nameT: 100.3, color: true },
+  { id: 'zen', type: 'polaroid', img: 'zenbilci', crop: [.18, .08, .66, .72], censor: [0.345, 0.435, 0.645, 0.51], censorT: 100.1, x: -300, y: 520, w: 520, rot: -.05, t0: 99.9, name: 'VEKİLİN OĞLU', nameT: 100.3, color: true },
   { id: 'sz', type: 'thread', from: 'zen', to: 'karar', t0: 100.6, dur: .6, sag: .1 },
   { id: 'sahsidir', type: 'band', text: 'SUÇ ŞAHSİDİR', x: 260, y: 820, size: 80, t0: 113.2, pin: true },
   { id: 'terazi', type: 'scale', x: 0, y: 1350, w: 900, t0: 119.0, left: 'İMKÂN', right: 'ADALET', leftColor: '#ffe1a0', tilt: [{ t: 120.5, a: -.24, dur: 2.2 }] },
@@ -149,3 +149,19 @@ const BEATS = [
   [174.1, ['xluks', 'xmilyar', 'xayr'], .2], [179.8, ['gecin', 'gelec', 'pazarh'], .2], [190.52, ['adalet2'], .2],
   [194.78, ['iller', 'hepimiz'], .05], [200.14, ['onlar'], .1], [202.12, ['biz'], .1],
 ].map(([t, hero, mapDim]) => ({ t, hero, mapDim }));
+
+// --- Ek cümle: "Eski Aile Bakanı ... tutuklandı." 71.742 sn'ye eklendi; sonrası kaydırılır.
+const SHIFT_AT = 71.742, SHIFT = 5.598, sh = v => (v != null && v >= SHIFT_AT ? v + SHIFT : v);
+FORMAT.dur = 6348 / 30;
+for (const o of OBJECTS) {
+  for (const k of ['t0', 't1', 'keyT', 'circleT', 'tStrike', 'nameT', 'censorT']) if (o[k] != null) o[k] = sh(o[k]);
+  if (o.stamp) o.stamp.t = sh(o.stamp.t); if (o.lineT) o.lineT = o.lineT.map(sh); if (o.tilt) o.tilt.forEach(k => k.t = sh(k.t)); if (o.keys) o.keys.forEach(k => k.t = sh(k.t));
+}
+for (const sp of SPACES) { sp.t = sh(sp.t); sp.cam.forEach(k => k.t = sh(k.t)); }
+for (const b of BEATS) b.t = sh(b.t);
+for (const g of GLITCH) { g[0] = sh(g[0]); g[1] = sh(g[1]); }
+// eklenen anda kamera kupüre döner, damga iner
+{ const sc = SPACES.find(x => x.t === 61.5), z = 1.3; sc.cam.splice(4, 0, { t: 72.4, x: 60000, y: -220, z: .56 * z }, { t: 76.9, x: 60000, y: -160, z: .58 * z }); sc.cam.sort((a, b) => a.t - b.t);
+  const k = OBJECTS.find(o => o.id === 'kupur'); k.stamp = { text: 'TUTUKLANDI', t: 76.0, x: 0, y: .3, rot: -.12, size: 92 };
+  OBJECTS.push({ id: 'suclama', type: 'band', text: 'SUÇ ÖRGÜTÜ ÜYELİĞİ', x: 60000 + 260, y: 150, size: 60, red: true, rot: -.03, t0: 74.6, space: 'board' });
+  BEATS.push({ t: 71.9, hero: ['kupur', 'fb2', 'sfk', 'suclama'], mapDim: .25 }); BEATS.sort((a, b) => a.t - b.t); }

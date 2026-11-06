@@ -1,6 +1,6 @@
 import numpy as np, soundfile as sf, subprocess, json
 from scipy import signal
-SR = 44100; DUR = 6180 / 30; N = int(DUR * SR); t = np.arange(N) / SR; rng = np.random.default_rng(5)
+SR = 44100; DUR = 6348 / 30; N = int(DUR * SR); t = np.arange(N) / SR; rng = np.random.default_rng(5)
 def lp(x, f): b, a = signal.butter(2, f / (SR / 2), 'low'); return signal.lfilter(b, a, x)
 def hp(x, f): b, a = signal.butter(2, f / (SR / 2), 'high'); return signal.lfilter(b, a, x)
 def bp(x, lo, hi): b, a = signal.butter(2, [lo / (SR / 2), hi / (SR / 2)], 'band'); return signal.lfilter(b, a, x)
@@ -38,13 +38,14 @@ for o in E['o']:
     for f in ('circleT', 'tStrike'):
         if o.get(f) is not None: place(sfx, pen(.45), o[f], .5)
     if o.get('stamp'): place(sfx, stamp(), o['stamp']['t'], .6)
-for b in [0.0, 22.12, 39.62, 61.7, 107.36, 162.32, 193.28, 200.14, 202.12]: place(sfx, boom(), b, .45)
+SH = lambda v: v + 5.598 if v >= 71.742 else v
+for b in [SH(x) for x in [0.0, 22.12, 39.62, 61.7, 76.0 - 5.598, 107.36, 162.32, 193.28, 200.14, 202.12]]: place(sfx, boom(), b, .45)
 # gergin dron (A minör), son bölümde umut veren major geçiş
 base = sum(a * np.sin(2 * np.pi * f * t + np.sin(2 * np.pi * .05 * t) * 2) for f, a in [(55, .5), (110, .4), (130.8, .18), (164.8, .12), (220, .06)])
 hope = sum(a * np.sin(2 * np.pi * f * t) for f, a in [(55, .45), (110, .35), (138.6, .2), (164.8, .14), (220, .08)])
-mix_t = np.clip((t - 179) / 6, 0, 1)
+mix_t = np.clip((t - 184.6) / 6, 0, 1)
 mus = lp(base * (1 - mix_t) + hope * mix_t, 800) * (1 + .3 * np.sin(2 * np.pi * .5 * t))
-inten = np.interp(t, [0, 21.5, 22.3, 25.5, 41, 61, 98, 127, 150, 162, 174, 190, 200, DUR], [1, 1, .15, .9, .8, 1, .9, .8, 1, 1.1, .9, 1.2, 1.3, .6])
+inten = np.interp(t, [0, 21.5, 22.3, 25.5, 41, 61] + [SH(x) for x in [98, 127, 150, 162, 174, 190, 200]] + [DUR], [1, 1, .15, .9, .8, 1, .9, .8, 1, 1.1, .9, 1.2, 1.3, .6])
 mus = mus * inten * np.interp(t, [0, .6, DUR - 1.5, DUR], [0, 1, 1, 0])
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/voice.mp3', '-ar', str(SR), '-ac', '1', 'build/vo.wav'], check=True)
 vo, _ = sf.read('build/vo.wav'); vo = vo / np.max(np.abs(vo)) * .9
