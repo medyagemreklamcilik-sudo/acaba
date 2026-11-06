@@ -1,6 +1,6 @@
 import numpy as np, soundfile as sf, subprocess, json
 from scipy import signal
-SR = 44100; DUR = 6348 / 30; N = int(DUR * SR); t = np.arange(N) / SR; rng = np.random.default_rng(5)
+SR = 44100; DUR = 6942 / 30; N = int(DUR * SR); t = np.arange(N) / SR; rng = np.random.default_rng(5)
 def lp(x, f): b, a = signal.butter(2, f / (SR / 2), 'low'); return signal.lfilter(b, a, x)
 def hp(x, f): b, a = signal.butter(2, f / (SR / 2), 'high'); return signal.lfilter(b, a, x)
 def bp(x, lo, hi): b, a = signal.butter(2, [lo / (SR / 2), hi / (SR / 2)], 'band'); return signal.lfilter(b, a, x)
@@ -45,11 +45,13 @@ base = sum(a * np.sin(2 * np.pi * f * t + np.sin(2 * np.pi * .05 * t) * 2) for f
 hope = sum(a * np.sin(2 * np.pi * f * t) for f, a in [(55, .45), (110, .35), (138.6, .2), (164.8, .14), (220, .08)])
 mix_t = np.clip((t - 184.6) / 6, 0, 1)
 mus = lp(base * (1 - mix_t) + hope * mix_t, 800) * (1 + .3 * np.sin(2 * np.pi * .5 * t))
-inten = np.interp(t, [0, 21.5, 22.3, 25.5, 41, 61] + [SH(x) for x in [98, 127, 150, 162, 174, 190, 200]] + [DUR], [1, 1, .15, .9, .8, 1, .9, .8, 1, 1.1, .9, 1.2, 1.3, .6])
+inten = np.interp(t, [0, 21.5, 22.3, 25.5, 41, 61] + [SH(x) for x in [98, 127, 150, 162, 174, 190, 200]] + [211.0, 213.0, DUR - 2, DUR], [1, 1, .15, .9, .8, 1, .9, .8, 1, 1.1, .9, 1.2, 1.3, .7, 1.0, 1.0, .5])
 mus = mus * inten * np.interp(t, [0, .6, DUR - 1.5, DUR], [0, 1, 1, 0])
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/voice.mp3', '-ar', str(SR), '-ac', '1', 'build/vo.wav'], check=True)
 vo, _ = sf.read('build/vo.wav'); vo = vo / np.max(np.abs(vo)) * .9
 VO = np.zeros(N); VO[:min(N, len(vo))] = vo[:N]
+sk, _ = sf.read('build/sarki/sarki_slow.wav'); sk = sk / np.max(np.abs(sk)) * .88; place(VO, sk, 212.0)
+place(sfx, boom(), 212.0 + 13.82 / .92, .5); place(sfx, air(1.2), 211.0, .4)
 duck = 1 - .5 * np.clip(lp(np.abs(VO), 5) / .05, 0, 1)
 mix = VO + (mus / np.max(np.abs(mus))) * .17 * duck + sfx * .42
 mix *= np.interp(t, [0, .02, DUR - .5, DUR], [0, 1, 1, 0]); mix = mix / np.max(np.abs(mix)) * .89

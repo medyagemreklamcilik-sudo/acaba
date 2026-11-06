@@ -165,3 +165,14 @@ for (const g of GLITCH) { g[0] = sh(g[0]); g[1] = sh(g[1]); }
   const k = OBJECTS.find(o => o.id === 'kupur'); k.stamp = { text: 'TUTUKLANDI', t: 76.0, x: 0, y: .3, rot: -.12, size: 92 };
   OBJECTS.push({ id: 'suclama', type: 'band', text: 'SUÇ ÖRGÜTÜ ÜYELİĞİ', x: 60000 + 260, y: 150, size: 60, red: true, rot: -.03, t0: 74.6, space: 'board' });
   BEATS.push({ t: 71.9, hero: ['kupur', 'fb2', 'sfk', 'suclama'], mapDim: .25 }); BEATS.sort((a, b) => a.t - b.t); }
+// --- Final: "Tuna Nehri" türküsünden dörtlükler (Cavit okur, 212.0 sn'de başlar; okuma %92 hıza yavaşlatıldı)
+{ const T0 = 212.0, k = v => T0 + v / 0.92;
+  FORMAT.dur = 6942 / 30;
+  SPACES.push({ t: 211.4, s: 'dark', cam: [{ t: 211.0, x: 300000, y: -260, z: .66 }, { t: 220.0, x: 300000, y: -120, z: .68 }, { t: 231.4, x: 300000, y: 120, z: .7 }] });
+  OBJECTS.push(
+    { id: 'kita1', type: 'title', space: 'dark', text: 'OLUR MU BÖYLE OLUR MU?\nEVLAT BABAYI VURUR MU?\nSİZİ VATAN HAİNLERİ,\nBU VATAN SİZE KALIR MI?', x: 300000, y: -560, size: 96, lh: 1.45, track: .06, t0: k(0), lineT: [k(0), k(2.94), k(5.02), k(6.42)], dur: .7, t1: k(8.0), fadeDur: .45 },
+    { id: 'kita2', type: 'title', space: 'dark', text: 'OLAMAZ BÖYLE OLAMAZ,\nEVLAT BABAYI VURAMAZ!\nCAN BEDENDEN ÇIKMAYINCA,', x: 300000, y: -420, size: 96, lh: 1.45, track: .06, t0: k(8.34), lineT: [k(8.34), k(10.34), k(12.18)], dur: .7 },
+    { id: 'kalamaz', type: 'title', space: 'dark', text: 'BU VATAN SİZE KALAMAZ...', x: 300000, y: 260, size: 104, track: .06, t0: k(13.82), dur: .9, color: '#e2493a' },
+    { id: 'turku', type: 'region', space: 'dark', text: 'TUNA NEHRİ AKMAM DİYOR · TÜRKÜ', x: 300000, y: 620, size: 34, alpha: .6, t0: k(1.0) });
+  BEATS.push({ t: 211.6, hero: ['kita1', 'turku'], mapDim: .2 }, { t: k(8.2), hero: ['kita2', 'turku'], mapDim: .2 }, { t: k(13.7), hero: ['kita2', 'kalamaz', 'turku'], mapDim: .2 });
+  BEATS.sort((a, b) => a.t - b.t); }
