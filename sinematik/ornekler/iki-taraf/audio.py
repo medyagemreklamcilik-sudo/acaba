@@ -1,6 +1,7 @@
 import numpy as np, soundfile as sf, subprocess, json
 from scipy import signal
-SR = 44100; DUR = 7170 / 30; N = int(DUR * SR); t = np.arange(N) / SR; rng = np.random.default_rng(5)
+SR = 44100; DUR = 7433 / 30
+S2 = lambda v: v + 8.764 if v >= 85.15 else v; N = int(DUR * SR); t = np.arange(N) / SR; rng = np.random.default_rng(5)
 def lp(x, f): b, a = signal.butter(2, f / (SR / 2), 'low'); return signal.lfilter(b, a, x)
 def hp(x, f): b, a = signal.butter(2, f / (SR / 2), 'high'); return signal.lfilter(b, a, x)
 def bp(x, lo, hi): b, a = signal.butter(2, [lo / (SR / 2), hi / (SR / 2)], 'band'); return signal.lfilter(b, a, x)
@@ -39,16 +40,16 @@ for o in E['o']:
         if o.get(f) is not None: place(sfx, pen(.45), o[f], .5)
     if o.get('stamp'): place(sfx, stamp(), o['stamp']['t'], .6)
 SH = lambda v: v + 5.598 if v >= 71.742 else v
-for b in [SH(x) for x in [0.0, 22.12, 39.62, 61.7, 76.0 - 5.598, 107.36, 162.32, 193.28, 200.14, 202.12]]: place(sfx, boom(), b, .45)
+for b in [S2(SH(x)) for x in [0.0, 22.12, 39.62, 61.7, 76.0 - 5.598, 107.36, 162.32, 193.28, 200.14, 202.12]]: place(sfx, boom(), b, .45)
 # gergin dron (A minör), son bölümde umut veren major geçiş
 base = sum(a * np.sin(2 * np.pi * f * t + np.sin(2 * np.pi * .05 * t) * 2) for f, a in [(55, .5), (110, .4), (130.8, .18), (164.8, .12), (220, .06)])
 hope = sum(a * np.sin(2 * np.pi * f * t) for f, a in [(55, .45), (110, .35), (138.6, .2), (164.8, .14), (220, .08)])
-mix_t = np.clip((t - 184.6) / 6, 0, 1) * (1 - np.clip((t - 209.5) / 2.5, 0, 1))
+mix_t = np.clip((t - S2(184.6)) / 6, 0, 1) * (1 - np.clip((t - S2(209.5)) / 2.5, 0, 1))
 mus = lp(base * (1 - mix_t) + hope * mix_t, 800) * (1 + .3 * np.sin(2 * np.pi * .5 * t))
-inten = np.interp(t, [0, 21.5, 22.3, 25.5, 41, 61] + [SH(x) for x in [98, 127, 150, 162, 174, 190, 200]] + [211.0, 213.0, DUR - 2, DUR], [1, 1, .15, .9, .8, 1, .9, .8, 1, 1.1, .9, 1.2, 1.3, .7, 1.2, 1.0, .5])
+inten = np.interp(t, [0, 21.5, 22.3, 25.5, 41, 61] + [S2(SH(x)) for x in [98, 127, 150, 162, 174, 190, 200]] + [S2(211.0), S2(213.0), DUR - 2, DUR], [1, 1, .15, .9, .8, 1, .9, .8, 1, 1.1, .9, 1.2, 1.3, .7, 1.2, 1.0, .5])
 mus = mus * inten * np.interp(t, [0, .6, DUR - 1.5, DUR], [0, 1, 1, 0])
 mel = np.zeros(N); notes = [220.0, 261.6, 329.6, 440.0, 392.0, 329.6, 293.7, 261.6, 220.0, 246.9, 261.6, 329.6, 349.2, 329.6, 293.7, 246.9]
-for i, tt in enumerate(np.arange(211.6, DUR - 1.5, 0.95)):
+for i, tt in enumerate(np.arange(S2(211.6), DUR - 1.5, 0.95)):
     f = notes[i % len(notes)]; n = int(2.6 * SR); u = np.arange(n) / SR
     tone = (np.sin(2 * np.pi * f * u) + .35 * np.sin(2 * np.pi * 2 * f * u) + .12 * np.sin(2 * np.pi * 3 * f * u)) * np.exp(-u * 1.6) * np.minimum(1, u / .01)
     place(mel, tone, tt, .5)
@@ -57,7 +58,7 @@ subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/voice.mp3', '-ar', s
 vo, _ = sf.read('build/vo.wav'); vo = vo / np.max(np.abs(vo)) * .9
 VO = np.zeros(N); VO[:min(N, len(vo))] = vo[:N]
 # türkü sözleri yalnız yazı: Cavit okumaz
-place(sfx, boom(), 219.6 + 13.82 / .92, .5); place(sfx, air(1.2), 211.0, .4); place(sfx, air(1.2), 218.8, .4); place(sfx, boom(), 217.4, .3)
+place(sfx, boom(), S2(219.6 + 13.82 / .92), .5); place(sfx, air(1.2), S2(211.0), .4); place(sfx, air(1.2), S2(218.8), .4); place(sfx, boom(), S2(217.4), .3); place(sfx, boom(), 85.582 + 7.26, .4)
 duck = 1 - .5 * np.clip(lp(np.abs(VO), 5) / .05, 0, 1)
 mix = VO + (mus / np.max(np.abs(mus))) * .17 * duck + mel / (np.max(np.abs(mel)) + 1e-9) * .14 * (.55 + .45 * duck) + sfx * .42
 mix *= np.interp(t, [0, .02, DUR - .5, DUR], [0, 1, 1, 0]); mix = mix / np.max(np.abs(mix)) * .89

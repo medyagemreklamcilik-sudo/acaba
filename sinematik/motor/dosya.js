@@ -309,7 +309,14 @@ function chart(ctx, o, t, lv) { // altın yükselen hisse grafiği (dünya koord
   ctx.strokeStyle = '#f2c46b'; ctx.lineWidth = o.w * .008; ctx.lineJoin = 'round'; ctx.shadowColor = 'rgba(255,190,80,.8)'; ctx.shadowBlur = 30; ctx.beginPath(); path.forEach((p, i) => i ? ctx.lineTo(...p) : ctx.moveTo(...p)); ctx.stroke();
   const tip = path[path.length - 1]; ctx.beginPath(); ctx.arc(tip[0], tip[1], o.w * .015, 0, TAU); ctx.fillStyle = '#fff2c8'; ctx.fill(); ctx.restore();
 }
-const DRAW = { chart, counter, car, scale, meter, lights, band, route, ring, xmark, polaroid, tag, doc, thread, halftone, glowdot, region, title, strike };
+function backdrop(ctx, o, t, lv) { // karanlık sahnelerin arkasında soluk, gri tonlu tam kadraj fotoğraf
+  const im = IMG[o.img]; if (!im || !im.naturalWidth) return; const a = smooth((t - o.t0) / (o.dur || 1.2)); if (a <= 0) return; const fa = fadeOf(o, t); if (fa <= 0) return;
+  const src = o.color ? im : (GRAY[o.img] || im), r = Math.max(o.w / im.naturalWidth, o.h / im.naturalHeight), dw = im.naturalWidth * r, dh = im.naturalHeight * r, k = 1 + .04 * clamp((t - o.t0) / 12);
+  ctx.save(); ctx.beginPath(); ctx.rect(o.x - o.w / 2, o.y - o.h / 2, o.w, o.h); ctx.clip(); ctx.globalAlpha = a * fa * (o.alpha || .32);
+  ctx.translate(o.x, o.y); ctx.scale(k, k); ctx.drawImage(src, -dw / 2, -dh / 2, dw, dh); ctx.setTransform(ctx.getTransform());
+  ctx.restore(); ctx.save(); const g = ctx.createRadialGradient(o.x, o.y, Math.min(o.w, o.h) * .2, o.x, o.y, Math.max(o.w, o.h) * .62); g.addColorStop(0, 'rgba(10,14,15,0)'); g.addColorStop(1, 'rgba(10,14,15,.95)'); ctx.fillStyle = g; ctx.globalAlpha = a * fa; ctx.fillRect(o.x - o.w / 2, o.y - o.h / 2, o.w, o.h); ctx.restore();
+}
+const DRAW = { backdrop, chart, counter, car, scale, meter, lights, band, route, ring, xmark, polaroid, tag, doc, thread, halftone, glowdot, region, title, strike };
 let OBJ = {};
 
 // ---------------- ekran katmanları ----------------
@@ -357,7 +364,7 @@ function drawWorld(ctx, t, sc) {
   applyView(ctx, cam, hh); if (sp === 'board') drawCork(ctx, cam); else if (sp === 'dark') drawDark(ctx, cam); else if (sp === 'split') drawSplit(ctx, cam); else drawMap(ctx);
   const md = mapDimAt(t); if (md > 0) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = `rgba(4,6,7,${md})`; ctx.fillRect(0, 0, FORMAT.w, FORMAT.h); ctx.restore(); }
   const mine = OBJECTS.filter(o => (o.space || 'map') === sp && (o.t0 == null || t >= o.t0 - .05) && !(endOf(o) != null && t > endOf(o) + (o.fadeDur || .5)));
-  const order = mine.filter(o => o.type !== 'thread').sort((a, b) => heroLevel(a.id, t) - heroLevel(b.id, t)).concat(mine.filter(o => o.type === 'thread'));
+  const order = mine.filter(o => o.type === 'backdrop').concat(mine.filter(o => o.type !== 'thread' && o.type !== 'backdrop').sort((a, b) => heroLevel(a.id, t) - heroLevel(b.id, t))).concat(mine.filter(o => o.type === 'thread'));
   for (const o of order) { applyView(ctx, cam, hh); DRAW[o.type](ctx, o, t, heroLevel(o.id, t)); }
   ctx.setTransform(1, 0, 0, 1, 0, 0); return cam;
 }

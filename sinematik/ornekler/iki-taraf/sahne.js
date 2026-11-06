@@ -1,7 +1,7 @@
 // "Bir tarafta onlar, diğer tarafta biz" — dosya stili, dikey. Mekânlar: split (üst ONLAR / alt BİZ), dark, board, map.
 const FORMAT = { w: 1080, h: 1920, fps: 30, dur: 6180 / 30 };
 const WORLD = { lon0: 20, lat0: 46, k: 600, latc: 30 };
-const IMAGES = { fbsk: 'img/fbsk.jpg', ayvatoglu: 'img/ayvatoglu.jpg', zenbilci: 'img/zenbilci.jpg', pazar: 'img/pazar.jpg', pazar2: 'img/pazar2.jpg', kepenk: 'img/kepenk.jpg' };
+const IMAGES = { rolls: 'img/rolls.jpg', gclass: 'img/gclass.jpg', ferrari: 'img/ferrari.jpg', yat: 'img/yat.jpg', yat2: 'img/yat2.jpg', para200: 'img/para200.jpg', dolar: 'img/dolar.jpg', metrobus: 'img/metrobus.jpg', sabah: 'img/sabah.jpg', isci: 'img/isci.jpg', aile: 'img/aile.jpg', ziyafet: 'img/ziyafet.jpg', bayrak: 'img/bayrak.jpg', fbsk: 'img/fbsk.jpg', ayvatoglu: 'img/ayvatoglu.jpg', zenbilci: 'img/zenbilci.jpg', pazar: 'img/pazar.jpg', pazar2: 'img/pazar2.jpg', kepenk: 'img/kepenk.jpg' };
 const OBJECTS = [], SPACES = [];
 function SC(t, s, ox, cam, objs, zm = 1) { SPACES.push({ t, s, cam: cam.map(([tt, x, y, z]) => ({ t: tt, x: x + ox, y, z: z * zm })) }); for (const o of objs) OBJECTS.push(Object.assign(o, { space: s }, o.x != null ? { x: o.x + ox } : {})); }
 const FB_CENSOR = [0.40, 0.215, 0.68, 0.275];
@@ -16,9 +16,11 @@ SC(0, 'split', 0, [[0, 0, -1150, .66], [2.9, 0, -1000, .6], [3.5, 0, -880, .58],
   { id: 'aysonu', type: 'tag', x: 300, y: 1350, w: 620, rot: .07, t0: 4.5, small: 'TAKVİM', big: 'AY SONU' },
   { id: 'milyonlar', type: 'band', text: 'MİLYONLARCA İNSAN', x: 0, y: 420, size: 80, t0: 6.9, red: true },
 ], 1.3);
-SC(8.5, 'split', 2500, [[8.1, 0, -1000, .6], [12.4, 0, -1100, .6], [13.4, 0, -80, .31], [14.4, 0, 850, .58], [18.5, 0, 1000, .58], [21.4, 0, 1250, .58]], [
-  { id: 'car', type: 'car', x: 0, y: -950, w: 1150, t0: 10.78 },
-  { id: 'luks', type: 'title', text: 'LÜKS HAYATLAR', x: 0, y: -1500, size: 140, t0: 11.84, color: '#ffe1a0' },
+SC(8.5, 'split', 2500, [[8.1, 0, -1250, .6], [9.6, 0, -1300, .6], [11.0, 0, -1150, .6], [12.4, 0, -1050, .6], [13.4, 0, -80, .31], [14.4, 0, 850, .58], [18.5, 0, 1000, .58], [21.4, 0, 1250, .58]], [
+  { id: 'paraA', type: 'polaroid', img: 'dolar', color: true, x: -230, y: -1500, w: 620, rot: -.05, t0: 9.22, pin: true },
+  { id: 'car', type: 'polaroid', img: 'rolls', color: true, crop: [0, .1, 1, .75], x: 230, y: -1080, w: 620, rot: .04, t0: 10.78 },
+  { id: 'yatA', type: 'polaroid', img: 'yat', color: true, crop: [0, .05, 1, .9], x: -200, y: -640, w: 640, rot: -.03, t0: 11.84 },
+  { id: 'luks', type: 'title', text: 'LÜKS HAYATLAR', x: 120, y: -1950, size: 130, t0: 11.84, color: '#ffe1a0' },
   { id: 'emekli', type: 'polaroid', img: 'pazar', crop: [.1, 0, .8, 1], x: -250, y: 780, w: 560, rot: -.05, t0: 14.14, name: 'EMEKLİ', nameT: 14.5 },
   { id: 'kira', type: 'doc', x: 280, y: 1020, w: 520, h: 640, rot: .05, t0: 16.84, seed: 7, head: ['KİRA MAKBUZU'], rowsBefore: 4, rowsAfter: 3, stamp: { text: 'ÖDENEMEDİ', t: 18.22, x: 0, y: .1, rot: -.15 } },
   { id: 'asgari', type: 'band', text: 'ASGARİ ÜCRET', x: 280, y: 640, size: 60, t0: 16.84, pin: true },
@@ -27,6 +29,7 @@ SC(8.5, 'split', 2500, [[8.1, 0, -1000, .6], [12.4, 0, -1100, .6], [13.4, 0, -80
 ], 1.3);
 // 2) karanlık: zoruna gidiyor / şahsi malı değil / vatana ihanet
 SC(21.9, 'dark', 20000, [[21.5, 0, -300, .6], [27.0, 0, 250, .58], [32.6, 0, 1000, .56], [36.6, 0, 1350, .56], [41.6, 0, 1950, .58]], [
+  { id: 'bgIsci', type: 'backdrop', img: 'isci', x: 0, y: 800, w: 2200, h: 4200, alpha: .3, t0: 25.6 },
   { id: 'zor', type: 'title', text: 'ZORUNA\nGİDİYOR', x: 0, y: -380, size: 190, lh: 1.05, t0: 24.98, t1: 26.3, fadeDur: .35 },
   { id: 'kaynak2', type: 'title', text: 'KAYNAKLAR\nSERVET\nALIN TERİ', x: 0, y: -420, size: 140, lh: 1.15, t0: 26.92, lineT: [26.92, 28.5, 29.34], dur: .6 },
   { id: 'sahsi', type: 'title', text: 'KİMSENİN\nŞAHSİ MALI\nDEĞİLDİR', x: 0, y: 180, size: 170, lh: 1.08, rule: 260, t0: 30.2, lineT: [30.54, 31.18, 31.98] },
@@ -36,7 +39,8 @@ SC(21.9, 'dark', 20000, [[21.5, 0, -300, .6], [27.0, 0, 250, .58], [32.6, 0, 100
   { id: 'ihanet', type: 'title', text: 'VATANA\nİHANETTİR', x: 0, y: 1900, size: 190, lh: 1.05, t0: 39.62, color: '#e2493a' },
 ], 1.15);
 // 3) pano: sabahın köründe, maaş eriyor
-SC(41.25, 'board', 40000, [[40.9, 0, -700, .6], [46.0, 0, -350, .6], [50.0, 0, 300, .58], [54.0, 0, 550, .58]], [
+SC(41.25, 'board', 40000, [[40.9, 0, -1050, .6], [44.0, 0, -950, .6], [46.0, 0, -350, .6], [50.0, 0, 300, .58], [54.0, 0, 550, .58]], [
+  { id: 'sabahF', type: 'polaroid', img: 'sabah', color: false, x: 0, y: -1380, w: 760, rot: -.03, t0: 42.56 },
   { id: 'saat', type: 'counter', from: 0, to: 1, fmt: () => '05:30', x: 0, y: -750, size: 260, t0: 43.76, dur: .3, solid: '#f1efe8', glow: 'rgba(0,0,0,.6)', sub: 'SABAHIN KÖRÜ', subSize: 40 },
   { id: 'bordro', type: 'doc', x: 0, y: -120, w: 900, h: 640, rot: .02, t0: 48.24, seed: 11, head: ['MAAŞ BORDROSU'], rowsBefore: 3, key: 'NET ÖDENEN', keySize: 74, keyT: 48.5, keyDur: .5, rowsAfter: 2 },
   { id: 'maas', type: 'meter', x: 0, y: 380, w: 860, h: 110, label: 'MAAŞ', t0: 48.8, keys: [{ t: 48.8, v: 1 }, { t: 51.06, v: .55 }, { t: 51.98, v: .22 }, { t: 52.7, v: 0 }] },
@@ -48,9 +52,11 @@ SC(41.25, 'board', 40000, [[40.9, 0, -700, .6], [46.0, 0, -350, .6], [50.0, 0, 3
   { id: 'sb', type: 'thread', from: 'bordro', to: 'borcB', t0: 52.7, dur: .5, sag: .05 },
 ], 1.3);
 // 4) split: hisse satışları, milyonluk arabalar
-SC(53.4, 'split', 5000, [[53.0, 0, -1750, .58], [57.0, 0, -1800, .56], [61.8, 0, -1750, .56]], [
+SC(53.4, 'split', 5000, [[53.0, 0, -1750, .58], [56.6, 0, -1750, .56], [59.0, 0, -1150, .56], [61.8, 0, -1050, .56]], [
   { id: 'hisse', type: 'chart', x: -420, y: -1550, w: 840, h: 520, t0: 55.04, dur: 1.6, pts: [[0, .05], [.12, .1], [.22, .08], [.35, .2], [.45, .18], [.58, .38], [.7, .35], [.82, .7], [1, 1]] },
   { id: 'hisseT', type: 'title', text: 'HİSSE SATIŞLARI', x: 0, y: -2180, size: 120, t0: 56.14, color: '#ffe1a0' },
+  { id: 'gclassF', type: 'polaroid', img: 'gclass', color: true, crop: [0, .2, 1, .7], x: -240, y: -900, w: 600, rot: -.05, t0: 57.46 },
+  { id: 'yatB', type: 'polaroid', img: 'yat2', color: true, crop: [0, .15, 1, .7], x: 250, y: -760, w: 600, rot: .05, t0: 59.76 },
 ], 1.25);
 // 5) pano: Fatma Betül Sayan Kaya dosyası
 SC(61.5, 'board', 60000, [[61.1, -100, -500, .6], [63.6, 0, -250, .56], [66.2, 0, 450, .58], [70.0, 0, 600, .58], [74.6, 0, 1250, .6], [80.0, 0, 1320, .62]], [
@@ -101,19 +107,22 @@ SC(127.2, 'board', 120000, [[126.8, 0, -1100, .6], [130.4, 0, -560, .6], [133.4,
 ], 1.3);
 // 10) split, iki taraf aynı kadrede
 SC(150.3, 'split', 7500, [[149.9, 0, -150, .46], [156.2, 0, -60, .46], [162.4, 0, 60, .46]], [
-  { id: 'car2', type: 'car', x: 0, y: -1100, w: 1500, t0: 150.82 },
+  { id: 'car2', type: 'polaroid', img: 'ferrari', color: true, crop: [0, .1, 1, .8], x: 0, y: -1150, w: 1000, rot: -.03, t0: 150.82, t1: 156.3 },
+  { id: 'paraB', type: 'polaroid', img: 'para200', color: true, x: 0, y: -1150, w: 1000, rot: .03, t0: 156.5 },
   { id: 'kart', type: 'doc', x: 0, y: 950, w: 940, h: 560, rot: -.03, t0: 153.44, seed: 81, pin: true, head: ['OTOBÜS KARTI'], rowsBefore: 0, key: 'BAKİYE YETERSİZ', keySize: 66, keyT: 154.8, keyDur: .7, rowsAfter: 1 },
-  { id: 'milyarlar', type: 'counter', from: 0, to: 1, fmt: () => 'MİLYARLAR', x: 0, y: -1750, size: 230, t0: 157.24, dur: .3 },
+  { id: 'milyarlar', type: 'counter', from: 0, to: 1, fmt: () => 'MİLYARLAR', x: 0, y: -1900, size: 230, t0: 157.24, dur: .3 },
   { id: 'sepet', type: 'band', text: 'SEPET KÜÇÜLÜYOR', x: 0, y: 1550, size: 110, red: true, t0: 160.6 },
 ], 1.15);
 // 11) karanlık: neden hep aynı insanlar
 SC(162.0, 'dark', 140000, [[161.6, 0, -500, .58], [167.4, 0, 150, .55], [174.3, 0, 650, .56]], [
+  { id: 'bgMetro', type: 'backdrop', img: 'metrobus', x: 0, y: 300, w: 2200, h: 3800, alpha: .32, t0: 162.0 },
   { id: 'neden', type: 'title', text: 'NEDEN HEP\nAYNI İNSANLAR?', x: 0, y: -620, size: 140, lh: 1.1, t0: 165.94 },
   { id: 'terazi2', type: 'scale', x: 0, y: 150, w: 1000, t0: 164.4, left: 'ONLAR', right: 'BİZ', leftDots: 1, rightDots: 160, tilt: [{ t: 166.6, a: .26, dur: 1.6 }] },
   { id: 'hayatta', type: 'title', text: 'SADECE\nHAYATTA KALMAK', x: 0, y: 1320, size: 130, lh: 1.1, t0: 172.02 },
 ], 1.15);
 // 12) karanlık: istemiyoruz / istiyoruz / adalet
 SC(173.9, 'dark', 160000, [[173.5, 0, -650, .6], [179.4, 0, -250, .58], [185.4, 0, 350, .58], [191.4, 0, 850, .56], [195.0, 0, 1000, .57]], [
+  { id: 'bgAile', type: 'backdrop', img: 'aile', x: 0, y: 200, w: 2200, h: 4000, alpha: .26, t0: 173.6 },
   { id: 'xluks', type: 'strike', text: 'LÜKS', x: 0, y: -760, size: 140, t0: 174.86, tStrike: 175.16 },
   { id: 'xmilyar', type: 'strike', text: 'MİLYAR', x: 0, y: -560, size: 140, t0: 176.42, tStrike: 176.94 },
   { id: 'xayr', type: 'strike', text: 'AYRICALIK', x: 0, y: -360, size: 140, t0: 177.98, tStrike: 178.6 },
@@ -134,17 +143,17 @@ SC(199.9, 'split', 10000, [[199.5, 0, -250, .48], [206.0, 0, 250, .5]], [
 ], 1.1);
 const CAMERA = SPACES[0].cam;
 const BEATS = [
-  [0, ['fb', 'c217'], .1], [3.64, ['fis', 'aysonu'], .1], [6.9, ['fis', 'aysonu', 'milyonlar'], .1], [8.64, ['car', 'luks'], .1],
+  [0, ['fb', 'c217'], .1], [3.64, ['fis', 'aysonu'], .1], [6.9, ['fis', 'aysonu', 'milyonlar'], .1], [8.64, ['paraA'], .1], [10.78, ['car'], .1], [11.84, ['yatA', 'luks'], .1],
   [13.24, ['emekli'], .1], [16.84, ['kira', 'asgari'], .1], [19.32, ['gencler', 'gelecek'], .1],
   [22.12, ['zor'], .2], [26.5, ['kaynak2'], .2], [30.4, ['sahsi'], .2], [33.02, ['makam', 'mevki', 'siyasi'], .2], [39.62, ['ihanet'], .2],
-  [41.38, ['saat'], .2], [48.24, ['bordro', 'maas'], .2], [51.06, ['maas', 'kiraB', 'faturaB', 'borcB', 'sk', 'sf', 'sb'], .2],
-  [53.56, ['hisse', 'hisseT', 'car'], .1],
+  [41.38, ['saat', 'sabahF'], .2], [48.24, ['bordro', 'maas'], .2], [51.06, ['maas', 'kiraB', 'faturaB', 'borcB', 'sk', 'sf', 'sb'], .2],
+  [53.56, ['hisse', 'hisseT'], .1], [57.46, ['hisse', 'gclassF'], .1], [59.76, ['gclassF', 'yatB'], .1],
   [61.7, ['fb2', 'kupur', 'sfk', 'kaynak'], .25], [64.34, ['c163'], .25], [66.98, ['c217b', 'kat'], .25], [71.94, ['nasil'], .25],
   [79.86, ['c217', 'fb'], .1], [81.46, ['fis', 'domates', 'peynir'], .1],
   [87.28, ['ayv'], .25], [92.34, ['pudra', 'itiraf'], .25], [96.36, ['pudra', 'silinmedi'], .25],
   [98.62, ['karar', 'zen', 'sz'], .25], [111.06, ['sahsidir', 'zen'], .25], [116.28, ['terazi', 'adalet'], .25],
   [127.4, ['pekibiz'], .25], [129.22, ['emekli2', 'ucuz'], .25], [131.94, ['isci'], .25], [135.68, ['esnaf', 'siftah'], .25], [138.52, ['cv', 'genc2', 'hayat'], .25], [143.74, ['senet', 'aile', 'ssa'], .25],
-  [150.6, ['car2'], .1], [153.44, ['kart'], .1], [156.5, ['milyarlar'], .1], [158.5, ['sepet', 'kart'], .1],
+  [150.6, ['car2'], .1], [153.44, ['kart'], .1], [156.5, ['milyarlar', 'paraB'], .1], [158.5, ['sepet', 'kart'], .1],
   [162.32, ['neden', 'terazi2'], .2], [167.86, ['terazi2', 'hayatta'], .2],
   [174.1, ['xluks', 'xmilyar', 'xayr'], .2], [179.8, ['gecin', 'gelec', 'pazarh'], .2], [190.52, ['adalet2'], .2],
   [194.78, ['iller', 'hepimiz'], .05], [200.14, ['onlar'], .1], [202.12, ['biz'], .1],
@@ -168,6 +177,7 @@ for (const g of GLITCH) { g[0] = sh(g[0]); g[1] = sh(g[1]); }
 // --- Final 1: Tevfik Fikret, Hân-ı Yağma (yalnız yazı, hüzünlü müzik)
 SPACES.push({ t: 211.4, s: 'dark', cam: [{ t: 211.0, x: 280000, y: -200, z: .66 }, { t: 219.4, x: 280000, y: -60, z: .7 }] });
 OBJECTS.push(
+  { id: 'bgZiyafet', type: 'backdrop', space: 'dark', img: 'ziyafet', color: true, x: 280000, y: -200, w: 2200, h: 3800, alpha: .3, t0: 211.4 },
   { id: 'yiyin', type: 'title', space: 'dark', text: 'YİYİN EFENDİLER, YİYİN;\nBU HÂN-I İŞTİHÂ SİZİN;', x: 280000, y: -520, size: 98, lh: 1.45, track: .06, t0: 212.0, lineT: [212.0, 213.6], dur: .9, color: '#ffd9a0' },
   { id: 'catla', type: 'title', space: 'dark', text: 'DOYUNCA, TIKSIRINCA,\nÇATLAYINCAYA KADAR YİYİN!', x: 280000, y: 40, size: 98, lh: 1.45, track: .06, t0: 215.2, lineT: [215.2, 216.6], dur: .9 },
   { id: 'catla2', type: 'title', space: 'dark', text: 'ÇATLAYINCAYA KADAR YİYİN!', x: 280000, y: 40 + 98 * 1.45, size: 98, track: .06, t0: 217.4, dur: .5, color: '#e2493a' },
@@ -178,9 +188,26 @@ BEATS.push({ t: 211.6, hero: ['yiyin', 'fikret'], mapDim: .2 }, { t: 215.0, hero
   FORMAT.dur = 7170 / 30;
   SPACES.push({ t: 219.2, s: 'dark', cam: [{ t: 218.8, x: 300000, y: -260, z: .66 }, { t: 227.6, x: 300000, y: -120, z: .68 }, { t: 239.0, x: 300000, y: 120, z: .7 }] });
   OBJECTS.push(
+    { id: 'bgBayrak', type: 'backdrop', space: 'dark', img: 'bayrak', color: true, x: 300000, y: 0, w: 2200, h: 3800, alpha: .3, t0: 219.2 },
     { id: 'kita1', type: 'title', space: 'dark', text: 'OLUR MU BÖYLE OLUR MU?\nEVLAT BABAYI VURUR MU?\nSİZİ VATAN HAİNLERİ,\nBU VATAN SİZE KALIR MI?', x: 300000, y: -560, size: 96, lh: 1.45, track: .06, t0: k(0), lineT: [k(0), k(2.94), k(5.02), k(6.42)], dur: .7, t1: k(8.0), fadeDur: .45 },
     { id: 'kita2', type: 'title', space: 'dark', text: 'OLAMAZ BÖYLE OLAMAZ,\nEVLAT BABAYI VURAMAZ!\nCAN BEDENDEN ÇIKMAYINCA,', x: 300000, y: -420, size: 96, lh: 1.45, track: .06, t0: k(8.34), lineT: [k(8.34), k(10.34), k(12.18)], dur: .7 },
     { id: 'kalamaz', type: 'title', space: 'dark', text: 'BU VATAN SİZE KALAMAZ...', x: 300000, y: 260, size: 104, track: .06, t0: k(13.82), dur: .9, color: '#e2493a' },
     { id: 'turku', type: 'region', space: 'dark', text: 'TUNA NEHRİ AKMAM DİYOR · TÜRKÜ', x: 300000, y: 620, size: 34, alpha: .6, t0: k(1.0) });
   BEATS.push({ t: 219.4, hero: ['kita1', 'turku'], mapDim: .2 }, { t: k(8.2), hero: ['kita2', 'turku'], mapDim: .2 }, { t: k(13.7), hero: ['kita2', 'kalamaz', 'turku'], mapDim: .2 });
   BEATS.sort((a, b) => a.t - b.t); }
+
+// --- Ek cümle 2: "Bakanlık maaşıyla, vekillik maaşıyla geçinen biri… nereden buldu?" 85.382 sn'ye eklendi (ses 85.582'de başlar)
+{ const AT2 = 85.15, D2 = 8.764, s2 = v => (v != null && v >= AT2 ? v + D2 : v), E = 85.582;
+  for (const o of OBJECTS) {
+    for (const k of ['t0', 't1', 'keyT', 'circleT', 'tStrike', 'nameT', 'censorT']) if (o[k] != null) o[k] = s2(o[k]);
+    if (o.stamp) o.stamp.t = s2(o.stamp.t); if (o.lineT) o.lineT = o.lineT.map(s2); if (o.tilt) o.tilt.forEach(k => k.t = s2(k.t)); if (o.keys) o.keys.forEach(k => k.t = s2(k.t));
+  }
+  for (const sp of SPACES) { sp.t = s2(sp.t); sp.cam.forEach(k => k.t = s2(k.t)); }
+  for (const b of BEATS) b.t = s2(b.t); for (const g of GLITCH) { g[0] = s2(g[0]); g[1] = s2(g[1]); }
+  FORMAT.dur = 7433 / 30;
+  const sc = SPACES.find(x => x.t === 61.5); sc.cam.push({ t: E + 1.2, x: 60000, y: 1520, z: .78 }, { t: E + 7.6, x: 60000, y: 1700, z: .78 }); sc.cam.sort((a, b) => a.t - b.t);
+  OBJECTS.push(
+    { id: 'maasla', type: 'band', space: 'board', text: 'MAAŞLA GEÇİNEN BİRİ', x: 60000, y: 1720, size: 80, pin: true, t0: E + .64 },
+    { id: 'nereden', type: 'title', space: 'board', text: 'NEREDEN?', x: 60000, y: 2100, size: 175, t0: E + 7.26, color: '#e2493a' });
+  BEATS.push({ t: E, hero: ['nasil', 'maasla'], mapDim: .25 }, { t: E + 7.2, hero: ['maasla', 'nereden'], mapDim: .25 }); BEATS.sort((a, b) => a.t - b.t);
+  GLITCH.push([E + 7.26, E + 7.5, .5]); }
