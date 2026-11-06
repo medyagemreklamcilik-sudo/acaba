@@ -45,6 +45,9 @@ def shadow_paste(img, x, y, blur=35, off=(22, 34), alpha=170):
 ph = Image.open(os.path.join(base, spec['photo'])).convert('L')
 c = spec.get('crop', [0, 0, 1, 1]); ph = ph.crop((int(c[0] * ph.width), int(c[1] * ph.height), int(c[2] * ph.width), int(c[3] * ph.height)))
 ph = ImageEnhance.Contrast(ph).enhance(1.25)
+if spec.get('censor'):
+    a, b, c2, d2 = spec['censor']; fx = lambda v: (v - c[0]) / (c[2] - c[0]) * ph.width; fy = lambda v: (v - c[1]) / (c[3] - c[1]) * ph.height
+    ImageDraw.Draw(ph).rectangle((fx(a), fy(b), fx(c2), fy(d2)), fill=5)
 pw = spec.get('photo_w', 640); phh = int(ph.height * pw / ph.width); ph = ph.resize((pw, phh)); bw = 30
 card = Image.new('RGB', (pw + 2 * bw, phh + bw + bw * 3), (236, 235, 230)); card.paste(Image.merge('RGB', [ph] * 3), (bw, bw))
 cd = ImageDraw.Draw(card)
