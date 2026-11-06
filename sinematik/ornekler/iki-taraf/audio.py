@@ -56,7 +56,7 @@ mel = lp(mel, 2500)
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/voice.mp3', '-ar', str(SR), '-ac', '1', 'build/vo.wav'], check=True)
 vo, _ = sf.read('build/vo.wav'); vo = vo / np.max(np.abs(vo)) * .9
 VO = np.zeros(N); VO[:min(N, len(vo))] = vo[:N]
-sk, _ = sf.read('build/sarki/sarki_slow.wav'); sk = sk / np.max(np.abs(sk)) * .88; place(VO, sk, 219.6)
+# türkü sözleri yalnız yazı: Cavit okumaz
 place(sfx, boom(), 219.6 + 13.82 / .92, .5); place(sfx, air(1.2), 211.0, .4); place(sfx, air(1.2), 218.8, .4); place(sfx, boom(), 217.4, .3)
 duck = 1 - .5 * np.clip(lp(np.abs(VO), 5) / .05, 0, 1)
 mix = VO + (mus / np.max(np.abs(mus))) * .17 * duck + mel / (np.max(np.abs(mel)) + 1e-9) * .14 * (.55 + .45 * duck) + sfx * .42
