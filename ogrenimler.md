@@ -162,3 +162,13 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 29. **Yavuz'da ortalama izleyici 22. sn'de "Peki 8 yıla nasıl bu kadar çok şey sığdırdı?" geçişinde gitti** (hemen önceki "KANITLANAMADI" damgasıyla konu kapanmış gibi hissettirdi). "Peki..." ile yeni bölüme geçme; önceki bölümü cevapsız bırakıp vaatle bağla ("Ama asıl şok edici olan...").
 30. **Sinematik Fahreddin videosu Instagram'da ilk 3 sn'de %33'te kaldı:** video karanlıkta yavaş beliren nokta portreyle açılıyor, ilk karede okunur yazı ve net yüz yok. Sinematik videolarda da ilk karede net yüz + büyük kanca yazısı olmalı (kapak ilk karelere gömüldü; açılış sahnesi de kanca yazısıyla başlamalı, karanlıktan açılış yok).
 31. Instagram'da son 3 videonun erişimi 150-310'a düştü (önceki haftalar 2-100 bin). Kanca oranı da düştüğü için önce ilk 3 sn düzeltilmeli; düşüş sürerse paylaşım saatleri (Instagram 20:00) ve aynı gün iki video paylaşmanın etkisi kontrol edilmeli.
+
+## Instagram, 4 Kasım videoları (6 Kasım'da analiz edildi)
+| Video | İzlenme | İlk 3 sn | Ort. izleme | İlk karede |
+|---|---|---|---|---|
+| kanuni-viyana | 190 | %37.1 | 10.9 sn / 94 sn | karanlık şehir planı (Meldeman), yüz yok |
+| fahreddin-pasa (sinematik) | 379 | %33.5 | 15.6 sn / 144 sn | siyahta beliren nokta portre, yazı yok |
+
+32. **İlk karede net bir yüz yoksa ilk 3 sn oranı çöküyor:** son iki video %33-37'de kaldı; ilk karede yüz olan videolar (kardeş katli %66, Hürrem-Kösem %71, Yavuz %53) belirgin şekilde daha iyi. Her videonun ilk sahnesi büyük ve net bir yüzle (padişah, kahraman) başlamalı; şehir planı, harita ya da karanlık açılış ilk sahne olmasın.
+33. **İsimle açılış kanca değildir:** "Fahreddin Paşa. Çöl Kaplanı." gibi isim + lakap açılışı %33.5'te kaldı. İlk cümle olay olmalı ("Padişah bile teslim ol dedi, o Medine'yi bırakmadı").
+34. **Kanuni'de ortalama izleyici 11. sn'de, "1529'da Kanuni... Viyana'ya yürüdü" cümlesinde gitti:** kancadan sonra tarihli anlatıma geçiş. İkinci cümle de merakı büyütmeli; tarih cümlesi en erken 15. sn'den sonra gelsin.
