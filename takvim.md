@@ -26,7 +26,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-05 | Per | Pargalı İbrahim neden boğduruldu? | 2026-11-05-pargali-ibrahim | planlandı |
 | 2026-11-06 | Cum | Abdülaziz: intihar mı, cinayet mi? | 2026-11-06-abdulaziz | planlandı |
 | 2026-11-07 | Cmt | Piri Reis haritasının sırrı | 2026-11-07-piri-reis | planlandı |
-| 2026-11-08 | Paz | Atatürk'ün son günleri | | bekliyor |
+| 2026-11-08 | Paz | Atatürk'ün son günleri | 2026-11-08-ataturk-son-gunler | hazır (Metricool limiti dolu) |
 | 2026-11-09 | Pzt | Atatürk'ün vasiyeti | | bekliyor |
 | 2026-11-10 | Sal | Atatürk 20 yıl daha yaşasaydı ne olurdu? | | bekliyor |
 | 2026-11-11 | Çar | Vahdettin hain miydi? | | bekliyor |
