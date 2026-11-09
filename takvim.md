@@ -28,7 +28,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-07 | Cmt | Piri Reis haritasının sırrı | 2026-11-07-piri-reis | planlandı |
 | 2026-11-08 | Paz | Atatürk'ün son günleri | 2026-11-08-ataturk-son-gunler | hazır (Metricool limiti dolu) |
 | 2026-11-09 | Pzt | Atatürk'ün vasiyeti | 2026-11-09-ataturk-vasiyet | hazır (Metricool limiti dolu) |
-| 2026-11-10 | Sal | Atatürk 20 yıl daha yaşasaydı ne olurdu? | | bekliyor |
+| 2026-11-10 | Sal | Atatürk 20 yıl daha yaşasaydı ne olurdu? | 2026-11-10-ataturk-yasasaydi | hazır (Metricool limiti dolu) |
 | 2026-11-11 | Çar | Vahdettin hain miydi? | | bekliyor |
 | 2026-11-12 | Per | Genç Osman'ı kim öldürdü? | | bekliyor |
 | 2026-11-13 | Cum | Barbaros: korsan mı, amiral mi? | | bekliyor |
