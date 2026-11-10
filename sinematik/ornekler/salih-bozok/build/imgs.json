@@ -1,0 +1,326 @@
+{
+"map": {
+"salih": "bozok_3",
+"kitapfoto": "kitap_3",
+"kitapA": "kitap_0",
+"kitapB": "kitap2_1",
+"kitapC": "kitap2_3",
+"veda": "veda_2",
+"selanik": "selanik_4",
+"selanikev": "selanikev_0",
+"zubeyde": "zubeyde_0",
+"mkgenc": "mkgenc_3",
+"mkgenc2": "mkgenc_2",
+"manastir": "manastir_0",
+"galata": "selanik_2",
+"harbiye": "harbiye_3",
+"talim": "harbiye_0",
+"subaylar": "harbiye_1",
+"jandarma": "jandarma_3",
+"jandarma2": "jandarma_1",
+"hurriyet": "hurriyet_4",
+"hurriyet2": "hurriyet_3",
+"hurriyet3": "hurriyet_0",
+"hareket": "hareket_4",
+"hareket2": "hareket_3",
+"abdulhamid": "abdulhamid_2",
+"alatini": "alatini_1",
+"balkan": "balkan_1",
+"balkan2": "balkan_2",
+"balkan3": "balkan_3",
+"teslim": "selanikteslim_0",
+"teslim2": "selanikteslim_1",
+"canakkale": "canakkale_4",
+"canakkale2": "canakkale_1",
+"suriye": "suriye_1",
+"suriyeg": "bozok2_1",
+"isgal": "isgal_1",
+"isgal2": "isgal_2",
+"ankara": "ankara_0",
+"meclis": "meclis_1",
+"yozgat": "yozgat_4",
+"yozgat2": "yozgat_0",
+"sakarya": "sakarya_4",
+"izmir": "izmir_0",
+"cumhuriyet": "cumhuriyet_1",
+"cumhuriyet2": "cumhuriyet_0",
+"meclisic": "meclis_4",
+"isbank": "isbank_3",
+"cankaya": "cankaya_1",
+"sofra": "cankaya_0",
+"dortlu": "mezar_2",
+"yuruyus": "bozok2_4",
+"nuri": "ucarkadas_0",
+"ikili": "ucarkadas_1",
+"cebeci": "cebeci_3",
+"cebeci2": "cebeci_0",
+"savarona": "savarona_1",
+"dolma": "dolmabahce_3",
+"oda": "dolmabahce_1",
+"tabanca": "tabanca_3",
+"cenaze": "cenaze_0",
+"cenaze2": "cenaze_2",
+"kapi": "dolmabahce_2",
+"anitkabir": "anitkabir_3",
+"ataturk": "suriye_4",
+"sakarya2": "sakarya_1"
+},
+"size": {
+"salih": [
+736,
+1128
+],
+"kitapfoto": [
+800,
+1248
+],
+"kitapA": [
+1000,
+1500
+],
+"kitapB": [
+797,
+1240
+],
+"kitapC": [
+800,
+1260
+],
+"veda": [
+1003,
+1500
+],
+"selanik": [
+1500,
+841
+],
+"selanikev": [
+1200,
+677
+],
+"zubeyde": [
+720,
+1133
+],
+"mkgenc": [
+853,
+1500
+],
+"mkgenc2": [
+929,
+1500
+],
+"manastir": [
+1500,
+842
+],
+"galata": [
+1169,
+926
+],
+"harbiye": [
+1500,
+1006
+],
+"talim": [
+1500,
+1197
+],
+"subaylar": [
+1280,
+720
+],
+"jandarma": [
+1024,
+1376
+],
+"jandarma2": [
+1080,
+830
+],
+"hurriyet": [
+810,
+1083
+],
+"hurriyet2": [
+1500,
+1005
+],
+"hurriyet3": [
+1033,
+1500
+],
+"hareket": [
+1500,
+1082
+],
+"hareket2": [
+791,
+1191
+],
+"abdulhamid": [
+1030,
+1500
+],
+"alatini": [
+1500,
+1132
+],
+"balkan": [
+1200,
+790
+],
+"balkan2": [
+1500,
+1084
+],
+"balkan3": [
+1392,
+764
+],
+"teslim": [
+1024,
+786
+],
+"teslim2": [
+1200,
+917
+],
+"canakkale": [
+1024,
+924
+],
+"canakkale2": [
+1080,
+1169
+],
+"suriye": [
+1156,
+1500
+],
+"suriyeg": [
+1200,
+761
+],
+"isgal": [
+1500,
+1071
+],
+"isgal2": [
+1320,
+932
+],
+"ankara": [
+1200,
+675
+],
+"meclis": [
+1280,
+720
+],
+"yozgat": [
+736,
+1097
+],
+"yozgat2": [
+1280,
+720
+],
+"sakarya": [
+967,
+1200
+],
+"izmir": [
+1200,
+675
+],
+"cumhuriyet": [
+1280,
+975
+],
+"cumhuriyet2": [
+1280,
+720
+],
+"meclisic": [
+1200,
+675
+],
+"isbank": [
+1200,
+635
+],
+"cankaya": [
+1500,
+776
+],
+"sofra": [
+1500,
+985
+],
+"dortlu": [
+1500,
+890
+],
+"yuruyus": [
+1067,
+1067
+],
+"nuri": [
+1145,
+915
+],
+"ikili": [
+1500,
+833
+],
+"cebeci": [
+1000,
+1500
+],
+"cebeci2": [
+1500,
+1000
+],
+"savarona": [
+1280,
+720
+],
+"dolma": [
+1500,
+1181
+],
+"oda": [
+1280,
+720
+],
+"tabanca": [
+1500,
+1113
+],
+"cenaze": [
+1280,
+884
+],
+"cenaze2": [
+1500,
+984
+],
+"kapi": [
+1280,
+852
+],
+"anitkabir": [
+1200,
+990
+],
+"ataturk": [
+1112,
+1500
+],
+"sakarya2": [
+1280,
+720
+]
+}
+}
