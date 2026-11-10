@@ -1,4 +1,4 @@
-"""Sinematik "dosya" stili kapak (1080x1920). Kullanım: python3 kapak.py <kapak.json> <çıktı.jpg>
+"""Sinematik "dosya" stili kapak (1080x1920; yatay için "size": [1920, 1080], "photo_x", "title_cx", "stamp_cx"). Kullanım: python3 kapak.py <kapak.json> <çıktı.jpg>
 JSON: {"bg": "cork"|"dark", "photo": "img/x.jpg", "crop": [x0,y0,x1,y1] (0-1), "name": "İSİM BANDI",
        "title": ["SATIR 1", "SATIR 2"], "title_red": 1 (kırmızı kutulu satır no, isteğe bağlı),
        "stamp": "KIRMIZI DAMGA", "tag_big": "1918", "tag_small": "DOSYA", "bottom": "alt mono satır"}
@@ -6,8 +6,8 @@ Yazılar TikTok/Instagram ızgarasının görünen bölgesinde (y 300-1600) tutu
 import json, sys, os, math, random
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter, ImageOps
 F = os.path.join(os.path.dirname(__file__), 'fonts') + '/'
-W, H = 1080, 1920
 spec = json.load(open(sys.argv[1])); base = os.path.dirname(os.path.abspath(sys.argv[1]))
+W, H = spec.get('size', [1080, 1920])  # yatay kapak için "size": [1920, 1080]
 R = random.Random(7)
 
 def cork():
@@ -55,7 +55,7 @@ if spec.get('name'):
     f = ImageFont.truetype(F + 'PlexMonoSemi.ttf', 38); tw = cd.textlength(spec['name'], font=f)
     cd.rectangle((bw + 14, bw + phh - 34, bw + 14 + tw + 50, bw + phh + 34), fill=(22, 25, 27)); cd.text((bw + 39, bw + phh - 24), spec['name'], font=f, fill=(239, 239, 233))
 card = card.convert('RGBA').rotate(spec.get('rot', 2.5), expand=True, resample=Image.BICUBIC)
-py0 = spec.get('photo_y', 560); px0 = (W - card.size[0]) // 2 + spec.get('photo_dx', -40)
+py0 = spec.get('photo_y', 560); px0 = spec['photo_x'] if 'photo_x' in spec else (W - card.size[0]) // 2 + spec.get('photo_dx', -40)
 shadow_paste(card, px0, py0)
 pinA = (px0 + card.size[0] // 2, py0 + 40)
 # manila etiket + ip
@@ -79,15 +79,15 @@ if spec.get('stamp'):
     tw = sd.textlength(spec['stamp'], font=fs); x0 = (1000 - tw) / 2
     sd.rectangle((x0 - 34, 30, x0 + tw + 34, 190), outline=(205, 40, 34, 235), width=12); sd.text((x0, 38), spec['stamp'], font=fs, fill=(205, 40, 34, 235))
     noise = Image.effect_noise(st.size, 90).point(lambda v: 255 if v > 70 else 120); a = st.split()[3]; st.putalpha(Image.composite(a, Image.new('L', st.size, 0), noise))
-    st = st.rotate(spec.get('stamp_rot', 7), expand=True, resample=Image.BICUBIC); bg.paste(st, ((W - st.size[0]) // 2, spec.get('stamp_y', py0 + card.size[1] - 150)), st)
+    st = st.rotate(spec.get('stamp_rot', 7), expand=True, resample=Image.BICUBIC); bg.paste(st, (int(spec.get('stamp_cx', W / 2) - st.size[0] / 2), spec.get('stamp_y', py0 + card.size[1] - 150)), st)
 # başlık: siyah bant + beyaz kalın yazı, isteğe bağlı kırmızı satır (kanaldaki kapaklarla aynı okunurluk)
 ft = ImageFont.truetype(F + 'Oswald.ttf', spec.get('title_size', 128)); ft.set_variation_by_axes([700]); y = spec.get('title_y', 300)
 for i, line in enumerate(spec['title']):
-    tw = d.textlength(line, font=ft); bx0 = (W - tw) / 2 - 34; red = spec.get('title_red') == i + 1
+    CX = spec.get('title_cx', W / 2); tw = d.textlength(line, font=ft); bx0 = CX - tw / 2 - 34; red = spec.get('title_red') == i + 1
     d.rectangle((bx0 + 8, y + 10, bx0 + tw + 76, y + ft.size * 1.22 + 10), fill=(0, 0, 0))
     d.rectangle((bx0, y, bx0 + tw + 68, y + ft.size * 1.22), fill=(200, 40, 34) if red else (16, 18, 20))
     if not red: d.rectangle((bx0, y, bx0 + 12, y + ft.size * 1.22), fill=(200, 40, 34))
-    d.text(((W - tw) / 2 + 6, y + ft.size * .02), line, font=ft, fill=(255, 255, 255)); y += ft.size * 1.32
+    d.text((CX - tw / 2 + 6, y + ft.size * .02), line, font=ft, fill=(255, 255, 255)); y += ft.size * 1.32
 if spec.get('bottom'):
     fm = ImageFont.truetype(F + 'PlexMonoSemi.ttf', 44); tw = d.textlength(spec['bottom'], font=fm)
     d.rectangle(((W - tw) / 2 - 26, 1596, (W + tw) / 2 + 26, 1666), fill=(12, 14, 15)); d.text(((W - tw) / 2, 1604), spec['bottom'], font=fm, fill=(240, 117, 78))

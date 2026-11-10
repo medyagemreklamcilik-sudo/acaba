@@ -33,6 +33,44 @@ PL = {'selanik': (22.94, 40.64), 'manastir': (21.33, 41.03), 'istanbul': (28.97,
       'ankara': (32.85, 39.93), 'yozgat': (34.8, 39.82), 'polatli': (32.15, 39.58), 'afyon': (30.54, 38.76), 'izmir': (27.14, 38.42), 'hatay': (36.16, 36.2), 'bilecik': (29.98, 40.14), 'adana': (35.32, 37.0)}
 def proj(lo, la): return ((lo - 20) * 600 * math.cos(math.radians(30)), (46 - la) * 600)
 
+
+YATAY = bool(os.environ.get('YATAY')); FW, FH = (1920, 1080) if YATAY else (1080, 1920)
+def yerlestir_yatay(o, kind, h, w, L):
+    """Yatay (16:9) yerleşim: pano soldan sağa akar, bantlar ebeveynin altına; karanlıkta yazılar görselin sağına."""
+    o['_h'], o['_w'] = h, w; big = L['big']; ty = o['type']
+    visual = ty in ('polaroid', 'tag', 'doc', 'halftone')
+    if kind == 'board':
+        if ty == 'band' and big is not None:
+            px, py, ph_, pw = big['x'], big['y'], big['_h'], big['_w']
+            o['y'] = py + ph_ / 2 + (o['size'] * .8 if big['type'] in ('tag', 'doc') else -40) + L['nb'] * (o['size'] * 1.9); L['nb'] += 1
+            o['x'] = px + (90 if L['nb'] % 2 else -60); o['x'] = min(max(o['x'], px - pw / 2 + w / 2 - 60), px + pw / 2 - w / 2 + 60)
+            o['rot'] = o.get('rot', [-.04, .03, -.02, .05][L['nb'] % 4]); o['_parent'] = big['id']; return
+        o.pop('x', None); o.pop('y', None)
+        o['x'] = L['cx'] + w / 2; o['y'] = L['side'] * (150 if visual else 60) - (h / 2 - 450 if h > 900 else 0) * 0
+        if ty in ('title', 'strike'): o['_cy'] = o['y']; o['y'] = o['_cy'] - h / 2 + o['size'] * .74
+        L['side'] = -L['side']; L['cx'] += w + 170; L['nb'] = 0
+        if 'rot' not in o and visual: o['rot'] = [-.035, .03, -.02, .045, -.05, .02][(L['k'] + int(L['cx'])) % 6]
+        if visual or ty == 'counter': L['big'] = o
+        return
+    # karanlık
+    if 'x' in o and 'y' in o and not visual:  # elle verilmiş (yalnız tek sütun sahneler)
+        if big is None:
+            if ty in ('title', 'strike'): o['_cy'] = o['y'] + h / 2 - o['size'] * .74
+            return
+    if visual:
+        x0 = max(L['cx'], L['sw'] + 220) if big is None and 'sw' in L else (L['cx'] if big is None else big['x'] + big['_w'] / 2 + 220 + (L.get('colw', 0)))
+        o['x'] = x0 + w / 2; o['y'] = 0; L['big'] = o; L['col_y'] = None; L['colw'] = 0; L['cx'] = o['x'] + w / 2 + 220; return
+    if big is None:  # yalnız yazı: ortada üst üste
+        o['x'] = 0; top = L['cy']
+        o['y'] = top + h / 2
+        if ty in ('title', 'strike'): o['_cy'] = o['y']; o['y'] = top + o['size'] * .74
+        L['cy'] = top + h + 110; L['sw'] = max(L.get('sw', 0), w / 2); return
+    # görselin sağında sütun
+    if L['col_y'] is None: L['col_y'] = -big['_h'] / 2 + 40
+    top = L['col_y']; o['x'] = big['x'] + big['_w'] / 2 + 140 + w / 2; L['colw'] = max(L.get('colw', 0), w + 140)
+    o['y'] = top + h / 2
+    if ty in ('title', 'strike'): o['_cy'] = o['y']; o['y'] = top + o['size'] * .74
+    L['col_y'] = top + h + 90; o['_colof'] = big['id']
 SCENES = []
 def SC(kind, ph, items=(), year=None, cam=None, glitch=None, boom=False, lead=.3):
     t = T(ph) - lead; CUR0 = CUR[0]
@@ -70,6 +108,7 @@ for si, sc in enumerate(SCENES):
     kind = sc['kind']; ox = 0 if kind == 'map' else 40000 * (si + 1)
     prev = t_s + .25; ev = []  # odak olayları
     side = -1; cy = 0; last_big = None; nb = 0; R_ = (si * 37) % 11
+    L = dict(cx=0, side=-1, big=None, nb=0, col_y=None, cy=0, k=len(OBJ))
     for it in sc['items']:
         o = {k: v for k, v in it.items() if k not in ('at',)}
         if o['type'] == 'thread':
@@ -79,6 +118,8 @@ for si, sc in enumerate(SCENES):
         if kind == 'map':
             OBJ.append(o); continue
         h, w = height(o)
+        if YATAY:
+            yerlestir_yatay(o, kind, h, w, L); OBJ.append(o); ev.append(o); continue
         if o['type'] in ('band',) and last_big is not None and 'x' not in o:
             px, py, ph_, pw = last_big['x'], last_big['y'], last_big['_h'], last_big['_w']
             o['x'] = px + (-1 if last_big.get('_side', 1) > 0 else 1) * min(250, pw * .25); o['y'] = py + ph_ / 2 + (o['size'] * .8 if last_big['type'] in ('tag', 'doc') else -40) + nb * (o['size'] * 1.9); nb += 1
@@ -99,6 +140,13 @@ for si, sc in enumerate(SCENES):
             if o['type'] in ('polaroid', 'tag', 'doc', 'halftone', 'counter'): last_big = o
         OBJ.append(o)
         ev.append(o)
+    if YATAY and kind == 'dark':  # görsel yanındaki yazı sütununu görselin ortasına hizala
+        for b in [q for q in OBJ if q.get('_sc') == si and q['id'] in {c.get('_colof') for c in OBJ if c.get('_sc') == si}]:
+            col = [c for c in OBJ if c.get('_colof') == b['id']]; top = min(c.get('_cy', c['y']) - c['_h'] / 2 for c in col); bot = max(c.get('_cy', c['y']) + c['_h'] / 2 for c in col)
+            dy = b['y'] - (top + bot) / 2
+            for c in col:
+                c['y'] += dy
+                if '_cy' in c: c['_cy'] += dy
     # yerel -> dünya
     for o in OBJ:
         if o.get('_sc') == si and 'x' in o and kind != 'map': o['x'] += ox
@@ -116,7 +164,7 @@ for si, sc in enumerate(SCENES):
     def fit(objs, cap=.82):
         x0 = min(o['x'] - o['_w'] / 2 for o in objs); x1 = max(o['x'] + o['_w'] / 2 for o in objs)
         y0 = min(o.get('_cy', o['y']) - o['_h'] / 2 for o in objs); y1 = max(o.get('_cy', o['y']) + o['_h'] / 2 for o in objs)
-        z = min(cap, .84 * 1080 / (x1 - x0 + 60), .68 * 1920 / (y1 - y0 + 60))
+        z = min(cap, .84 * FW / (x1 - x0 + 60), (.70 if YATAY else .68) * FH / (y1 - y0 + 60))
         return (x0 + x1) / 2, (y0 + y1) / 2 + 30 / z, z
     cam = []
     CUR[0] = sc['cur']
@@ -140,6 +188,7 @@ for si, sc in enumerate(SCENES):
                 x, y, z = fit(g[:k + 1], cap=g[0].get('zcap', .8))
                 ta = o['t0'] + (.15 if k else 0.1)
                 if gi == 0 and k == 0: keys.append([round(t_s - .45, 3), x, y + 40 / z, z * .9])
+                if k and o['t0'] - .7 > keys[-1][0] + .3: px_, py_, pz_ = keys[-1][1:]; keys.append([round(o['t0'] - .7, 3), px_, py_ + 12 / pz_, pz_ * 1.01])
                 keys.append([round(ta, 3), x, y, z])
                 hero = [q['id'] for q in g[:k + 1]] + [th['id'] for th in OBJ if th.get('_sc') == si and th['type'] == 'thread' and th['to'] in [q['id'] for q in g[:k + 1]]]
                 hero += [p['id'] for p in OBJ if p.get('_sc') == si and p['type'] == 'region']
@@ -204,12 +253,13 @@ for si, sc in enumerate(SCENES):
     for o in [o for o in OBJ if o.get('_sc') == si]: out.append(js_obj(o))
 imgs = sorted(SZ.keys())
 BEAT.sort(key=lambda b: b['t'])
-TL = dict(t0=.6, t1=round(END - 1, 2), years=[1880, 1945], every=10, tick=1, keys=[dict(t=0, v=1938.86)] + TLK)
+TL = dict(t0=.6, t1=round(END - 1, 2), years=[1880, 1945], every=5 if YATAY else 10, tick=1, **({'bottom': 78} if YATAY else {}), keys=[dict(t=0, v=1938.86)] + TLK)
+IMGP = '../salih-bozok/' if YATAY else ''
 js = f"""// Salih Bozok: Başkomutan yaversiz gidemez. "dosya" stili, uzun video ({END:.1f} sn, 9:16).
 // build/derle.py + build/storyboard.py ile üretildi; elle düzenleme yerine storyboard'u değiştirip yeniden derle.
-const FORMAT = {{ w: 1080, h: 1920, fps: 30, dur: {NF} / 30 }};
+const FORMAT = {{ w: {FW}, h: {FH}, fps: 30, dur: {NF} / 30 }};
 const WORLD = {{ lon0: 20, lat0: 46, k: 600, latc: 30 }};
-const IMAGES = {{}}; for (const k of {json.dumps(imgs)}) IMAGES[k] = `img/${{k}}.jpg`;
+const IMAGES = {{}}; for (const k of {json.dumps(imgs)}) IMAGES[k] = `{IMGP}img/${{k}}.jpg`;
 const SPACES = {json.dumps(SPC, ensure_ascii=False)};
 const CAMERA = SPACES[0].cam;
 const OBJECTS = [
@@ -219,6 +269,6 @@ const BEATS = {json.dumps(BEAT, ensure_ascii=False)};
 const GLITCH = {json.dumps(GL)};
 const TIMELINE = {json.dumps(TL)};
 """
-open(f'{R}/sahne.js', 'w').write(js)
-json.dump(dict(s=[s['t'] for s in SPC], g=GL, b=BOOMS, kinds=[s['s'] for s in SPC], o=[json.loads(re.sub(r'"fmt": [^,}]*', '"fmt": 0', js_o)) for js_o in out], end=END), open(f'{D}/events.json', 'w'), ensure_ascii=False)
+OUT = R + '-yatay' if YATAY else R; os.makedirs(f'{OUT}/build', exist_ok=True); open(f'{OUT}/sahne.js', 'w').write(js)
+json.dump(dict(s=[s['t'] for s in SPC], g=GL, b=BOOMS, kinds=[s['s'] for s in SPC], o=[json.loads(re.sub(r'"fmt": [^,}]*', '"fmt": 0', js_o)) for js_o in out], end=END), open(f'{OUT}/build/events.json', 'w'), ensure_ascii=False)
 print('sahne', len(SPC), 'nesne', len(OBJ), 'kare', NF, 'süre', round(END, 2))
