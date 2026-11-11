@@ -210,7 +210,9 @@ def hook_check(words, S):
     first = " ".join(w for w, s, _ in words if s < 3.0)
     notes = []
     ilk = re.split(r"[.!?]", first)[0]
-    if re.match(r"^\W*\d", first) or (re.search(r"\b1\d{3}\b", ilk) and len(ilk.split()) <= 4):
+    AY = r"(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)"
+    # tarih açılışı: "2 Eylül 1651", "1453'te ...", kısa yıl cümlesi; "17 yaşındaki", "19 kardeşini" gibi sayı kancaları tarih değildir
+    if re.match(r"^\W*\d{1,2}\s+" + AY, first.lower()) or re.match(r"^\W*1\d{3}\b", first) or (re.search(r"\b1\d{3}\b", ilk) and len(ilk.split()) <= 4):
         notes.append("Tarihle başlıyor: kanca kuralına aykırı, en çarpıcı iddia ilk kelimelerde olmalı.")
     if first.count(" ") + 1 > 10:
         notes.append("İlk 3 saniyede 10'dan fazla kelime var; ilk cümle kısalmalı.")
