@@ -172,3 +172,11 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 32. **İlk karede net bir yüz yoksa ilk 3 sn oranı çöküyor:** son iki video %33-37'de kaldı; ilk karede yüz olan videolar (kardeş katli %66, Hürrem-Kösem %71, Yavuz %53) belirgin şekilde daha iyi. Her videonun ilk sahnesi büyük ve net bir yüzle (padişah, kahraman) başlamalı; şehir planı, harita ya da karanlık açılış ilk sahne olmasın.
 33. **İsimle açılış kanca değildir:** "Fahreddin Paşa. Çöl Kaplanı." gibi isim + lakap açılışı %33.5'te kaldı. İlk cümle olay olmalı ("Padişah bile teslim ol dedi, o Medine'yi bırakmadı").
 34. **Kanuni'de ortalama izleyici 11. sn'de, "1529'da Kanuni... Viyana'ya yürüdü" cümlesinde gitti:** kancadan sonra tarihli anlatıma geçiş. İkinci cümle de merakı büyütmeli; tarih cümlesi en erken 15. sn'den sonra gelsin.
+
+## Instagram, Atatürk 20 yıl yaşasaydı (10 Kasım, 12 Kasım'da analiz edildi)
+| Video | Yaş | İzlenme | İlk 3 sn | Ort. izleme | Erişim | Yorum |
+|---|---|---|---|---|---|---|
+| ataturk-yasasaydi (elle yüklendi) | 2 gün | 1.881 | %55.7 | 21.1 sn / 85 sn (%25) | 1.617 | 4 |
+
+35. **"Ya olsaydı" videosunda gerçek sonucu erken söyleme:** ortalama izleyici 21. sn'de, "İsmet İnönü, bütün baskılara rağmen Türkiye'yi savaşın dışında tuttu." cümlesinde gitti. Kancadaki soru ("savaşa girer miydi?") bu cümleyle fiilen cevaplanmış gibi duruyor; ardından gelen "bazı tarihçilere göre Atatürk de aynı yolu seçerdi" merakı kapatıyor. Gerçekte ne olduğunu en erken videonun ortasında, bir "sen olsan?" anından sonra ver; ilk 30 sn'de yalnızca senaryoyu büyüt (ne değişebilirdi, kim karşı çıkardı).
+36. Kanca orta seviyede kaldı (%55.7): ilk karede net yüz vardı ama ilk cümle uzun bir soru (12 kelime). Soruyu kısalt, ilk 2 sn'de bitsin ("Atatürk 20 yıl daha yaşasaydı?").
