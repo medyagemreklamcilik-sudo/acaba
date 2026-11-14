@@ -5,7 +5,7 @@ ElevenLabs kotası yetmezse o günün uzun videosu atlanır, rapora yazılır (k
 
 | Tarih | Konu | Klasör | Durum |
 |---|---|---|---|
-| 2026-11-16 | Salih Bozok: Atatürk öldüğü an kendini vuran yaver | sinematik/ornekler/salih-bozok-yatay | planlandı (YouTube 15:00; Facebook'a dikey sürüm 11 Kasım'da elle yüklendi) |
+| 2026-11-16 | Salih Bozok: Atatürk öldüğü an kendini vuran yaver | sinematik/ornekler/salih-bozok-yatay | kullanıcı elle yükledi (Metricool paylaşımı taslağa çekildi) |
 | 2026-11-18 | Enver Paşa: imparatorluğu batıran adam mı, kahraman mı? (Harbiye'den Belcuvan'a) | | bekliyor |
 | 2026-11-20 | Sultan Abdülhamid: Kızıl Sultan mı, Ulu Hakan mı? | | bekliyor |
 | 2026-11-22 | Çerkez Ethem: kahraman mı, hain mi? | | bekliyor |
