@@ -44,6 +44,12 @@ Kullanıcı bu görünümü istedi; yeni videolarda varsayılan budur. Motor: `m
 - Ekran katmanı: altta yıl çizgisi (`TIMELINE`), turuncu toz zerreleri, camgöbeği gölge / sıcak ışık renk, spot vinyet, gren.
 - Kamera yavaş: ekran hızı ~400 px/sn'yi geçmesin (kullanıcı "kamera çok hızlı" dedi); nesneleri kameranın yolu üstünde sırala, uzak zıplama yok.
 
+## Hızlı hat: storyboard derleyici (varsayılan, 15 Kasım)
+Günlük videolar ve yeni sinematikler artık bununla üretilir (`/viral` adım 5-6'da tam örnek):
+- `build/storyboard.py`: `SC(mekân, ifade, [nesneler])` sahneleri, nesneler kelimeye bağlı (`P` polaroid, `TI` başlık, `TG` etiket, `DC` belge, `BD` bant, `TH` ip, `HT` nokta portre, `CT` sayaç, `ST` üstü çizili, `RG` bölge yazısı, `GD`/`RT` harita noktası/rota).
+- `python3 sinematik/motor/derle.py <klasör>` → yerleşim, kamera, BEATS, TIMELINE otomatik (`YATAY=1` ile 16:9 sürüm `<klasör>-yatay/`).
+- `bash sinematik/motor/uret.sh <klasör> stills|final` → kontrol sayfası ya da kapaklı, sesli `video.mp4`; ses `motor/ses.py` (`SHOT=1` glitch anlarında silah sesi).
+
 ## Kapak (zorunlu, kullanıcı isteği)
 TikTok kişisel hesapta `videoThumbnailUrl`'yi yok sayar ve kapağı videonun içinden seçer; Fahreddin videosunda ızgarada yalnızca "1918" etiketi göründü. Bu yüzden her sinematik videoda:
 1. `kapak.json` yaz ve `python3 sinematik/motor/kapak.py <klasör>/kapak.json <klasör>/kapak.jpg` ile "dosya" stilinde kapak üret: mantar pano (`bg: cork`) ya da karanlık (`dark`), raptiyeli gri polaroid + siyah mono isim bandı, kırmızı ip ile bağlı manila yıl etiketi, kırmızı lastik damga ve **üstte iki satır kalın başlık** (siyah bant + kırmızı kenar; `title_red` ile bir satır kırmızı kutu). Örnek: `sinematik/ornekler/fahreddin-dosya/kapak.json`.

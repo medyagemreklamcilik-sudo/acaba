@@ -7,7 +7,11 @@ description: acaba.nolurdu için uçtan uca dikey tarih videosu üretir ve yayı
 
 Depo: `medyagemreklamcilik-sudo/acaba` (herkese açık, `main` dalı). Çalışma kökü: `/home/user/acaba`.
 Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan ve durumu `bekliyor` olan satırı üret (aynı güne ait EKSTRA satırlar ayrı videodur, onlara bakma); yarına ait `bekliyor` satır yoksa, tarihi yarından sonra olan ilk `bekliyor` satırı üret. Satırda saat yazmıyorsa her platform kendi zirve saatinde yayınlanır (bkz. adım 9); satırda saat yazıyorsa (EKSTRA) dört platform o saatte tek paylaşım olarak gider. Takvimde hiç `bekliyor` satır kalmadıysa önceki konularla çakışmayan, tartışma yaratacak yeni bir Osmanlı/Cumhuriyet tarihi konusu seç ve takvime ekle.
-Otomatik (zamanlanmış) çalıştırmada kullanıcıya hiçbir şey sorma; her kararı kendin ver ve sonunda kısa rapor yaz. Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
+**Kullanıcının kalıcı kararları (15 Kasım 2026):**
+- Video sohbetlerinde (otomatik ya da elle) kullanıcıya **hiçbir şey sorma**; her kararı kendin ver, sonunda kısa Türkçe rapor yaz.
+- Metricool için bütün onaylar verili (plan yükseltildi, limit yok): planla, güncelle, biriken videoları kuyruğa koy.
+- **Yeni videoların hepsi `/sinematik` "dosya" stilinde** (mantar pano, ip, polaroid, belge, harita; 9:16). Görüntü adımı aşağıdaki 5-6'daki sinematik hattıdır; eski `scenes.py` motoru yalnızca sinematik hat bozulursa yedektir.
+- Bir gün video hazırlanamazsa boş geçme: eski güçlü bir videoyu (ör. `ogrenimler.md` tablolarındaki en iyiler) aynı saatlerde yeniden paylaş (öğrenim 37). Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
 
 ## 0. Hazırlık (her yeni oturumda)
 1. `/home/user/acaba` yoksa: `add_repo` (owner `medyagemreklamcilik-sudo`, repo `acaba`, access `push`), sonra `git clone https://github.com/medyagemreklamcilik-sudo/acaba /home/user/acaba`.
@@ -51,45 +55,33 @@ python3 tools/viral.py voice videolar/<klasör>
 - Seçilenleri `videolar/<klasör>/img/` içine kopyala. Kaynak URL'lerini (`build/cand/_index.json`) README'ye yaz.
 - Portresi olmayan kişiler için bunu açıkça belirt (ör. "temsili minyatür"), sahte portre kullanma.
 
-## 5. Sahne dosyası (`scenes.py`)
-Örnekler: `engine/ornekler/` (`scenes_koyun.py` kalem efektleri, `scenes_hocalar.py` belgesel, `scenes_hurrem_kosem.py` karşılaştırma, `scenes_harita.py` + `mapdata_harita.py` harita). Zamanları `build/aligned.json`'dan al.
-- Dosyada: `DURATION` (ses süresi), `CX = 507`, `IMAGES {anahtar: dosya | (dosya, (x0,y0,x1,y1) kırpma)}`, `FACES`, `SCENES`, `OVERLAYS`, `NO_CAPTIONS`, `BLUR_CAPS`, `CAPTION_Y(t)`, `PUNCH`, `SHAKE`, `FLASH`, `MUSIC [(t0,t1,yoğunluk 0-3)]`, `SFX`, `spec()`.
-- Sahne modları: `cover` (zoom/focus/from/to/kf), `card` (maxw,maxh,tilt), `split` (imgs), `grid` (tiles,bg), `plate` (bg; sadece yazı arka planı).
-- Geçişler (`tr`): pushup, pushdown, pushleft, pushright, bars, iris, diag, zoomblur, spin, glitch, flash, dip. **Çeşitli kullan**, aynı geçişi art arda koyma. Her 2–4 saniyede görsel değişsin.
-- Overlay tipleri: title, label, kinetic, counter, arrow, pip, stamp, tagpair, cta, item, source, quote, vs, roster, pencircle, penarrow, penline, pencross, handwrite, finger, people, typewriter, papers.
-- Stil kuralları (kullanıcının istekleri):
-  - Altyazılar siyah kutu üstünde **sarı** yazı (motor otomatik yapar).
-  - Güvenli alan: x 64–950, üst yazılar y≥230, altyazı y≈1235–1440; sağ kenar ve alt 420 px butonlara ayrılmış.
-  - İlk 1 saniyede güçlü kanca: büyük `title` + `impact` SFX + hareketli zoom.
-  - Bir şeyi göstermek için kalem efektleri: `pencircle`, `penarrow`, `handwrite`.
-  - Geçiş SFX'ini az kullan (izleyiciyi bayıyor): sadece önemli anlarda `impact`/`hit`, gerisi sessiz.
-  - Yapay zekâ görünümü olmasın: gerçek arşiv görselleri, sade modern tipografi, abartısız renk.
-  - Sona `cta` + tartışma sorusu `kinetic` ile.
-  - Kaynak gösterilen iddialarda `source` overlay'i kullan.
-- **Kapak (zorunlu):** `scenes.py` içine `COVER` ekle. Videonun ilk 2 karesi ve `kapak.jpg` bundan üretilir (TikTok kapağı ilk kareden alır; beyaz flaş/boş kare kapak olmasın). Kullanıcının elle yaptığı kapak tarzı:
-  ```python
-  COVER = dict(img="fatih", focus=(0.45, 0.32), zoom=1.12,          # yüzü net, büyük bir görsel
-               lines=["FATİH İSTANBUL'U", "ALAMASAYDI?"], size=118,   # siyah kutuda sarı, 2 satır, kısa ve soru/şok
-               stamp="OSMANLI BİTERDİ?", stamp_y=1050, stamp_size=96, # kırmızı damga: tartışma kışkırtan 1-3 kelime
-               bottom="sonuna kadar izle", bottom_y=1330,              # altta sarı küçük çağrı
-               marks=[dict(type="pencircle", cx=..., cy=..., rx=..., ry=...)])  # isteğe bağlı: kırmızı daire/ok
-  ```
-  **Her videonun kapağı kendine özel olmalı** (kullanıcı isteği). Kapak tasarlamadan önce `grep -A4 "COVER" videolar/*/scenes.py` ile son 7 videonun kapaklarına bak ve aynı düzeni, aynı damga/alt yazıyı, aynı başlık rengini art arda kullanma. Konuya göre düzen seç:
-  - **Tek yüz** (kişi videoları): `img` + `focus` yüze, büyük başlık, damga.
-  - **Karşılaştırma** (X mi Y mi): `imgs=[dict(img=..., focus=...), dict(img=..., focus=...)]` + `marks=[dict(type="vs")]`.
-  - **Detay işaretleme** (belge, tablo, mekân): `marks` ile `pencircle` + `penarrow` kırmızı daire/ok, `handwrite` el yazısı not.
-  - **Harita/şehir + portre**: arka plan harita (`grade="dark"`), `portraits=[("anahtar", x, y, boyut)]` yuvarlak portre.
-  - **Rakam kancası**: başlıkta büyük sayı ("53 GÜN", "623 YIL", "%3").
-  - Başlık rengi `style`: `"yellow"` (siyah kutu sarı yazı), `"red"` (kırmızı kutu beyaz yazı), `"white"` (beyaz kutu siyah yazı). Damga rengi `stamp_color`. Alt yazı (`bottom`) her seferinde farklı ve konuya özel olsun ("sonuna kadar izle"yi sürekli tekrarlama); gerekmiyorsa hiç koyma.
-  - Kapak metni videodaki kancayla aynı vaadi versin ama birebir aynı cümle olmak zorunda değil; merak boşluğu bıraksın.
-  Başlık 3 saniyede okunmalı, en fazla ~16 karakter/satır. Yüz veya ana obje yazıların altında kalmasın. `python3 tools/viral.py cover <klasör>` ile üretip Read ile kontrol et; küçük (360x640) halde de okunur olmalı.
-- Önizleme: `python3 tools/viral.py stills videolar/<klasör> 0.5,5,30,60,...` ve kareleri Read ile kontrol et (yazı taşması, yüz kesilmesi, güvenli alan). Sorunları düzelt.
+## 5. Sinematik sahne (`build/storyboard.py`) — varsayılan
+Motor: `sinematik/motor/dosya.js`; derleyici `sinematik/motor/derle.py`; hat `sinematik/motor/uret.sh`. Örnekler: `sinematik/ornekler/yasar-nuri-dosya/build/storyboard.py` (2:15, dört söz), `sinematik/ornekler/salih-bozok/build/storyboard.py` (11 dk, harita dahil).
+Klasör yine `videolar/<YYYY-MM-DD>-<slug>/` (Metricool raw URL'leri aynı kalır). Görseller `img/<anahtar>.jpg` (yalnız .jpg, ≤1600 px).
+`build/storyboard.py` sahneleri metindeki sırayla, kelimeye bağlı yazar. Zaman = `build/aligned.json`'da o kelime grubunun başlangıcı (birebir metinden kopyala; noktalama ve kesme işareti önemsiz):
+```python
+BASLIK = 'Konu: kısa açıklama'; TL_YEARS, TL_EVERY, TL_START = [1600, 1650], 10, 1622.4   # alttaki yıl şeridi
+SC('board', 'Sahnenin ilk kelimeleri', [            # mekân: 'board' (mantar pano), 'dark' (karanlık), 'map' (harita)
+    P('osman', 'kelime grubu', 'İSİM BANDI', w=820, crop=[0,0,1,.72], shift=-1.2),   # polaroid (shift<0: ilk karede hazır)
+    TI('kelime', '“BÜYÜK\nBAŞLIK”', 120, x=0, j=1, lineAt=[0, 'ikinci satır kelimesi']),  # başlık; j=1 öncekiyle aynı kadraj
+    TG('kelime', 'KÜÇÜK', '1622', 'ALT SATIR'),     # manila etiket
+    DC('kelime', ['BAŞLIK', 'KAYNAK', 'TARİH'], 'DAKTİLO ANAHTAR', keyAt='kelime', stamp=dict(text='DAMGA', t='kelime', x=.1, y=.3, rot=-.1)),
+    BD('kelime', 'SİYAH BANT', red=True, size=80),   # ebeveyninin altına iner
+    TH('osman', 'tag1'),                             # kırmızı ip (görsel anahtarı / tag1 / doc1)
+    HT('osman', 'kelime', crop=[.1,.02,.8,.55], w=1100),  # nokta portre (dark)
+    CT('kelime', 0, 17, 'v => Math.round(v) + " YAŞINDA"', 220, dur=1.0, sub='ALT'),  # sayaç
+    ST('kelime', 'ÜSTÜ ÇİZİLEN', 'çizilecek kelime', 120),
+], year=1622.4, glitch=[('kelime', .35, .8)], boom=True)
+SC('map', 'kelime', [RT('kelime', ['istanbul', 'ankara'], 1.2), GD('kelime', 'ankara', 'ANKARA', square=True)],
+   cam=[(-.4, 'istanbul', .2), ('kelime', 'ankara', .3)])    # şehirler: derle.py içindeki PL sözlüğü (yoksa [lon, lat])
+```
+Kurallar (öğrenimlerden): **ilk sahne `board` + net yüzlü polaroid (shift=-1.2) + kanca yazısı (shift=-1.2), karanlıktan yavaş açılış yok** (öğrenim 30, 32); her cümlenin tek kahramanı; ortadaki "sen olsan?" `dark` sahnede büyük yazı; sözler/alıntılar `DC` belge + altında tam metin `TI`; kamera derleyicide otomatik (odak + pano sonu geri çekilme).
+Kontrol: `bash sinematik/motor/uret.sh videolar/<klasör> stills` → `videolar/<klasör>/stills/_sayfa.jpg`'yi Read ile incele (yazı taşması, boş pano, yüzü örten yazı); storyboard'u düzelt, yeniden `stills`.
+- **Kapak (zorunlu):** `kapak.json` (dosya stili; `bg: cork|dark`, `photo`, `crop`, `name`, `title[2]`, `title_red`, `stamp` ≤16 karakter; `motor/kapak.py` dokümanına bak). Son 7 videonun kapaklarıyla aynı düzeni art arda kullanma. `uret.sh final` kapağı ilk 2 kareye gömer.
 
 ## 6. Render
-```
-python3 tools/viral.py render videolar/<klasör>
-```
-(Harita videoları için klasörde `mapdata.py` olması yeterli.) Çıktı: `video.mp4` (1080x1920, ≈3.5 Mbps, < 90 MB) ve `kapak.jpg`. Uzun sürer; arka planda çalıştır, bitince süreyi ve boyutu doğrula, birkaç kare çıkarıp bak.
+`bash sinematik/motor/uret.sh videolar/<klasör> final` (90 sn ≈ 5-7 dk; yarıda kalırsa aynı komut kaldığı yerden sürer) → `video.mp4` (< 90 MB) + `kapak.jpg`. Arka planda çalıştır. Bitince 3-4 kare çıkarıp bak (ilk kare kapak, ikinci saniyede yüz + kanca).
+Yedek (sinematik hat bozulursa): eski motor `scenes.py` + `python3 tools/viral.py render videolar/<klasör>` (örnekler `engine/ornekler/`, `videolar/2026-11-1*/scenes.py`).
 
 ## 7. Açıklama (`aciklama.txt`)
 - **İlk yorum (`ilk_yorum.txt`, zorunlu):** iki seçenekli soru + paylaşım çağrısı, konuya özel; ör. "Hürrem mi bitirdi, kibri mi? 1 ya da 2 yaz. Bunu en yakın arkadaşına gönder, o ne derdi?" Metricool'da `firstCommentText` olarak dört paylaşımın hepsine eklenir.
