@@ -34,7 +34,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-13 | Cum | Barbaros: korsan mı, amiral mi? | 2026-11-13-barbaros | hazır (Metricool limiti dolu) |
 | 2026-11-14 | Cmt | Osmanlı I. Dünya Savaşı'na girmeseydi ne olurdu? | 2026-11-14-osmanli-savasa-girmeseydi | hazır (Metricool limiti dolu) |
 | 2026-11-15 | Paz | Sarıkamış faciası | 2026-11-15-sarikamis | hazır (Metricool limiti dolu) |
-| 2026-11-15 | Paz | EKSTRA: Yaşar Nuri Öztürk, iki tarafın da kızdığı ilahiyatçı (kullanıcı isteği) | 2026-11-14-yasar-nuri-ozturk-ekstra | hazırlanıyor |
+| 2026-11-15 | Paz | EKSTRA: Yaşar Nuri Öztürk, iki tarafın da kızdığı ilahiyatçı (kullanıcı isteği) | 2026-11-14-yasar-nuri-ozturk-ekstra | hazır (elle yüklenecek) |
 | 2026-11-16 | Pzt | Çanakkale'yi kaybetseydik ne olurdu? | | bekliyor |
 | 2026-11-17 | Sal | Lale Devri ve Patrona Halil | | bekliyor |
 | 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | | bekliyor |
