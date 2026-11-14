@@ -90,9 +90,9 @@ Yedek (sinematik hat bozulursa): eski motor `scenes.py` + `python3 tools/viral.p
 
 ## 8. Depoya gönder
 ```
-git add videolar/<klasör> takvim.md && git commit -m "<konu> videosu" && git push origin main
+git add videolar/<klasör> takvim.md && git add -f videolar/<klasör>/build/storyboard.py && git commit -m "<konu> videosu" && git push origin main
 ```
-`img/` ve `build/` .gitignore'da; video, kapak, metinler, scenes.py ve README girer. Push sonrası kontrol:
+`img/` ve `build/` .gitignore'da; video, kapak, metinler, sahne.js, storyboard.py (-f ile) ve README girer. Push sonrası kontrol:
 `curl -sI https://raw.githubusercontent.com/medyagemreklamcilik-sudo/acaba/main/videolar/<klasör>/video.mp4` → 200.
 
 ## 9. Metricool'da planla (platform başına zirve saat)
@@ -118,7 +118,7 @@ Her paylaşım için `createScheduledPost` — blogId `7651740`, tarih `<YYYY-MM
  "firstCommentText": "<ilk_yorum.txt>", "hasNotReadNotes": false, "shortener": false, "smartLinkData": {"ids": []}, "descendants": [], "mediaAltText": []}
 ```
 İlk paylaşımın yanıtındaki `media`/`videoThumbnailUrl` (static.metricool.com) adreslerini sonraki üç paylaşımda kullanmak yeterlidir.
-`VIDEO_THUMBNAIL_NOT_APPLICABLE` hatası gelirse `videoThumbnailUrl` olmadan bir kez daha dene (kapak zaten videonun ilk karesi). Başka hata verirse mesajı olduğu gibi kullanıcıya ilet; plan limiti (ücretsiz plan) dolduysa takvimde durumu `hazır` bırak.
+`VIDEO_THUMBNAIL_NOT_APPLICABLE` hatası gelirse `videoThumbnailUrl` olmadan bir kez daha dene (kapak zaten videonun ilk karesi). Başka hata verirse bir kez yeniden dene, yine olmazsa raporda mesajı olduğu gibi yaz ve takvimde durumu `hazır` bırak (Metricool planı 15 Kasım'da yükseltildi; aylık gönderi limiti artık sorun değil).
 Dört paylaşım da başarılıysa takvimde durumu `planlandı` yap, commit + push.
 
 ## 10. Rapor
