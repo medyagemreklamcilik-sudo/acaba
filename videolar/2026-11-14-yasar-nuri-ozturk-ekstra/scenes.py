@@ -55,7 +55,7 @@ OVERLAYS = [
     dict(type="kinetic", t0=43.8, t1=50.7, text="SEN OLSAN?", y=420, size=170, style="red"),
     dict(type="tagpair", t0=47.9, t1=50.7, tags=[("KIZARDIM", 760, 48.1), ("AÇIP BAKARDIM", 900, 49.6)]),
     dict(type="label", t0=51.0, t1=54.2, title="Kur'an-ı Kerim Meali", sub="sade Türkçe ile", y=420),
-    dict(type="counter", t0=54.4, t1=57.3, **{"from": 1, "to": 120}, fmt="{}+ BASKI", dur=0.8, y=1050, size=150),
+    dict(type="counter", t0=54.4, t1=57.3, **{"from": 1, "to": 120}, fmt="{}+ BASKI", dur=0.8, y=470, size=150),
     dict(type="label", t0=57.6, t1=62.8, title="1999", sub="radikal örgüt üyeleri itiraf etti", y=420),
     dict(type="stamp", t0=60.30, t1=62.8, text="SUİKAST PLANI", y=900, size=120, color=RED, rot=-6, fill=True),
     dict(type="label", t0=63.1, t1=66.8, title="2002: milletvekili", sub="sonra kendi partisini kurdu", y=420),
