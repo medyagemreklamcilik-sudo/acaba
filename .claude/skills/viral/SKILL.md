@@ -121,6 +121,19 @@ Her paylaşım için `createScheduledPost` — blogId `7651740`, tarih `<YYYY-MM
 `VIDEO_THUMBNAIL_NOT_APPLICABLE` hatası gelirse `videoThumbnailUrl` olmadan bir kez daha dene (kapak zaten videonun ilk karesi). Başka hata verirse bir kez yeniden dene, yine olmazsa raporda mesajı olduğu gibi yaz ve takvimde durumu `hazır` bırak (Metricool planı 15 Kasım'da yükseltildi; aylık gönderi limiti artık sorun değil).
 Dört paylaşım da başarılıysa takvimde durumu `planlandı` yap, commit + push.
 
+## 9b. Uzun video (iki günde bir, kullanıcı isteği 15 Kasım)
+`uzun-takvim.md`'de tarihi **yarın** olan `bekliyor` satır varsa, günlük kısa videodan SONRA onu da üret:
+1. Klasör `videolar/<YYYY-MM-DD>-<slug>-uzun/`. Derin araştırma (en az 3 kaynak, TDV İslâm Ansiklopedisi / akademik makale / dönemin gazetesi). Metin `tts.txt` ≈ 8.500-9.500 karakter (~11 dk): kanca (şok olay, tarih değil) → 3 sn'de vaat → bölümler (her 60-90 sn'de yeni merak boşluğu, 2-3 "sen olsan?" anı, bir "kendini görmek" cümlesi) → kapanış repliği + iki seçenekli soru. Tartışmalı bilgi "iddiaya göre / anlatılanlara göre". Örnek: `sinematik/ornekler/salih-bozok/tts.txt`.
+2. Seslendirme: `python3 tools/uzun_ses.py <klasör>` (kota kontrolü yapar; **çıkış kodu 3 = kota yetmiyor** → uzun videoyu atla, `uzun-takvim.md`'de "atlandı (ElevenLabs kotası)" yaz, raporda belirt; kısa video etkilenmez).
+3. Görseller: konu başına 40-60 gerçek görsel (`tools/ydl.py`, 30-45 sorgu), seçip `img/`'e kopyala.
+4. `build/storyboard.py`: 50-70 sahne; `board` (pano + ip), `dark` (başlık/alıntı/sorular), `map` (rota, `PL` şehirleri); `TL_YEARS` konunun yılları. Örnek: `sinematik/ornekler/salih-bozok/build/storyboard.py`.
+5. Kontrol: `YATAY=1 bash sinematik/motor/uret.sh <klasör> stills` → `stills/_sayfa.jpg` incele, düzelt. Render: `YATAY=1 bash sinematik/motor/uret.sh <klasör> final` (~25-35 dk, arka planda; < 92 MB, 1920x1080).
+6. Kapak: `kapak.json` içinde `"size": [1920, 1080]`, `photo_x`, `title_cx`, `stamp_cx` (örnek `sinematik/ornekler/salih-bozok-yatay/kapak.json`, koyu `bg: dark` kullanıcının beğendiği).
+7. Metinler: `baslik.txt` (≤90 karakter, merak), `aciklama.txt` (giriş paragrafı + **bölüm zaman damgaları** `00:00 ...` + soru + kaynaklar + 5 hashtag), `etiketler.txt`, `ilk_yorum.txt`.
+8. Metricool: YouTube `{"network":"youtube"}` + `"youtubeData": {"title", "type": "video", "privacy": "public", "madeForKids": false, "category": "EDUCATION", "tags": [...]}` **15:00**; Facebook `{"network":"facebook"}` + `"facebookData": {"type": "POST", "title": "<baslik>"}` **17:00**. Ayrı iki paylaşım, `firstCommentText` = ilk yorum.
+9. Commit (`git add -f .../build/storyboard.py`), `uzun-takvim.md` durumunu `planlandı` yap, push; video için `curl -sI` raw kontrolü.
+Kota notu: ElevenLabs Creator (121 bin karakter/ay) iki günde bir uzun video + günlük kısa için yetmez (~176 bin gerekir); Pro plana geçilene kadar ay sonuna doğru atlanan uzun videolar olabilir.
+
 ## 10. Rapor
 - `python3 tools/analiz.py <klasör>` ile kanca kontrolünü çalıştır; "Tarihle başlıyor" ya da "İlk 0.6 sn'de ekranda yazı yok" uyarısı varsa planlamadan önce düzelt.
 Kullanıcıya kısa Türkçe özet: konu, süre, yayın tarihi ve platform saatleri, açıklama, tartışmalı/emin olunmayan noktalar, Metricool planner linki.

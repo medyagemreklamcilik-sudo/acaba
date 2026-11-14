@@ -1,5 +1,6 @@
 #!/bin/bash
 # Sinematik "dosya" videosu üretim hattı (dikey 1080x1920, 30 fps).
+# Yatay (16:9, 1920x1080) uzun video: YATAY=1 bash sinematik/motor/uret.sh <klasör> stills|final
 # Kullanım:
 #   bash sinematik/motor/uret.sh <klasör> stills [t1,t2,...]   → derle + kontrol kareleri (<klasör>/stills/)
 #   bash sinematik/motor/uret.sh <klasör> final                → derle + parça render + ses + kapak ilk 2 kare → <klasör>/video.mp4
@@ -21,7 +22,8 @@ body{margin:0;background:#000}</style></head><body><canvas id="c"></canvas>
 <script src="$REL/geo/dogu-akdeniz.js"></script><script src="sahne.js"></script><script src="$REL/dosya.js"></script>
 </body></html>
 EOF
-[ -f "$D/format.json" ] || echo '{"w":1080,"h":1920,"fps":30}' > "$D/format.json"
+if [ -n "$YATAY" ]; then echo '{"w":1920,"h":1080,"fps":30}' > "$D/format.json"; export YATAY_HERE=1 GRAIN=${GRAIN:-.04}; KW=1920; KH=1080
+else [ -f "$D/format.json" ] || echo '{"w":1080,"h":1920,"fps":30}' > "$D/format.json"; KW=1080; KH=1920; fi
 python3 "$MOTOR/derle.py" "$D"
 END=$(python3 -c "import re;print(re.search(r'dur: (\d+) / 30',open('$D/sahne.js').read()).group(1))")
 if [ "$MODE" = "stills" ]; then
@@ -33,7 +35,7 @@ const S=c.S,o=[0.05,1.0];for(let k=0;k<S.length;k++){const e=S[k+1]?S[k+1].t:$EN
 import sys, glob
 from PIL import Image, ImageDraw
 d = sys.argv[1]; fs = sorted(glob.glob(d + '/stills/s_*.jpg'), key=lambda f: float(f.split('s_')[-1][:-4]))
-W, H = 216, 384; cols = 8; rows = (len(fs) + cols - 1) // cols
+im0 = Image.open(fs[0]); W = 216 if im0.width < im0.height else 384; H = 384 if im0.width < im0.height else 216; cols = 8 if W == 216 else 5; rows = (len(fs) + cols - 1) // cols
 sh = Image.new('RGB', (W * cols, (H + 22) * rows), (20, 20, 20)); dr = ImageDraw.Draw(sh)
 for i, f in enumerate(fs):
     x, y = (i % cols) * W, (i // cols) * (H + 22); sh.paste(Image.open(f).resize((W, H)), (x, y)); dr.text((x + 4, y + H + 4), f.split('s_')[-1][:-4], fill=(255, 255, 0))
@@ -52,10 +54,11 @@ N=$(ls $D/build/seg/ | grep -c '^c[0-9]*\.mp4$' || true); NEED=$(( (END + C - 1)
 python3 "$MOTOR/ses.py" "$D"
 [ -f "$D/kapak.jpg" ] || python3 "$MOTOR/kapak.py" "$D/kapak.json" "$D/kapak.jpg"
 ls $D/build/seg/ | grep '^c[0-9]*\.mp4$' | sort | sed "s#^#file '$D/build/seg/#;s#\$#'#" > $D/build/list.txt
-DUR=$(python3 -c "print($END/30)"); BR=$(python3 -c "d=$END/30;print(int(min(4500, 85*8*1000/d - 200)))")  # < ~90 MB (GitHub raw)
+DUR=$(python3 -c "print($END/30)"); BR=$(python3 -c "d=$END/30;print(int(min(4500, 88*8*1000/d - 170)))")  # < ~92 MB (GitHub raw, Metricool)
+[ -n "$YATAY" ] && PRESET=slow
 ffmpeg -v error -y -f concat -safe 0 -i $D/build/list.txt -i $D/build/mix.wav -i $D/kapak.jpg \
-  -filter_complex "[2:v]scale=1080:1920,format=yuv420p[k];[0:v][k]overlay=0:0:enable='lt(n,2)'[v]" -map "[v]" -map 1:a \
-  -c:v libx264 -preset medium -b:v ${BR}k -maxrate $((BR*3/2))k -bufsize $((BR*3))k -pix_fmt yuv420p -c:a aac -b:a 160k \
+  -filter_complex "[2:v]scale=$KW:$KH,format=yuv420p[k];[0:v][k]overlay=0:0:enable='lt(n,2)'[v]" -map "[v]" -map 1:a \
+  -c:v libx264 -preset ${PRESET:-medium} -b:v ${BR}k -maxrate $((BR*3/2))k -bufsize $((BR*3))k -pix_fmt yuv420p -c:a aac -b:a 160k \
   -af loudnorm=I=-14:TP=-1.5:LRA=11 -movflags +faststart -shortest $D/video.mp4
 ls -la $D/video.mp4 | awk '{printf "video.mp4: %.1f MB, ", $5/1048576}'; ffprobe -v error -show_entries format=duration -of csv=p=0 $D/video.mp4
 rm -f $D/build/seg/c*.mp4   # yer aç (video.mp4 hazır)

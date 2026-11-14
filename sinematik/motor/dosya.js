@@ -407,7 +407,7 @@ function renderFrame(f) {
   out.globalCompositeOperation = 'soft-light'; out.fillStyle = 'rgba(40,95,105,.22)'; out.fillRect(0, 0, FORMAT.w, FORMAT.h); out.globalCompositeOperation = 'source-over';
   const vg = out.createRadialGradient(FORMAT.w / 2, FORMAT.h * .47, Math.min(FORMAT.w, FORMAT.h) * .32, FORMAT.w / 2, FORMAT.h / 2, Math.hypot(FORMAT.w, FORMAT.h) * .56); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.72)'); out.fillStyle = vg; out.fillRect(0, 0, FORMAT.w, FORMAT.h);
   drawTimeline(out, t);
-  out.globalCompositeOperation = 'overlay'; out.globalAlpha = .11; const g = TEX.grain[f % TEX.grain.length]; out.save(); out.translate((f * 131) % 512, (f * 71) % 512); out.fillStyle = out.createPattern(g, 'repeat'); out.fillRect(-512, -512, FORMAT.w + 1024, FORMAT.h + 1024); out.restore(); out.globalAlpha = 1; out.globalCompositeOperation = 'source-over';
+  out.globalCompositeOperation = 'overlay'; out.globalAlpha = typeof GRAIN !== 'undefined' ? GRAIN : .11; const g = TEX.grain[f % TEX.grain.length]; out.save(); out.translate((f * 131) % 512, (f * 71) % 512); out.fillStyle = out.createPattern(g, 'repeat'); out.fillRect(-512, -512, FORMAT.w + 1024, FORMAT.h + 1024); out.restore(); out.globalAlpha = 1; out.globalCompositeOperation = 'source-over';
 }
 window.READY = (async () => {
   GEO = window.GEOJS; OBJ = Object.fromEntries(OBJECTS.map(o => [o.id, o]));

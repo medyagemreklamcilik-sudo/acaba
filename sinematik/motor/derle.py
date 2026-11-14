@@ -259,7 +259,7 @@ for si, sc in enumerate(SCENES):
 imgs = sorted(SZ.keys())
 BEAT.sort(key=lambda b: b['t'])
 TL = dict(t0=.6, t1=round(END - 1, 2), years=globals().get('TL_YEARS', [1880, 1945]), every=globals().get('TL_EVERY', 5 if YATAY else 10), tick=1, **({'bottom': 78} if YATAY else {}), keys=[dict(t=0, v=globals().get('TL_START', 1938.86))] + TLK)
-IMGP = '../' + os.path.basename(R) + '/' if YATAY else ''
+IMGP = '../' + os.path.basename(R) + '/' if YATAY and not os.environ.get('YATAY_HERE') else ''
 js = f"""// {globals().get("BASLIK", "Sinematik dosya")} ({END:.1f} sn, 9:16).
 // build/derle.py + build/storyboard.py ile üretildi; elle düzenleme yerine storyboard'u değiştirip yeniden derle.
 const FORMAT = {{ w: {FW}, h: {FH}, fps: 30, dur: {NF} / 30 }};
@@ -273,7 +273,8 @@ const OBJECTS = [
 const BEATS = {json.dumps(BEAT, ensure_ascii=False)};
 const GLITCH = {json.dumps(GL)};
 const TIMELINE = {json.dumps(TL)};
+const GRAIN = {os.environ.get("GRAIN", ".11")};
 """
-OUT = R + '-yatay' if YATAY else R; os.makedirs(f'{OUT}/build', exist_ok=True); open(f'{OUT}/sahne.js', 'w').write(js)
+OUT = R + '-yatay' if YATAY and not os.environ.get('YATAY_HERE') else R; os.makedirs(f'{OUT}/build', exist_ok=True); open(f'{OUT}/sahne.js', 'w').write(js)
 json.dump(dict(s=[s['t'] for s in SPC], g=GL, b=BOOMS, kinds=[s['s'] for s in SPC], o=[json.loads(re.sub(r'"fmt": [^,}]*', '"fmt": 0', js_o)) for js_o in out], end=END), open(f'{OUT}/build/events.json', 'w'), ensure_ascii=False)
 print('sahne', len(SPC), 'nesne', len(OBJ), 'kare', NF, 'süre', round(END, 2))
