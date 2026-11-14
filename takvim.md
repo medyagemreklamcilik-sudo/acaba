@@ -23,19 +23,19 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-03 | Sal | Yavuz 8 yılda imparatorluğu nasıl ikiye katladı? (harita) | 2026-11-03-yavuz-8-yil | planlandı |
 | 2026-11-04 | Çar | Kanuni Viyana'yı alsaydı ne olurdu? | 2026-11-04-kanuni-viyana | planlandı |
 | 2026-11-04 | Çar | EKSTRA 11:20 · Fahreddin Paşa: Çöl Kaplanı (sinematik, 2:24) | 2026-11-05-fahreddin-pasa-ekstra | planlandı |
-| 2026-11-05 | Per | Pargalı İbrahim neden boğduruldu? | 2026-11-05-pargali-ibrahim | planlandı |
-| 2026-11-06 | Cum | Abdülaziz: intihar mı, cinayet mi? | 2026-11-06-abdulaziz | planlandı |
-| 2026-11-07 | Cmt | Piri Reis haritasının sırrı | 2026-11-07-piri-reis | planlandı |
+| 2026-11-05 | Per | Pargalı İbrahim neden boğduruldu? | 2026-11-05-pargali-ibrahim | FB+YT yayınlandı; TikTok+Instagram EKSTRA 23 Kasım 10:00 |
+| 2026-11-06 | Cum | Abdülaziz: intihar mı, cinayet mi? | 2026-11-06-abdulaziz | planlandı (EKSTRA 21 Kasım 10:00, 4 platform; ilk denemede limit yüzünden gitmemişti) |
+| 2026-11-07 | Cmt | Piri Reis haritasının sırrı | 2026-11-07-piri-reis | planlandı (EKSTRA 22 Kasım 10:00, 4 platform; ilk denemede limit yüzünden gitmemişti) |
 | 2026-11-08 | Paz | Atatürk'ün son günleri | 2026-11-08-ataturk-son-gunler | atlandı (10 Kasım geçti, planlanmadı) |
 | 2026-11-09 | Pzt | Atatürk'ün vasiyeti | 2026-11-09-ataturk-vasiyet | atlandı (10 Kasım geçti, planlanmadı) |
 | 2026-11-10 | Sal | Atatürk 20 yıl daha yaşasaydı ne olurdu? | 2026-11-10-ataturk-yasasaydi | Instagram'a elle yüklendi (10 Kasım) |
-| 2026-11-11 | Çar | Vahdettin hain miydi? | 2026-11-11-vahdettin-hain-mi | planlandı (EKSTRA 17 Kasım 14:00, 4 platform tek paylaşım) |
-| 2026-11-12 | Per | Genç Osman'ı kim öldürdü? | 2026-11-12-genc-osman | planlandı (EKSTRA 16 Kasım 14:00, 4 platform tek paylaşım) |
-| 2026-11-13 | Cum | Barbaros: korsan mı, amiral mi? | 2026-11-13-barbaros | planlandı (EKSTRA 18 Kasım 14:00, 4 platform tek paylaşım) |
-| 2026-11-14 | Cmt | Osmanlı I. Dünya Savaşı'na girmeseydi ne olurdu? | 2026-11-14-osmanli-savasa-girmeseydi | planlandı (EKSTRA 19 Kasım 14:00, 4 platform tek paylaşım) |
+| 2026-11-11 | Çar | Vahdettin hain miydi? | 2026-11-11-vahdettin-hain-mi | planlandı (EKSTRA 17 Kasım 10:00, 4 platform tek paylaşım) |
+| 2026-11-12 | Per | Genç Osman'ı kim öldürdü? | 2026-11-12-genc-osman | planlandı (EKSTRA 16 Kasım 10:00, 4 platform tek paylaşım) |
+| 2026-11-13 | Cum | Barbaros: korsan mı, amiral mi? | 2026-11-13-barbaros | planlandı (EKSTRA 18 Kasım 10:00, 4 platform tek paylaşım) |
+| 2026-11-14 | Cmt | Osmanlı I. Dünya Savaşı'na girmeseydi ne olurdu? | 2026-11-14-osmanli-savasa-girmeseydi | planlandı (EKSTRA 19 Kasım 10:00, 4 platform tek paylaşım) |
 | 2026-11-15 | Paz | Sarıkamış faciası | 2026-11-15-sarikamis | planlandı |
-| 2026-11-15 | Paz | EKSTRA: Yaşar Nuri Öztürk, iki tarafın da kızdığı ilahiyatçı (kullanıcı isteği) | 2026-11-14-yasar-nuri-ozturk-ekstra | planlandı (EKSTRA 20 Kasım 14:00, 4 platform tek paylaşım) |
-| 2026-11-15 | Paz | EKSTRA 14:00 · Yaşar Nuri Öztürk: dört söz (sinematik, 2:15) | sinematik/ornekler/yasar-nuri-dosya | planlandı (4 platform tek paylaşım) |
+| 2026-11-15 | Paz | EKSTRA: Yaşar Nuri Öztürk, iki tarafın da kızdığı ilahiyatçı (kullanıcı isteği) | 2026-11-14-yasar-nuri-ozturk-ekstra | planlandı (EKSTRA 20 Kasım 10:00, 4 platform tek paylaşım) |
+| 2026-11-15 | Paz | EKSTRA 10:00 · Yaşar Nuri Öztürk: dört söz (sinematik, 2:15) | sinematik/ornekler/yasar-nuri-dosya | planlandı (4 platform tek paylaşım) |
 | 2026-11-16 | Pzt | Çanakkale'yi kaybetseydik ne olurdu? | | bekliyor |
 | 2026-11-17 | Sal | Lale Devri ve Patrona Halil | | bekliyor |
 | 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | | bekliyor |

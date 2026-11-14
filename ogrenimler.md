@@ -180,3 +180,10 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 
 35. **"Ya olsaydı" videosunda gerçek sonucu erken söyleme:** ortalama izleyici 21. sn'de, "İsmet İnönü, bütün baskılara rağmen Türkiye'yi savaşın dışında tuttu." cümlesinde gitti. Kancadaki soru ("savaşa girer miydi?") bu cümleyle fiilen cevaplanmış gibi duruyor; ardından gelen "bazı tarihçilere göre Atatürk de aynı yolu seçerdi" merakı kapatıyor. Gerçekte ne olduğunu en erken videonun ortasında, bir "sen olsan?" anından sonra ver; ilk 30 sn'de yalnızca senaryoyu büyüt (ne değişebilirdi, kim karşı çıkardı).
 36. Kanca orta seviyede kaldı (%55.7): ilk karede net yüz vardı ama ilk cümle uzun bir soru (12 kelime). Soruyu kısalt, ilk 2 sn'de bitsin ("Atatürk 20 yıl daha yaşasaydı?").
+
+## Metricool tam rapor (15 Kasım, plan yükseltildi): `raporlar/2026-11-15-metricool.md`
+37. **Paylaşım boşluğu büyümeyi öldürüyor:** limit yüzünden 7-14 Kasım'da paylaşım yokken Facebook günlük yeni takipçi 275-918'den 45-178'e, YouTube günlük izlenme 15-28 binden 5-12 bine düştü. Günlük paylaşım hiç aksamamalı; bir video hazır değilse eski güçlü bir video yeniden paylaşılsın.
+38. **Facebook uzun izlemeyi ödüllendiriyor:** cariye (10:41) ortalama 97 sn, Salih Bozok (11 dk) 83 sn izlendi; kısa videolarda ortalama 28-40 sn. Uzun sinematik videolar Facebook'a (dikey) ve YouTube'a (yatay) da gitsin.
+39. **TikTok'ta paylaşımı belge/kimlik konuları getiriyor:** en çok paylaşılanlar Atatürk vatan haini mi (4.059), Atatürk dindardı (3.401), hocaları astı mı (2.430). Bu format ayda en az 2 kez.
+40. **Metricool en iyi saatleri mevcut planı doğruladı** (Instagram 20, TikTok 18, YouTube 16, Facebook 10≈12). 14:00 dört platformda da zayıf; ekstra/biriken paylaşımlar 10:00'da.
+41. Instagram'da artık `IGRE27` (izlenen yüzde) ve `IGRE30` (ilk 3 sn'de kaydırma oranı) da geliyor; Facebook'ta `FBRE13` (ortalama izleme), TikTok'ta `TKPO21` (aramadan gelen) var. `/analiz` bunları da kullanır.

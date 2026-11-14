@@ -17,7 +17,9 @@ kapanış) ve düzeltmeyi yazar.
 
 ## 1. Veriyi topla
 Metricool brand `7651740`. `getAnalyticsDataByMetrics`, aralık: videonun yayın günü ile bugün arası.
-- Instagram Reels: `IGRE02` (tarih), `IGRE03` (metin), `IGRE23` (izlenme), `IGRE24` (ortalama izleme sn), `IGRE28` (ilk 3 sn'yi geçenlerin %'si), `IGRE11` (erişim), `IGRE07` (yorum)
+- Instagram Reels: `IGRE02` (tarih), `IGRE03` (metin), `IGRE23` (izlenme), `IGRE24` (ortalama izleme sn), `IGRE28` (ilk 3 sn'yi geçenlerin %'si), `IGRE11` (erişim), `IGRE07` (yorum), `IGRE27` (videonun izlenen yüzdesi), `IGRE30` (ilk 3 sn'de kaydırma oranı), `IGRE21` (paylaşım), `IGRE12` (kaydetme)
+- Facebook Reels: `FBRE02`, `FBRE05`, `FBRE10` (izlenme), `FBRE11` (erişim), `FBRE13` (ortalama izleme sn), `FBRE08` (beğeni)
+- Takipçi gelişimi (haftalık raporda): `IGEV01`/`IGEV43`, `FBEV17`/`FBEV47`, `TKEV07`/`TKEV08`, `YTEV01`/`YTEV02`; en iyi saat: `getBestTimeToPostByNetwork`
 - TikTok: `TKPO02`, `TKPO05`, `TKPO06` (süre), `TKPO07` (izlenme), `TKPO13` (tamamını izleme %), `TKPO15` (ort. izleme), `TKPO09` (yorum). Boş gelebilir.
 - YouTube: `YTVP02`, `YTVP17`, `YTVP06`, `YTVP08` (ort. izleme), `YTVP11`. Boş gelebilir.
 Satırı videoya yayın tarihi ve açıklama metniyle eşleştir (`aciklama.txt`).
