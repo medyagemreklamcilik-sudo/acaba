@@ -35,7 +35,7 @@ for _i, _s in enumerate(SCENES):
     _s["_end"] = SCENES[_i + 1]["t"] if _i + 1 < len(SCENES) else DURATION
 
 OVERLAYS = [
-    dict(type="title", t0=0.0, t1=4.3, lines=["90 BİN ASKER", "DONARAK ŞEHİT OLDU?"], y=330, size=108),
+    dict(type="title", t0=0.0, t1=4.3, lines=["90 BİN ASKER", "DONARAK ŞEHİT OLDU?"], y=1000, size=108),
     dict(type="stamp", t0=4.40, t1=5.8, text="HEPİMİZ DUYDUK", y=900, size=120, color=YELLOW, rot=-6, fill=True),
     dict(type="kinetic", t0=6.0, t1=10.3, text="TARİHÇİLER:\nRAKAM DOĞRU DEĞİL", y=420, size=120, style="red"),
     dict(type="kinetic", t0=10.6, t1=13.3, text="GERÇEK HİKÂYE\nDAHA ACI", y=420, size=130, style="black"),
