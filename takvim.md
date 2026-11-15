@@ -36,7 +36,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-15 | Paz | Sarıkamış faciası | 2026-11-15-sarikamis | planlandı |
 | 2026-11-15 | Paz | EKSTRA: Yaşar Nuri Öztürk, iki tarafın da kızdığı ilahiyatçı (kullanıcı isteği) | 2026-11-14-yasar-nuri-ozturk-ekstra | planlandı (EKSTRA 20 Kasım 10:00, 4 platform tek paylaşım) |
 | 2026-11-15 | Paz | EKSTRA 10:00 · Yaşar Nuri Öztürk: dört söz (sinematik, 2:15) | sinematik/ornekler/yasar-nuri-dosya | planlandı (4 platform tek paylaşım) |
-| 2026-11-16 | Pzt | Çanakkale'yi kaybetseydik ne olurdu? | | bekliyor |
+| 2026-11-16 | Pzt | Çanakkale'yi kaybetseydik ne olurdu? | 2026-11-16-canakkale-kaybetseydik | planlandı |
 | 2026-11-17 | Sal | Lale Devri ve Patrona Halil | | bekliyor |
 | 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | | bekliyor |
 | 2026-11-19 | Per | Mimar Sinan'ın kayıp kafatası | | bekliyor |

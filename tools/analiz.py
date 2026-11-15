@@ -205,7 +205,7 @@ def reasons(words, S, t, dur):
     return out
 
 
-def hook_check(words, S):
+def hook_check(words, S, d=None):
     """İlk 3 saniyenin metinsel kontrolü (Shorts kanca kuralı)."""
     first = " ".join(w for w, s, _ in words if s < 3.0)
     notes = []
@@ -220,6 +220,9 @@ def hook_check(words, S):
     if not re.search(r"[?!]|\d", first) and not re.search(sayi, first.lower()):
         notes.append("İlk cümlede soru, sayı ya da ünlem yok; merak boşluğu zayıf.")
     ovs = [o for o in getattr(S, "OVERLAYS", []) if o.get("t0", 9) < 0.6] if S else []
+    sj = os.path.join(d, "sahne.js") if d else None
+    if not ovs and sj and os.path.exists(sj):  # sinematik motor: ilk karede görünen başlık/etiket
+        ovs = [t0 for kind, t0 in re.findall(r'"type": "(title|tag|band)"[^}]*?"t0": (-?[\d.]+)', open(sj).read()) if float(t0) < 0.6]
     if not ovs:
         notes.append("İlk 0.6 sn'de ekranda yazı yok; sesi kapalı izleyen için kanca görünmüyor.")
     return first, notes
@@ -259,7 +262,7 @@ def report(d, rows=None, avg=None, hold3=None, platform=None, views=None):
     dur = duration(d, S)
     L = [f"# Analiz: {os.path.basename(d)}", "", f"Süre: {dur:.1f} sn" + (f" · Platform: {platform}" if platform else "")
          + (f" · İzlenme: {views}" if views else ""), ""]
-    first, hnotes = hook_check(words, S)
+    first, hnotes = hook_check(words, S, d)
     biggest = None
 
     if hold3 is not None:
