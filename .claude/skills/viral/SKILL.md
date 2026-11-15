@@ -11,6 +11,7 @@ Argüman yoksa `takvim.md`'de tarihi **yarın** (Europe/Istanbul) olan ve durumu
 - Video sohbetlerinde (otomatik ya da elle) kullanıcıya **hiçbir şey sorma**; her kararı kendin ver, sonunda kısa Türkçe rapor yaz.
 - Metricool için bütün onaylar verili (plan yükseltildi, limit yok): planla, güncelle, biriken videoları kuyruğa koy.
 - **Yeni videoların hepsi `/sinematik` "dosya" stilinde** (mantar pano, ip, polaroid, belge, harita; 9:16). Görüntü adımı aşağıdaki 5-6'daki sinematik hattıdır; eski `scenes.py` motoru yalnızca sinematik hat bozulursa yedektir.
+- **Videodaki ana şahsın adı her paylaşımda hem başlıkta (`baslik.txt`, YouTube/Facebook başlığı) hem açıklamada (`aciklama.txt`, dört platform) geçmeli** (ör. "Enver Paşa", "Kösem Sultan"). Şahıs yoksa (olay/"ne olurdu" videosu) olayın kilit ismi yazılır (ör. Çanakkale → Mustafa Kemal ya da olayın adı). Uzun videolar ve EKSTRA paylaşımlar dahil.
 - Bir gün video hazırlanamazsa boş geçme: eski güçlü bir videoyu (ör. `ogrenimler.md` tablolarındaki en iyiler) aynı saatlerde yeniden paylaş (öğrenim 37). Argüman bir tarihse o satırı, serbest metinse o konuyu üret (takvime ekleyerek).
 
 ## 0. Hazırlık (her yeni oturumda)
@@ -86,7 +87,7 @@ Yedek (sinematik hat bozulursa): eski motor `scenes.py` + `python3 tools/viral.p
 ## 7. Açıklama (`aciklama.txt`)
 - **İlk yorum (`ilk_yorum.txt`, zorunlu):** iki seçenekli soru + paylaşım çağrısı, konuya özel; ör. "Hürrem mi bitirdi, kibri mi? 1 ya da 2 yaz. Bunu en yakın arkadaşına gönder, o ne derdi?" Metricool'da `firstCommentText` olarak dört paylaşımın hepsine eklenir.
 - **Toplam en fazla 100 karakter, 4 hashtag dahil.** Emoji yok. `#osmanlıtreni` / "osmanlı treni" etiketini KULLANMA (kullanıcı yalnızca tek bir video için istemişti). Merak uyandıran tek cümle + 4 hashtag. Python ile `len()` kontrol et.
-- YouTube başlığı (`baslik.txt`): en fazla 70 karakter, kanca gibi.
+- YouTube başlığı (`baslik.txt`): en fazla 70 karakter, kanca gibi; **şahsın adı mutlaka geçer.** Açıklamada da adı geçer (100 karakter sınırı içinde).
 
 ## 8. Depoya gönder
 ```
@@ -129,7 +130,7 @@ Dört paylaşım da başarılıysa takvimde durumu `planlandı` yap, commit + pu
 4. `build/storyboard.py`: 50-70 sahne; `board` (pano + ip), `dark` (başlık/alıntı/sorular), `map` (rota, `PL` şehirleri); `TL_YEARS` konunun yılları. Örnek: `sinematik/ornekler/salih-bozok/build/storyboard.py`.
 5. Kontrol: `YATAY=1 bash sinematik/motor/uret.sh <klasör> stills` → `stills/_sayfa.jpg` incele, düzelt. Render: `YATAY=1 bash sinematik/motor/uret.sh <klasör> final` (~25-35 dk, arka planda; < 92 MB, 1920x1080).
 6. Kapak: `kapak.json` içinde `"size": [1920, 1080]`, `photo_x`, `title_cx`, `stamp_cx` (örnek `sinematik/ornekler/salih-bozok-yatay/kapak.json`, koyu `bg: dark` kullanıcının beğendiği).
-7. Metinler: `baslik.txt` (≤90 karakter, merak), `aciklama.txt` (giriş paragrafı + **bölüm zaman damgaları** `00:00 ...` + soru + kaynaklar + 5 hashtag), `etiketler.txt`, `ilk_yorum.txt`.
+7. Metinler: `baslik.txt` (≤90 karakter, merak, şahsın adı geçer), `aciklama.txt` (giriş paragrafı + **bölüm zaman damgaları** `00:00 ...` + soru + kaynaklar + 5 hashtag), `etiketler.txt`, `ilk_yorum.txt`.
 8. Metricool: YouTube `{"network":"youtube"}` + `"youtubeData": {"title", "type": "video", "privacy": "public", "madeForKids": false, "category": "EDUCATION", "tags": [...]}` **15:00**; Facebook `{"network":"facebook"}` + `"facebookData": {"type": "POST", "title": "<baslik>"}` **17:00**. Ayrı iki paylaşım, `firstCommentText` = ilk yorum.
 9. Commit (`git add -f .../build/storyboard.py`), `uzun-takvim.md` durumunu `planlandı` yap, push; video için `curl -sI` raw kontrolü.
 Kota notu: ElevenLabs Creator (121 bin karakter/ay) iki günde bir uzun video + günlük kısa için yetmez (~176 bin gerekir); Pro plana geçilene kadar ay sonuna doğru atlanan uzun videolar olabilir.
