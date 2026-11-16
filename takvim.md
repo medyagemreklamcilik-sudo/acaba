@@ -38,6 +38,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-15 | Paz | EKSTRA 10:00 · Yaşar Nuri Öztürk: dört söz (sinematik, 2:15) | sinematik/ornekler/yasar-nuri-dosya | planlandı (4 platform tek paylaşım) |
 | 2026-11-16 | Pzt | Çanakkale'yi kaybetseydik ne olurdu? | 2026-11-16-canakkale-kaybetseydik | planlandı |
 | 2026-11-17 | Sal | Lale Devri ve Patrona Halil | 2026-11-17-patrona-halil | planlandı |
+| 2026-11-17 | Sal | EKSTRA 10:00 · Otlukbeli: Türk'ü Türk'e kırdıran savaş (kullanıcı isteği, sinematik) | 2026-11-17-otlukbeli-ekstra | planlandı (4 platform tek paylaşım; Vahdettin ekstrası 24 Kasım 10:00'a kaydı) |
 | 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | | bekliyor |
 | 2026-11-19 | Per | Mimar Sinan'ın kayıp kafatası | | bekliyor |
 | 2026-11-20 | Cum | Deli İbrahim gerçekten deli miydi? | | bekliyor |

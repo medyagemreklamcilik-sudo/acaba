@@ -1,0 +1,15 @@
+[dramatic] Türk'ü Türk'e kırdıran savaş: Otlukbeli.
+[whispers] "Bre kahbe oğlu, ne deryadır!"
+[serious] Bu sözü bir Türk hükümdarı, karşısındaki Türk ordusunu görünce haykırdı.
+[serious] Bir yanda Fatih Sultan Mehmed, öbür yanda Akkoyunlu hükümdarı Uzun Hasan. İkisi de Oğuz'du, ikisi de Müslümandı.
+[curious] Anlatılanlara göre Uzun Hasan'ın annesi, yıllar önce Fatih'e "oğul" demişti.
+[serious] Ama Uzun Hasan, Trabzon'un vergisini istedi. Rivayete göre Fatih'in cevabı kısaydı: "İstediklerini seneye ben kendim getiririm." Ertesi yıl ordusuyla gelip Trabzon'u aldı.
+[dramatic] Uzun Hasan Tokat'ı yaktı, Venedik'ten top istedi. Bir mektubunda da Trabzon ve Kapadokya verilirse barışacağını yazdı.
+[serious] Fatih'in cevabı: "Er isen meydana gel, delikten deliğe girme."
+[pause] Sen Fatih olsan barışır mıydın, yoksa atını mı eyerlerdin?
+[dramatic] 1473. İlk çarpışmada Akkoyunlular sahte bir geri çekilme yaptı. Peşlerine düşen Osmanlı beylerbeyi Has Murad Paşa, Fırat'ta boğuldu.
+[serious] Bir hafta sonra Otlukbeli. Uzun Hasan tepeden Osmanlı ordusuna baktı ve o sözü söyledi.
+[dramatic] Osmanlı topları ateşlendi. Akkoyunlu süvarisi barut sesine dayanamadı. Uzun Hasan'ın oğlu Zeynel'i, sıradan bir azap askeri öldürdü. Uzun Hasan kaçtı.
+[sighs] Venedik'in topları mı? Hiç yetişmedi.
+[serious] Bazen en ağır savaş, en çok benzediğin insanla yapılır.
+[curious] Sence haklı olan kimdi? Fatih mi, Uzun Hasan mı? Yorumlara yaz.
