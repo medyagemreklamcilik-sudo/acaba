@@ -187,3 +187,7 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 39. **TikTok'ta paylaşımı belge/kimlik konuları getiriyor:** en çok paylaşılanlar Atatürk vatan haini mi (4.059), Atatürk dindardı (3.401), hocaları astı mı (2.430). Bu format ayda en az 2 kez.
 40. **Metricool en iyi saatleri mevcut planı doğruladı** (Instagram 20, TikTok 18, YouTube 16, Facebook 10≈12). 14:00 dört platformda da zayıf; ekstra/biriken paylaşımlar 10:00'da.
 41. Instagram'da artık `IGRE27` (izlenen yüzde) ve `IGRE30` (ilk 3 sn'de kaydırma oranı) da geliyor; Facebook'ta `FBRE13` (ortalama izleme), TikTok'ta `TKPO21` (aramadan gelen) var. `/analiz` bunları da kullanır.
+
+## Haftalık rapor (16 Kasım): `raporlar/2026-11-16-haftalik.md`
+42. **"Kendi sözleri" + iki tarafın da kızdığı isim = kanalın en çok paylaşılan videosu.** Yaşar Nuri "dört söz" (sinematik, 2:15, 10:00'da tek paylaşım) bir günde Instagram 90 bin (2.452 paylaşım, 2.251 kaydetme, 458 yorum), TikTok 105 bin, Facebook 81 bin izlendi. Kişinin tarihli, kaynaklı sözleri belge (`DC`) olarak ekranda + altında tam metin; izleyici kendi tarafını savunmak için paylaşıyor. Bu formatta 2+ dakika sorun değil (ortalama 40 sn). Haftada en az bir kez.
+43. Sinematik (dosya) video ilk 3 sn'de eski motordan iyi: aynı gün Yaşar Nuri %56.9, Sarıkamış (eski motor) %37.3.
