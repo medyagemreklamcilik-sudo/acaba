@@ -1,0 +1,15 @@
+[dramatic] Eski bir hamam tellağı, Osmanlı padişahını tahttan indirdi.
+[serious] Adı Patrona Halil'di. İsyanı, koca bir dönemi birkaç günde bitirdi.
+[curious] Ama asıl şaşırtıcı olan, o döneme verdiğimiz adın o zaman hiç kullanılmamış olması.
+Sultan Üçüncü Ahmed ve damadı Sadrazam Nevşehirli İbrahim Paşa, İstanbul'u bahçeler, köşkler ve eğlencelerle doldurdu. Bazı lale soğanları servet değerinde satılıyordu.
+[whispers] Ama sarayın dışında başka bir İstanbul vardı.
+[serious] Pahalılık, ağır vergiler ve İran cephesinden gelen yenilgi haberleri. Tebriz kaybedilmişti.
+[pause] Sen o günlerde İstanbul'da yaşasan, sarayın eğlencesine mi kızardın, kaybedilen savaşa mı?
+[dramatic] 28 Eylül 1730. Patrona Halil, bir avuç adamla Bayezid'de isyan bayrağı açtı.
+İsyancılar tek şey istedi: İbrahim Paşa'nın başını.
+[sighs] Padişah, tahtını kurtarmak için kendi damadını boğdurdu ve cesedini isyancılara teslim etti. Yetmedi. Birkaç gün sonra o da tahttan indi.
+[serious] Patrona Halil iki ay boyunca İstanbul'un gerçek hâkimi oldu. Sonra yeni padişah onu saraya çağırdı ve orada öldürttü.
+[curious] Peki "Lale Devri" adı nereden geliyor? Bu isim, olaylardan yaklaşık 180 yıl sonra tarihçiler tarafından konuldu.
+[serious] Bazen bir düzeni yıkan düşman değil, sofradakilerle sokaktakiler arasındaki mesafedir.
+[dramatic] Lale bahçeleri, bir tellağın öfkesine dayanamadı.
+[curious] Sence suçlu israf mıydı, savaş mı? Yorumlara yaz.
