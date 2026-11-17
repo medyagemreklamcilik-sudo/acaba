@@ -39,7 +39,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-16 | Pzt | Çanakkale'yi kaybetseydik ne olurdu? | 2026-11-16-canakkale-kaybetseydik | planlandı |
 | 2026-11-17 | Sal | Lale Devri ve Patrona Halil | 2026-11-17-patrona-halil | planlandı |
 | 2026-11-16 | Pzt | EKSTRA 12:12 · Otlukbeli: Türk'ü Türk'e kırdıran savaş (kullanıcı isteği "şimdi at", sinematik) | 2026-11-17-otlukbeli-ekstra | planlandı (4 platform tek paylaşım, 16 Kasım 12:12) |
-| 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | | bekliyor |
+| 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | 2026-11-18-murad4-tutun | planlandı |
 | 2026-11-19 | Per | Mimar Sinan'ın kayıp kafatası | | bekliyor |
 | 2026-11-20 | Cum | Deli İbrahim gerçekten deli miydi? | | bekliyor |
 | 2026-11-21 | Cmt | Yıldırım Ankara Savaşı'nı kazansaydı ne olurdu? | | bekliyor |

@@ -1,0 +1,16 @@
+[dramatic] Tütün içeni idam ettiren padişah, kendisi içkiden öldü.
+[serious] Adı Dördüncü Murad'dı. Onun döneminde İstanbul'da bir nefes tütün, insanın canına mal olabiliyordu.
+[curious] Ama bu yasağı başlatan şey, bir yangındı.
+1633'te İstanbul'da büyük bir yangın çıktı. Binlerce ev kül oldu.
+[serious] Saray, kahvehaneleri ve tütün içilen meclisleri suçladı. Oralarda isyan fısıldandığı söyleniyordu.
+[dramatic] Murad önce kahvehaneleri kapattı. Sonra tütünü ve içkiyi yasakladı.
+[whispers] Rivayete göre geceleri kılık değiştirip sokaklara çıkıyor, tütün içen birini yakalarsa orada cezalandırıyordu.
+[serious] Bazı kaynaklara göre bu yasak yüzünden binlerce kişi öldürüldü. Seferde bile tütün içen askerler idam edildi.
+[pause] Sen o günlerde İstanbul'da yaşasan, bir nefes tütün için canını riske atar mıydın?
+[serious] Ama insanlar vazgeçmedi. Dönemin büyük âlimi Kâtip Çelebi bile, yasakların insanları vazgeçiremediğini yazdı.
+[curious] Ve en ironik kısım: Murad'ın kendisi.
+[serious] Anlatılanlara göre genç padişahı içkiyle Bekri Mustafa adında bir ayyaş tanıştırdı. Murad, kendi yasakladığı içkiye düştü.
+[sighs] 1640'ta, daha yirmi yedi yaşındayken öldü. Ölümünde içkinin payı olduğu söylenir.
+[serious] Bazen insan, başkalarında en çok cezalandırdığı şeyin kendinde olduğunu en son fark eder.
+[dramatic] Murad tütünü yasakladı. Ama tütün, Murad'dan uzun yaşadı.
+[curious] Sence bu yasak bir gereklilik miydi, yoksa zulüm mü? Yorumlara yaz.
