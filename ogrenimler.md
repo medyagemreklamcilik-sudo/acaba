@@ -191,3 +191,8 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 ## Haftalık rapor (16 Kasım): `raporlar/2026-11-16-haftalik.md`
 42. **"Kendi sözleri" + iki tarafın da kızdığı isim = kanalın en çok paylaşılan videosu.** Yaşar Nuri "dört söz" (sinematik, 2:15, 10:00'da tek paylaşım) bir günde Instagram 90 bin (2.452 paylaşım, 2.251 kaydetme, 458 yorum), TikTok 105 bin, Facebook 81 bin izlendi. Kişinin tarihli, kaynaklı sözleri belge (`DC`) olarak ekranda + altında tam metin; izleyici kendi tarafını savunmak için paylaşıyor. Bu formatta 2+ dakika sorun değil (ortalama 40 sn). Haftada en az bir kez.
 43. Sinematik (dosya) video ilk 3 sn'de eski motordan iyi: aynı gün Yaşar Nuri %56.9, Sarıkamış (eski motor) %37.3.
+
+## 17 Kasım analizi (Sarıkamış, Yaşar Nuri sinematik; 16 Kasım erken veri)
+44. **Vaat edilen cevabın ilk parçası 15 sn içinde gelmeli:** Sarıkamış'ta kanca "rakam doğru değil" dedi ama ilk rakam 42. sn'deydi; ortalama izleyici 19. sn'de, askerî plan anlatımında gitti. Rakam/belge vaat eden videoda ilk rakamı 15. sn'den önce ver.
+45. **Aynı gün 3 paylaşım birbirini yiyor (erken sinyal):** 16 Kasım'da Genç Osman (10:00), Otlukbeli (12:12) ve Çanakkale (12/16/18/20) aynı gün çıktı; Çanakkale Instagram'da ilk 3 sn %21.6, TikTok 1.005 izlenme (aynı gün Genç Osman 9.178). Günde en fazla 2 video (bir ekstra + bir günlük); "hemen paylaş" istekleri günlük videonun platform saatlerinden en az 3 saat uzak tutulsun.
+46. Yaşar Nuri iki günde ~375 bin izlenmeye çıktı (IG 124 bin, 3.679 paylaşım, 3.423 kaydetme). Ortalama izleyici ilk sözden sonra ayrılıyor; ikinci en sert söz 40. sn'den önce gelsin.
