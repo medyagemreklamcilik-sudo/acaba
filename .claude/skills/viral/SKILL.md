@@ -76,7 +76,7 @@ SC('board', 'Sahnenin ilk kelimeleri', [            # mekân: 'board' (mantar pa
 SC('map', 'kelime', [RT('kelime', ['istanbul', 'ankara'], 1.2), GD('kelime', 'ankara', 'ANKARA', square=True)],
    cam=[(-.4, 'istanbul', .2), ('kelime', 'ankara', .3)])    # şehirler: derle.py içindeki PL sözlüğü (yoksa [lon, lat])
 ```
-Kurallar (öğrenimlerden): **ilk sahne `board` + net yüzlü polaroid (shift=-1.2) + kanca yazısı (shift=-1.2), karanlıktan yavaş açılış yok** (öğrenim 30, 32); her cümlenin tek kahramanı; ortadaki "sen olsan?" `dark` sahnede büyük yazı; sözler/alıntılar `DC` belge + altında tam metin `TI`; kamera derleyicide otomatik (odak + pano sonu geri çekilme).
+Kurallar (öğrenimlerden): **ilk sahne `board` + net yüzlü polaroid (w=1000, yüze yakın crop, shift=-1.2) + kanca yazısı `TI(..., font='cond')` (kalın Oswald, ≥150 punto, shift=-1.2), karanlıktan yavaş açılış yok, ilk karede ince serif başlık yok** (öğrenim 30, 32, 47); her cümlenin tek kahramanı; ortadaki "sen olsan?" `dark` sahnede büyük yazı; sözler/alıntılar `DC` belge + altında tam metin `TI`; kamera derleyicide otomatik (odak + pano sonu geri çekilme).
 Kontrol: `bash sinematik/motor/uret.sh videolar/<klasör> stills` → `videolar/<klasör>/stills/_sayfa.jpg`'yi Read ile incele (yazı taşması, boş pano, yüzü örten yazı); storyboard'u düzelt, yeniden `stills`.
 - **Kapak (zorunlu):** `kapak.json` (dosya stili; `bg: cork|dark`, `photo`, `crop`, `name`, `title[2]`, `title_red`, `stamp` ≤16 karakter; `motor/kapak.py` dokümanına bak). Son 7 videonun kapaklarıyla aynı düzeni art arda kullanma. `uret.sh final` kapağı ilk 2 kareye gömer.
 
