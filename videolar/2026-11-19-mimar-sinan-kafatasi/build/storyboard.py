@@ -3,8 +3,8 @@ BASLIK = 'Mimar Sinan: 1935, açılan mezar ve kayıp kafatası. "dosya" stili'
 TL_YEARS, TL_EVERY, TL_START = [1500, 2020], 100, 1935.6
 # ---- KANCA ----
 SC('board', 'Mimar Sinan’ın mezarı açıldı.', [
-    P('sinan', 'Mimar Sinan’ın', 'MİMAR SİNAN (TEMSİLİ)', w=860, crop=[0, 0, 1, .7], shift=-1.2),
-    TI('Mimar Sinan’ın', 'MEZARI AÇILDI', 130, x=0, j=1, shift=-1.2),
+    P('sinan', 'Mimar Sinan’ın', 'MİMAR SİNAN (TEMSİLİ)', w=1000, crop=[.05, 0, .9, .62], shift=-1.2),
+    TI('Mimar Sinan’ın', 'MEZARI AÇILDI', 170, x=0, j=1, shift=-1.2, font='cond'),
     BD('Ve kafatası bir daha', 'KAFATASI GERİ DÖNMEDİ', red=True, size=62),
 ], lead=.0, year=1935.6)
 SC('board', 'Süleymaniye’yi yapan', [
