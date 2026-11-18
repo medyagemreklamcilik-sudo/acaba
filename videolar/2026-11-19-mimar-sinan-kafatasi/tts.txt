@@ -1,0 +1,16 @@
+[dramatic] Mimar Sinan'ın mezarı açıldı. Ve kafatası bir daha hiç geri dönmedi.
+[serious] Süleymaniye'yi yapan dâhinin kafatası hâlâ kayıp.
+[curious] Ama asıl soru şu: Bir mimarın mezarını neden açarsınız?
+[serious] 1935 yazı. Türk Tarih Kurumu'ndan bir heyet İstanbul'a geldi. Heyette Afet İnan ve antropolog Şevket Aziz Kansu da vardı.
+[whispers] Süleymaniye'deki küçük türbeye girdiler ve mezarı açtılar.
+[serious] Amaç, Sinan'ın kafatasını ölçmekti. O yıllarda kafatasının şekli, bir ırkın bilimsel kanıtı sayılıyordu.
+[serious] Çünkü Sinan'ın kökeni hep tartışılmıştı. Kayserili bir Hristiyan ailenin çocuğuydu, devşirme olarak saraya alınmıştı. Bir taraf onu Türk sayıyordu, öbür taraf Rum ya da Ermeni.
+[pause] Sen olsan, bir dâhinin kökenini kanıtlamak için mezarını açar mıydın?
+[dramatic] Kansu ölçümü orada yaptı ve sonucu açıkladı: Kafatası, Türk ırkına uygun tipteydi.
+[serious] Kafatası, açılacak bir antropoloji müzesinde sergilenmek üzere Kansu'ya teslim edildi.
+[sighs] Ama o müze hiç açılmadı. Ve kafatası bir daha mezara dönmedi.
+[curious] Bir fakültede mi, bir koleksiyonda mı? Kimse bilmiyor.
+[serious] Yıllar sonra hükümet arama başlatacağını açıkladı.
+[serious] Bazen bir insanı kim olduğu için değil, bizim ne olduğumuzu kanıtlamak için kullanırız.
+[dramatic] Sinan bize taştan bir dünya bıraktı. Biz onun kafatasını bile koruyamadık.
+[curious] Sence mezarı açmak bilim miydi, saygısızlık mı? Yorumlara yaz.
