@@ -1,0 +1,16 @@
+[dramatic] Padişah olduğunu söylediler. O ise kapıyı açmadı.
+[serious] Çünkü yıllardır o kapının arkasında, öldürülmeyi bekliyordu. Adı Sultan İbrahim'di. Tarih ona "Deli İbrahim" dedi.
+[curious] Ama gerçekten deli miydi?
+[serious] İbrahim gençliğini Kafes denilen dairede geçirdi. Şehzadelerin kilitli yaşadığı bir saray köşesi.
+[serious] Ağabeyi Dördüncü Murad tahttaydı. Ve Murad, kardeşlerini birer birer öldürttü.
+[whispers] Her kapı açıldığında, sıranın kendisine geldiğini düşünüyordu.
+[serious] Anlatılanlara göre Murad, ölüm döşeğinde İbrahim'in de öldürülmesini emretti. Onu annesi Kösem Sultan kurtardı.
+[dramatic] 1640'ta Murad öldü. Görevliler kapıya gelip "Padişah oldunuz" dediler. İbrahim bunun bir tuzak olduğunu sandı. Kapıyı ancak ağabeyinin cesedini görünce açtı.
+[pause] Sen yıllarca ölümü beklesen, tahta çıktığında normal kalabilir miydin?
+[serious] Tahttaki yılları tuhaflıklarla anıldı. Samur kürke ve amber kokusuna servet harcadı.
+[serious] Bazı tarihçilere göre ağır baş ağrıları ve sinir krizleri yaşıyordu.
+[sighs] 1648'de yeniçeriler ve ulema ayaklandı. Annesi Kösem Sultan bile oğlunun tahttan indirilmesine razı oldu.
+[dramatic] Fetva verildi. Sultan İbrahim, otuz iki yaşında boğduruldu.
+[serious] Bazen bir insanı deli yapan kendisi değil, büyüdüğü kafestir.
+[dramatic] Tarih onu "deli" diye hatırladı. Belki de sadece hayatta kalmaya çalışan bir çocuktu.
+[curious] Sence Sultan İbrahim deli miydi, yoksa kafesin kurbanı mı? Yorumlara yaz.
