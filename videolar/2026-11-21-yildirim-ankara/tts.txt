@@ -1,0 +1,16 @@
+[dramatic] Yıldırım Bayezid o savaşı kazansaydı, İstanbul elli yıl erken düşebilirdi.
+[serious] Bayezid, İstanbul'u yıllardır kuşatıyordu. Şehir teslim olmanın eşiğindeydi.
+[curious] Ama doğudan biri geldi: Timur.
+[serious] 28 Temmuz 1402. Ankara yakınlarında, Çubuk Ovası. İki dev ordu karşı karşıya geldi.
+[dramatic] Savaşın ortasında, Bayezid'in saflarındaki Tatarlar ve beylik askerleri taraf değiştirdi. Çünkü eski beyleri, Timur'un yanındaydı.
+[serious] Bayezid yanında kalan yeniçerilerle akşama kadar savaştı. Sonunda esir düştü.
+[pause] Sen Bayezid olsan, seni savaşın ortasında bırakan askerleri affeder miydin?
+[serious] Anlatılanlara göre Timur onu demir bir kafeste taşıdı. Bu büyük ihtimalle efsane. Bayezid birkaç ay sonra Akşehir'de, tutsakken öldü.
+[sighs] Osmanlı neredeyse dağıldı. Oğulları on bir yıl boyunca taht için birbirleriyle savaştı.
+[dramatic] Peki Yıldırım kazansaydı?
+[serious] Bazı tarihçilere göre İstanbul 1453'ü beklemeden düşerdi. Kuşatılan şehri kurtaran aslında Timur'du.
+[serious] Belki "Fatih" unvanı da Yıldırım’ın olurdu.
+[curious] Bazı tarihçilere göre bu yenilgi devleti Balkanlara itti ve Osmanlı orada daha sağlam kuruldu.
+[serious] Bazen en büyük yenilgi, düşmandan değil, yanında sandığın birinin saf değiştirmesinden gelir.
+[dramatic] Yıldırım'ı Timur değil, kendi saflarındaki ihanet yendi.
+[curious] Sence Yıldırım kazansaydı İstanbul elli yıl önce düşer miydi? Evet mi, hayır mı? Yorumlara yaz.

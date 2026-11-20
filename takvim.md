@@ -42,7 +42,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-18 | Çar | IV. Murad'ın tütün yasağı | 2026-11-18-murad4-tutun | planlandı |
 | 2026-11-19 | Per | Mimar Sinan'ın kayıp kafatası | 2026-11-19-mimar-sinan-kafatasi | planlandı |
 | 2026-11-20 | Cum | Deli İbrahim gerçekten deli miydi? | 2026-11-20-deli-ibrahim | planlandı (TEST: 10:00 dört platform tek paylaşım; Yaşar Nuri kısa 12/16/18/20'ye alındı, öğrenim 49) |
-| 2026-11-21 | Cmt | Yıldırım Ankara Savaşı'nı kazansaydı ne olurdu? | | bekliyor |
+| 2026-11-21 | Cmt | Yıldırım Ankara Savaşı'nı kazansaydı ne olurdu? | 2026-11-21-yildirim-ankara | planlandı |
 | 2026-11-22 | Paz | II. Abdülhamid: Kızıl Sultan mı, Ulu Hakan mı? | | bekliyor |
 | 2026-11-23 | Pzt | Kanuni'nin ölümü 48 gün saklandı | | bekliyor |
 | 2026-11-24 | Sal | Yeniçeriler: padişah indiren ordu | | bekliyor |
