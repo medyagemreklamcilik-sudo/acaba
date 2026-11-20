@@ -203,3 +203,7 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 
 ## 19 Kasım analizi: paylaşım düzeni
 49. **10:00'da dört platform tek paylaşım, ayrı saatlere bölünmüş paylaşımı ezici farkla geçiyor:** 15-18 Kasım'da 10:00 tek paylaşımlar (Yaşar Nuri, Genç Osman, Vahdettin, Barbaros) TikTok 15-150 bin, Facebook 7-100 bin aldı; aynı günlerin FB 12 / YT 16 / TT 18 / IG 20 ayrı paylaşımları (Çanakkale, Patrona, IV. Murad) TikTok 0.4-1.4 bin, Facebook 1-4.6 bin, Instagram ilk 3 sn %21-27. Motor farkı da var (öğrenim 47), bu yüzden 20 Kasım'da test: yeni sinematik Deli İbrahim 10:00 tek paylaşım, eski Yaşar Nuri kısa 12/16/18/20 ayrı. Sonuç 22 Kasım analizinde; test doğrularsa günlük video 10:00 tek paylaşıma geçer.
+
+## 20 Kasım analizi
+50. **Kalın kanca başlığı (öğrenim 47) ilk sonucu verdi:** Mimar Sinan (yeni kanca karesi) Instagram ilk 3 sn %36.3; aynı düzende eski ince başlıklı IV. Murad %31.7, Patrona %22.6, Çanakkale %23.6. İyileşme var ama hâlâ 10:00 tek paylaşımların (%41-44) altında; asıl fark paylaşım düzeninde (öğrenim 49), 22 Kasım testini bekle.
+51. **Yatay uzun video Facebook'ta düşük:** Enver Paşa (yatay POST) FB 1.3 bin / ort. 16 sn. Facebook'ta uzun içerik dikey ya da Reel olarak daha iyi (Salih Bozok dikey: 23 bin / 88 sn). Uzun videoların Facebook paylaşımı için dikey 2-3 dk kesit düşünülmeli.
