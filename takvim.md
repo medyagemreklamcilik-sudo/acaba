@@ -44,7 +44,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-20 | Cum | Deli İbrahim gerçekten deli miydi? | 2026-11-20-deli-ibrahim | planlandı (TEST: 10:00 dört platform tek paylaşım; Yaşar Nuri kısa 12/16/18/20'ye alındı, öğrenim 49) |
 | 2026-11-21 | Cmt | Yıldırım Ankara Savaşı'nı kazansaydı ne olurdu? | 2026-11-21-yildirim-ankara | planlandı |
 | 2026-11-22 | Paz | II. Abdülhamid: Kızıl Sultan mı, Ulu Hakan mı? | | atlandı (rutin 21-23 Kasım çalışmadı; uzun Abdülhamid videosu zaten var) |
-| 2026-11-24 | Sal | 09:00 · Kanuni'nin ölümü 48 gün saklandı | | bekliyor |
+| 2026-11-24 | Sal | 09:00 · Kanuni'nin ölümü 48 gün saklandı | 2026-11-24-kanuni-48-gun | planlandı (09:00, 4 platform tek paylaşım) |
 | 2026-11-24 | Sal | 18:00 · Yeniçeriler: padişah indiren ordu | | bekliyor |
 | 2026-11-25 | Çar | 09:00 · Osmanlı matbaayı neden geç aldı? | | bekliyor |
 | 2026-11-25 | Çar | 18:00 · Atatürk ezanı neden Türkçeleştirdi? (belgelerle) | | bekliyor |
