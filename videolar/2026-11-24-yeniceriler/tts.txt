@@ -1,0 +1,15 @@
+[dramatic] Osmanlı'da padişahı boğan, kendi ordusuydu.
+[serious] Yeniçeriler, devletin en korkulan askerleriydi. Ama bir gün kılıçlarını saraya çevirdiler.
+[curious] İsyanın işareti basitti: çorba kazanlarını devirirlerdi. Kazan devrildiyse, saray titrerdi.
+[serious] 1622'de genç padişah İkinci Osman, ocağı kaldırmak istedi. Yeniçeriler onu Yedikule'de boğdu.
+[dramatic] Bir Osmanlı padişahını ilk kez kendi askeri öldürmüştü.
+[serious] Sonra sıra diğerlerine geldi. Sultan İbrahim tahttan indirildi ve boğuldu. Dördüncü Mehmed, İkinci Mustafa, Üçüncü Ahmed. Hepsi isyanlarla tahtı kaybetti.
+[pause] Sen padişah olsan, seni koruması gereken askerden korkar mıydın?
+[serious] Islahat isteyen Üçüncü Selim de tahttan indirildi, ertesi yıl öldürüldü.
+[curious] Ve tahta İkinci Mahmud geçti. Yıllarca sabretti. Sessizce yeni bir ordu kurdu.
+[dramatic] 15 Haziran 1826. Yeniçeriler yine kazanlarını devirdi. Ama bu sefer karşılarında toplar vardı.
+[serious] Et Meydanı'ndaki kışlalar topa tutuldu. Binlerce yeniçeri öldürüldü. Dört yüz yılı aşkın ocak, bir günde tarihe karıştı.
+[whispers] Buna "Hayırlı Olay" dediler.
+[sighs] Bazen seni korusun diye büyüttüğün güç, bir gün sana emir vermeye başlar.
+[dramatic] Padişahları deviren ordu, sonunda bir padişah tarafından devrildi.
+[curious] Sence Mahmud haklı mıydı, zalim mi? Yorumlara yaz.

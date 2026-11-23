@@ -8,8 +8,8 @@ ElevenLabs kotası yetmezse o günün uzun videosu atlanır, rapora yazılır (k
 | 2026-11-16 | Salih Bozok: Atatürk öldüğü an kendini vuran yaver | sinematik/ornekler/salih-bozok-yatay | kullanıcı elle yükledi (Metricool paylaşımı taslağa çekildi) |
 | 2026-11-18 | Enver Paşa: imparatorluğu batıran adam mı, kahraman mı? (Harbiye'den Belcuvan'a) | videolar/2026-11-18-enver-pasa-uzun | planlandı (YouTube 15:00, Facebook 17:00) |
 | 2026-11-20 | Sultan Abdülhamid: Kızıl Sultan mı, Ulu Hakan mı? | videolar/2026-11-20-abdulhamid-uzun | planlandı (YouTube 15:00, Facebook 17:00) |
-| 2026-11-22 | Çerkez Ethem: kahraman mı, hain mi? | | bekliyor |
-| 2026-11-24 | Lozan'ın perde arkası: İsmet Paşa'nın sekiz ayı | | bekliyor |
+| 2026-11-22 | Çerkez Ethem: kahraman mı, hain mi? | | atlandı (rutin 21-23 Kasım çalışmadı) |
+| 2026-11-24 | Lozan'ın perde arkası: İsmet Paşa'nın sekiz ayı | | atlandı (rutin 23 Kasım çalışmadı; 24 Kasım gece kısa videolar önceliklendi) |
 | 2026-11-26 | Topal Osman ve Ali Şükrü Bey cinayeti | | bekliyor |
 | 2026-11-28 | Kösem Sultan: yarım asır imparatorluğu yöneten kadın | | bekliyor |
 | 2026-11-30 | 31 Mart Vakası: bir gecede devrilen düzen | | bekliyor |
