@@ -207,3 +207,20 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 ## 20 Kasım analizi
 50. **Kalın kanca başlığı (öğrenim 47) ilk sonucu verdi:** Mimar Sinan (yeni kanca karesi) Instagram ilk 3 sn %36.3; aynı düzende eski ince başlıklı IV. Murad %31.7, Patrona %22.6, Çanakkale %23.6. İyileşme var ama hâlâ 10:00 tek paylaşımların (%41-44) altında; asıl fark paylaşım düzeninde (öğrenim 49), 22 Kasım testini bekle.
 51. **Yatay uzun video Facebook'ta düşük:** Enver Paşa (yatay POST) FB 1.3 bin / ort. 16 sn. Facebook'ta uzun içerik dikey ya da Reel olarak daha iyi (Salih Bozok dikey: 23 bin / 88 sn). Uzun videoların Facebook paylaşımı için dikey 2-3 dk kesit düşünülmeli.
+
+## 24 Kasım analizi (19-23 Kasım, Metricool; rutin 21-23 Kasım'da çalışmadı, yeni video yoktu)
+| Video | Saat | IG izlenme | IG ilk 3 sn | IG ort. | TikTok | Facebook |
+|---|---|---|---|---|---|---|
+| Pargalı İbrahim (EKSTRA, 23 Kasım) | 10:00 tek | 41.270 | %65.2 | 38.7 sn | 28.000 | - |
+| Yaşar Nuri kısa (20 Kasım) | ayrı saatler | 117.769 | %60.4 | 37.2 sn | 217.698 | 5.697 |
+| Piri Reis (EKSTRA, 22 Kasım) | 10:00 tek | 1.858 | %56.3 | 19.8 sn | 2.607 | 5.242 |
+| Abdülaziz (EKSTRA, 21 Kasım) | 10:00 tek | 692 | %53.0 | 19.0 sn | 3.771 | 8.534 |
+| Yıldırım Ankara (21 Kasım) | ayrı saatler | 1.569 | %42.8 | 15.0 sn | 3.235 | 5.912 |
+| Mimar Sinan kafatası (19 Kasım) | ayrı saatler | 447 | %42.8 | 18.8 sn | 1.631 | 6.793 |
+| Deli İbrahim (20 Kasım, TEST) | 10:00 tek | 388 | %40.4 | 19.9 sn | 2.651 | 5.358 |
+| Abdülhamid uzun (yatay, 20 Kasım) | YT 15 / FB 17 | - | - | - | - | 52.919 |
+
+52. **Saatten çok konu belirliyor: tanınmış isim + "kendi adamı tarafından öldürüldü/ihanet" ya da suçlama sorusu kazanıyor.** Son 10 günde 20 binin üstüne çıkan kısa videoların hepsi bu kalıpta: Pargalı (Kanuni boğdurttu, IG 41 bin), Genç Osman (kendi askerleri boğdu, TT 30 bin / FB 26 bin), Vahdettin hain miydi (FB 40 bin / TT 28 bin), Barbaros korsan mı (TT 24 bin), Yaşar Nuri (IG 118 bin / TT 218 bin). Az bilinen merak konuları (Mimar Sinan'ın kafatası, Piri Reis, IV. Murad tütün, Patrona, Deli İbrahim) saatinden bağımsız 0.4-2.6 bin IG'de kaldı. Deli İbrahim 10:00 testi de %40.4 ile zayıf: öğrenim 49'daki "10:00 tek paylaşım" farkının büyük kısmı konudan geliyordu.
+53. **Kancadan sonraki ilk tarih cümlesi hâlâ kaybettiriyor:** Yıldırım'da ortalama izleyici 15. sn'de "28 Temmuz 1402." cümlesinde, Mimar Sinan'da 19. sn'de heyet isim listesinde ("Afet İnan ve antropolog Şevket Aziz Kansu"), Deli İbrahim'de 20. sn'de mekân tarifinde ("Şehzadelerin kilitli yaşadığı bir saray köşesi") gitti. 15-20. sn'ye ikinci şok bilgi koy; tarih tek başına cümle olmasın, olayın içine gömülsün ("1402'de Ankara'da ordusu onu terk etti").
+54. **Yatay uzun video Facebook'ta bu kez çalıştı:** Abdülhamid uzun FB 52.919 (Enver Paşa yatay 1.526). Fark konu ve açıklama: Abdülhamid tanınmış isim + "Kızıl Sultan mı, Ulu Hakan mı?" ikiliği. Öğrenim 51'i tek başına kural yapma.
+55. **24 Kasım - 8 Aralık: günde 2 video, 09:00 ve 18:00 tek paylaşım (kullanıcı kararı).** Her iki slot için de öğrenim 52'ye uyan konu seç; aynı gün iki videonun birbirini yiyip yemediğini (öğrenim 45) 09:00 ve 18:00 videolarını karşılaştırarak izle.

@@ -9,7 +9,7 @@
 set -e
 MOTOR=$(cd "$(dirname "$0")" && pwd)
 D=$(cd "$1" && pwd); MODE=${2:-final}
-export NODE_PATH=/home/user/acaba/vendor/claude-animation-skills/kit/node_modules CHROME=/opt/pw-browsers/chromium
+export NODE_PATH=/home/user/acaba/vendor/claude-animation-skills/kit/node_modules:/opt/node22/lib/node_modules CHROME=/opt/pw-browsers/chromium
 REL=$(python3 -c "import os,sys;print(os.path.relpath(sys.argv[1],sys.argv[2]))" "$MOTOR" "$D")
 cat > "$D/index.html" <<EOF
 <!doctype html><html><head><meta charset="utf-8"><style>
