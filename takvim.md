@@ -43,12 +43,36 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-19 | Per | Mimar Sinan'ın kayıp kafatası | 2026-11-19-mimar-sinan-kafatasi | planlandı |
 | 2026-11-20 | Cum | Deli İbrahim gerçekten deli miydi? | 2026-11-20-deli-ibrahim | planlandı (TEST: 10:00 dört platform tek paylaşım; Yaşar Nuri kısa 12/16/18/20'ye alındı, öğrenim 49) |
 | 2026-11-21 | Cmt | Yıldırım Ankara Savaşı'nı kazansaydı ne olurdu? | 2026-11-21-yildirim-ankara | planlandı |
-| 2026-11-22 | Paz | II. Abdülhamid: Kızıl Sultan mı, Ulu Hakan mı? | | bekliyor |
-| 2026-11-23 | Pzt | Kanuni'nin ölümü 48 gün saklandı | | bekliyor |
-| 2026-11-24 | Sal | Yeniçeriler: padişah indiren ordu | | bekliyor |
-| 2026-11-25 | Çar | Osmanlı matbaayı neden geç aldı? | | bekliyor |
-| 2026-11-26 | Per | Enver Paşa: kahraman mı, felaket mi? | | bekliyor |
-| 2026-11-27 | Cum | Lozan'ın "gizli maddeleri" efsanesi | | bekliyor |
-| 2026-11-28 | Cmt | Hatay Türkiye'ye nasıl katıldı? | | bekliyor |
-| 2026-11-29 | Paz | Osmanlı hiç yıkılmasaydı bugün ne olurdu? | | bekliyor |
-| 2026-11-30 | Pzt | Osmanlı'da bir padişahın bir günü nasıl geçerdi? | | bekliyor |
+| 2026-11-22 | Paz | II. Abdülhamid: Kızıl Sultan mı, Ulu Hakan mı? | | atlandı (rutin 21-23 Kasım çalışmadı; uzun Abdülhamid videosu zaten var) |
+| 2026-11-24 | Sal | 09:00 · Kanuni'nin ölümü 48 gün saklandı | | bekliyor |
+| 2026-11-24 | Sal | 18:00 · Yeniçeriler: padişah indiren ordu | | bekliyor |
+| 2026-11-25 | Çar | 09:00 · Osmanlı matbaayı neden geç aldı? | | bekliyor |
+| 2026-11-25 | Çar | 18:00 · Atatürk ezanı neden Türkçeleştirdi? (belgelerle) | | bekliyor |
+| 2026-11-26 | Per | 09:00 · Enver Paşa: kahraman mı, felaket mi? | | bekliyor |
+| 2026-11-26 | Per | 18:00 · Kanuni mi, Fatih mi? En büyük padişah hangisi? | | bekliyor |
+| 2026-11-27 | Cum | 09:00 · Lozan'ın "gizli maddeleri" efsanesi | | bekliyor |
+| 2026-11-27 | Cum | 18:00 · Kösem mi, Turhan mı? Sarayda gelin-kaynana savaşı | | bekliyor |
+| 2026-11-28 | Cmt | 09:00 · Hatay Türkiye'ye nasıl katıldı? | | bekliyor |
+| 2026-11-28 | Cmt | 18:00 · Sokullu Mehmed Paşa'yı kim öldürdü? | | bekliyor |
+| 2026-11-29 | Paz | 09:00 · Osmanlı hiç yıkılmasaydı bugün ne olurdu? | | bekliyor |
+| 2026-11-29 | Paz | 18:00 · İskilipli Atıf Hoca şapka yüzünden mi asıldı? (belgelerle) | | bekliyor |
+| 2026-11-30 | Pzt | 09:00 · Osmanlı'da bir padişahın bir günü nasıl geçerdi? | | bekliyor |
+| 2026-11-30 | Pzt | 18:00 · Cem Sultan zehirlendi mi? | | bekliyor |
+| 2026-12-01 | Sal | 09:00 · Fatih mi, Yavuz mu? | | bekliyor |
+| 2026-12-01 | Sal | 18:00 · Rus Çarı Deli Petro Osmanlı'ya nasıl teslim oldu? (Prut) | | bekliyor |
+| 2026-12-02 | Çar | 09:00 · Latife Hanım Atatürk'ten neden ayrıldı? | | bekliyor |
+| 2026-12-02 | Çar | 18:00 · Köprülü Mehmed Paşa: devleti kurtaran cellat mı? | | bekliyor |
+| 2026-12-03 | Per | 09:00 · Osmanlı Amerika'yı keşfetseydi ne olurdu? | | bekliyor |
+| 2026-12-03 | Per | 18:00 · Harem'e kızlar nasıl seçilirdi? | | bekliyor |
+| 2026-12-04 | Cum | 09:00 · İsmet İnönü: Milli Şef mi, diktatör mü? | | bekliyor |
+| 2026-12-04 | Cum | 18:00 · Şeyh Said isyanı: din mi, siyaset mi? | | bekliyor |
+| 2026-12-05 | Cmt | 09:00 · Şehzade Mustafa'yı Hürrem mi öldürttü? | | bekliyor |
+| 2026-12-05 | Cmt | 18:00 · Osmanlı'da cellat olmak | | bekliyor |
+| 2026-12-06 | Paz | 09:00 · Yavuz Mısır'ı alamasaydı halifelik kimde olurdu? | | bekliyor |
+| 2026-12-06 | Paz | 18:00 · Menderes mi, İnönü mü? | | bekliyor |
+| 2026-12-07 | Pzt | 09:00 · Atatürk'e İzmir suikastı: 1926'da ne oldu? | | bekliyor |
+| 2026-12-07 | Pzt | 18:00 · Barbaros mu, Turgut Reis mi? | | bekliyor |
+| 2026-12-08 | Sal | 09:00 · Ertuğrul Gazi gerçekten var mıydı? | | bekliyor |
+| 2026-12-08 | Sal | 18:00 · Osmanlı borç yüzünden mi battı? (Düyun-u Umumiye) | | bekliyor |
+
+**24 Kasım - 8 Aralık 2026 (kullanıcı kararı):** günde 2 video, 09:00 ve 18:00. Her video dört platforma o saatte tek paylaşım. Rutin her sabah 04:12'de o günün iki videosunu üretir.
