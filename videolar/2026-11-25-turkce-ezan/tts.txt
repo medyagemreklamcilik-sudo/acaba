@@ -1,0 +1,14 @@
+[dramatic] Atatürk ezanı yasakladı mı?
+[serious] 18 yıl boyunca minarelerden "Tanrı uludur" sesi yükseldi.
+[curious] Ama belgeler, bilinen hikâyeden farklı bir şey söylüyor.
+[dramatic] Arapça ezan okuyana hapis cezası getiren kanun, Atatürk öldükten 3 yıl sonra, 1941'de çıktı.
+[serious] Atatürk döneminde böyle bir kanun yoktu. 1932'de Diyanet bir genelge yayımladı: ezan bütün camilerde Türkçe okunacak.
+[serious] İlk Türkçe ezan, Ocak 1932'de Fatih Camii'nde okundu.
+[pause] Sen olsan, ömür boyu duyduğun ezanı bir gün kendi dilinde duysan, sevinir miydin, kızar mıydın?
+[serious] 1933'te Bursa Ulu Cami'de biri Arapça ezan okudu. Gözaltılar başlayınca halk valiliğe yürüdü.
+[dramatic] Atatürk hemen Bursa'ya gitti. Gazetelere aktarılan sözü şuydu: Mesele din değil, dil meselesidir.
+[serious] Ona göre halk, ibadette ne söylediğini anlamalıydı. Karşı çıkanlara göre ise bu, dine müdahaleydi.
+[sighs] Sen de hiç anlamını bilmeden bir şeyi ezberledin mi?
+[serious] 1950'de Meclis cezayı kaldırdı. Ertesi gün minarelerden yeniden Arapça ezan yükseldi.
+[dramatic] Atatürk ezanı yasaklamadı, Türkçeleştirdi. Ceza ondan sonra geldi.
+[curious] Sence hangisi önemliydi? Dil mi, din mi? Yorumlara yaz.
