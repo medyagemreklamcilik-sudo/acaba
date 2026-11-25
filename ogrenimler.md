@@ -228,7 +228,7 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 ## 25 Kasım: ilk 09:00 / 18:00 karşılaştırması (24 Kasım videoları, ~1 gün veri)
 | Video | Saat | IG izlenme | IG ilk 3 sn | IG ort. | TikTok | Kanca |
 |---|---|---|---|---|---|---|
-| Yeniçeriler | 18:00 | 1.456 | %62.2 | 19.6 sn | 1.784 | "Padişahı kendi ordusu boğdu" (suçlama + şok eylem) |
+| Yeniçeriler | 18:00 | 1.456 | %62.2 | 19.6 sn | 1.784 | "Osmanlı'da padişahı boğan, kendi ordusuydu." (şok eylem) |
 | Kanuni 48 gün | 09:00 | 331 | %35.2 | 12.9 sn | 2.148 | "Padişah ölmüştü." (isimsiz, durum cümlesi) |
 | Pargalı İbrahim (23 Kasım, 2 gün) | 10:00 | 70.767 | %68.3 | 44.9 sn | 38.195 | "Kanuni, Pargalı'yı iftardan sonra boğdurttu" |
 
