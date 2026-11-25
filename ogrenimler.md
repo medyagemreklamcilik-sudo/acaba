@@ -224,3 +224,12 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 53. **Kancadan sonraki ilk tarih cümlesi hâlâ kaybettiriyor:** Yıldırım'da ortalama izleyici 15. sn'de "28 Temmuz 1402." cümlesinde, Mimar Sinan'da 19. sn'de heyet isim listesinde ("Afet İnan ve antropolog Şevket Aziz Kansu"), Deli İbrahim'de 20. sn'de mekân tarifinde ("Şehzadelerin kilitli yaşadığı bir saray köşesi") gitti. 15-20. sn'ye ikinci şok bilgi koy; tarih tek başına cümle olmasın, olayın içine gömülsün ("1402'de Ankara'da ordusu onu terk etti").
 54. **Yatay uzun video Facebook'ta bu kez çalıştı:** Abdülhamid uzun FB 52.919 (Enver Paşa yatay 1.526). Fark konu ve açıklama: Abdülhamid tanınmış isim + "Kızıl Sultan mı, Ulu Hakan mı?" ikiliği. Öğrenim 51'i tek başına kural yapma.
 55. **24 Kasım - 8 Aralık: günde 2 video, 09:00 ve 18:00 tek paylaşım (kullanıcı kararı).** Her iki slot için de öğrenim 52'ye uyan konu seç; aynı gün iki videonun birbirini yiyip yemediğini (öğrenim 45) 09:00 ve 18:00 videolarını karşılaştırarak izle.
+
+## 25 Kasım: ilk 09:00 / 18:00 karşılaştırması (24 Kasım videoları, ~1 gün veri)
+| Video | Saat | IG izlenme | IG ilk 3 sn | IG ort. | TikTok | Kanca |
+|---|---|---|---|---|---|---|
+| Yeniçeriler | 18:00 | 1.456 | %62.2 | 19.6 sn | 1.784 | "Padişahı kendi ordusu boğdu" (suçlama + şok eylem) |
+| Kanuni 48 gün | 09:00 | 331 | %35.2 | 12.9 sn | 2.148 | "Padişah ölmüştü." (isimsiz, durum cümlesi) |
+| Pargalı İbrahim (23 Kasım, 2 gün) | 10:00 | 70.767 | %68.3 | 44.9 sn | 38.195 | "Kanuni, Pargalı'yı iftardan sonra boğdurttu" |
+
+56. **Instagram'da 09:00 slotu erken sinyalde zayıf:** aynı gün 09:00 Kanuni IG 331 izlenme / ilk 3 sn %35, 18:00 Yeniçeriler 1.456 / %62. TikTok'ta fark yok (2.1 bin / 1.8 bin). Kanca farkı da var: "Padişah ölmüştü." isim ve suçlu içermiyor; Pargalı ve Yeniçeri kancaları "kim kimi öldürdü" cümlesiyle açılıyor (öğrenim 52). 09:00 videolarında da ilk cümle tanınmış isim + şok eylem olsun. 26-27 Kasım verisi aynı yöndeyse sabah slotu 10:00'a (öğrenim 40) çekilmeli.
