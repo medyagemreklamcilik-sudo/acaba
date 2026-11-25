@@ -1,0 +1,14 @@
+[dramatic] Avrupa kitap basarken, Osmanlı matbaayı 270 yıl bekledi.
+[curious] Bir padişah mı yasakladı?
+[serious] Sana anlatılan hikâye şu: İkinci Bayezid bir fermanla matbaayı yasakladı. İddiaya göre cezası ölümdü.
+[dramatic] Ama o fermanı bugüne kadar kimse bulamadı.
+[serious] İddia, 1584'te bir Fransız rahibin kitabından çıkıyor. Osmanlı arşivinde böyle bir belge yok.
+[curious] Üstelik İstanbul'da matbaa zaten vardı. Yahudiler 1493'te, Ermeniler 1567'de kitap basıyordu.
+[serious] Basmayan Müslümanlardı. Arap harfleri birbirine bitişikti, tek tek dökmek çok zordu. Hattatlar ise yazıyı kutsal bir sanat sayıyordu.
+[pause] Sen olsan, ekmeğini kalemden kazanan hattatları bir makineyle işsiz bırakır mıydın?
+[dramatic] 1727'de Müslüman olmuş bir Macar, İbrahim Müteferrika, ilk Türk matbaasını kurdu.
+[serious] Şeyhülislam fetva verdi, ama bir şartla: Kur'an ve dinî kitaplar basılmayacaktı.
+[serious] Müteferrika ölene kadar yalnızca 17 kitap basabildi. Bazıları yıllarca satılmadı.
+[sighs] Bugün de öyle değil mi? Yeni bir şey çıkınca önce "buna gerek yok" deriz.
+[dramatic] Osmanlı'yı geciktiren bir yasak değildi, bir alışkanlıktı.
+[curious] Sence suçlu kim? Hattatlar mı, ulema mı? Yorumlara yaz.
