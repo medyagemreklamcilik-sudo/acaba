@@ -48,7 +48,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-24 | Sal | 18:00 · Yeniçeriler: padişah indiren ordu | 2026-11-24-yeniceriler | planlandı (18:00, 4 platform tek paylaşım) |
 | 2026-11-25 | Çar | 09:00 · Osmanlı matbaayı neden geç aldı? | 2026-11-25-matbaa | planlandı (09:00, 4 platform tek paylaşım) |
 | 2026-11-25 | Çar | 18:00 · Atatürk ezanı neden Türkçeleştirdi? (belgelerle) | 2026-11-25-turkce-ezan | planlandı (18:00, 4 platform tek paylaşım) |
-| 2026-11-26 | Per | 09:00 · Enver Paşa: kahraman mı, felaket mi? | | bekliyor |
+| 2026-11-26 | Per | 09:00 · Enver Paşa: kahraman mı, felaket mi? | 2026-11-26-enver-pasa | hazır (09:00 kaçtı, 12:00) |
 | 2026-11-26 | Per | 18:00 · Kanuni mi, Fatih mi? En büyük padişah hangisi? | | bekliyor |
 | 2026-11-27 | Cum | 09:00 · Lozan'ın "gizli maddeleri" efsanesi | | bekliyor |
 | 2026-11-27 | Cum | 18:00 · Kösem mi, Turhan mı? Sarayda gelin-kaynana savaşı | | bekliyor |
