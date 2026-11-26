@@ -1,0 +1,14 @@
+[dramatic] Fatih mi daha büyüktü, Kanuni mi?
+[curious] Biri İstanbul'u aldı. Öbürü Viyana'nın kapısına dayandı. Osmanlı'nın en büyük padişahı hangisi?
+[serious] Önce Fatih. Yirmi bir yaşındaydı. Gemileri karadan yürüterek Haliç'e indirdi ve 1453'te bin yıllık Bizans'ı bitirdi.
+[dramatic] Bir çağı kapatıp yenisini açtı. Osmanlı artık bir beylik değil, bir imparatorluktu.
+[serious] Kanuni ise yirmi altı yaşında tahta çıktı ve tam 46 yıl hüküm sürdü. Osmanlı tarihinin en uzun saltanatı.
+[serious] Belgrad, Rodos, Mohaç, Bağdat. Sınırlar Viyana'dan Basra'ya uzandı.
+[curious] Ama Kanuni Viyana'yı alamadı. Fatih de Belgrad'ı ve Rodos'u alamamıştı. İkisinin de yenilgileri var.
+[pause] Sen olsan hangisi olmak isterdin? Bin yıllık bir şehri alan genç mi, yarım asır dünyayı yöneten imparator mu?
+[serious] Fatih'in gölgesinde bir kanun var. Devletin birliği için kardeş katline izin veren madde, onun kanunnamesiyle anılır.
+[serious] Kanuni'nin gölgesi ise kendi ailesiydi. Oğlu Şehzade Mustafa'yı çadırında boğdurdu. En yakın dostu Pargalı İbrahim'i de.
+[sighs] Büyüklük bazen, en sevdiğini kaybetmenin bedeliyle gelir.
+[serious] Fatih 49 yaşında, yeni bir seferin yolunda öldü. Kanuni 72 yaşında, Zigetvar önünde, çadırında.
+[dramatic] Fatih bir dünyayı bitirdi. Kanuni o dünyayı yönetti.
+[curious] Sence en büyük padişah hangisi? Fatih mi, Kanuni mi? Yorumlara yaz.
