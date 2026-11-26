@@ -233,3 +233,16 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 | Pargalı İbrahim (23 Kasım, 2 gün) | 10:00 | 70.767 | %68.3 | 44.9 sn | 38.195 | "Kanuni, Pargalı'yı iftardan sonra boğdurttu" |
 
 56. **Instagram'da 09:00 slotu erken sinyalde zayıf:** aynı gün 09:00 Kanuni IG 331 izlenme / ilk 3 sn %35, 18:00 Yeniçeriler 1.456 / %62. TikTok'ta fark yok (2.1 bin / 1.8 bin). Kanca farkı da var: "Padişah ölmüştü." isim ve suçlu içermiyor; Pargalı ve Yeniçeri kancaları "kim kimi öldürdü" cümlesiyle açılıyor (öğrenim 52). 09:00 videolarında da ilk cümle tanınmış isim + şok eylem olsun. 26-27 Kasım verisi aynı yöndeyse sabah slotu 10:00'a (öğrenim 40) çekilmeli.
+
+## 26 Kasım analizi (24-25 Kasım, 09:00 / 18:00)
+| Video | Saat | IG izlenme | IG ilk 3 sn | IG paylaşım / yorum | TikTok | Facebook |
+|---|---|---|---|---|---|---|
+| Atatürk ezanı yasakladı mı? (belgelerle) | 25 Kas 18:00 | 2.546 | %44.1 | 23 / 32 | 3.473 | 527 (ilk saatler) |
+| II. Bayezid matbaayı yasakladı mı? | 25 Kas 09:00 | 1.715 | %52.1 | 1 / 1 | 3.337 | 407 (ilk saatler) |
+| Yeniçeriler | 24 Kas 18:00 | 1.721 | %61.0 | 1 / 5 | 5.494 | 6.110 |
+| Kanuni 48 gün | 24 Kas 09:00 | 381 | %35.8 | 13 / 2 | 2.490 | 6.012 |
+| Pargalı İbrahim uzun (yatay, 14 dk) | 25 Kas 21:30 | - | - | - | - | 1.088 / ort. 67 sn (ilk 14 saat) |
+
+57. **09:00 slotu kendi başına zayıf değil, öğrenim 56'yı düzelt:** 09:00 Matbaa (suçlama sorusu, isimli kanca) IG 1.715 / %52, 18:00 Yeniçeri ile aynı seviyede. 09:00 Kanuni'nin düşüklüğü isimsiz kancadan. Sabah slotu 10:00'a çekilmesin; her iki slotta da kanca "isim + suçlama/şok eylem".
+58. **Belgelerle Atatürk konusu yine en çok etkileşimi getirdi:** ezan videosu IG ilk 3 sn'de ortalama (%44) ama paylaşım 23, yorum 32 (Matbaa 1/1, Yeniçeri 1/5). Öğrenim 15/39 doğrulandı: "belgelerle" kimlik konuları yorum ve paylaşım motoru; kanca karesi güçlendirilirse (yüz daha büyük, kısa soru) izlenme de büyür.
+59. **Rutin gecikmesi riski:** 26 Kasım rutini 04:12 yerine 11:11'de geldi, 09:00 kaçtı (Enver 12:00'ye kaydı). Gecikme olursa sabah videosu 12:00'ye, 18:00 olduğu gibi.
