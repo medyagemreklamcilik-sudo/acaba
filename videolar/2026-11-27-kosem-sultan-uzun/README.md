@@ -1,0 +1,10 @@
+# Kösem Sultan: yarım asır imparatorluğu yöneten kadın (uzun video, yatay)
+
+~8:58, 1920x1080, sinematik "dosya" stili. Kanca: 2 Eylül 1651 gecesi haremde öldürülmesi. Yayın: 28 Kasım 2026, YouTube 15:00 (video), Facebook 17:00 (POST).
+
+Kaynaklar:
+- TDV İslâm Ansiklopedisi, "Kösem Sultan" (Mücteba İlgürel, 2002): papaz kızı / Bosna rivayeti (belgesiz), Mahpeyker adı ve "Kösem" lakabının iki açıklaması, 62 yaşında ölüm rivayetinden 1589 doğum tahmini; I. Ahmed'in hasekisi; Murad (1612), İbrahim (1615), Kasım; kardeş katlinin sona ermesinde nispi payı; Eski Saray'da ~6 yıl; 10 Eylül 1623 IV. Murad'ın cülusu ve valide sultanlık; 1631-32'de yetkinin Murad'a geçmesi; Bayezid ve Süleyman (1635), Kasım (1638) idamları, İbrahim'i "âciz ve zavallı" göstererek kurtarması; İbrahim döneminde güç ve sürgün rivayetleri; 1648'de rızası, 8 Ağustos 1648 IV. Mehmed'in cülusu, İbrahim'in boğdurulmasında "parmağı" iddiası (Karaçelebizâde); büyük valide / küçük valide, 3000 ve 2000 akçe yevmiye; Kâtip Çelebi'ye göre plan, Meleki Kadın'ın ihbarı; 2-3 Eylül 1651 (16-17 Ramazan 1061) haremde "dolap üzerinde" bulunarak öldürülmesi; Sultan Ahmed Camii haziresine defin; terekesi, Büyük Valide Hanı'ndaki yirmi sandık altın ve mücevher; Çinili Cami (1640), Büyük Valide Hanı, borçluların borçlarını ödemesi, Haremeyn vakfı.
+- TDV İslâm Ansiklopedisi, "Turhan Sultan" (Filiz Karaca, 2012): on dört ağanın kararı; Lala/Uzun Süleyman Ağa karışıklığı; Turhan'ın valide sultanlığı (1683'e kadar), Köprülü Mehmed Paşa, Yeni Cami.
+- Britannica, "Kösem Sultan": perde kordonu / saç örgüsü rivayetleri.
+- Tartışmalı ve metinde öyle belirtilen: köken, lakabın anlamı, İbrahim'in ölümündeki rolü, ölüm şekli, Rodos sürgünü rivayeti, geceleri tebdil-i kıyafet anlatısı.
+Görseller (Yandex): Kösem'in ve Turhan'ın gerçek portresi yoktur, Avrupa gravürleri temsili kullanıldı; I. Ahmed, I. Mustafa, Genç Osman, IV. Murad, Sultan İbrahim, IV. Mehmed portre/minyatürleri; Topkapı Haremi, Eski Saray, Yedikule, Sultanahmet, I. Ahmed Türbesi, kahvehane gravürü, Bağdat minyatürü, Büyük Valide Han, Çinili Camii, Mekke gravürü, Köprülü Mehmed Paşa, Yeni Cami.
