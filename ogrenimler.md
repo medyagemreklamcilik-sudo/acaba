@@ -246,3 +246,16 @@ Eksik olanlar ve kural hâline getirilenler (`/viral` SKILL.md, adım 2 ve 7):
 57. **09:00 slotu kendi başına zayıf değil, öğrenim 56'yı düzelt:** 09:00 Matbaa (suçlama sorusu, isimli kanca) IG 1.715 / %52, 18:00 Yeniçeri ile aynı seviyede. 09:00 Kanuni'nin düşüklüğü isimsiz kancadan. Sabah slotu 10:00'a çekilmesin; her iki slotta da kanca "isim + suçlama/şok eylem".
 58. **Belgelerle Atatürk konusu yine en çok etkileşimi getirdi:** ezan videosu IG ilk 3 sn'de ortalama (%44) ama paylaşım 23, yorum 32 (Matbaa 1/1, Yeniçeri 1/5). Öğrenim 15/39 doğrulandı: "belgelerle" kimlik konuları yorum ve paylaşım motoru; kanca karesi güçlendirilirse (yüz daha büyük, kısa soru) izlenme de büyür.
 59. **Rutin gecikmesi riski:** 26 Kasım rutini 04:12 yerine 11:11'de geldi, 09:00 kaçtı (Enver 12:00'ye kaydı). Gecikme olursa sabah videosu 12:00'ye, 18:00 olduğu gibi.
+
+## 27 Kasım analizi (25-26 Kasım)
+| Video | Saat | IG izlenme | IG ilk 3 sn | IG ort. | IG paylaşım / kaydetme / yorum | TikTok |
+|---|---|---|---|---|---|---|
+| Atatürk ezanı yasakladı mı? (belgelerle) | 25 Kas 18:00 | 4.753 | %48.6 | 24.3 sn | 94 / 82 / 69 | 5.774 |
+| II. Bayezid matbaayı yasakladı mı? | 25 Kas 09:00 | 1.789 | %51.5 | 16.7 sn | 1 / 11 / 1 | 3.689 |
+| Fatih mi, Kanuni mi? | 26 Kas 18:00 (1 gün) | 1.409 | %53.4 | 20.0 sn | 0 / 4 / 8 | 1.051 |
+| Enver Paşa kahraman mı? | 26 Kas 12:00 (1 gün) | 212 | %33.5 | 15.0 sn | 0 / 1 / 3 | 1.756 |
+Facebook ortalama izleme: Pargalı uzun 104 sn, Topal Osman uzun 66 sn, kısalar 13-21 sn.
+
+60. **İlk kelimede isim yoksa ilk 3 sn çöküyor (üçüncü doğrulama):** Enver videosu "Otuz iki yaşında Osmanlı ordusunun başına geçti." diye isimsiz açıldı, %33.5 (Kanuni 48 gün "Padişah ölmüştü." %35.8). İsimle/soruyla açılanlar %48-53. Kanca kuralı: ilk 2 kelimeden biri tanınmış isim olsun ("Enver Paşa 32 yaşında...").
+61. **Belgelerle Atatürk/kimlik konusu paylaşım motoru, ayda 2 değil haftada 1 olsun:** ezan videosu 94 paylaşım / 69 yorum ile diğer dört videonun toplamının 5 katı. Takvime haftada bir "belgelerle" konu eklenmeli.
+62. **Uzun yatay video Facebook'ta izleniyor:** Pargalı 14 dk ortalama 104 sn, Topal Osman 66 sn. Tanınmış isim + ihanet/cinayet konusu uzunlarda da önde.
