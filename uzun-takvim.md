@@ -13,7 +13,7 @@ ElevenLabs kotası yetmezse o günün uzun videosu atlanır, rapora yazılır (k
 | 2026-11-24 | Lozan'ın perde arkası: İsmet Paşa'nın sekiz ayı | | atlandı (rutin 23 Kasım çalışmadı; 24 Kasım gece kısa videolar önceliklendi) |
 | 2026-11-25 | EKSTRA (kullanıcı isteği) · Pargalı İbrahim: Kanuni Sultan Süleyman'ın en yakın dostu (14 dk) | videolar/2026-11-25-pargali-ibrahim-uzun | planlandı (YouTube + Facebook 25 Kasım 21:30) |
 | 2026-11-26 | Topal Osman ve Ali Şükrü Bey cinayeti | videolar/2026-11-25-topal-osman-uzun | planlandı (YouTube 15:00, Facebook 17:00) |
-| 2026-11-28 | Kösem Sultan: yarım asır imparatorluğu yöneten kadın · başlık: "Kösem Sultan Kimdir? Altı Padişah Gören Kadının Gerçek Hikâyesi" | videolar/2026-11-27-kosem-sultan-uzun | hazır |
+| 2026-11-28 | Kösem Sultan: yarım asır imparatorluğu yöneten kadın · başlık: "Kösem Sultan Kimdir? Altı Padişah Gören Kadının Gerçek Hikâyesi" | videolar/2026-11-27-kosem-sultan-uzun | planlandı (YouTube 15:00, Facebook 17:00) |
 | 2026-11-30 | 31 Mart Vakası: bir gecede devrilen düzen · başlık: "31 Mart Vakası Nedir? Bir Gecede Devrilen Düzenin Perde Arkası" | | bekliyor |
 | 2026-12-02 | Sabahattin Ali'nin son yolculuğu · başlık: "Sabahattin Ali Kimdir? Kuyucaklı Yusuf'un Yazarının Son Yolculuğu" | | bekliyor |
 | 2026-12-04 | Adnan Menderes: Yassıada'dan İmralı'ya · başlık: "Adnan Menderes Kimdir? Yassıada'dan İmralı'ya Son Günleri" | | bekliyor |
