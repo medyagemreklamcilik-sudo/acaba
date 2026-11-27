@@ -1,0 +1,14 @@
+[dramatic] Kösem Sultan'ı kendi gelini mi boğdurdu?
+[curious] Biri imparatorluğu yarım asır yöneten kadın. Öbürü, yirmili yaşlarında genç bir anne. Kösem mi güçlüydü, Turhan mı?
+[serious] Kösem, iki padişahın annesiydi. Dördüncü Murad ve İbrahim. Oğulları çocukken devleti o yönetti.
+[serious] İbrahim tahttan indirilince yerine altı yaşındaki torunu Dördüncü Mehmed geçti. Kösem bu kez "büyük valide" olarak sarayda kaldı.
+[dramatic] Ama küçük padişahın bir annesi vardı. Turhan Sultan. Ve Turhan, oğlunun devletini kaynanasına bırakmak istemiyordu.
+[serious] Saray ikiye bölündü. Bir yanda Kösem ve yeniçeri ağaları. Öbür yanda Turhan ve harem ağaları.
+[curious] Anlatılanlara göre Kösem bir plan yaptı: Küçük Mehmed'i tahttan indirip, yerine annesi daha uysal olan başka bir şehzadeyi geçirmek.
+[pause] Sen Turhan olsan, oğlunu kurtarmak için ne yapardın?
+[dramatic] Plan Turhan'a sızdı. 2 Eylül 1651 gecesi, harem ağası Süleyman Ağa ve adamları Kösem'in dairesine girdi.
+[whispers] Anlatılanlara göre Kösem bir dolaba saklandı. Bulundu. Kaynaklara göre perde kordonuyla, bazı rivayetlere göre kendi saç örgüsüyle boğuldu. Altmış yaşını geçmişti.
+[serious] Turhan o geceden sonra otuz yıl Osmanlı'nın en güçlü kadını oldu. Köprülü Mehmed Paşa'yı sadrazam yaptı. Yeni Cami'yi tamamlattı.
+[sighs] Gelin ile kaynana arasındaki kavga her evde olur. Ama bu evde, kazanan bir imparatorluk aldı.
+[dramatic] Kösem yarım asır saraya hükmetti. Ama son geceyi kazanan Turhan oldu.
+[curious] Sence hangisi güçlüydü? Kösem mi, Turhan mı? Yorumlara yaz.
