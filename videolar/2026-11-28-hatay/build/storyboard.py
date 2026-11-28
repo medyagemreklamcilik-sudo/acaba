@@ -1,9 +1,9 @@
 # Hatay Türkiye'ye nasıl katıldı? (sinematik dosya, dikey). Kaynaklar README'de.
 BASLIK = 'Hatay 1921-1939: belgeler. "dosya" stili'
 TL_YEARS, TL_EVERY, TL_START = [1920, 1940], 5, 1938.86
-SC('board', 'Atatürk, Hatay’ın Türkiye’ye', [
-    P('ataturk', 'Atatürk, Hatay’ın', 'MUSTAFA KEMAL ATATÜRK', w=1000, crop=[.05, .02, .95, .55], shift=-1.2),
-    TI('Atatürk, Hatay’ın', 'HATAY’I\nGÖREMEDEN ÖLDÜ', 150, x=0, j=1, shift=-1.2, font='cond'),
+SC('board', 'Atatürk, Hatay’ı neden', [
+    P('ataturk', 'Atatürk, Hatay’ı', 'MUSTAFA KEMAL ATATÜRK', w=1000, crop=[.05, .02, .95, .55], shift=-1.2),
+    TI('Atatürk, Hatay’ı', 'HATAY’I\nNEDEN GÖREMEDİ?', 150, x=0, j=1, shift=-1.2, font='cond'),
 ], lead=.0, year=1938.86)
 SC('dark', 'Peki Hatay nasıl', [
     TI('Hatay nasıl bizim', 'HATAY NASIL\nBİZİM OLDU?', 140),
