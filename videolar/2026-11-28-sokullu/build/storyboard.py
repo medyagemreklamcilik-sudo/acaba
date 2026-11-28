@@ -18,7 +18,7 @@ SC('board', 'Sokullu, Bosna’da bir köyde', [
     TH('visegrad', 'devsirme'),
     CT('on dört yıl', 0, 14, 'v => Math.round(v) + " YIL"', 170, dur=.8, sub='SADRAZAM'),
 ], year=1520)
-SC('dark', 'Kanuni’nin ölümünü Zigetvar’da', [], year=1566.68)   # LTX: zigetvar
+SC('dark', 'Kanuni’nin ölümünü Zigetvar’da', [TI('Kanuni’nin ölümünü', 'ZİGETVAR', 140)], year=1566.68)   # LTX: zigetvar
 SC('board', 'Don ile Volga’yı', [
     P('volga', 'Don ile Volga’yı', 'DON - VOLGA KANALI', w=900),
 ], year=1569)
@@ -36,8 +36,8 @@ SC('dark', 'Sen olsan, etrafındaki', [
     TI('Sen olsan,', 'SEN OLSAN?', 200, color='#f0754e'),
     TI('görevini bırakır', 'GÖREVİ\nBIRAKIR MIYDIN?', 120),
 ], boom=True)
-SC('dark', '12 Ekim 1579’da', [], year=1579.78)   # LTX: dervis
-SC('dark', 'Dilekçeyi uzatır gibi', [], year=1579.78)   # LTX: hancer
+SC('dark', '12 Ekim 1579’da', [TI('12 Ekim 1579’da', '12 EKİM 1579', 140)], year=1579.78)   # LTX: dervis
+SC('dark', 'Dilekçeyi uzatır gibi', [TI('Dilekçeyi uzatır', 'HANÇER', 140)], year=1579.78)   # LTX: hancer
 SC('board', 'Katil, tımarı azaltılan', [
     P('katil', 'Katil, tımarı', 'KATİL: BİR BOŞNAK', w=900, crop=[0, 0, 1, .5]),
     TG('tımarı azaltılan', 'GÖRÜNÜŞTE', '', 'TIMARI AZALTILMIŞ'),
@@ -51,7 +51,7 @@ SC('board', 'Bazı tarihçilere göre arkada', [
 SC('dark', 'Bazen en büyük tehlike', [
     TI('küçük bir ricayla', 'KÜÇÜK BİR\nRİCAYLA GELEN', 140, color='#f0754e', font='cond'),
 ])
-SC('dark', 'Sokullu’yu bir hançer', [], year=1579.8)   # LTX: gravur
+SC('dark', 'Sokullu’yu bir hançer', [TI('Sokullu’yu bir hançer', 'YALNIZ', 140)], year=1579.8)   # LTX: gravur
 SC('dark', 'Sence kim gönderdi?', [
     TI('Sence kim gönderdi?', 'KİM GÖNDERDİ?', 150),
     TI('Hamzavîler mi', 'HAMZAVÎLER Mİ,\nPADİŞAH MI?', 120, color='#f0754e', font='cond'),

@@ -22,9 +22,8 @@ for i, it in enumerate(items):
     band = (f",drawbox=x=90:y=1560:w=900:h=120:color=0xb3261e@0.95:t=fill,"
             f"drawtext=fontfile={FONT}:text='{txt}':fontsize=66:fontcolor=white:x=(w-tw)/2:y=1578") if txt else ''
     fc.append(f"[{i+1}:v]setpts={k:.4f}*PTS,fps=30,trim=0:{dur:.3f},setpts=PTS-STARTPTS,"
-              f"scale=1188:2112:flags=lanczos,"
-              f"crop=w='1188-108*t/{dur:.3f}':h='2112-192*t/{dur:.3f}':x='(in_w-out_w)/2':y='(in_h-out_h)/2',"
-              f"scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p{band},"
+              f"scale=w='trunc(1080*(1+0.07*t/{dur:.3f})/2)*2':h='trunc(1920*(1+0.07*t/{dur:.3f})/2)*2':eval=frame:flags=lanczos,"
+              f"crop=1080:1920,setsar=1,format=yuv420p{band},"
               f"setpts=PTS+{it['t0']:.3f}/TB[c{i}]")
     fc.append(f"[{last}][c{i}]overlay=0:0:enable='between(t,{it['t0']:.3f},{it['t1']:.3f})':eof_action=pass[v{i}]")
     last = f'v{i}'
