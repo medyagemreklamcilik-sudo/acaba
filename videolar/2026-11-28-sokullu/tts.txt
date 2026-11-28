@@ -1,0 +1,14 @@
+[dramatic] Sokullu Mehmed Paşa'yı bir dilekçe öldürdü.
+[curious] Üç padişaha sadrazamlık yapan adam, kendi konağında, elinde kâğıt tutan bir dervişin hançeriyle can verdi. Ama o dervişi kim gönderdi?
+[serious] Sokullu, Bosna'da bir köyde doğdu. Devşirme olarak saraya alındı ve on dört yıl boyunca imparatorluğu yönetti.
+[serious] Kanuni'nin ölümünü Zigetvar'da haftalarca saklayan oydu. Don ile Volga'yı birleştirecek bir kanal bile hayal etti.
+[dramatic] Ama yeni padişah Üçüncü Murad, onu sevmiyordu.
+[serious] Sokullu'nun adamları birer birer görevden alındı. 1578'de Budin beylerbeyi olan akrabası idam edildi. Sadrazam yalnız kalıyordu.
+[pause] Sen olsan, etrafındaki herkes düşerken görevini bırakır mıydın?
+[dramatic] 12 Ekim 1579'da Sokullu konağında ikindi divanındaydı. Derviş kılığında bir adam yaklaştı. Elinde bir dilekçe vardı.
+[whispers] Dilekçeyi uzatır gibi yaptı. Koynundan bir hançer çıkardı ve sadrazamın kalbine sapladı.
+[serious] Katil, tımarı azaltılan bir Boşnaktı. Ama hikâye burada bitmiyor.
+[curious] Bazı tarihçilere göre arkada, şeyhleri idam edilen Hamzavî tarikatı vardı. Bir başka iddiaya göre ise padişahın kendisi.
+[sighs] Bazen en büyük tehlike, kapına küçük bir ricayla gelen kişidir.
+[dramatic] Sokullu'yu bir hançer öldürdü. Ama onu yalnız bırakan bir padişahtı.
+[curious] Sence kim gönderdi? Hamzavîler mi, padişah mı? Yorumlara yaz.
