@@ -1,0 +1,14 @@
+[dramatic] Atatürk, Hatay'ın Türkiye'ye katıldığını göremeden öldü.
+[curious] Peki Hatay nasıl bizim oldu? Tek kurşun atılmadan.
+[serious] 1921'de imzalanan Ankara Antlaşması'yla İskenderun ve Antakya, Fransız yönetimindeki Suriye'de kaldı. Ama Türkçe resmi dil olacak, Türklere özel bir statü verilecekti.
+[serious] 1936'da Fransa, Suriye'ye bağımsızlık sözü verdi. Hatay da Suriye'yle birlikte gidecekti.
+[dramatic] Atatürk bunu kabul etmedi. Anlatılanlara göre şöyle dedi: "Hatay meselesi benim şahsi meselemdir."
+[serious] Mesele Milletler Cemiyeti'ne taşındı. 1937'de Hatay'a ayrı bir statü verildi.
+[pause] Sen olsan, hasta yatağındayken bir şehir için savaşı göze alır mıydın?
+[serious] Atatürk o günlerde ağır hastaydı. Ama 1938 baharında güneye gitti, Mersin'de ve Adana'da askerleri denetledi. Mesaj açıktı.
+[dramatic] 2 Eylül 1938'de Hatay Devleti kuruldu. Kendi meclisi, kendi bayrağı vardı.
+[whispers] Ama Atatürk iki ay sonra, 10 Kasım 1938'de öldü.
+[serious] 29 Haziran 1939'da Hatay Meclisi Türkiye'ye katılma kararı aldı. Temmuz'da Fransız askerleri çekildi.
+[sighs] Bazen en çok istediğin şeyi göremezsin. Ama onu başlatan sen olursun.
+[dramatic] Hatay'ı bir kurşun değil, bir inat kazandı.
+[curious] Sence Hatay'ı kim kazandı? Atatürk mü, diplomasi mi? Yorumlara yaz.

@@ -52,7 +52,7 @@ Durumlar: `bekliyor` → `hazır` (video depoda, planlanmadı) → `planlandı` 
 | 2026-11-26 | Per | 18:00 · Kanuni mi, Fatih mi? En büyük padişah hangisi? | 2026-11-26-kanuni-fatih | planlandı (18:00, 4 platform tek paylaşım) |
 | 2026-11-27 | Cum | 09:00 · Lozan'ın "gizli maddeleri" efsanesi | 2026-11-27-lozan-gizli-madde | planlandı (09:00, 4 platform tek paylaşım) |
 | 2026-11-27 | Cum | 18:00 · Kösem mi, Turhan mı? Sarayda gelin-kaynana savaşı | 2026-11-27-kosem-turhan | planlandı (18:00, 4 platform tek paylaşım) |
-| 2026-11-28 | Cmt | 09:00 · Hatay Türkiye'ye nasıl katıldı? | | bekliyor |
+| 2026-11-28 | Cmt | 09:00 · Hatay Türkiye'ye nasıl katıldı? | 2026-11-28-hatay | hazır |
 | 2026-11-28 | Cmt | 18:00 · Sokullu Mehmed Paşa'yı kim öldürdü? | 2026-11-28-sokullu | hazır (LTX karma) |
 | 2026-11-29 | Paz | 09:00 · Osmanlı hiç yıkılmasaydı bugün ne olurdu? | | bekliyor |
 | 2026-11-29 | Paz | 18:00 · İskilipli Atıf Hoca şapka yüzünden mi asıldı? (belgelerle) | | bekliyor |
